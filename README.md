@@ -36,7 +36,7 @@ The simplest way to get up and running with NCLDR is to watch a series of short 
 2. Open Visual Studio 2012 or later and builder the NCLDR.sln solution.
 3. Download CLDR release 22.1 or later from [http://cldr.unicode.org/index/downloads](http://cldr.unicode.org/index/downloads).
 4. Run NCldrBuilderCmd.exe to build the NCLDR.dat data file from the CLDR XML files (you only need to do this once).
-5. Run NCLDRExplorer.exe to view the NCLDR data and/or to create NCLDR custom cultures.
+5. Run NCldrExplorer.exe to view the NCLDR data and/or to create NCLDR custom cultures.
 6. Add references to NCldr.dll and NCldrExtensions.dll to your application to use NCLDR data in your applications.
 
 ##License
