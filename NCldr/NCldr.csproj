@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FF26CFA-910C-43CB-A758-D20BF99EFDEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NCldr</RootNamespace>
+    <AssemblyName>NCldr</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="INCldrData.cs" />
+    <Compile Include="NCldr.cs" />
+    <Compile Include="NCldrData.cs" />
+    <Compile Include="NCldrLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\Calendar.cs" />
+    <Compile Include="Types\CalendarDisplayNames.cs" />
+    <Compile Include="Types\CalendarType.cs" />
+    <Compile Include="Types\Casing.cs" />
+    <Compile Include="Types\CharacterFallback.cs" />
+    <Compile Include="Types\Characters.cs" />
+    <Compile Include="Types\CldrIdentifier.cs" />
+    <Compile Include="Types\CalendarName.cs" />
+    <Compile Include="Types\CalendarNameSet.cs" />
+    <Compile Include="Types\CalendarPreference.cs" />
+    <Compile Include="Types\CurrencySpacing.cs" />
+    <Compile Include="Types\CurrencySpacings.cs" />
+    <Compile Include="Types\DateTimeFormat.cs" />
+    <Compile Include="Types\Delimiters.cs" />
+    <Compile Include="Types\Culture.cs" />
+    <Compile Include="Types\Currency.cs" />
+    <Compile Include="Types\IDescription.cs" />
+    <Compile Include="Types\GenderList.cs" />
+    <Compile Include="Types\LanguageMatch.cs" />
+    <Compile Include="Types\LikelySubTag.cs" />
+    <Compile Include="Types\ListPattern.cs" />
+    <Compile Include="Types\MetaTimeZone.cs" />
+    <Compile Include="Types\ParentCulture.cs" />
+    <Compile Include="Types\Reference.cs" />
+    <Compile Include="Types\RegionCode.cs" />
+    <Compile Include="Types\RegionPaperSize.cs" />
+    <Compile Include="Types\MeasurementData.cs" />
+    <Compile Include="Types\RegionMeasurementSystem.cs" />
+    <Compile Include="Types\CurrencyDisplayName.cs" />
+    <Compile Include="Types\CurrencyDisplayNameSet.cs" />
+    <Compile Include="Types\CurrencyFraction.cs" />
+    <Compile Include="Types\CurrencyPeriod.cs" />
+    <Compile Include="Types\DecimalFormatPattern.cs" />
+    <Compile Include="Types\DecimalFormatPatternSet.cs" />
+    <Compile Include="Types\Era.cs" />
+    <Compile Include="Types\IPeriod.cs" />
+    <Compile Include="Types\LanguagePopulation.cs" />
+    <Compile Include="Types\Messages.cs" />
+    <Compile Include="Types\MinDaysCount.cs" />
+    <Compile Include="Types\NumberingSystem.cs" />
+    <Compile Include="Types\Numbers.cs" />
+    <Compile Include="Types\NumberingSystemSymbols.cs" />
+    <Compile Include="Types\RegionDayOfWeek.cs" />
+    <Compile Include="Types\RegionGroup.cs" />
+    <Compile Include="Types\RegionInformation.cs" />
+    <Compile Include="Types\RegionTelephoneCode.cs" />
+    <Compile Include="Types\RuleBasedNumberFormatting.cs" />
+    <Compile Include="Types\RuleBasedNumberFormattingRule.cs" />
+    <Compile Include="Types\RuleBasedNumberFormattingRuleSet.cs" />
+    <Compile Include="Types\TimeFormat.cs" />
+    <Compile Include="Types\DateFormat.cs" />
+    <Compile Include="Types\EraNameSet.cs" />
+    <Compile Include="Types\EraName.cs" />
+    <Compile Include="Types\DayPeriodNameSet.cs" />
+    <Compile Include="Types\DayNameSet.cs" />
+    <Compile Include="Types\DayName.cs" />
+    <Compile Include="Types\DayPeriodName.cs" />
+    <Compile Include="Types\MonthNameSet.cs" />
+    <Compile Include="Types\Dates.cs" />
+    <Compile Include="Types\DayPeriodRule.cs" />
+    <Compile Include="Types\DayPeriodRuleSet.cs" />
+    <Compile Include="Types\MonthName.cs" />
+    <Compile Include="Types\NumberingSystemType.cs" />
+    <Compile Include="Types\PluralRuleSet.cs" />
+    <Compile Include="Types\PluralRule.cs" />
+    <Compile Include="Types\PostcodeRegex.cs" />
+    <Compile Include="Types\ScriptDisplayName.cs" />
+    <Compile Include="Types\RegionDisplayName.cs" />
+    <Compile Include="Types\CultureData.cs" />
+    <Compile Include="Types\DisplayName.cs" />
+    <Compile Include="Types\Identity.cs" />
+    <Compile Include="Types\Language.cs" />
+    <Compile Include="Types\LanguageDisplayName.cs" />
+    <Compile Include="Types\Script.cs" />
+    <Compile Include="Types\Region.cs" />
+    <Compile Include="Types\TimeZone.cs" />
+    <Compile Include="Types\TimeZonePeriod.cs" />
+    <Compile Include="Types\TimeZoneRegion.cs" />
+    <Compile Include="Types\UnitPattern.cs" />
+    <Compile Include="Types\UnitPatternSet.cs" />
+    <Compile Include="Types\Variant.cs" />
+    <Compile Include="Types\WeekData.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

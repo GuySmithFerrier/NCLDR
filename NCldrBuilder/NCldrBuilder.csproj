@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF372F8E-FAB5-4B70-9132-3BEA580D0F90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NCldr.Builder</RootNamespace>
+    <AssemblyName>NCldrBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NCldrBuilder.GetRegionTelephoneCodes.cs" />
+    <Compile Include="GenericDescription.cs" />
+    <Compile Include="NCldrBuilder.GetDescriptions.cs" />
+    <Compile Include="NCldrBuilder.GetMetaTimeZones.cs" />
+    <Compile Include="NCldrBuilder.GetTimeZones.cs" />
+    <Compile Include="NCldrBuilder.GetLikelySubTags.cs" />
+    <Compile Include="NCldrBuilder.GetLanguageMatches.cs" />
+    <Compile Include="NCldrBuilder.GetGenderLists.cs" />
+    <Compile Include="NCldrBuilder.GetCharacterFallbacks.cs" />
+    <Compile Include="NCldrBuilder.GetReferences.cs" />
+    <Compile Include="NCldrBuilder.GetParentCultures.cs" />
+    <Compile Include="NCldrBuilder.GetRegionCodes.cs" />
+    <Compile Include="NCldrBuilder.GetMeasurementData.cs" />
+    <Compile Include="NCldrBuilder.GetWeekData.cs" />
+    <Compile Include="NCldrBuilder.GetCalendarPreferences.cs" />
+    <Compile Include="NCldrBuilder.GetCalendarTypes.cs" />
+    <Compile Include="NCldrBuilder.GetRegionInformations.cs" />
+    <Compile Include="NCldrBuilder.GetRegionGroups.cs" />
+    <Compile Include="NCldrBuilder.GetCurrencyFractions.cs" />
+    <Compile Include="NCldrBuilder.GetDayPeriodRuleSets.cs" />
+    <Compile Include="NCldrBuilder.GetNumberingSystems.cs" />
+    <Compile Include="NCldrBuilder.cs" />
+    <Compile Include="NCldrBuilder.GetCultures.cs" />
+    <Compile Include="NCldrBuilder.GetPluralRuleSets.cs" />
+    <Compile Include="NCldrBuilder.GetPostcodeRegexes.cs" />
+    <Compile Include="NCldrBuilderOptions.cs" />
+    <Compile Include="NCldrBuilderProgressEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NCldrBuilderCultureOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NCldr\NCldr.csproj">
+      <Project>{5ff26cfa-910c-43cb-a758-d20bf99efdec}</Project>
+      <Name>NCldr</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
