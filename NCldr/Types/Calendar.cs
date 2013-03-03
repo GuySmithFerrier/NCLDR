@@ -366,7 +366,7 @@
         private string[] GetDayNames(string id)
         {
             DayName[] dayNames = (from dns in this.DayNameSets
-                                  where string.Compare(dns.Id, Id, false, CultureInfo.InvariantCulture) == 0
+                                  where string.Compare(dns.Id, id, false, CultureInfo.InvariantCulture) == 0
                                   select dns.Names).FirstOrDefault();
             if (dayNames != null)
             {
