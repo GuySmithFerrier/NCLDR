@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -1101,13 +1103,84 @@ namespace NCldrExplorer
 
                     File.WriteAllText("CustomCultures.txt", GetCustomCulturesList());
 
-                    MessageBox.Show("A list of custom cultures to unregister has been written to CustomCultures.txt." + System.Environment.NewLine + System.Environment.NewLine +
+                    string message =
+                        "A list of custom cultures to unregister has been written to CustomCultures.txt." + System.Environment.NewLine + System.Environment.NewLine +
                         "To unregister these custom cultures use the UnregisterCustomCultures.exe command line utility like this:-" + System.Environment.NewLine + System.Environment.NewLine +
                         "UnregisterCustomCultures CustomCultures.txt" + System.Environment.NewLine + System.Environment.NewLine +
                         "Note that you must run UnregisterCustomCultures with administrator priviledges." + System.Environment.NewLine + System.Environment.NewLine +
-                        "In addition you may need to reboot before using UnregisterCustomCultures because it cannot unregister custom cultures when they are in use.");
+                        "In addition you may need to reboot before using UnregisterCustomCultures because it cannot unregister custom cultures when they are in use.";
+
+                    if (IsRunningAsAdministrator())
+                    {
+                        string unregisterCustomCulturesPath = FindUnregisterCustomCulturesExecutable(
+                            Path.GetDirectoryName(Application.ExecutablePath));
+
+                        if (!String.IsNullOrEmpty(unregisterCustomCulturesPath))
+                        {
+                            Process.Start(
+                                unregisterCustomCulturesPath, 
+                                Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CustomCultures.txt"));
+
+                            MessageBox.Show("A separate process has been started to unregister the custom cultures");
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "The UnregisterCustomCultures.exe file could not be found so the custom cultures have not been unregistered." + System.Environment.NewLine + System.Environment.NewLine +
+                                message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "This process is not running as Administrator so the custom cultures cannot be unregistered from here." + System.Environment.NewLine + System.Environment.NewLine +
+                            message);
+                    }
                 }
             }
+        }
+
+        private bool IsRunningAsAdministrator()
+        {
+            WindowsIdentity windowsIdentity = WindowsIdentity.GetCurrent();
+            SecurityIdentifier securityIdentifier = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null);
+            return windowsIdentity.Groups.Select(g => (SecurityIdentifier)g.Translate(typeof(SecurityIdentifier))).
+                Any(s => s == securityIdentifier);
+            //return identity.User.ToString() == securityIdentifier.ToString();
+        }
+
+        private string FindUnregisterCustomCulturesExecutable(string path)
+        {
+            string unregisterCustomCulturesPath = Path.Combine(path, "UnregisterCustomCultures.exe");
+            if (File.Exists(unregisterCustomCulturesPath))
+            {
+                return unregisterCustomCulturesPath;
+            }
+
+            string unregisterCustomCulturesFolder = Path.Combine(path, "UnregisterCustomCultures");
+            if (Directory.Exists(unregisterCustomCulturesFolder))
+            {
+                unregisterCustomCulturesPath = Path.Combine(unregisterCustomCulturesFolder, "UnregisterCustomCultures.exe");
+                if (File.Exists(unregisterCustomCulturesPath))
+                {
+                    return unregisterCustomCulturesPath;
+                }
+
+                unregisterCustomCulturesFolder = Path.Combine(unregisterCustomCulturesFolder, @"bin\debug");
+                unregisterCustomCulturesPath = Path.Combine(unregisterCustomCulturesFolder, "UnregisterCustomCultures.exe");
+                if (File.Exists(unregisterCustomCulturesPath))
+                {
+                    return unregisterCustomCulturesPath;
+                }
+            }
+
+            string parentFolder = Directory.GetParent(path).FullName;
+            if (!String.IsNullOrEmpty(parentFolder))
+            {
+                return FindUnregisterCustomCulturesExecutable(parentFolder);
+            }
+
+            return null;
         }
 
         private string GetCustomCulturesList()
