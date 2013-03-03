@@ -348,7 +348,7 @@ namespace NCldrExplorer
             }
         }
 
-        private void ShowMessages(Messages messages)
+        private void ShowMessages(MessageSet messages)
         {
             if (messages == null)
             {
@@ -361,15 +361,7 @@ namespace NCldrExplorer
             }
             else
             {
-                List<CultureMessage> cultureMessages = new List<CultureMessage>();
-                IDictionaryEnumerator enumerator = messages.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    DictionaryEntry entry = (DictionaryEntry)enumerator.Current;
-                    cultureMessages.Add(new CultureMessage() { Id = entry.Key.ToString(), Message = entry.Value.ToString() });
-                }
-
-                dgvMessages.DataSource = cultureMessages;
+                dgvMessages.DataSource = messages.Messages;
 
                 tbxMessagesYes.Text = messages.Yes;
                 tbxMessagesY.Text = messages.YesShort;
@@ -1431,13 +1423,6 @@ namespace NCldrExplorer
             dgvCultureCurrencyNames.Columns[0].Width = 70;
             dgvCultureCurrencyNames.Columns[1].Width = 140;
         }
-    }
-
-    public class CultureMessage
-    {
-        public string Id { get; set; }
-
-        public string Message { get; set; }
     }
 
     public class NumberingSystemId

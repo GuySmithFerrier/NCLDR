@@ -612,26 +612,32 @@ namespace NCldr.Builder
             return symbols;
         }
 
-        private static Messages GetMessages(XDocument document)
+        private static MessageSet GetMessages(XDocument document)
         {
             if (options != null && options.CultureOptions != null && !options.CultureOptions.IncludeMessages)
             {
                 return null;
             }
 
-            Messages messages = null;
+            MessageSet messages = null;
             IEnumerable<XElement> ldmlElements = document.Elements("ldml");
             List<XElement> messageDatas = (from item in ldmlElements.Elements("posix")
                                                 .Elements("messages").Elements()
                                             select item).ToList();
             if (messageDatas != null)
             {
-                messages = new Messages();
-
+                List<Message> messageList = new List<Message>();
                 foreach(XElement messageData in messageDatas)
                 {
-                    messages.Add(messageData.Name.ToString(), messageData.Value.ToString());
+                    messageList.Add(new Message()
+                    {
+                        Id = messageData.Name.ToString(),
+                        Text = messageData.Value.ToString()
+                    });
                 }
+
+                messages = new MessageSet();
+                messages.Messages = messageList.ToArray();
             }
 
             return messages;

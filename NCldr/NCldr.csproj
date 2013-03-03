@@ -56,6 +56,7 @@
     <Compile Include="Types\LanguageMatch.cs" />
     <Compile Include="Types\LikelySubTag.cs" />
     <Compile Include="Types\ListPattern.cs" />
+    <Compile Include="Types\Message.cs" />
     <Compile Include="Types\MetaTimeZone.cs" />
     <Compile Include="Types\ParentCulture.cs" />
     <Compile Include="Types\Reference.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="Types\Era.cs" />
     <Compile Include="Types\IPeriod.cs" />
     <Compile Include="Types\LanguagePopulation.cs" />
-    <Compile Include="Types\Messages.cs" />
+    <Compile Include="Types\MessageSet.cs" />
     <Compile Include="Types\MinDaysCount.cs" />
     <Compile Include="Types\NumberingSystem.cs" />
     <Compile Include="Types\Numbers.cs" />

@@ -69,12 +69,12 @@
         /// <summary>
         /// Gets or sets the resolved Messages
         /// </summary>
-        private Messages messages;
+        private MessageSet messages;
 
         /// <summary>
         /// Gets or sets the un-resolved Messages
         /// </summary>
-        private Messages messagesNoParents;
+        private MessageSet messagesNoParents;
 
         /// <summary>
         /// Gets or sets the resolved Numbers
@@ -804,7 +804,7 @@
         /// <summary>
         /// Gets or sets the resolved Messages
         /// </summary>
-        public Messages Messages
+        public MessageSet Messages
         {
             get
             {
@@ -826,12 +826,12 @@
         /// GetMessages gets the resolved Messages
         /// </summary>
         /// <returns>The resolved Messages</returns>
-        private Messages GetMessages()
+        private MessageSet GetMessages()
         {
-            Messages messages = null;
+            MessageSet messages = null;
             if (this.messagesNoParents != null)
             {
-                messages = (Messages)this.messagesNoParents.Clone();
+                messages = (MessageSet)this.messagesNoParents.Clone();
             }
 
             Culture[] parentCultures = this.GetParents();
@@ -849,7 +849,7 @@
         /// <param name="combinedMessages">The child object</param>
         /// <param name="parentMessages">The parent object</param>
         /// <returns>The combined object</returns>
-        private Messages CombineMessages(Messages combinedMessages, Messages parentMessages)
+        private MessageSet CombineMessages(MessageSet combinedMessages, MessageSet parentMessages)
         {
             if (combinedMessages == null && parentMessages == null)
             {
@@ -857,22 +857,26 @@
             }
             else if (combinedMessages == null)
             {
-                return (Messages)parentMessages.Clone();
+                return (MessageSet)parentMessages.Clone();
             }
             else if (parentMessages == null)
             {
                 return combinedMessages;
             }
 
-            IDictionaryEnumerator enumerator = parentMessages.GetEnumerator();
-            while (enumerator.MoveNext())
+            List<Message> combinedMessagesList = new List<Message>(combinedMessages.Messages);
+
+            foreach (Message parentMessage in parentMessages.Messages)
             {
-                DictionaryEntry entry = (DictionaryEntry)enumerator.Current;
-                if (!combinedMessages.ContainsKey(entry.Key.ToString()))
+                if (!(from m in combinedMessages.Messages
+                      where m.Id == parentMessage.Id
+                      select m).Any())
                 {
-                    combinedMessages.Add(entry.Key.ToString(), entry.Value.ToString());
+                    combinedMessagesList.Add(parentMessage);
                 }
             }
+
+            combinedMessages.Messages = combinedMessagesList.ToArray();
 
             return combinedMessages;
         }

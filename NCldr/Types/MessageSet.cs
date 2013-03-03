@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections;
+    using System.Globalization;
+    using System.Linq;
     using System.Runtime.Serialization;
 
     /// <summary>
@@ -9,25 +11,20 @@
     /// </summary>
     /// <remarks>CLDR reference: http://www.unicode.org/reports/tr35/#POSIX_Elements </remarks>
     [Serializable]
-    public class Messages : Hashtable, ICloneable
+    public class MessageSet : ICloneable
     {
         /// <summary>
         /// Initializes a new instance of the Messages class
         /// </summary>
-        public Messages()
+        public MessageSet()
             : base()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the Messages class
+        /// Gets or sets an array of Message objects in the set
         /// </summary>
-        /// <param name="info">A SerializationInfo object</param>
-        /// <param name="context">A StreamingContext object</param>
-        public Messages(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
+        public Message[] Messages { get; set; }
 
         /// <summary>
         /// Gets the localized 'wide' form of Yes
@@ -36,12 +33,21 @@
         {
             get
             {
-                if (!this.ContainsKey("yesstr"))
+                if (this.Messages == null)
                 {
                     return null;
                 }
 
-                string yesstr = this["yesstr"].ToString();
+                Message message = (from m in this.Messages
+                                   where String.Compare(m.Id, "yesstr", true, CultureInfo.InvariantCulture) == 0
+                                   select m).FirstOrDefault();
+
+                if (message == null)
+                {
+                    return null;
+                }
+
+                string yesstr = message.Text;
                 if (string.IsNullOrEmpty(yesstr))
                 {
                     return null;
@@ -59,12 +65,21 @@
         {
             get
             {
-                if (!this.ContainsKey("yesstr"))
+                if (this.Messages == null)
                 {
                     return null;
                 }
 
-                string yesstr = this["yesstr"].ToString();
+                Message message = (from m in this.Messages
+                                   where String.Compare(m.Id, "yesstr", true, CultureInfo.InvariantCulture) == 0
+                                   select m).FirstOrDefault();
+
+                if (message == null)
+                {
+                    return null;
+                }
+
+                string yesstr = message.Text;
                 if (string.IsNullOrEmpty(yesstr))
                 {
                     return null;
@@ -88,12 +103,21 @@
         {
             get
             {
-                if (!this.ContainsKey("nostr"))
+                if (this.Messages == null)
                 {
                     return null;
                 }
 
-                string nostr = this["nostr"].ToString();
+                Message message = (from m in this.Messages
+                                   where String.Compare(m.Id, "nostr", true, CultureInfo.InvariantCulture) == 0
+                                   select m).FirstOrDefault();
+
+                if (message == null)
+                {
+                    return null;
+                }
+
+                string nostr = message.Text;
                 if (string.IsNullOrEmpty(nostr))
                 {
                     return null;
@@ -111,12 +135,21 @@
         {
             get
             {
-                if (!this.ContainsKey("nostr"))
+                if (this.Messages == null)
                 {
                     return null;
                 }
 
-                string nostr = this["nostr"].ToString();
+                Message message = (from m in this.Messages
+                                   where String.Compare(m.Id, "nostr", true, CultureInfo.InvariantCulture) == 0
+                                   select m).FirstOrDefault();
+
+                if (message == null)
+                {
+                    return null;
+                }
+
+                string nostr = message.Text;
                 if (string.IsNullOrEmpty(nostr))
                 {
                     return null;
@@ -137,7 +170,7 @@
         /// Clone clones the object
         /// </summary>
         /// <returns>A cloned copy of the object</returns>
-        public new object Clone()
+        public object Clone()
         {
             return this.MemberwiseClone();
         }

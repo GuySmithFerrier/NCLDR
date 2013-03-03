@@ -61,7 +61,7 @@
         /// <summary>
         /// Gets or sets the culture's messages
         /// </summary>
-        public Messages Messages { get; set; }
+        public MessageSet Messages { get; set; }
 
         /// <summary>
         /// Gets or sets the culture's numbers and formats
