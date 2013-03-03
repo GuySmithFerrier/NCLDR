@@ -1,5 +1,6 @@
 ﻿namespace NCldr
 {
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
@@ -10,6 +11,11 @@
     /// </summary>
     public class NCldr
     {
+        /// <summary>
+        /// Gets or sets the NCldrData object containing the raw CLDR data
+        /// </summary>
+        private static INCldrData ncldrData;
+
         /// <summary>
         /// Gets the RegionId that represents the whole world
         /// </summary>
@@ -26,7 +32,23 @@
         /// </summary>
         /// <remarks>This property must be set before NCLDR can be used. Typically it is set using
         /// the NCldrLoader class.</remarks>
-        public static INCldrData NCldrData { get; set; }
+        public static INCldrData NCldrData
+        {
+            get
+            {
+                if (ncldrData == null)
+                {
+                    throw new ArgumentException("NCldr.NCldrData must be initialized before NCLDR can be used");
+                }
+
+                return ncldrData;
+            }
+
+            set
+            {
+                ncldrData = value;
+            }
+        }
 
         /// <summary>
         /// Gets the Unicode Licence Agreement (see http://www.unicode.org/copyright.html#Exhibit1)
