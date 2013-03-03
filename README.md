@@ -17,6 +17,7 @@ What is complete:-
 
 What is still to do:-
 * In general the main part of NCLDR that is currently missing is a layer of intelligence on top of the data that makes the data valuable.
+* Documentation. At present the source code includes XML code comments but there is no documentation beyond this.
 
 ##NCLDR Videos
 
@@ -37,7 +38,8 @@ The simplest way to get up and running with NCLDR is to watch a series of short 
 3. Download CLDR release 22.1 or later from [http://cldr.unicode.org/index/downloads](http://cldr.unicode.org/index/downloads).
 4. Run NCldrBuilderCmd.exe to build the NCLDR.dat data file from the CLDR XML files (you only need to do this once).
 5. Run NCldrExplorer.exe to view the NCLDR data and/or to create NCLDR custom cultures.
-6. Add references to NCldr.dll and NCldrExtensions.dll to your application to use NCLDR data in your applications.
+6. Either: Add references to NCldr.dll and NCldrExtensions.dll to your application to use NCLDR data in your applications.
+7. Or: Add the NCLDR (Pre-Release) NuGet package to your application.
 
 ##License
 
