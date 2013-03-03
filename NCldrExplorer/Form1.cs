@@ -65,7 +65,11 @@ namespace NCldrExplorer
             PluralRuleSet[] pluralRuleSets = NCldr.NCldr.PluralRuleSets;
             foreach (PluralRuleSet pluralRuleSet in pluralRuleSets)
             {
-                lbxPluralRuleSets.Items.Add(pluralRuleSet);
+                lbxPluralRuleSets.Items.Add(new PluralRuleSetDisplay
+                {
+                    CultureNames = String.Join(" ", pluralRuleSet.CultureNames),
+                    PluralRuleSet = pluralRuleSet
+                });
             }
 
             if (lbxPluralRuleSets.Items.Count > 0)
@@ -81,7 +85,11 @@ namespace NCldrExplorer
             PluralRuleSet[] ordinalRuleSets = NCldr.NCldr.OrdinalRuleSets;
             foreach (PluralRuleSet ordinalRuleSet in ordinalRuleSets)
             {
-                lbxOrdinalRuleSets.Items.Add(ordinalRuleSet);
+                lbxOrdinalRuleSets.Items.Add(new PluralRuleSetDisplay
+                {
+                    CultureNames = String.Join(" ", ordinalRuleSet.CultureNames),
+                    PluralRuleSet = ordinalRuleSet
+                });
             }
 
             if (lbxOrdinalRuleSets.Items.Count > 0)
@@ -124,12 +132,16 @@ namespace NCldrExplorer
 
         private void AddDayPeriods()
         {
-            lbxDayPeriodRuleSets.DisplayMember = "Cultures";
+            lbxDayPeriodRuleSets.DisplayMember = "CultureNames";
             lbxDayPeriodRuleSets.Items.Clear();
             DayPeriodRuleSet[] dayPeriodRuleSets = NCldr.NCldr.DayPeriodRuleSets;
             foreach (DayPeriodRuleSet dayPeriodRuleSet in dayPeriodRuleSets)
             {
-                lbxDayPeriodRuleSets.Items.Add(dayPeriodRuleSet);
+                lbxDayPeriodRuleSets.Items.Add(new DayPeriodRuleSetDisplay
+                {
+                    CultureNames = String.Join(" ", dayPeriodRuleSet.CultureNames),
+                    DayPeriodRuleSet = dayPeriodRuleSet
+                });
             }
 
             if (lbxDayPeriodRuleSets.Items.Count > 0)
@@ -665,7 +677,7 @@ namespace NCldrExplorer
 
         private void lbxPluralRuleSets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PluralRuleSet pluralRuleSet = (PluralRuleSet)lbxPluralRuleSets.SelectedItem;
+            PluralRuleSet pluralRuleSet = ((PluralRuleSetDisplay)lbxPluralRuleSets.SelectedItem).PluralRuleSet;
             tbxPluralRuleSetCultures.Text = String.Join(" ", pluralRuleSet.CultureNames);
             lbxPluralRuleSetRules.Items.Clear();
             foreach (PluralRule pluralRule in pluralRuleSet.PluralRules)
@@ -764,7 +776,7 @@ namespace NCldrExplorer
 
         private void lbxOrdinalRuleSets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PluralRuleSet pluralRuleSet = (PluralRuleSet)lbxOrdinalRuleSets.SelectedItem;
+            PluralRuleSet pluralRuleSet = ((PluralRuleSetDisplay)lbxOrdinalRuleSets.SelectedItem).PluralRuleSet;
             tbxOrdinalRuleSetCultures.Text = String.Join(" ", pluralRuleSet.CultureNames);
             lbxOrdinalRuleSetRules.Items.Clear();
             foreach (PluralRule pluralRule in pluralRuleSet.PluralRules)
@@ -800,7 +812,7 @@ namespace NCldrExplorer
 
         private void lbxDayPeriodRuleSets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DayPeriodRuleSet dayPeriodRuleSet = (DayPeriodRuleSet)lbxDayPeriodRuleSets.SelectedItem;
+            DayPeriodRuleSet dayPeriodRuleSet = ((DayPeriodRuleSetDisplay)lbxDayPeriodRuleSets.SelectedItem).DayPeriodRuleSet;
             tbxDayPeriodCultures.Text = String.Join(" ", dayPeriodRuleSet.CultureNames);
             lbxDayPeriodRules.Items.Clear();
             foreach (DayPeriodRule dayPeriodRule in dayPeriodRuleSet.DayPeriodRules)
@@ -1435,5 +1447,19 @@ namespace NCldrExplorer
         public string Value { get; set; }
 
         public NumberingSystem NumberingSystem { get; set; }
+    }
+
+    public class DayPeriodRuleSetDisplay
+    {
+        public string CultureNames { get; set; }
+
+        public DayPeriodRuleSet DayPeriodRuleSet { get; set; }
+    }
+
+    public class PluralRuleSetDisplay
+    {
+        public string CultureNames { get; set; }
+
+        public PluralRuleSet PluralRuleSet { get; set; }
     }
 }
