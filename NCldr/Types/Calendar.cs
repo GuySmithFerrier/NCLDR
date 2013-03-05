@@ -59,6 +59,11 @@
         {
             get
             {
+                if (NCldr.CalendarTypes == null)
+                {
+                    return null;
+                }
+
                 return (from ct in NCldr.CalendarTypes
                         where string.Compare(ct.Id, this.Id, false, CultureInfo.InvariantCulture) == 0
                         select ct).FirstOrDefault();
@@ -365,6 +370,11 @@
         /// <returns>An array of day names for the given DayNameSet Id</returns>
         private string[] GetDayNames(string id)
         {
+            if (this.DayNameSets == null)
+            {
+                return null;
+            }
+
             DayName[] dayNames = (from dns in this.DayNameSets
                                   where string.Compare(dns.Id, id, false, CultureInfo.InvariantCulture) == 0
                                   select dns.Names).FirstOrDefault();
@@ -384,6 +394,11 @@
         /// <returns>An array of month names for the given MonthNameSet Id</returns>
         private string[] GetMonthNames(string id)
         {
+            if (this.MonthNameSets == null)
+            {
+                return null;
+            }
+
             MonthName[] monthNames = (from dns in this.MonthNameSets
                                       where string.Compare(dns.Id, id, false, CultureInfo.InvariantCulture) == 0
                                       select dns.Names).FirstOrDefault();
@@ -411,6 +426,11 @@
         /// <returns>An array of day names for the given DayNameSet Id</returns>
         private DayPeriodName[] GetDayPeriods(string id)
         {
+            if (this.DayPeriodNameSets == null)
+            {
+                return null;
+            }
+
             DayPeriodName[] dayPeriodNames = (from dns in this.DayPeriodNameSets
                                               where string.Compare(dns.Id, id, false, CultureInfo.InvariantCulture) == 0
                                               select dns.Names).FirstOrDefault();

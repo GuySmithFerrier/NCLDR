@@ -627,7 +627,7 @@ namespace NCldr.Builder
             List<XElement> messageDatas = (from item in ldmlElements.Elements("posix")
                                                 .Elements("messages").Elements()
                                             select item).ToList();
-            if (messageDatas != null)
+            if (messageDatas != null && messageDatas.Count > 0)
             {
                 List<Message> messageList = new List<Message>();
                 foreach(XElement messageData in messageDatas)
@@ -873,6 +873,11 @@ namespace NCldr.Builder
                                         .Elements("dateFormatLength")
                             select item).ToList();
 
+            if (dateFormatDatas.Count == 0)
+            {
+                return null;
+            }
+
             foreach (XElement dateFormatData in dateFormatDatas)
             {
                 XElement patternData = (from p in dateFormatData.Elements("dateFormat").Elements("pattern")
@@ -900,8 +905,13 @@ namespace NCldr.Builder
         {
             List<TimeFormat> timeFormats = new List<TimeFormat>();
             List<XElement> timeFormatDatas = (from item in calendarData.Elements("timeFormats")
-                                        .Elements("timeFormatLength")
+                                                .Elements("timeFormatLength")
                                               select item).ToList();
+
+            if (timeFormatDatas.Count == 0)
+            {
+                return null;
+            }
 
             foreach (XElement timeFormatData in timeFormatDatas)
             {
@@ -1020,6 +1030,11 @@ namespace NCldr.Builder
                                 select item).ToList();
             }
 
+            if (nameSetDatas.Count == 0)
+            {
+                return null;
+            }
+
             List<TSet> nameSets = new List<TSet>();
             foreach (XElement nameSetData in nameSetDatas)
             {
@@ -1065,7 +1080,7 @@ namespace NCldr.Builder
             List<XElement> datas = (from item in ldmlElements.Elements("localeDisplayNames")
                                                 .Elements(listName).Elements(itemName)
                                     select item).ToList();
-            if (datas != null)
+            if (datas != null && datas.Count > 0)
             {
                 List<T> displayNames = new List<T>();
                 foreach (XElement data in datas)
