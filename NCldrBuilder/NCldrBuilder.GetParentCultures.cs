@@ -20,7 +20,7 @@ namespace NCldr.Builder
             List<XElement> parentCultureElements = (from i in supplementalDataDocument.Elements("supplementalData")
                                                         .Elements("parentLocales").Elements("parentLocale")
                                                     select i).ToList();
-            if (parentCultureElements == null)
+            if (parentCultureElements == null || parentCultureElements.Count == 0)
             {
                 return null;
             }
@@ -37,6 +37,7 @@ namespace NCldr.Builder
                 parentCulture.CultureIds = parentCultureElement.Attribute("locales").Value.ToString().Split(' ');
 
                 parentCultures.Add(parentCulture);
+                Progress("Added parent culture", parentId, ProgressEventType.Added, parentCulture);
             }
 
             return parentCultures.ToArray();

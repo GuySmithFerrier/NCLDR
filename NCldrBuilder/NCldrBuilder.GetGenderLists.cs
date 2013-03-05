@@ -22,7 +22,7 @@ namespace NCldr.Builder
             List<XElement> genderListElements = (from i in document.Elements("supplementalData")
                                                     .Elements("gender").Elements("personList")
                                                  select i).ToList();
-            if (genderListElements == null)
+            if (genderListElements == null || genderListElements.Count == 0)
             {
                 return null;
             }
@@ -38,6 +38,7 @@ namespace NCldr.Builder
                 genderList.Id = id;
                 genderList.CultureIds = genderListElement.Attribute("locales").Value.ToString().Split(' ');
                 genderLists.Add(genderList);
+                Progress("Added gender list", id, ProgressEventType.Added, genderList);
             }
 
             return genderLists.ToArray();

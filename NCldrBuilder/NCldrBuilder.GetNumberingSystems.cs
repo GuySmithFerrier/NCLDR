@@ -23,7 +23,7 @@ namespace NCldr.Builder
             List<XElement> numberingSystemDatas = (from item in ldmlElements.Elements("numberingSystems")
                                                 .Elements("numberingSystem")
                                                    select item).ToList();
-            if (numberingSystemDatas != null)
+            if (numberingSystemDatas != null && numberingSystemDatas.Count > 0)
             {
                 List<NumberingSystemType> numberingSystems = new List<NumberingSystemType>();
                 foreach (XElement data in numberingSystemDatas)
@@ -45,6 +45,7 @@ namespace NCldr.Builder
                     }
 
                     numberingSystems.Add(numberingSystem);
+                    Progress("Added numbering system", id, ProgressEventType.Added, numberingSystem);
                 }
 
                 UpdateDescriptions(numberingSystems);

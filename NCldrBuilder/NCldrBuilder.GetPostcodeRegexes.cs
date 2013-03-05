@@ -24,7 +24,7 @@ namespace NCldr.Builder
                                                 .Elements("postCodeRegex")
                                               orderby item.Attribute("territoryId").Value
                                               select item).ToList();
-            if (postalCodeDatas != null)
+            if (postalCodeDatas != null && postalCodeDatas.Count > 0)
             {
                 List<PostcodeRegex> postcodeRegexes = new List<PostcodeRegex>();
                 foreach (XElement data in postalCodeDatas)
@@ -37,6 +37,7 @@ namespace NCldr.Builder
                     postcodeRegex.Regex = data.Value;
 
                     postcodeRegexes.Add(postcodeRegex);
+                    Progress("Added postal code", region, ProgressEventType.Added, postcodeRegex);
                 }
 
                 return postcodeRegexes.ToArray();

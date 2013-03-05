@@ -62,6 +62,7 @@ namespace NCldr.Builder
                 calendarType.Eras = eras.ToArray();
 
                 calendarTypes.Add(calendarType);
+                Progress("Added calendar type", calendarTypeId, ProgressEventType.Added, calendarType);
             }
 
             UpdateCalendarNamesAndDescriptions(calendarTypes);

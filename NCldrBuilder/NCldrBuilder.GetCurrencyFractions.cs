@@ -36,6 +36,7 @@ namespace NCldr.Builder
                 currencyFraction.Digits = int.Parse(infoElement.Attribute("digits").Value.ToString());
                 currencyFraction.Rounding = int.Parse(infoElement.Attribute("rounding").Value.ToString());
                 currencyFractions.Add(currencyFraction);
+                Progress("Added currency fraction", currencyId, ProgressEventType.Added, currencyFraction);
             }
 
             return currencyFractions.ToArray();

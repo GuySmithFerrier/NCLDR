@@ -41,6 +41,7 @@ namespace NCldr.Builder
                 }
 
                 regionGroups.Add(regionGroup);
+                Progress("Added region group", regionGroupId, ProgressEventType.Added, regionGroup);
             }
 
             return regionGroups.ToArray();

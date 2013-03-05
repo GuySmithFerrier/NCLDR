@@ -38,6 +38,7 @@ namespace NCldr.Builder
                 calendarPreference.CalendarTypes = calendarTypes.Split(' ');
 
                 calendarPreferences.Add(calendarPreference);
+                Progress("Added calendar preference", regionIds, ProgressEventType.Added, calendarPreference);
             }
 
             return calendarPreferences.ToArray();

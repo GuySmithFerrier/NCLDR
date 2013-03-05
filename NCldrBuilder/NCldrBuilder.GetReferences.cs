@@ -20,7 +20,7 @@ namespace NCldr.Builder
             List<XElement> referenceElements = (from i in supplementalDataDocument.Elements("supplementalData")
                                                         .Elements("references").Elements("reference")
                                                     select i).ToList();
-            if (referenceElements == null)
+            if (referenceElements == null || referenceElements.Count == 0)
             {
                 return null;
             }
@@ -43,6 +43,7 @@ namespace NCldr.Builder
                 reference.Value = referenceElement.Value;
 
                 references.Add(reference);
+                Progress("Added reference", id, ProgressEventType.Added, reference);
             }
 
             return references.ToArray();

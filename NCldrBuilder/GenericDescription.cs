@@ -7,6 +7,7 @@ using NCldr.Types;
 
 namespace NCldr.Builder
 {
+    [Serializable]
     public class GenericDescription : IDescription
     {
         public string Id { get; set; }

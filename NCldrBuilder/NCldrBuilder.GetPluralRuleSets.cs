@@ -27,7 +27,7 @@ namespace NCldr.Builder
             List<XElement> pluralRuleSetDatas = (from item in ldmlElements.Elements("plurals")
                                                 .Elements("pluralRules")
                                                  select item).ToList();
-            if (pluralRuleSetDatas != null)
+            if (pluralRuleSetDatas != null && pluralRuleSetDatas.Count > 0)
             {
                 List<PluralRuleSet> pluralRuleSets = new List<PluralRuleSet>();
                 foreach (XElement data in pluralRuleSetDatas)
@@ -56,6 +56,7 @@ namespace NCldr.Builder
                     }
 
                     pluralRuleSets.Add(pluralRuleSet);
+                    Progress(String.Format("Added {0} rule set", ruleSetType), cultureNames, ProgressEventType.Added, pluralRuleSet);
                 }
 
                 return pluralRuleSets.ToArray();

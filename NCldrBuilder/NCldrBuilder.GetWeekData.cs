@@ -49,6 +49,8 @@ namespace NCldr.Builder
 
             weekData.WeekendEnds = GetRegionDayOfWeeks(weekDataElement, "weekendEnd");
 
+            Progress("Added week data", string.Empty, ProgressEventType.Added, weekData);
+
             return weekData;
         }
 

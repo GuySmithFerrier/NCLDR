@@ -20,7 +20,7 @@ namespace NCldr.Builder
             List<XElement> regionCodeElements = (from i in supplementalDataDocument.Elements("supplementalData")
                                                    .Elements("codeMappings").Elements("territoryCodes")
                                                  select i).ToList();
-            if (regionCodeElements == null)
+            if (regionCodeElements == null || regionCodeElements.Count == 0)
             {
                 return null;
             }
@@ -51,6 +51,7 @@ namespace NCldr.Builder
                 }
 
                 regionCodes.Add(regionCode);
+                Progress("Added region code", regionId, ProgressEventType.Added, regionCode);
             }
 
             return regionCodes.ToArray();

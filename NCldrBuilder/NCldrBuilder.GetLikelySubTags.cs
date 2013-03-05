@@ -22,7 +22,7 @@ namespace NCldr.Builder
             List<XElement> likelySubTagElements = (from i in document.Elements("supplementalData")
                                                     .Elements("likelySubtags").Elements("likelySubtag")
                                                     select i).ToList();
-            if (likelySubTagElements == null)
+            if (likelySubTagElements == null || likelySubTagElements.Count == 0)
             {
                 return null;
             }
@@ -38,6 +38,7 @@ namespace NCldr.Builder
                 likelySubTag.FromCultureId = fromCultureId;
                 likelySubTag.ToCultureId = likelySubTagElement.Attribute("to").Value.ToString();
                 likelySubTags.Add(likelySubTag);
+                Progress("Added likely subtag", fromCultureId, ProgressEventType.Added, likelySubTag);
             }
 
             return likelySubTags.ToArray();

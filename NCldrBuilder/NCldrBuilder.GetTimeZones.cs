@@ -98,6 +98,7 @@ namespace NCldr.Builder
                 }
 
                 timeZones.Add(timeZone);
+                Progress("Added time zone", aliases[0], ProgressEventType.Added, timeZone);
             }
 
             return timeZones.ToArray();

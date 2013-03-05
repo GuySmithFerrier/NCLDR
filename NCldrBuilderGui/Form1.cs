@@ -328,22 +328,25 @@ namespace NCldrBuilderGui
 
         private void Progress(object sender, NCldrBuilderProgressEventArgs args)
         {
-            if (args.Section != previousSection)
+            if (args.ProgressEventType != ProgressEventType.Added)
             {
-                Console.WriteLine(String.Empty);
-                if (args.Section.StartsWith("Adding "))
+                if (args.Section != previousSection)
                 {
-                    tbxProgress.Text = args.Section + "s..." + System.Environment.NewLine + tbxProgress.Text;
+                    Console.WriteLine(String.Empty);
+                    if (args.ProgressEventType == ProgressEventType.Adding)
+                    {
+                        tbxProgress.Text = args.Section + "s..." + System.Environment.NewLine + tbxProgress.Text;
+                    }
+                    else
+                    {
+                        tbxProgress.Text = args.Section + "..." + System.Environment.NewLine + tbxProgress.Text;
+                    }
                 }
-                else
-                {
-                    tbxProgress.Text = args.Section + "..." + System.Environment.NewLine + tbxProgress.Text;
-                }
+
+                previousSection = args.Section;
+
+                Application.DoEvents();
             }
-
-            previousSection = args.Section;
-
-            Application.DoEvents();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

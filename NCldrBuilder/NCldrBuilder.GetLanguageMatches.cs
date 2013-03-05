@@ -22,7 +22,7 @@ namespace NCldr.Builder
             List<XElement> languageMatchElements = (from i in document.Elements("supplementalData")
                                                     .Elements("languageMatching").Elements("languageMatches").Elements("languageMatch")
                                                     select i).ToList();
-            if (languageMatchElements == null)
+            if (languageMatchElements == null || languageMatchElements.Count == 0)
             {
                 return null;
             }
@@ -42,6 +42,7 @@ namespace NCldr.Builder
                 languageMatch.Percent = int.Parse(languageMatchElement.Attribute("percent").Value.ToString());
                 languageMatch.IsOneWay = onewayAttribute != null && onewayAttribute.Value.ToString() == "true";
                 languageMatches.Add(languageMatch);
+                Progress("Added language match", desired, ProgressEventType.Added, languageMatch);
             }
 
             return languageMatches.ToArray();

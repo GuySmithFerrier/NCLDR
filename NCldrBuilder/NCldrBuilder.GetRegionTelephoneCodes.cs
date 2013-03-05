@@ -49,6 +49,7 @@ namespace NCldr.Builder
                 regionTelephoneCode.TelephoneCodes = telephoneCountryCodes.ToArray();
 
                 regionTelephoneCodes.Add(regionTelephoneCode);
+                Progress("Added region telephone code", regionId, ProgressEventType.Added, regionTelephoneCode);
             }
 
             return regionTelephoneCodes.ToArray();

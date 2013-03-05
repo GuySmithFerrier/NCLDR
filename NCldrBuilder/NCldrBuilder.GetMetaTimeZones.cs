@@ -71,6 +71,7 @@ namespace NCldr.Builder
                 metaTimeZone.TimeZoneRegions = timeZoneRegions.ToArray();
 
                 metaTimeZones.Add(metaTimeZone);
+                Progress(string.Format("Added {0}", progressName), metaTimeZoneId, ProgressEventType.Added, metaTimeZone);
             }
 
             return metaTimeZones.ToArray();

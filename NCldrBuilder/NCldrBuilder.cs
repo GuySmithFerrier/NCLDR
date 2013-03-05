@@ -64,13 +64,19 @@ namespace NCldr.Builder
             Build(ncldrData);
         }
 
-        private static void Progress(string section, string item)
+        private static void Progress(
+            string section, 
+            string item, 
+            ProgressEventType progressEventType = ProgressEventType.Adding,
+            object addedObject = null)
         {
             if (progress != null)
             {
                 NCldrBuilderProgressEventArgs args = new NCldrBuilderProgressEventArgs();
                 args.Section = section;
                 args.Item = item;
+                args.ProgressEventType = progressEventType;
+                args.AddedObject = addedObject;
                 progress(null, args);
             }
         }
@@ -159,7 +165,7 @@ namespace NCldr.Builder
         private static void Build(NCldrData ncldrData)
         {
             string ncldrFile = Path.Combine(ncldrPath, "NCldr.dat");
-            Progress("Writing data file", ncldrFile);
+            Progress("Writing data file", ncldrFile, ProgressEventType.Writing);
 
             FileStream fileStream = new FileStream(ncldrFile, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();

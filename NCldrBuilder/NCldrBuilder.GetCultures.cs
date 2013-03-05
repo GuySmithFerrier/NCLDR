@@ -27,7 +27,10 @@ namespace NCldr.Builder
                 {
                     Progress("Adding culture", cldrCultureName);
 
-                    cultures.Add(GetCulture(cldrCultureName));
+                    CultureData cultureData = GetCulture(cldrCultureName);
+                    cultures.Add(cultureData);
+
+                    Progress("Added culture", cldrCultureName, ProgressEventType.Added, cultureData);
                 }
             }
 
@@ -133,7 +136,7 @@ namespace NCldr.Builder
                 (from i in rbnfDocument.Elements("ldml").Elements("rbnf").Elements("rulesetGrouping")
                  select i).ToList();
 
-            if (ruleSetGroupingElements == null)
+            if (ruleSetGroupingElements == null || ruleSetGroupingElements.Count == 0)
             {
                 return null;
             }
@@ -207,7 +210,7 @@ namespace NCldr.Builder
                                                 .Elements("casingItem")
                                              select i).ToList();
 
-            if (casingElements == null)
+            if (casingElements == null || casingElements.Count == 0)
             {
                 return null;
             }

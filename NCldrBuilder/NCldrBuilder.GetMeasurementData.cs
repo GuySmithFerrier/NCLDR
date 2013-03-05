@@ -59,6 +59,8 @@ namespace NCldr.Builder
                 measurementData.PaperSizes = paperSizes.ToArray();
             }
 
+            Progress("Added measurement data", string.Empty, ProgressEventType.Added, measurementData);
+
             return measurementData;
         }
     }

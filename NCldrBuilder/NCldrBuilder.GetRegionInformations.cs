@@ -59,6 +59,7 @@ namespace NCldr.Builder
 
                 regionInformation.LanguagePopulations = languagePopulations.ToArray();
                 regionInformations.Add(regionInformation);
+                Progress("Added region information", regionInformationId, ProgressEventType.Added, regionInformation);
             }
 
             return regionInformations.ToArray();

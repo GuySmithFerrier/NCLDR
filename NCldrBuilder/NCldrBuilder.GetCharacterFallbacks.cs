@@ -22,7 +22,7 @@ namespace NCldr.Builder
             List<XElement> characterElements = (from i in document.Elements("supplementalData")
                                                     .Elements("characters").Elements("character-fallback").Elements("character")
                                                 select i).ToList();
-            if (characterElements == null)
+            if (characterElements == null || characterElements.Count == 0)
             {
                 return null;
             }
@@ -46,6 +46,7 @@ namespace NCldr.Builder
 
                 characterFallback.Substitutes = substitutes.ToArray();
                 characterFallbacks.Add(characterFallback);
+                Progress("Added character fallback", value, ProgressEventType.Added, characterFallback);
             }
 
             return characterFallbacks.ToArray();

@@ -23,7 +23,7 @@ namespace NCldr.Builder
             List<XElement> dayPeriodRuleSetDatas = (from item in ldmlElements.Elements("dayPeriodRuleSet")
                                                 .Elements("dayPeriodRules")
                                                     select item).ToList();
-            if (dayPeriodRuleSetDatas != null)
+            if (dayPeriodRuleSetDatas != null && dayPeriodRuleSetDatas.Count > 0)
             {
                 List<DayPeriodRuleSet> dayPeriodRuleSets = new List<DayPeriodRuleSet>();
                 foreach (XElement data in dayPeriodRuleSetDatas)
@@ -72,6 +72,7 @@ namespace NCldr.Builder
                     dayPeriodRuleSet.DayPeriodRules = dayPeriodRules.ToArray();
 
                     dayPeriodRuleSets.Add(dayPeriodRuleSet);
+                    Progress("Added day period", locales, ProgressEventType.Added, dayPeriodRuleSet);
                 }
 
                 return dayPeriodRuleSets.ToArray();

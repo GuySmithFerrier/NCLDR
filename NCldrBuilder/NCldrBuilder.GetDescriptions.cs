@@ -30,7 +30,7 @@ namespace NCldr.Builder
 
             List<XElement> elements = (from i in keyElement.Elements("type")
                                                select i).ToList();
-            if (elements == null)
+            if (elements == null || elements.Count == 0)
             {
                 return null;
             }
@@ -46,6 +46,7 @@ namespace NCldr.Builder
                 item.Id = name;
                 item.Description = element.Attribute("description").Value.ToString();
                 list.Add(item);
+                Progress(String.Format("Added {0}", progressName), name, ProgressEventType.Added, item);
             }
 
             return list.ToArray();
