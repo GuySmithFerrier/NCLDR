@@ -27,6 +27,11 @@
         /// <returns>The postal code regular expression for the region</returns>
         public static string GetPostcodeRegex(string regionId)
         {
+            if (NCldr.PostcodeRegexes == null)
+            {
+                return null;
+            }
+
             return (from pcr in NCldr.PostcodeRegexes
                     where string.Compare(pcr.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
                     select pcr.Regex).FirstOrDefault();
@@ -49,6 +54,11 @@
         /// <returns>An array of telephone codes used by the region</returns>
         public static string[] GetTelephoneCodes(string regionId)
         {
+            if (NCldr.RegionTelephoneCodes == null)
+            {
+                return null;
+            }
+
             return (from rtc in NCldr.RegionTelephoneCodes
                     where string.Compare(rtc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
                     select rtc.TelephoneCodes).FirstOrDefault();
@@ -77,6 +87,11 @@
         /// is larger than a country/region (e.g. The World) will it have more than one telephone code.</remarks>
         public static string GetTelephoneCode(string regionId)
         {
+            if (NCldr.RegionTelephoneCodes == null)
+            {
+                return null;
+            }
+
             string[] telephoneCodes = (from rtc in NCldr.RegionTelephoneCodes
                                        where string.Compare(rtc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
                                        select rtc.TelephoneCodes).FirstOrDefault();
@@ -105,9 +120,41 @@
         /// <returns>The RegionCode for the region</returns>
         public static RegionCode GetRegionCode(string regionId)
         {
+            if (NCldr.RegionCodes == null)
+            {
+                return null;
+            }
+
             return (from rc in NCldr.RegionCodes
                     where string.Compare(rc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
                     select rc).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// GetRegionInformation gets the RegionInformation for the RegionInfo
+        /// </summary>
+        /// <param name="regionInfo">The RegionInfo to get the RegionInformation for</param>
+        /// <returns>The RegionInformation for the RegionInfo</returns>
+        public static RegionInformation GetRegionInformation(this RegionInfo regionInfo)
+        {
+            return GetRegionInformation(regionInfo.Name);
+        }
+
+        /// <summary>
+        /// GetRegionInformation gets the RegionInformation for the region
+        /// </summary>
+        /// <param name="regionId">The Id of the region to get the RegionInformation for</param>
+        /// <returns>The RegionInformation for the region</returns>
+        public static RegionInformation GetRegionInformation(string regionId)
+        {
+            if (NCldr.RegionInformations == null)
+            {
+                return null;
+            }
+
+            return (from ri in NCldr.RegionInformations
+                    where string.Compare(ri.Id, regionId, false, CultureInfo.InvariantCulture) == 0
+                    select ri).FirstOrDefault();
         }
 
         /// <summary>
@@ -127,6 +174,11 @@
         /// <returns>The MeasurementSystem for the region</returns>
         public static RegionMeasurementSystem GetMeasurementSystem(string regionId)
         {
+            if (NCldr.MeasurementData == null)
+            {
+                return null;
+            }
+
             RegionMeasurementSystem measurementSystem = (from ms in NCldr.MeasurementData.MeasurementSystems
                                                          where ms.RegionIds.Contains(regionId)
                                                          select ms).FirstOrDefault();
@@ -160,6 +212,11 @@
         /// <returns>The RegionPaperSize for the region</returns>
         public static RegionPaperSize GetPaperSize(string regionId)
         {
+            if (NCldr.MeasurementData == null)
+            {
+                return null;
+            }
+
             RegionPaperSize paperSize = (from ms in NCldr.MeasurementData.PaperSizes
                                          where ms.RegionIds.Contains(regionId)
                                          select ms).FirstOrDefault();
