@@ -60,6 +60,22 @@
         }
 
         /// <summary>
+        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CurrencyPeriods for</param>
+        /// <returns>An array of CurrencyPeriods for a culture</returns>
+        public static CurrencyPeriod[] GetCurrencyPeriods(string cultureName)
+        {
+            CultureData culture = CultureData.GetCulture(cultureName);
+            if (culture != null && culture.Numbers != null && culture.Numbers.CurrencyPeriods != null)
+            {
+                return culture.Numbers.CurrencyPeriods;
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// GetCurrencyPeriods gets an array of CurrencyPeriods for a culture for a given datetime
         /// </summary>
         /// <param name="cultureName">The culture name to get the CurrencyPeriods for</param>
@@ -68,7 +84,7 @@
         public static CurrencyPeriod[] GetCurrencyPeriods(string cultureName, DateTime dateTime)
         {
             CultureData culture = CultureData.GetCulture(cultureName);
-            if (culture.Numbers != null && culture.Numbers.CurrencyPeriods != null)
+            if (culture != null && culture.Numbers != null && culture.Numbers.CurrencyPeriods != null)
             {
                 return (from cp in culture.Numbers.CurrencyPeriods
                         where (cp.From == null || cp.From < dateTime)
@@ -77,6 +93,22 @@
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// GetCasing gets the CLDR Casing for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR Casing for</param>
+        /// <returns>The CLDR Casing for the culture</returns>
+        public static Casing GetCasing(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.Casing;
         }
 
         /// <summary>
@@ -120,6 +152,22 @@
         }
 
         /// <summary>
+        /// GetDelimiters gets the CLDR Delimiters for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR Delimiters for</param>
+        /// <returns>The CLDR Delimiters for the culture</returns>
+        public static Delimiters GetDelimiters(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.Delimiters;
+        }
+
+        /// <summary>
         /// GetGenderListId gets the CLDR GenderList identifier for the culture
         /// </summary>
         /// <param name="cultureName">The culture name to get the CLDR GenderList identifier for</param>
@@ -153,6 +201,38 @@
             return (from lst in NCldr.LikelySubTags
                     where string.Compare(lst.FromCultureId, cultureName, true, CultureInfo.InvariantCulture) == 0
                     select lst.ToCultureId).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// GetListPatterns gets the CLDR ListPatterns for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR ListPatterns for</param>
+        /// <returns>The CLDR ListPatterns for the culture</returns>
+        public static ListPattern[] GetListPatterns(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.ListPatterns;
+        }
+
+        /// <summary>
+        /// GetNumbers gets the CLDR Numbers for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR Numbers for</param>
+        /// <returns>The CLDR Numbers for the culture</returns>
+        public static Numbers GetNumbers(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.Numbers;
         }
 
         /// <summary>
@@ -195,6 +275,38 @@
         public static PluralRule GetOrdinalRule(string cultureName, int value)
         {
             return GetPluralRule(GetOrdinalRules(cultureName), value);
+        }
+
+        /// <summary>
+        /// GetRuleBasedNumberFormatting gets the CLDR RuleBasedNumberFormatting for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR RuleBasedNumberFormatting for</param>
+        /// <returns>The CLDR RuleBasedNumberFormatting for the culture</returns>
+        public static RuleBasedNumberFormatting GetRuleBasedNumberFormatting(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.RuleBasedNumberFormatting;
+        }
+
+        /// <summary>
+        /// GetUnitPatternSets gets the CLDR UnitPatternSets for the culture
+        /// </summary>
+        /// <param name="cultureName">The culture name to get the CLDR UnitPatternSets for</param>
+        /// <returns>The CLDR UnitPatternSets for the culture</returns>
+        public static UnitPatternSet[] GetUnitPatternSets(string cultureName)
+        {
+            Culture culture = Culture.GetCulture(cultureName);
+            if (culture == null)
+            {
+                return null;
+            }
+
+            return culture.UnitPatternSets;
         }
 
         /// <summary>

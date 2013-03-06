@@ -17,7 +17,17 @@
         /// <returns>The CLDR currency for a CultureInfo</returns>
         public static string GetCurrency(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetCurrency(cultureInfo.Name);
+            return CultureExtensions.GetCurrency(GetNCldrCultureName(cultureInfo));
+        }
+
+                /// <summary>
+        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the CurrencyPeriods for</param>
+        /// <returns>An array of CurrencyPeriods for a CultureInfo</returns>
+        public static CurrencyPeriod[] GetCurrencyPeriods(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetCurrencyPeriods(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -28,7 +38,17 @@
         /// <returns>An array of CurrencyPeriods for a CultureInfo for a given datetime</returns>
         public static CurrencyPeriod[] GetCurrencyPeriods(this CultureInfo cultureInfo, DateTime dateTime)
         {
-            return CultureExtensions.GetCurrencyPeriods(cultureInfo.Name, dateTime);
+            return CultureExtensions.GetCurrencyPeriods(GetNCldrCultureName(cultureInfo), dateTime);
+        }
+
+        /// <summary>
+        /// GetCasing gets the CLDR Casing for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the CLDR Casing for</param>
+        /// <returns>The CLDR Casing for the CultureInfo</returns>
+        public static Casing GetCasing(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetCasing(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -38,7 +58,7 @@
         /// <returns>The CLDR Characters for the CultureInfo</returns>
         public static Characters GetCharacters(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetCharacters(cultureInfo.Name);
+            return CultureExtensions.GetCharacters(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -49,6 +69,16 @@
         public static DayPeriodRule[] GetDayPeriodRules(this CultureInfo cultureInfo)
         {
             return CultureExtensions.GetDayPeriodRules(GetNeutralCultureInfo(cultureInfo).Name);
+        }
+
+        /// <summary>
+        /// GetDelimiters gets the CLDR Delimiters for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the CLDR Delimiters for</param>
+        /// <returns>The CLDR Delimiters for the CultureInfo</returns>
+        public static Delimiters GetDelimiters(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetDelimiters(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -68,7 +98,27 @@
         /// <returns>The most likely child culture name for the parent CultureInfo</returns>
         public static string GetLikelySubTag(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetLikelySubTag(cultureInfo.Name);
+            return CultureExtensions.GetLikelySubTag(GetNCldrCultureName(cultureInfo));
+        }
+
+        /// <summary>
+        /// GetListPatterns gets the CLDR ListPatterns for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the CLDR ListPatterns for</param>
+        /// <returns>The CLDR ListPatterns for the CultureInfo</returns>
+        public static ListPattern[] GetListPatterns(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetListPatterns(GetNCldrCultureName(cultureInfo));
+        }
+
+        /// <summary>
+        /// GetNumbers gets the CLDR Numbers for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the Numbers</param>
+        /// <returns>The CLDR Numbers for the CultureInfo</returns>
+        public static Numbers GetNumbers(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetNumbers(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -78,7 +128,7 @@
         /// <returns>The CLDR PluralRules for the CultureInfo</returns>
         public static PluralRule[] GetPluralRules(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetPluralRules(GetNeutralCultureInfo(cultureInfo).Name);
+            return CultureExtensions.GetPluralRules(GetNCldrCultureName(GetNeutralCultureInfo(cultureInfo)));
         }
 
         /// <summary>
@@ -89,7 +139,7 @@
         /// <returns>The CLDR PluralRule for the integer for the CultureInfo</returns>
         public static PluralRule GetPluralRule(this CultureInfo cultureInfo, int value)
         {
-            return CultureExtensions.GetPluralRule(GetNeutralCultureInfo(cultureInfo).Name, value);
+            return CultureExtensions.GetPluralRule(GetNCldrCultureName(GetNeutralCultureInfo(cultureInfo)), value);
         }
 
         /// <summary>
@@ -99,7 +149,7 @@
         /// <returns>The CLDR ordinal PluralRules for the CultureInfo</returns>
         public static PluralRule[] GetOrdinalRules(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetOrdinalRules(GetNeutralCultureInfo(cultureInfo).Name);
+            return CultureExtensions.GetOrdinalRules(GetNCldrCultureName(GetNeutralCultureInfo(cultureInfo)));
         }
 
         /// <summary>
@@ -110,7 +160,7 @@
         /// <returns>The CLDR ordinal PluralRule for the integer for the CultureInfo</returns>
         public static PluralRule GetOrdinalRule(this CultureInfo cultureInfo, int value)
         {
-            return CultureExtensions.GetOrdinalRule(GetNeutralCultureInfo(cultureInfo).Name, value);
+            return CultureExtensions.GetOrdinalRule(GetNCldrCultureName(GetNeutralCultureInfo(cultureInfo)), value);
         }
 
         /// <summary>
@@ -138,13 +188,33 @@
         }
 
         /// <summary>
+        /// GetUnitPatternSets gets the CLDR UnitPatternSets for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the UnitPatternSets for</param>
+        /// <returns>The CLDR UnitPatternSets for the CultureInfo</returns>
+        public static UnitPatternSet[] GetUnitPatternSets(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetUnitPatternSets(GetNCldrCultureName(cultureInfo));
+        }
+
+        /// <summary>
+        /// GetRuleBasedNumberFormatting gets the CLDR RuleBasedNumberFormatting for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the RuleBasedNumberFormatting for</param>
+        /// <returns>The CLDR RuleBasedNumberFormatting for the CultureInfo</returns>
+        public static RuleBasedNumberFormatting GetRuleBasedNumberFormatting(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetRuleBasedNumberFormatting(GetNCldrCultureName(cultureInfo));
+        }
+
+        /// <summary>
         /// GetYes gets the localized 'Yes' string for the CultureInfo
         /// </summary>
         /// <param name="cultureInfo">The CultureInfo to get the localized 'Yes' string for</param>
         /// <returns>The localized 'Yes' string for the CultureInfo</returns>
         public static string GetYes(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetYes(cultureInfo.Name);
+            return CultureExtensions.GetYes(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -154,7 +224,7 @@
         /// <returns>The localized short 'Yes' string for the CultureInfo</returns>
         public static string GetYesShort(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetYesShort(cultureInfo.Name);
+            return CultureExtensions.GetYesShort(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -164,7 +234,7 @@
         /// <returns>The localized 'No' string for the CultureInfo</returns>
         public static string GetNo(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetNo(cultureInfo.Name);
+            return CultureExtensions.GetNo(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -174,7 +244,7 @@
         /// <returns>The localized short 'No' string for the CultureInfo</returns>
         public static string GetNoShort(this CultureInfo cultureInfo)
         {
-            return CultureExtensions.GetNoShort(cultureInfo.Name);
+            return CultureExtensions.GetNoShort(GetNCldrCultureName(cultureInfo));
         }
 
         /// <summary>
@@ -202,6 +272,22 @@
             {
                 throw new ArgumentException("CultureInfo must have a region to get a RegionInformation");
             }
+        }
+
+        /// <summary>
+        /// GetNCldrCultureName gets an NCLDR culture name from a .NET culture name
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the NCLDR culture name for</param>
+        /// <returns>An NCLDR culture name from a .NET culture name</returns>
+        private static string GetNCldrCultureName(CultureInfo cultureInfo)
+        {
+            if (cultureInfo.Equals(CultureInfo.InvariantCulture))
+            {
+                // The CLDR equivalent to .NET's Invariant Culture is the "root" culture
+                return "root";
+            }
+
+            return cultureInfo.Name;
         }
     }
 }
