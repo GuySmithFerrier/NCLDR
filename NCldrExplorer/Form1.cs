@@ -724,7 +724,7 @@ namespace NCldrExplorer
 
         private void btnGetPluralRules_Click(object sender, EventArgs e)
         {
-            PluralRule[] pluralRules = CultureInfoExtensions.GetPluralRules(tbxPluralRulesCultureName.Text);
+            PluralRule[] pluralRules = CultureExtensions.GetPluralRules(tbxPluralRulesCultureName.Text);
             StringBuilder builder = new StringBuilder();
             foreach (PluralRule pluralRule in pluralRules)
             {
@@ -739,7 +739,7 @@ namespace NCldrExplorer
             int value;
             if (int.TryParse(tbxPluralRuleInteger.Text, out value))
             {
-                PluralRule pluralRule = CultureInfoExtensions.GetPluralRule(tbxPluralRulesCultureName.Text, value);
+                PluralRule pluralRule = CultureExtensions.GetPluralRule(tbxPluralRulesCultureName.Text, value);
                 if (pluralRule == null)
                     tbxPluralRuleResults.Text = "There is no rule for this integer";
                 else
@@ -756,7 +756,7 @@ namespace NCldrExplorer
 
         private void btnGetPostalCodeRegex_Click(object sender, EventArgs e)
         {
-            tbxPostalCodeGetRegex.Text = RegionInfoExtensions.GetPostcodeRegex(tbxPostalCodeGetRegionId.Text);
+            tbxPostalCodeGetRegex.Text = RegionExtensions.GetPostcodeRegex(tbxPostalCodeGetRegionId.Text);
         }
 
         private void lbxNumberingSystems_SelectedIndexChanged(object sender, EventArgs e)
@@ -781,7 +781,7 @@ namespace NCldrExplorer
 
         private void btnGetOrdinalRules_Click(object sender, EventArgs e)
         {
-            PluralRule[] pluralRules = CultureInfoExtensions.GetOrdinalRules(tbxOrdinalRulesCultureName.Text);
+            PluralRule[] pluralRules = CultureExtensions.GetOrdinalRules(tbxOrdinalRulesCultureName.Text);
             StringBuilder builder = new StringBuilder();
             foreach (PluralRule pluralRule in pluralRules)
             {
@@ -796,7 +796,7 @@ namespace NCldrExplorer
             int value;
             if (int.TryParse(tbxOrdinalRuleInteger.Text, out value))
             {
-                PluralRule pluralRule = CultureInfoExtensions.GetOrdinalRule(tbxOrdinalRulesCultureName.Text, value);
+                PluralRule pluralRule = CultureExtensions.GetOrdinalRule(tbxOrdinalRulesCultureName.Text, value);
                 if (pluralRule == null)
                     tbxOrdinalRuleResults.Text = "There is no rule for this integer";
                 else
@@ -817,7 +817,7 @@ namespace NCldrExplorer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DayPeriodRule[] dayPeriodRules = CultureInfoExtensions.GetDayPeriodRules(tbxDayPeriodCulture.Text);
+            DayPeriodRule[] dayPeriodRules = CultureExtensions.GetDayPeriodRules(tbxDayPeriodCulture.Text);
             StringBuilder builder = new StringBuilder();
             foreach (DayPeriodRule dayPeriodRule in dayPeriodRules)
             {
@@ -1227,7 +1227,7 @@ namespace NCldrExplorer
 
         private void btnGetTelephoneCode_Click(object sender, EventArgs e)
         {
-            tbxTelephoneCode.Text = RegionInfoExtensions.GetTelephoneCode(tbxTelephoneCodeRegionIdInput.Text);
+            tbxTelephoneCode.Text = RegionExtensions.GetTelephoneCode(tbxTelephoneCodeRegionIdInput.Text);
         }
 
         private void lbxTelephoneCodeRegions_SelectedIndexChanged(object sender, EventArgs e)

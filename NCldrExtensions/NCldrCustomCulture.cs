@@ -85,7 +85,7 @@
                     builder.RegionNativeName = regionNativeName;
                 }
 
-                RegionCode regionCode = RegionInfoExtensions.GetRegionCode(region.Id);
+                RegionCode regionCode = RegionExtensions.GetRegionCode(region.Id);
                 if (regionCode != null && regionCode.Alpha3 != null)
                 {
                     builder.ThreeLetterISORegionName = regionCode.Alpha3;
@@ -99,11 +99,11 @@
                 builder.ThreeLetterWindowsRegionName = region.Id;
                 builder.TwoLetterISORegionName = region.Id;
 
-                builder.IsMetric = RegionInfoExtensions.GetMeasurementSystem(region.Id).IsMetric;
+                builder.IsMetric = RegionExtensions.GetMeasurementSystem(region.Id).IsMetric;
             }
             else
             {
-                builder.IsMetric = RegionInfoExtensions.GetMeasurementSystem(NCldr.RegionIdForTheWorld).IsMetric;
+                builder.IsMetric = RegionExtensions.GetMeasurementSystem(NCldr.RegionIdForTheWorld).IsMetric;
             }
 
             // CLDR does not have data for KeyboardLayoutId or GeoId
@@ -116,14 +116,14 @@
 
             if (culture.Numbers != null && culture.Numbers.CurrencyDisplayNameSets != null)
             {
-                string currencyName = CultureInfoExtensions.GetCurrency(cldrCultureName);
+                string currencyName = CultureExtensions.GetCurrency(cldrCultureName);
                 if (!string.IsNullOrEmpty(currencyName))
                 {
                     builder.ISOCurrencySymbol = currencyName;
 
-                    builder.CurrencyEnglishName = CultureInfoExtensions.GetCurrencyDisplayName(currencyName, "en");
+                    builder.CurrencyEnglishName = CultureExtensions.GetCurrencyDisplayName(currencyName, "en");
 
-                    string currencyNativeName = CultureInfoExtensions.GetCurrencyDisplayName(currencyName, culture.Identity.Language.Id);
+                    string currencyNativeName = CultureExtensions.GetCurrencyDisplayName(currencyName, culture.Identity.Language.Id);
                     builder.CurrencyNativeName = currencyNativeName == null ? builder.CurrencyEnglishName : currencyNativeName;
                 }
             }
@@ -278,7 +278,7 @@
                 return null;
             }
 
-            string currencyId = CultureInfoExtensions.GetCurrency(culture.Name);
+            string currencyId = CultureExtensions.GetCurrency(culture.Name);
 
             NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
 
@@ -465,11 +465,11 @@
 
                     if (culture.Identity.Region != null)
                     {
-                        dateTimeFormatInfo.FirstDayOfWeek = RegionInfoExtensions.GetFirstDayOfWeek(culture.Identity.Region.Id);
+                        dateTimeFormatInfo.FirstDayOfWeek = RegionExtensions.GetFirstDayOfWeek(culture.Identity.Region.Id);
                     }
                     else
                     {
-                        dateTimeFormatInfo.FirstDayOfWeek = RegionInfoExtensions.GetFirstDayOfWeek(NCldr.RegionIdForTheWorld);
+                        dateTimeFormatInfo.FirstDayOfWeek = RegionExtensions.GetFirstDayOfWeek(NCldr.RegionIdForTheWorld);
                     }
 
                     if (!string.IsNullOrEmpty(gregorianCalendar.FullDotNetDatePattern))

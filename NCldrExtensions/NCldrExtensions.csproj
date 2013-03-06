@@ -34,9 +34,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CultureExtensions.cs" />
     <Compile Include="CultureInfoExtensions.cs" />
     <Compile Include="NCldrCustomCulture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionExtensions.cs" />
     <Compile Include="RegionInfoExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
