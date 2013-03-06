@@ -1,7 +1,7 @@
 NCLDR
 =====
 
-NCLDR is an open source .NET port of [CLDR](http://cldr.unicode.org/) (the Common Locale Data Repository).
+NCLDR is an open source .NET implementation of [CLDR](http://cldr.unicode.org/) (the Common Locale Data Repository).
 
 CLDR serves the same purpose as the .NET Framework's System.Globalization namespace and the culture data made available through the CultureInfo and RegionInfo classes. The difference, however, is that CLDR contains almost twice the number of cultures and includes additional data for each culture that is not included in the .NET Framework. NCLDR brings these cultures and this additional data to .NET developers.
 
