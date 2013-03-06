@@ -35,8 +35,8 @@ namespace NCldr.Builder
                 Progress("Adding likely subtag", fromCultureId);
 
                 LikelySubTag likelySubTag = new LikelySubTag();
-                likelySubTag.FromCultureId = fromCultureId;
-                likelySubTag.ToCultureId = likelySubTagElement.Attribute("to").Value.ToString();
+                likelySubTag.FromCultureId = GetDotNetCultureName(fromCultureId);
+                likelySubTag.ToCultureId = GetDotNetCultureName(likelySubTagElement.Attribute("to").Value.ToString());
                 likelySubTags.Add(likelySubTag);
                 Progress("Added likely subtag", fromCultureId, ProgressEventType.Added, likelySubTag);
             }
