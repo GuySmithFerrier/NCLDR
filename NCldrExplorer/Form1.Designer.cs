@@ -377,6 +377,7 @@
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.tbxOrdinalRuleResults = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label121 = new System.Windows.Forms.Label();
             this.btnGetOrdinalRuleForInteger = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.tbxOrdinalRuleInteger = new System.Windows.Forms.TextBox();
@@ -410,6 +411,7 @@
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.tbxPluralRuleResults = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label120 = new System.Windows.Forms.Label();
             this.btnGetPluralRuleForInteger = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.tbxPluralRuleInteger = new System.Windows.Forms.TextBox();
@@ -460,8 +462,6 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.tbpCultures.SuspendLayout();
@@ -4155,6 +4155,15 @@
             this.panel2.Size = new System.Drawing.Size(497, 140);
             this.panel2.TabIndex = 0;
             // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Location = new System.Drawing.Point(88, 124);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(319, 13);
+            this.label121.TabIndex = 26;
+            this.label121.Text = "This functionality is not complete. The results are not yet accurate.";
+            // 
             // btnGetOrdinalRuleForInteger
             // 
             this.btnGetOrdinalRuleForInteger.Location = new System.Drawing.Point(91, 100);
@@ -4512,6 +4521,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(497, 140);
             this.panel1.TabIndex = 0;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Location = new System.Drawing.Point(88, 126);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(319, 13);
+            this.label120.TabIndex = 25;
+            this.label120.Text = "This functionality is not complete. The results are not yet accurate.";
             // 
             // btnGetPluralRuleForInteger
             // 
@@ -5021,24 +5039,6 @@
             this.btnCustomCulturesCheckAll.Text = "Check All";
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(88, 126);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(319, 13);
-            this.label120.TabIndex = 25;
-            this.label120.Text = "This functionality is not complete. The results are not yet accurate.";
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(88, 124);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(319, 13);
-            this.label121.TabIndex = 26;
-            this.label121.Text = "This functionality is not complete. The results are not yet accurate.";
             // 
             // Form1
             // 
