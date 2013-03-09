@@ -41,6 +41,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxIncludeCalendarPreferences = new System.Windows.Forms.CheckBox();
             this.cbxIncludeRegionTelephoneCodes = new System.Windows.Forms.CheckBox();
             this.cbxIncludeWindowsMetaTimeZones = new System.Windows.Forms.CheckBox();
             this.cbxIncludeWeekData = new System.Windows.Forms.CheckBox();
@@ -92,7 +93,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbxIncludeCalendarPreferences = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -189,7 +189,7 @@
             this.tbxCldrPath.Name = "tbxCldrPath";
             this.tbxCldrPath.Size = new System.Drawing.Size(334, 20);
             this.tbxCldrPath.TabIndex = 1;
-            this.tbxCldrPath.Text = "C:\\CLDR\\Release22.1";
+            this.tbxCldrPath.Text = "C:\\CLDR\\Release22.1\\Core";
             // 
             // label2
             // 
@@ -274,6 +274,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // cbxIncludeCalendarPreferences
+            // 
+            this.cbxIncludeCalendarPreferences.AutoSize = true;
+            this.cbxIncludeCalendarPreferences.Checked = true;
+            this.cbxIncludeCalendarPreferences.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeCalendarPreferences.Location = new System.Drawing.Point(7, 43);
+            this.cbxIncludeCalendarPreferences.Name = "cbxIncludeCalendarPreferences";
+            this.cbxIncludeCalendarPreferences.Size = new System.Drawing.Size(173, 17);
+            this.cbxIncludeCalendarPreferences.TabIndex = 1;
+            this.cbxIncludeCalendarPreferences.Text = "Include calendar preferences ?";
+            this.cbxIncludeCalendarPreferences.UseVisualStyleBackColor = true;
+            this.cbxIncludeCalendarPreferences.CheckedChanged += new System.EventHandler(this.cbxIncludeCalendarPreferences_CheckedChanged);
             // 
             // cbxIncludeRegionTelephoneCodes
             // 
@@ -920,19 +933,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbxIncludeCalendarPreferences
-            // 
-            this.cbxIncludeCalendarPreferences.AutoSize = true;
-            this.cbxIncludeCalendarPreferences.Checked = true;
-            this.cbxIncludeCalendarPreferences.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCalendarPreferences.Location = new System.Drawing.Point(7, 43);
-            this.cbxIncludeCalendarPreferences.Name = "cbxIncludeCalendarPreferences";
-            this.cbxIncludeCalendarPreferences.Size = new System.Drawing.Size(173, 17);
-            this.cbxIncludeCalendarPreferences.TabIndex = 1;
-            this.cbxIncludeCalendarPreferences.Text = "Include calendar preferences ?";
-            this.cbxIncludeCalendarPreferences.UseVisualStyleBackColor = true;
-            this.cbxIncludeCalendarPreferences.CheckedChanged += new System.EventHandler(this.cbxIncludeCalendarPreferences_CheckedChanged);
             // 
             // Form1
             // 

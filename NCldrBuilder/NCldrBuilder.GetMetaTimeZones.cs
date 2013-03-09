@@ -32,7 +32,7 @@ namespace NCldr.Builder
 
         private static MetaTimeZone[] GetMetaTimeZones(string filename, string elementsName, string progressName)
         {
-            XDocument supplementalDocument = GetXmlDocument(String.Format(@"Core\common\supplemental\{0}.xml", filename));
+            XDocument supplementalDocument = GetXmlDocument(String.Format(@"common\supplemental\{0}.xml", filename));
             List<XElement> metaTimeZoneElements =
                 (from i in supplementalDocument.Elements("supplementalData").Elements(elementsName)
                      .Elements("mapTimezones").Elements("mapZone")

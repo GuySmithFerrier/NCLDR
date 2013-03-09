@@ -20,7 +20,7 @@ namespace NCldr.Builder
             }
 
             List<CultureData> cultures = new List<CultureData>();
-            string[] cldrCultureNames = GetFilenames(@"Core\common\main");
+            string[] cldrCultureNames = GetFilenames(@"common\main");
             foreach (string cldrCultureName in cldrCultureNames)
             {
                 if (IncludeCulture(cldrCultureName))
@@ -82,7 +82,7 @@ namespace NCldr.Builder
 
         private static CultureData GetCulture(string cultureName)
         {
-            XDocument document = GetXmlDocument(@"Core\common\main\" + cultureName + ".xml");
+            XDocument document = GetXmlDocument(@"common\main\" + cultureName + ".xml");
 
             CultureData culture = new CultureData();
 
@@ -122,7 +122,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            string filename = String.Format(@"Core\common\rbnf\{0}.xml", cultureName);
+            string filename = String.Format(@"common\rbnf\{0}.xml", cultureName);
             string path = Path.Combine(cldrPath, filename);
 
             if (!File.Exists(path))
@@ -196,7 +196,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            string filename = String.Format(@"Core\common\casing\{0}.xml", cultureName);
+            string filename = String.Format(@"common\casing\{0}.xml", cultureName);
             string path = Path.Combine(cldrPath, filename);
 
             if (!File.Exists(path))

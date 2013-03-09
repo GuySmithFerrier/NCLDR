@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\telephoneCodeData.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\telephoneCodeData.xml");
 
             List<XElement> regionTelephoneCodeElements = (from i in document.Elements("supplementalData")
                                                             .Elements("telephoneCodeData").Elements("codesByTerritory")

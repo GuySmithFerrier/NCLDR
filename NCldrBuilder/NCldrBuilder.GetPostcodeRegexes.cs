@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\postalcodedata.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\postalcodedata.xml");
 
             IEnumerable<XElement> supplementalElements = document.Elements("supplementalData");
             List<XElement> postalCodeDatas = (from item in supplementalElements.Elements("postalCodeData")

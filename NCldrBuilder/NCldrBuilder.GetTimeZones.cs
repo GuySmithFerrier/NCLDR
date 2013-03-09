@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument bcp47Document = GetXmlDocument(@"Core\common\bcp47\timezone.xml");
+            XDocument bcp47Document = GetXmlDocument(@"common\bcp47\timezone.xml");
 
             XElement timeZoneKeyElement = (from i in bcp47Document.Elements("ldmlBCP47").Elements("keyword").Elements("key")
                                            where i.Attribute("name").Value.ToString() == "tz"
@@ -35,7 +35,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument supplementalDocument = GetXmlDocument(@"Core\common\supplemental\metaZones.xml");
+            XDocument supplementalDocument = GetXmlDocument(@"common\supplemental\metaZones.xml");
             List<XElement> timeZonePeriodTimeZoneElements =
                 (from i in supplementalDocument.Elements("supplementalData").Elements("metaZones")
                      .Elements("metazoneInfo").Elements("timezone")

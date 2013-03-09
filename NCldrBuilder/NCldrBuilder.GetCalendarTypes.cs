@@ -72,7 +72,7 @@ namespace NCldr.Builder
 
         private static void UpdateCalendarNamesAndDescriptions(List<CalendarType> calendarTypes)
         {
-            XDocument bcp47Document = GetXmlDocument(@"Core\common\bcp47\calendar.xml");
+            XDocument bcp47Document = GetXmlDocument(@"common\bcp47\calendar.xml");
 
             XElement calendarKeyElement = (from i in bcp47Document.Elements("ldmlBCP47").Elements("keyword").Elements("key")
                                            where i.Attribute("name").Value.ToString() == "ca"

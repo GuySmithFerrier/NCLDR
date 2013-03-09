@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\languageInfo.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\languageInfo.xml");
 
             List<XElement> languageMatchElements = (from i in document.Elements("supplementalData")
                                                     .Elements("languageMatching").Elements("languageMatches").Elements("languageMatch")

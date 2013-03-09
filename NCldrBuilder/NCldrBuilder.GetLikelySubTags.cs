@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\likelySubtags.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\likelySubtags.xml");
 
             List<XElement> likelySubTagElements = (from i in document.Elements("supplementalData")
                                                     .Elements("likelySubtags").Elements("likelySubtag")

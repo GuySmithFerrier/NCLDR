@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\genderList.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\genderList.xml");
 
             List<XElement> genderListElements = (from i in document.Elements("supplementalData")
                                                     .Elements("gender").Elements("personList")

@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\characters.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\characters.xml");
 
             List<XElement> characterElements = (from i in document.Elements("supplementalData")
                                                     .Elements("characters").Elements("character-fallback").Elements("character")

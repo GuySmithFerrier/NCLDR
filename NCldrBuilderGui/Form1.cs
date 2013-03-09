@@ -251,7 +251,7 @@ namespace NCldrBuilderGui
 
         private bool IsCldrPath(string cldrPath)
         {
-            string aaCultureFile = Path.Combine(cldrPath, @"Core\common\main\aa.xml");
+            string aaCultureFile = Path.Combine(cldrPath, @"common\main\aa.xml");
             return File.Exists(aaCultureFile);
         }
 
@@ -267,7 +267,7 @@ namespace NCldrBuilderGui
 
         private string[] GetCultureNames()
         {
-            string[] cldrCultureNames = GetFilenames(@"Core\common\main");
+            string[] cldrCultureNames = GetFilenames(@"common\main");
             List<string> dotNetCultureNames = new List<string>();
             foreach (string cldrCultureName in cldrCultureNames)
             {

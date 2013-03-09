@@ -21,7 +21,7 @@ namespace NCldr.Builder
             string filename = ordinals ? "ordinals" : "plurals";
             string ruleSetType = ordinals ? "ordinal" : "plural";
 
-            XDocument document = GetXmlDocument(String.Format(@"Core\common\supplemental\{0}.xml", filename));
+            XDocument document = GetXmlDocument(String.Format(@"common\supplemental\{0}.xml", filename));
 
             IEnumerable<XElement> ldmlElements = document.Elements("supplementalData");
             List<XElement> pluralRuleSetDatas = (from item in ldmlElements.Elements("plurals")

@@ -31,7 +31,7 @@ namespace NCldr.Builder
             NCldrBuilder.cldrPath = cldrPath;
             NCldrBuilder.ncldrPath = ncldrPath;
 
-            supplementalDataDocument = GetXmlDocument(@"Core\common\supplemental\supplementalData.xml");
+            supplementalDataDocument = GetXmlDocument(@"common\supplemental\supplementalData.xml");
 
             NCldrData ncldrData = new NCldrData();
             ncldrData.CultureNames = GetCultureNames();
@@ -142,7 +142,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            string[] cldrCultureNames = GetFilenames(@"Core\common\main");
+            string[] cldrCultureNames = GetFilenames(@"common\main");
             List<string> dotNetCultureNames = new List<string>();
             foreach (string cldrCultureName in cldrCultureNames)
             {

@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\dayPeriods.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\dayPeriods.xml");
 
             IEnumerable<XElement> ldmlElements = document.Elements("supplementalData");
             List<XElement> dayPeriodRuleSetDatas = (from item in ldmlElements.Elements("dayPeriodRuleSet")

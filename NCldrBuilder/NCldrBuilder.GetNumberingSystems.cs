@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument document = GetXmlDocument(@"Core\common\supplemental\numberingSystems.xml");
+            XDocument document = GetXmlDocument(@"common\supplemental\numberingSystems.xml");
 
             IEnumerable<XElement> ldmlElements = document.Elements("supplementalData");
             List<XElement> numberingSystemDatas = (from item in ldmlElements.Elements("numberingSystems")

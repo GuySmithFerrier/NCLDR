@@ -17,7 +17,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            XDocument bcp47Document = GetXmlDocument(String.Format(@"Core\common\bcp47\{0}.xml", filename));
+            XDocument bcp47Document = GetXmlDocument(String.Format(@"common\bcp47\{0}.xml", filename));
 
             XElement keyElement = (from i in bcp47Document.Elements("ldmlBCP47").Elements("keyword").Elements("key")
                                            where i.Attribute("name").Value.ToString() == nameCode
