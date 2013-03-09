@@ -28,6 +28,17 @@
         private static Culture[] cultures;
 
         /// <summary>
+        /// Gets a value indicating whether the NCLDR data has been loaded
+        /// </summary>
+        public static bool IsDataLoaded
+        {
+            get
+            {
+                return ncldrData != null;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the NCldrData object containing the raw CLDR data
         /// </summary>
         /// <remarks>This property must be set before NCLDR can be used. Typically it is set using
