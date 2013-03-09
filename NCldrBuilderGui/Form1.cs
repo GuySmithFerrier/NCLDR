@@ -324,7 +324,7 @@ namespace NCldrBuilderGui
                         new NCldrBuilderProgressEventHandler(Progress),
                         this.options);
 
-                    tbxProgress.Text = "Done." + System.Environment.NewLine + tbxProgress.Text;
+                    Progress("Done.");
                 }
             }
         }
@@ -340,11 +340,11 @@ namespace NCldrBuilderGui
                     Console.WriteLine(String.Empty);
                     if (args.ProgressEventType == ProgressEventType.Adding)
                     {
-                        tbxProgress.Text = args.Section + "s..." + System.Environment.NewLine + tbxProgress.Text;
+                        Progress(args.Section + "s...");
                     }
                     else
                     {
-                        tbxProgress.Text = args.Section + "..." + System.Environment.NewLine + tbxProgress.Text;
+                        Progress(args.Section + "...");
                     }
                 }
 
@@ -352,6 +352,13 @@ namespace NCldrBuilderGui
 
                 Application.DoEvents();
             }
+        }
+
+        private void Progress(string text)
+        {
+            tbxProgress.Text += text + System.Environment.NewLine;
+            tbxProgress.SelectionStart = tbxProgress.Text.Length;
+            tbxProgress.ScrollToCaret();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

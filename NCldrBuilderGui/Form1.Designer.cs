@@ -150,6 +150,7 @@
             this.tbxProgress.Location = new System.Drawing.Point(3, 16);
             this.tbxProgress.Multiline = true;
             this.tbxProgress.Name = "tbxProgress";
+            this.tbxProgress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbxProgress.Size = new System.Drawing.Size(871, 254);
             this.tbxProgress.TabIndex = 0;
             // 
