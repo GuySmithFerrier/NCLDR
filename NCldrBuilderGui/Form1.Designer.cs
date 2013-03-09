@@ -93,6 +93,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cbxIncludeLayouts = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -711,6 +712,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbxIncludeLayouts);
             this.groupBox3.Controls.Add(this.cbxIncludeUnitPatternSets);
             this.groupBox3.Controls.Add(this.cbxIncludeListPatterns);
             this.groupBox3.Controls.Add(this.cbxIncludeDelimiters);
@@ -735,7 +737,7 @@
             this.cbxIncludeUnitPatternSets.AutoSize = true;
             this.cbxIncludeUnitPatternSets.Checked = true;
             this.cbxIncludeUnitPatternSets.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeUnitPatternSets.Location = new System.Drawing.Point(6, 280);
+            this.cbxIncludeUnitPatternSets.Location = new System.Drawing.Point(6, 303);
             this.cbxIncludeUnitPatternSets.Name = "cbxIncludeUnitPatternSets";
             this.cbxIncludeUnitPatternSets.Size = new System.Drawing.Size(148, 17);
             this.cbxIncludeUnitPatternSets.TabIndex = 12;
@@ -748,7 +750,7 @@
             this.cbxIncludeListPatterns.AutoSize = true;
             this.cbxIncludeListPatterns.Checked = true;
             this.cbxIncludeListPatterns.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeListPatterns.Location = new System.Drawing.Point(6, 188);
+            this.cbxIncludeListPatterns.Location = new System.Drawing.Point(6, 211);
             this.cbxIncludeListPatterns.Name = "cbxIncludeListPatterns";
             this.cbxIncludeListPatterns.Size = new System.Drawing.Size(126, 17);
             this.cbxIncludeListPatterns.TabIndex = 11;
@@ -787,7 +789,7 @@
             this.cbxIncludeRuleBasedNumberFormatting.AutoSize = true;
             this.cbxIncludeRuleBasedNumberFormatting.Checked = true;
             this.cbxIncludeRuleBasedNumberFormatting.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeRuleBasedNumberFormatting.Location = new System.Drawing.Point(6, 257);
+            this.cbxIncludeRuleBasedNumberFormatting.Location = new System.Drawing.Point(6, 280);
             this.cbxIncludeRuleBasedNumberFormatting.Name = "cbxIncludeRuleBasedNumberFormatting";
             this.cbxIncludeRuleBasedNumberFormatting.Size = new System.Drawing.Size(209, 17);
             this.cbxIncludeRuleBasedNumberFormatting.TabIndex = 8;
@@ -800,7 +802,7 @@
             this.cbxIncludeNumbers.AutoSize = true;
             this.cbxIncludeNumbers.Checked = true;
             this.cbxIncludeNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeNumbers.Location = new System.Drawing.Point(6, 234);
+            this.cbxIncludeNumbers.Location = new System.Drawing.Point(6, 257);
             this.cbxIncludeNumbers.Name = "cbxIncludeNumbers";
             this.cbxIncludeNumbers.Size = new System.Drawing.Size(113, 17);
             this.cbxIncludeNumbers.TabIndex = 7;
@@ -813,7 +815,7 @@
             this.cbxIncludeMessages.AutoSize = true;
             this.cbxIncludeMessages.Checked = true;
             this.cbxIncludeMessages.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeMessages.Location = new System.Drawing.Point(6, 211);
+            this.cbxIncludeMessages.Location = new System.Drawing.Point(6, 234);
             this.cbxIncludeMessages.Name = "cbxIncludeMessages";
             this.cbxIncludeMessages.Size = new System.Drawing.Size(120, 17);
             this.cbxIncludeMessages.TabIndex = 6;
@@ -935,6 +937,19 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbxIncludeLayouts
+            // 
+            this.cbxIncludeLayouts.AutoSize = true;
+            this.cbxIncludeLayouts.Checked = true;
+            this.cbxIncludeLayouts.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeLayouts.Location = new System.Drawing.Point(6, 188);
+            this.cbxIncludeLayouts.Name = "cbxIncludeLayouts";
+            this.cbxIncludeLayouts.Size = new System.Drawing.Size(106, 17);
+            this.cbxIncludeLayouts.TabIndex = 13;
+            this.cbxIncludeLayouts.Text = "Include layouts ?";
+            this.cbxIncludeLayouts.UseVisualStyleBackColor = true;
+            this.cbxIncludeLayouts.CheckedChanged += new System.EventHandler(this.cbxIncludeLayouts_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1035,6 +1050,7 @@
         private System.Windows.Forms.CheckBox cbxIncludeDelimiters;
         private System.Windows.Forms.CheckBox cbxIncludeCharacters;
         private System.Windows.Forms.CheckBox cbxIncludeCalendarPreferences;
+        private System.Windows.Forms.CheckBox cbxIncludeLayouts;
     }
 }
 

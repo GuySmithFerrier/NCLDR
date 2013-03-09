@@ -102,6 +102,8 @@ namespace NCldr.Builder
 
             culture.Delimiters = GetDelimiters(document);
 
+            culture.Layout = GetLayout(document);
+
             culture.ListPatterns = GetListPatterns(document);
 
             culture.Messages = GetMessages(document);
@@ -836,6 +838,40 @@ namespace NCldr.Builder
             }
 
             return dates;
+        }
+
+        private static Layout GetLayout(XDocument document)
+        {
+            if (options != null && options.CultureOptions != null && !options.CultureOptions.IncludeLayout)
+            {
+                return null;
+            }
+
+            Layout layout = null;
+            IEnumerable<XElement> ldmlElements = document.Elements("ldml");
+            List<XElement> layoutDatas = (from item in ldmlElements.Elements("layout")
+                                          select item).ToList();
+            if (layoutDatas != null && layoutDatas.Count > 0)
+            {
+                XElement orientationData = layoutDatas.Elements("orientation").FirstOrDefault();
+                if (orientationData != null)
+                {
+                    layout = new Layout();
+                    layout.Orientation = new Orientation();
+
+                    if (orientationData.Attribute("characters") != null)
+                    {
+                        layout.Orientation.Characters = orientationData.Attribute("characters").Value.ToString();
+                    }
+
+                    if (orientationData.Attribute("lines") != null)
+                    {
+                        layout.Orientation.Lines = orientationData.Attribute("lines").Value.ToString();
+                    }
+                }
+            }
+
+            return layout;
         }
 
         private static ListPattern[] GetListPatterns(XDocument document)

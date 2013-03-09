@@ -462,6 +462,12 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
+            this.tbpLayout = new System.Windows.Forms.TabPage();
+            this.groupBox65 = new System.Windows.Forms.GroupBox();
+            this.tbxOrientationLines = new System.Windows.Forms.TextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.tbxOrientationCharacters = new System.Windows.Forms.TextBox();
+            this.label123 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.tbpCultures.SuspendLayout();
@@ -644,6 +650,8 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
+            this.tbpLayout.SuspendLayout();
+            this.groupBox65.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -769,6 +777,7 @@
             this.tabControl2.Controls.Add(this.tbpCalendars);
             this.tabControl2.Controls.Add(this.tbpCasing);
             this.tabControl2.Controls.Add(this.tbpCharacters);
+            this.tabControl2.Controls.Add(this.tbpLayout);
             this.tabControl2.Controls.Add(this.tbpListPatterns);
             this.tabControl2.Controls.Add(this.tbpMessages);
             this.tabControl2.Controls.Add(this.tbpNumbers);
@@ -5040,6 +5049,62 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
+            // tbpLayout
+            // 
+            this.tbpLayout.Controls.Add(this.groupBox65);
+            this.tbpLayout.Location = new System.Drawing.Point(4, 22);
+            this.tbpLayout.Name = "tbpLayout";
+            this.tbpLayout.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpLayout.Size = new System.Drawing.Size(506, 360);
+            this.tbpLayout.TabIndex = 9;
+            this.tbpLayout.Text = "Layout";
+            this.tbpLayout.UseVisualStyleBackColor = true;
+            // 
+            // groupBox65
+            // 
+            this.groupBox65.Controls.Add(this.tbxOrientationLines);
+            this.groupBox65.Controls.Add(this.label122);
+            this.groupBox65.Controls.Add(this.tbxOrientationCharacters);
+            this.groupBox65.Controls.Add(this.label123);
+            this.groupBox65.Location = new System.Drawing.Point(6, 6);
+            this.groupBox65.Name = "groupBox65";
+            this.groupBox65.Size = new System.Drawing.Size(204, 93);
+            this.groupBox65.TabIndex = 0;
+            this.groupBox65.TabStop = false;
+            this.groupBox65.Text = "Orientation";
+            // 
+            // tbxOrientationLines
+            // 
+            this.tbxOrientationLines.Location = new System.Drawing.Point(93, 53);
+            this.tbxOrientationLines.Name = "tbxOrientationLines";
+            this.tbxOrientationLines.Size = new System.Drawing.Size(100, 20);
+            this.tbxOrientationLines.TabIndex = 7;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(17, 56);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(32, 13);
+            this.label122.TabIndex = 6;
+            this.label122.Text = "Lines";
+            // 
+            // tbxOrientationCharacters
+            // 
+            this.tbxOrientationCharacters.Location = new System.Drawing.Point(93, 27);
+            this.tbxOrientationCharacters.Name = "tbxOrientationCharacters";
+            this.tbxOrientationCharacters.Size = new System.Drawing.Size(100, 20);
+            this.tbxOrientationCharacters.TabIndex = 5;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(17, 30);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(58, 13);
+            this.label123.TabIndex = 4;
+            this.label123.Text = "Characters";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5269,6 +5334,9 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
+            this.tbpLayout.ResumeLayout(false);
+            this.groupBox65.ResumeLayout(false);
+            this.groupBox65.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5709,6 +5777,12 @@
         private System.Windows.Forms.DataGridView dgvCurrencyPeriods;
         private System.Windows.Forms.Label label121;
         private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.TabPage tbpLayout;
+        private System.Windows.Forms.GroupBox groupBox65;
+        private System.Windows.Forms.TextBox tbxOrientationLines;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.TextBox tbxOrientationCharacters;
+        private System.Windows.Forms.Label label123;
     }
 }
 

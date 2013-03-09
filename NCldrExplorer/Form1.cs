@@ -222,6 +222,8 @@ namespace NCldrExplorer
 
             ShowDelimiters(culture.Delimiters);
 
+            ShowLayout(culture.Layout);
+
             ShowListPatterns(culture.ListPatterns);
 
             ShowMessages(culture.Messages);
@@ -369,6 +371,20 @@ namespace NCldrExplorer
                 tbxMessagesY.Text = messages.YesShort;
                 tbxMessagesNo.Text = messages.No;
                 tbxMessagesN.Text = messages.NoShort;
+            }
+        }
+
+        private void ShowLayout(Layout layout)
+        {
+            if (layout == null || layout.Orientation == null)
+            {
+                tbxOrientationCharacters.Text = String.Empty;
+                tbxOrientationLines.Text = String.Empty;
+            }
+            else
+            {
+                tbxOrientationCharacters.Text = layout.Orientation.Characters;
+                tbxOrientationLines.Text = layout.Orientation.Lines;
             }
         }
 

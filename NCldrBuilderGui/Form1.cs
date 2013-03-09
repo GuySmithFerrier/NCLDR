@@ -173,6 +173,11 @@ namespace NCldrBuilderGui
             options.CultureOptions.IncludeDates = cbxIncludeDates.Checked;
         }
 
+        private void cbxIncludeLayouts_CheckedChanged(object sender, EventArgs e)
+        {
+            options.CultureOptions.IncludeLayout = cbxIncludeLayouts.Checked;
+        }
+
         private void cbxIncludeMessages_CheckedChanged(object sender, EventArgs e)
         {
             options.CultureOptions.IncludeMessages = cbxIncludeMessages.Checked;
@@ -429,6 +434,7 @@ namespace NCldrBuilderGui
             cbxIncludeCharacters.Checked = options.CultureOptions.IncludeCharacters;
             cbxIncludeDates.Checked = options.CultureOptions.IncludeDates;
             cbxIncludeDelimiters.Checked = options.CultureOptions.IncludeDelimiters;
+            cbxIncludeLayouts.Checked = options.CultureOptions.IncludeLayout;
             cbxIncludeListPatterns.Checked = options.CultureOptions.IncludeListPatterns;
             cbxIncludeMessages.Checked = options.CultureOptions.IncludeMessages;
             cbxIncludeNumbers.Checked = options.CultureOptions.IncludeNumbers;

@@ -26,6 +26,7 @@ namespace NCldr.Builder
             this.IncludeCharacters = true;
             this.IncludeDates = true;
             this.IncludeDelimiters = true;
+            this.IncludeLayout = true;
             this.IncludeListPatterns = true;
             this.IncludeMessages = true;
             this.IncludeNumbers = true;
@@ -54,6 +55,8 @@ namespace NCldr.Builder
         public bool IncludeDates { get; set; }
 
         public bool IncludeDelimiters { get; set; }
+
+        public bool IncludeLayout { get; set; }
 
         public bool IncludeListPatterns { get; set; }
 

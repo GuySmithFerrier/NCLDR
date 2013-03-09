@@ -45,6 +45,8 @@
     <Compile Include="Types\CalendarName.cs" />
     <Compile Include="Types\CalendarNameSet.cs" />
     <Compile Include="Types\CalendarPreference.cs" />
+    <Compile Include="Types\Orientation.cs" />
+    <Compile Include="Types\Layout.cs" />
     <Compile Include="Types\CurrencySpacing.cs" />
     <Compile Include="Types\CurrencySpacings.cs" />
     <Compile Include="Types\DateTimeFormat.cs" />

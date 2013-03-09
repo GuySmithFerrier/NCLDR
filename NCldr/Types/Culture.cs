@@ -57,6 +57,16 @@
         private Delimiters delimitersNoParents;
 
         /// <summary>
+        /// Gets or sets the resolved Layout
+        /// </summary>
+        private Layout layout;
+
+        /// <summary>
+        /// Gets or sets the un-resolved Layout
+        /// </summary>
+        private Layout layoutNoParents;
+
+        /// <summary>
         /// Gets or sets the resolved ListPatterns
         /// </summary>
         private ListPattern[] listPatterns;
@@ -155,6 +165,7 @@
             this.delimitersNoParents = cultureData.Delimiters;
             this.Identity = cultureData.Identity;
             this.languageDisplayNamesNoParents = cultureData.LanguageDisplayNames;
+            this.layoutNoParents = cultureData.Layout;
             this.listPatternsNoParents = cultureData.ListPatterns;
             this.messagesNoParents = cultureData.Messages;
             this.numbersNoParents = cultureData.Numbers;
@@ -721,6 +732,89 @@
             }
 
             return combinedDelimiters;
+        }
+
+        /// <summary>
+        /// Gets or sets the resolved Layout
+        /// </summary>
+        public Layout Layout
+        {
+            get
+            {
+                if (this.layout == null)
+                {
+                    this.layout = this.GetLayout();
+                }
+
+                return this.layout;
+            }
+
+            set
+            {
+                this.layout = value;
+            }
+        }
+
+        /// <summary>
+        /// GetLayout gets the resolved Layout
+        /// </summary>
+        /// <returns>The resolved Layout</returns>
+        private Layout GetLayout()
+        {
+            Layout layout = null;
+            if (this.layoutNoParents != null)
+            {
+                layout = (Layout)this.layoutNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                layout = this.CombineLayouts(layout, parentCulture.layoutNoParents);
+            }
+
+            return layout;
+        }
+
+        /// <summary>
+        /// CombineLayouts combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedLayout">The child object</param>
+        /// <param name="parentLayout">The parent object</param>
+        /// <returns>The combined object</returns>
+        private Layout CombineLayouts(Layout combinedLayout, Layout parentLayout)
+        {
+            if (combinedLayout == null && parentLayout == null)
+            {
+                return null;
+            }
+            else if (combinedLayout == null)
+            {
+                return (Layout)parentLayout.Clone();
+            }
+            else if (parentLayout == null)
+            {
+                return combinedLayout;
+            }
+
+            if (combinedLayout.Orientation == null)
+            {
+                combinedLayout.Orientation = parentLayout.Orientation;
+            }
+            else if (parentLayout.Orientation != null)
+            {
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.Characters))
+                {
+                    combinedLayout.Orientation.Characters = parentLayout.Orientation.Characters;
+                }
+
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.Lines))
+                {
+                    combinedLayout.Orientation.Lines = parentLayout.Orientation.Lines;
+                }
+            }
+
+            return combinedLayout;
         }
 
         /// <summary>

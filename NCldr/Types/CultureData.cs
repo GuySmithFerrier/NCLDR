@@ -54,6 +54,11 @@
         public Dates Dates { get; set; }
 
         /// <summary>
+        /// Gets or sets the culture's layout
+        /// </summary>
+        public Layout Layout { get; set; }
+
+        /// <summary>
         /// Gets or sets the culture's list patterns
         /// </summary>
         public ListPattern[] ListPatterns { get; set; }
