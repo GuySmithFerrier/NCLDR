@@ -28,6 +28,11 @@ namespace NCldrBuilderGui
             options.IncludeCultureNames = cbxIncludeCultureNames.Checked;
         }
 
+        private void cbxIncludeCalendarPreferences_CheckedChanged(object sender, EventArgs e)
+        {
+            options.IncludeCalendarPreferences = cbxIncludeCalendarPreferences.Checked;
+        }
+
         private void cbxIncludeCharacterFallbacks_CheckedChanged(object sender, EventArgs e)
         {
             options.IncludeCharacterFallbacks = cbxIncludeCharacterFallbacks.Checked;
@@ -385,6 +390,7 @@ namespace NCldrBuilderGui
             this.options = builderOptions;
 
             cbxIncludeCultureNames.Checked = options.IncludeCultureNames;
+            cbxIncludeCalendarPreferences.Checked = options.IncludeCalendarPreferences;
             cbxIncludeCharacterFallbacks.Checked = options.IncludeCharacterFallbacks;
             cbxIncludeCultures.Checked = options.IncludeCultures;
             cbxIncludeCurrencies.Checked = options.IncludeCurrencies;
@@ -429,12 +435,16 @@ namespace NCldrBuilderGui
             }
             else if (options.CultureOptions.CultureSelection == CultureSelection.AllExceptExclude)
             {
+                string[] cultures = options.CultureOptions.ExcludeCultures;
                 rbExclude.Checked = true;
+                options.CultureOptions.ExcludeCultures = cultures;
                 SetCheckedItems(options.CultureOptions.ExcludeCultures);
             }
             else if (options.CultureOptions.CultureSelection == CultureSelection.IncludeOnly)
             {
+                string[] cultures = options.CultureOptions.IncludeCultures;
                 rbIncludeOnly.Checked = true;
+                options.CultureOptions.IncludeCultures = cultures;
                 SetCheckedItems(options.CultureOptions.IncludeCultures);
             }
             else if (options.CultureOptions.CultureSelection == CultureSelection.AllNew)

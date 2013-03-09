@@ -41,6 +41,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxIncludeRegionTelephoneCodes = new System.Windows.Forms.CheckBox();
             this.cbxIncludeWindowsMetaTimeZones = new System.Windows.Forms.CheckBox();
             this.cbxIncludeWeekData = new System.Windows.Forms.CheckBox();
             this.cbxIncludeTimeZones = new System.Windows.Forms.CheckBox();
@@ -74,6 +75,10 @@
             this.rbIncludeOnly = new System.Windows.Forms.RadioButton();
             this.rbExclude = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxIncludeUnitPatternSets = new System.Windows.Forms.CheckBox();
+            this.cbxIncludeListPatterns = new System.Windows.Forms.CheckBox();
+            this.cbxIncludeDelimiters = new System.Windows.Forms.CheckBox();
+            this.cbxIncludeCharacters = new System.Windows.Forms.CheckBox();
             this.cbxIncludeRuleBasedNumberFormatting = new System.Windows.Forms.CheckBox();
             this.cbxIncludeNumbers = new System.Windows.Forms.CheckBox();
             this.cbxIncludeMessages = new System.Windows.Forms.CheckBox();
@@ -87,11 +92,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbxIncludeRegionTelephoneCodes = new System.Windows.Forms.CheckBox();
-            this.cbxIncludeCharacters = new System.Windows.Forms.CheckBox();
-            this.cbxIncludeDelimiters = new System.Windows.Forms.CheckBox();
-            this.cbxIncludeListPatterns = new System.Windows.Forms.CheckBox();
-            this.cbxIncludeUnitPatternSets = new System.Windows.Forms.CheckBox();
+            this.cbxIncludeCalendarPreferences = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -240,6 +241,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxIncludeCalendarPreferences);
             this.groupBox1.Controls.Add(this.cbxIncludeRegionTelephoneCodes);
             this.groupBox1.Controls.Add(this.cbxIncludeWindowsMetaTimeZones);
             this.groupBox1.Controls.Add(this.cbxIncludeWeekData);
@@ -272,6 +274,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // cbxIncludeRegionTelephoneCodes
+            // 
+            this.cbxIncludeRegionTelephoneCodes.AutoSize = true;
+            this.cbxIncludeRegionTelephoneCodes.Checked = true;
+            this.cbxIncludeRegionTelephoneCodes.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeRegionTelephoneCodes.Location = new System.Drawing.Point(199, 227);
+            this.cbxIncludeRegionTelephoneCodes.Name = "cbxIncludeRegionTelephoneCodes";
+            this.cbxIncludeRegionTelephoneCodes.Size = new System.Drawing.Size(184, 17);
+            this.cbxIncludeRegionTelephoneCodes.TabIndex = 24;
+            this.cbxIncludeRegionTelephoneCodes.Text = "Include region telephone codes ?";
+            this.cbxIncludeRegionTelephoneCodes.UseVisualStyleBackColor = true;
+            this.cbxIncludeRegionTelephoneCodes.CheckedChanged += new System.EventHandler(this.cbxIncludeRegionTelephoneCodes_CheckedChanged);
             // 
             // cbxIncludeWindowsMetaTimeZones
             // 
@@ -434,7 +449,7 @@
             this.cbxIncludeMetaTimeZones.AutoSize = true;
             this.cbxIncludeMetaTimeZones.Checked = true;
             this.cbxIncludeMetaTimeZones.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeMetaTimeZones.Location = new System.Drawing.Point(7, 273);
+            this.cbxIncludeMetaTimeZones.Location = new System.Drawing.Point(6, 296);
             this.cbxIncludeMetaTimeZones.Name = "cbxIncludeMetaTimeZones";
             this.cbxIncludeMetaTimeZones.Size = new System.Drawing.Size(149, 17);
             this.cbxIncludeMetaTimeZones.TabIndex = 11;
@@ -447,7 +462,7 @@
             this.cbxIncludeMeasurementData.AutoSize = true;
             this.cbxIncludeMeasurementData.Checked = true;
             this.cbxIncludeMeasurementData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeMeasurementData.Location = new System.Drawing.Point(7, 250);
+            this.cbxIncludeMeasurementData.Location = new System.Drawing.Point(6, 273);
             this.cbxIncludeMeasurementData.Name = "cbxIncludeMeasurementData";
             this.cbxIncludeMeasurementData.Size = new System.Drawing.Size(160, 17);
             this.cbxIncludeMeasurementData.TabIndex = 10;
@@ -460,7 +475,7 @@
             this.cbxIncludeLikelySubTags.AutoSize = true;
             this.cbxIncludeLikelySubTags.Checked = true;
             this.cbxIncludeLikelySubTags.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeLikelySubTags.Location = new System.Drawing.Point(7, 227);
+            this.cbxIncludeLikelySubTags.Location = new System.Drawing.Point(6, 250);
             this.cbxIncludeLikelySubTags.Name = "cbxIncludeLikelySubTags";
             this.cbxIncludeLikelySubTags.Size = new System.Drawing.Size(136, 17);
             this.cbxIncludeLikelySubTags.TabIndex = 9;
@@ -473,7 +488,7 @@
             this.cbxIncludeLanguageMatches.AutoSize = true;
             this.cbxIncludeLanguageMatches.Checked = true;
             this.cbxIncludeLanguageMatches.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeLanguageMatches.Location = new System.Drawing.Point(7, 204);
+            this.cbxIncludeLanguageMatches.Location = new System.Drawing.Point(6, 227);
             this.cbxIncludeLanguageMatches.Name = "cbxIncludeLanguageMatches";
             this.cbxIncludeLanguageMatches.Size = new System.Drawing.Size(160, 17);
             this.cbxIncludeLanguageMatches.TabIndex = 8;
@@ -486,7 +501,7 @@
             this.cbxIncludeGenderLists.AutoSize = true;
             this.cbxIncludeGenderLists.Checked = true;
             this.cbxIncludeGenderLists.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeGenderLists.Location = new System.Drawing.Point(7, 181);
+            this.cbxIncludeGenderLists.Location = new System.Drawing.Point(6, 204);
             this.cbxIncludeGenderLists.Name = "cbxIncludeGenderLists";
             this.cbxIncludeGenderLists.Size = new System.Drawing.Size(126, 17);
             this.cbxIncludeGenderLists.TabIndex = 7;
@@ -499,7 +514,7 @@
             this.cbxIncludeDayPeriodRuleSets.AutoSize = true;
             this.cbxIncludeDayPeriodRuleSets.Checked = true;
             this.cbxIncludeDayPeriodRuleSets.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeDayPeriodRuleSets.Location = new System.Drawing.Point(7, 158);
+            this.cbxIncludeDayPeriodRuleSets.Location = new System.Drawing.Point(6, 181);
             this.cbxIncludeDayPeriodRuleSets.Name = "cbxIncludeDayPeriodRuleSets";
             this.cbxIncludeDayPeriodRuleSets.Size = new System.Drawing.Size(164, 17);
             this.cbxIncludeDayPeriodRuleSets.TabIndex = 6;
@@ -512,7 +527,7 @@
             this.cbxIncludeCalendarTypes.AutoSize = true;
             this.cbxIncludeCalendarTypes.Checked = true;
             this.cbxIncludeCalendarTypes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCalendarTypes.Location = new System.Drawing.Point(7, 135);
+            this.cbxIncludeCalendarTypes.Location = new System.Drawing.Point(6, 158);
             this.cbxIncludeCalendarTypes.Name = "cbxIncludeCalendarTypes";
             this.cbxIncludeCalendarTypes.Size = new System.Drawing.Size(142, 17);
             this.cbxIncludeCalendarTypes.TabIndex = 5;
@@ -525,7 +540,7 @@
             this.cbxIncludeCurrencyFractions.AutoSize = true;
             this.cbxIncludeCurrencyFractions.Checked = true;
             this.cbxIncludeCurrencyFractions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCurrencyFractions.Location = new System.Drawing.Point(7, 112);
+            this.cbxIncludeCurrencyFractions.Location = new System.Drawing.Point(6, 135);
             this.cbxIncludeCurrencyFractions.Name = "cbxIncludeCurrencyFractions";
             this.cbxIncludeCurrencyFractions.Size = new System.Drawing.Size(157, 17);
             this.cbxIncludeCurrencyFractions.TabIndex = 4;
@@ -538,7 +553,7 @@
             this.cbxIncludeCurrencies.AutoSize = true;
             this.cbxIncludeCurrencies.Checked = true;
             this.cbxIncludeCurrencies.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCurrencies.Location = new System.Drawing.Point(7, 89);
+            this.cbxIncludeCurrencies.Location = new System.Drawing.Point(6, 112);
             this.cbxIncludeCurrencies.Name = "cbxIncludeCurrencies";
             this.cbxIncludeCurrencies.Size = new System.Drawing.Size(122, 17);
             this.cbxIncludeCurrencies.TabIndex = 3;
@@ -551,7 +566,7 @@
             this.cbxIncludeCultures.AutoSize = true;
             this.cbxIncludeCultures.Checked = true;
             this.cbxIncludeCultures.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCultures.Location = new System.Drawing.Point(7, 66);
+            this.cbxIncludeCultures.Location = new System.Drawing.Point(6, 89);
             this.cbxIncludeCultures.Name = "cbxIncludeCultures";
             this.cbxIncludeCultures.Size = new System.Drawing.Size(110, 17);
             this.cbxIncludeCultures.TabIndex = 2;
@@ -564,7 +579,7 @@
             this.cbxIncludeCharacterFallbacks.AutoSize = true;
             this.cbxIncludeCharacterFallbacks.Checked = true;
             this.cbxIncludeCharacterFallbacks.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCharacterFallbacks.Location = new System.Drawing.Point(7, 43);
+            this.cbxIncludeCharacterFallbacks.Location = new System.Drawing.Point(6, 66);
             this.cbxIncludeCharacterFallbacks.Name = "cbxIncludeCharacterFallbacks";
             this.cbxIncludeCharacterFallbacks.Size = new System.Drawing.Size(163, 17);
             this.cbxIncludeCharacterFallbacks.TabIndex = 1;
@@ -700,6 +715,58 @@
             this.groupBox3.Size = new System.Drawing.Size(218, 336);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
+            // 
+            // cbxIncludeUnitPatternSets
+            // 
+            this.cbxIncludeUnitPatternSets.AutoSize = true;
+            this.cbxIncludeUnitPatternSets.Checked = true;
+            this.cbxIncludeUnitPatternSets.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeUnitPatternSets.Location = new System.Drawing.Point(6, 280);
+            this.cbxIncludeUnitPatternSets.Name = "cbxIncludeUnitPatternSets";
+            this.cbxIncludeUnitPatternSets.Size = new System.Drawing.Size(148, 17);
+            this.cbxIncludeUnitPatternSets.TabIndex = 12;
+            this.cbxIncludeUnitPatternSets.Text = "Include unit pattern sets ?";
+            this.cbxIncludeUnitPatternSets.UseVisualStyleBackColor = true;
+            this.cbxIncludeUnitPatternSets.CheckedChanged += new System.EventHandler(this.cbxIncludeUnitPatternSets_CheckedChanged);
+            // 
+            // cbxIncludeListPatterns
+            // 
+            this.cbxIncludeListPatterns.AutoSize = true;
+            this.cbxIncludeListPatterns.Checked = true;
+            this.cbxIncludeListPatterns.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeListPatterns.Location = new System.Drawing.Point(6, 188);
+            this.cbxIncludeListPatterns.Name = "cbxIncludeListPatterns";
+            this.cbxIncludeListPatterns.Size = new System.Drawing.Size(126, 17);
+            this.cbxIncludeListPatterns.TabIndex = 11;
+            this.cbxIncludeListPatterns.Text = "Include list patterns ?";
+            this.cbxIncludeListPatterns.UseVisualStyleBackColor = true;
+            this.cbxIncludeListPatterns.CheckedChanged += new System.EventHandler(this.cbxIncludeListPatterns_CheckedChanged);
+            // 
+            // cbxIncludeDelimiters
+            // 
+            this.cbxIncludeDelimiters.AutoSize = true;
+            this.cbxIncludeDelimiters.Checked = true;
+            this.cbxIncludeDelimiters.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeDelimiters.Location = new System.Drawing.Point(6, 165);
+            this.cbxIncludeDelimiters.Name = "cbxIncludeDelimiters";
+            this.cbxIncludeDelimiters.Size = new System.Drawing.Size(116, 17);
+            this.cbxIncludeDelimiters.TabIndex = 10;
+            this.cbxIncludeDelimiters.Text = "Include delimiters ?";
+            this.cbxIncludeDelimiters.UseVisualStyleBackColor = true;
+            this.cbxIncludeDelimiters.CheckedChanged += new System.EventHandler(this.cbxIncludeDelimiters_CheckedChanged);
+            // 
+            // cbxIncludeCharacters
+            // 
+            this.cbxIncludeCharacters.AutoSize = true;
+            this.cbxIncludeCharacters.Checked = true;
+            this.cbxIncludeCharacters.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeCharacters.Location = new System.Drawing.Point(6, 119);
+            this.cbxIncludeCharacters.Name = "cbxIncludeCharacters";
+            this.cbxIncludeCharacters.Size = new System.Drawing.Size(123, 17);
+            this.cbxIncludeCharacters.TabIndex = 9;
+            this.cbxIncludeCharacters.Text = "Include characters ?";
+            this.cbxIncludeCharacters.UseVisualStyleBackColor = true;
+            this.cbxIncludeCharacters.CheckedChanged += new System.EventHandler(this.cbxIncludeCharacters_CheckedChanged);
             // 
             // cbxIncludeRuleBasedNumberFormatting
             // 
@@ -854,70 +921,18 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cbxIncludeRegionTelephoneCodes
+            // cbxIncludeCalendarPreferences
             // 
-            this.cbxIncludeRegionTelephoneCodes.AutoSize = true;
-            this.cbxIncludeRegionTelephoneCodes.Checked = true;
-            this.cbxIncludeRegionTelephoneCodes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeRegionTelephoneCodes.Location = new System.Drawing.Point(199, 227);
-            this.cbxIncludeRegionTelephoneCodes.Name = "cbxIncludeRegionTelephoneCodes";
-            this.cbxIncludeRegionTelephoneCodes.Size = new System.Drawing.Size(184, 17);
-            this.cbxIncludeRegionTelephoneCodes.TabIndex = 24;
-            this.cbxIncludeRegionTelephoneCodes.Text = "Include region telephone codes ?";
-            this.cbxIncludeRegionTelephoneCodes.UseVisualStyleBackColor = true;
-            this.cbxIncludeRegionTelephoneCodes.CheckedChanged += new System.EventHandler(this.cbxIncludeRegionTelephoneCodes_CheckedChanged);
-            // 
-            // cbxIncludeCharacters
-            // 
-            this.cbxIncludeCharacters.AutoSize = true;
-            this.cbxIncludeCharacters.Checked = true;
-            this.cbxIncludeCharacters.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeCharacters.Location = new System.Drawing.Point(6, 119);
-            this.cbxIncludeCharacters.Name = "cbxIncludeCharacters";
-            this.cbxIncludeCharacters.Size = new System.Drawing.Size(123, 17);
-            this.cbxIncludeCharacters.TabIndex = 9;
-            this.cbxIncludeCharacters.Text = "Include characters ?";
-            this.cbxIncludeCharacters.UseVisualStyleBackColor = true;
-            this.cbxIncludeCharacters.CheckedChanged += new System.EventHandler(this.cbxIncludeCharacters_CheckedChanged);
-            // 
-            // cbxIncludeDelimiters
-            // 
-            this.cbxIncludeDelimiters.AutoSize = true;
-            this.cbxIncludeDelimiters.Checked = true;
-            this.cbxIncludeDelimiters.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeDelimiters.Location = new System.Drawing.Point(6, 165);
-            this.cbxIncludeDelimiters.Name = "cbxIncludeDelimiters";
-            this.cbxIncludeDelimiters.Size = new System.Drawing.Size(116, 17);
-            this.cbxIncludeDelimiters.TabIndex = 10;
-            this.cbxIncludeDelimiters.Text = "Include delimiters ?";
-            this.cbxIncludeDelimiters.UseVisualStyleBackColor = true;
-            this.cbxIncludeDelimiters.CheckedChanged += new System.EventHandler(this.cbxIncludeDelimiters_CheckedChanged);
-            // 
-            // cbxIncludeListPatterns
-            // 
-            this.cbxIncludeListPatterns.AutoSize = true;
-            this.cbxIncludeListPatterns.Checked = true;
-            this.cbxIncludeListPatterns.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeListPatterns.Location = new System.Drawing.Point(6, 188);
-            this.cbxIncludeListPatterns.Name = "cbxIncludeListPatterns";
-            this.cbxIncludeListPatterns.Size = new System.Drawing.Size(126, 17);
-            this.cbxIncludeListPatterns.TabIndex = 11;
-            this.cbxIncludeListPatterns.Text = "Include list patterns ?";
-            this.cbxIncludeListPatterns.UseVisualStyleBackColor = true;
-            this.cbxIncludeListPatterns.CheckedChanged += new System.EventHandler(this.cbxIncludeListPatterns_CheckedChanged);
-            // 
-            // cbxIncludeUnitPatternSets
-            // 
-            this.cbxIncludeUnitPatternSets.AutoSize = true;
-            this.cbxIncludeUnitPatternSets.Checked = true;
-            this.cbxIncludeUnitPatternSets.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeUnitPatternSets.Location = new System.Drawing.Point(6, 280);
-            this.cbxIncludeUnitPatternSets.Name = "cbxIncludeUnitPatternSets";
-            this.cbxIncludeUnitPatternSets.Size = new System.Drawing.Size(148, 17);
-            this.cbxIncludeUnitPatternSets.TabIndex = 12;
-            this.cbxIncludeUnitPatternSets.Text = "Include unit pattern sets ?";
-            this.cbxIncludeUnitPatternSets.UseVisualStyleBackColor = true;
-            this.cbxIncludeUnitPatternSets.CheckedChanged += new System.EventHandler(this.cbxIncludeUnitPatternSets_CheckedChanged);
+            this.cbxIncludeCalendarPreferences.AutoSize = true;
+            this.cbxIncludeCalendarPreferences.Checked = true;
+            this.cbxIncludeCalendarPreferences.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeCalendarPreferences.Location = new System.Drawing.Point(7, 43);
+            this.cbxIncludeCalendarPreferences.Name = "cbxIncludeCalendarPreferences";
+            this.cbxIncludeCalendarPreferences.Size = new System.Drawing.Size(173, 17);
+            this.cbxIncludeCalendarPreferences.TabIndex = 1;
+            this.cbxIncludeCalendarPreferences.Text = "Include calendar preferences ?";
+            this.cbxIncludeCalendarPreferences.UseVisualStyleBackColor = true;
+            this.cbxIncludeCalendarPreferences.CheckedChanged += new System.EventHandler(this.cbxIncludeCalendarPreferences_CheckedChanged);
             // 
             // Form1
             // 
@@ -1018,6 +1033,7 @@
         private System.Windows.Forms.CheckBox cbxIncludeListPatterns;
         private System.Windows.Forms.CheckBox cbxIncludeDelimiters;
         private System.Windows.Forms.CheckBox cbxIncludeCharacters;
+        private System.Windows.Forms.CheckBox cbxIncludeCalendarPreferences;
     }
 }
 
