@@ -11,37 +11,6 @@
     public static class CultureInfoExtensions
     {
         /// <summary>
-        /// GetCurrency gets the CLDR currency for a CultureInfo
-        /// </summary>
-        /// <param name="cultureInfo">The CultureInfo to get the CLDR currency for</param>
-        /// <returns>The CLDR currency for a CultureInfo</returns>
-        public static string GetCurrency(this CultureInfo cultureInfo)
-        {
-            return CultureExtensions.GetCurrency(GetNCldrCultureName(cultureInfo));
-        }
-
-                /// <summary>
-        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a CultureInfo
-        /// </summary>
-        /// <param name="cultureInfo">The CultureInfo to get the CurrencyPeriods for</param>
-        /// <returns>An array of CurrencyPeriods for a CultureInfo</returns>
-        public static CurrencyPeriod[] GetCurrencyPeriods(this CultureInfo cultureInfo)
-        {
-            return CultureExtensions.GetCurrencyPeriods(GetNCldrCultureName(cultureInfo));
-        }
-
-        /// <summary>
-        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a CultureInfo for a given datetime
-        /// </summary>
-        /// <param name="cultureInfo">The CultureInfo to get the CurrencyPeriods for</param>
-        /// <param name="dateTime">The DateTime to get the CurrencyPeriods for</param>
-        /// <returns>An array of CurrencyPeriods for a CultureInfo for a given datetime</returns>
-        public static CurrencyPeriod[] GetCurrencyPeriods(this CultureInfo cultureInfo, DateTime dateTime)
-        {
-            return CultureExtensions.GetCurrencyPeriods(GetNCldrCultureName(cultureInfo), dateTime);
-        }
-
-        /// <summary>
         /// GetCasing gets the CLDR Casing for the CultureInfo
         /// </summary>
         /// <param name="cultureInfo">The CultureInfo to get the CLDR Casing for</param>

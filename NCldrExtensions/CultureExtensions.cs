@@ -44,58 +44,6 @@
         }
 
         /// <summary>
-        /// GetCurrency gets the current CLDR currency Id for the given culture
-        /// </summary>
-        /// <param name="cultureName">The name of the culture to get the currency for</param>
-        /// <returns>The current CLDR currency Id for the given culture</returns>
-        public static string GetCurrency(string cultureName)
-        {
-            CurrencyPeriod[] currencyPeriods = GetCurrencyPeriods(cultureName, DateTime.Now);
-            if (currencyPeriods == null || currencyPeriods.GetLength(0) == 0)
-            {
-                return null;
-            }
-
-            return currencyPeriods[0].Id;
-        }
-
-        /// <summary>
-        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a culture
-        /// </summary>
-        /// <param name="cultureName">The culture name to get the CurrencyPeriods for</param>
-        /// <returns>An array of CurrencyPeriods for a culture</returns>
-        public static CurrencyPeriod[] GetCurrencyPeriods(string cultureName)
-        {
-            CultureData culture = CultureData.GetCulture(cultureName);
-            if (culture != null && culture.Numbers != null && culture.Numbers.CurrencyPeriods != null)
-            {
-                return culture.Numbers.CurrencyPeriods;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a culture for a given datetime
-        /// </summary>
-        /// <param name="cultureName">The culture name to get the CurrencyPeriods for</param>
-        /// <param name="dateTime">The DateTime to get the CurrencyPeriods for</param>
-        /// <returns>An array of CurrencyPeriods for a culture for a given datetime</returns>
-        public static CurrencyPeriod[] GetCurrencyPeriods(string cultureName, DateTime dateTime)
-        {
-            CultureData culture = CultureData.GetCulture(cultureName);
-            if (culture != null && culture.Numbers != null && culture.Numbers.CurrencyPeriods != null)
-            {
-                return (from cp in culture.Numbers.CurrencyPeriods
-                        where (cp.From == null || cp.From < dateTime)
-                        && (cp.To == null || cp.To > dateTime)
-                        select cp).ToArray();
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// GetCasing gets the CLDR Casing for the culture
         /// </summary>
         /// <param name="cultureName">The culture name to get the CLDR Casing for</param>

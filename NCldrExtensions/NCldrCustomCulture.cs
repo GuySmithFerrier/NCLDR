@@ -116,7 +116,7 @@
 
             if (culture.Numbers != null && culture.Numbers.CurrencyDisplayNameSets != null)
             {
-                string currencyName = CultureExtensions.GetCurrency(cldrCultureName);
+                string currencyName = culture.Numbers.CurrentCurrencyPeriod.Id;
                 if (!string.IsNullOrEmpty(currencyName))
                 {
                     builder.ISOCurrencySymbol = currencyName;
@@ -278,7 +278,7 @@
                 return null;
             }
 
-            string currencyId = CultureExtensions.GetCurrency(culture.Name);
+            string currencyId = culture.Numbers.CurrentCurrencyPeriod.Id;
 
             NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
 

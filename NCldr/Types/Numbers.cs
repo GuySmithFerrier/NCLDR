@@ -74,6 +74,24 @@
         }
 
         /// <summary>
+        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a given datetime
+        /// </summary>
+        /// <param name="dateTime">The DateTime to get the CurrencyPeriods for</param>
+        /// <returns>An array of CurrencyPeriods for a given datetime</returns>
+        public CurrencyPeriod[] GetCurrencyPeriods(DateTime dateTime)
+        {
+            if (this.CurrencyPeriods != null)
+            {
+                return (from cp in this.CurrencyPeriods
+                        where (cp.From == null || cp.From < dateTime)
+                        && (cp.To == null || cp.To > dateTime)
+                        select cp).ToArray();
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Clone clones the object
         /// </summary>
         /// <returns>A cloned copy of the object</returns>
