@@ -1259,7 +1259,7 @@ namespace NCldrExplorer
 
         private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (NCldr.NCldr.NCldrData == null && tabControl.SelectedTab != tbpLoad)
+            if (!NCldr.NCldr.IsDataLoaded && tabControl.SelectedTab != tbpLoad)
             {
                 e.Cancel = true;
             }
