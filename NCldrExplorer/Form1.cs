@@ -175,6 +175,20 @@ namespace NCldrExplorer
             tbxLanguage.Text = culture.Identity.Language.Id;
             tbxLanguageEnglish.Text = culture.Identity.Language.EnglishName;
             tbxLanguageNative.Text = culture.Identity.Language.NativeName;
+
+            if (culture.Layout == null || culture.Layout.Orientation == null || !culture.Layout.Orientation.IsRightToLeft)
+            {
+                tbxLanguageNative.RightToLeft = RightToLeft.No;
+                tbxRegionNative.RightToLeft = RightToLeft.No;
+                tbxScriptNative.RightToLeft = RightToLeft.No;
+            }
+            else
+            {
+                tbxLanguageNative.RightToLeft = RightToLeft.Yes;
+                tbxRegionNative.RightToLeft = RightToLeft.Yes;
+                tbxScriptNative.RightToLeft = RightToLeft.Yes;
+            }
+
             if (culture.Identity.Region == null)
             {
                 tbxRegion.Text = String.Empty;
@@ -640,6 +654,8 @@ namespace NCldrExplorer
             tbxDotNetCultureEnglishDisplayName.Text = cultureInfo.EnglishName;
             tbxDotNetCultureNativeDisplayName.Text = cultureInfo.NativeName;
 
+            tbxDotNetCultureNativeDisplayName.RightToLeft = cultureInfo.TextInfo.IsRightToLeft ? RightToLeft.Yes : RightToLeft.No;
+
             StringBuilder builder = new StringBuilder();
             CultureInfo parentCultureInfo = cultureInfo.Parent;
             while (parentCultureInfo != CultureInfo.InvariantCulture)
@@ -664,6 +680,10 @@ namespace NCldrExplorer
             Culture culture = Culture.GetCulture(cultureName);
             tbxNCldrCultureEnglishDisplayName.Text = culture.EnglishName;
             tbxNCldrCultureNativeDisplayName.Text = culture.NativeName;
+
+            tbxNCldrCultureNativeDisplayName.RightToLeft =
+                culture.Layout == null || culture.Layout.Orientation == null || !culture.Layout.Orientation.IsRightToLeft
+                ? RightToLeft.No : RightToLeft.Yes;
 
             StringBuilder builder = new StringBuilder();
             string[] parentNames = culture.GetParentNames();
@@ -854,6 +874,10 @@ namespace NCldrExplorer
             Culture culture = Culture.GetCulture(cultureName);
             tbxCustomCultureEnglishDisplayName.Text = culture.EnglishName;
             tbxCustomCultureNativeDisplayName.Text = culture.NativeName;
+
+            tbxCustomCultureNativeDisplayName.RightToLeft =
+                culture.Layout == null || culture.Layout.Orientation == null || !culture.Layout.Orientation.IsRightToLeft
+                ? RightToLeft.No : RightToLeft.Yes;
         }
 
         private void btnCustomCulturesCheckAll_Click(object sender, EventArgs e)
