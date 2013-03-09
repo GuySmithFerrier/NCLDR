@@ -21,17 +21,19 @@
         public string Characters { get; set; }
 
         /// <summary>
-        /// IsRightToLeft returns true if the ordering of characters within a line is Right To Left
+        /// Gets or sets a value indicating whether the ordering of characters within a line is Right To Left
         /// </summary>
-        /// <returns>True if the ordering of characters within a line is Right To Left</returns>
-        public bool IsRightToLeft()
+        public bool IsRightToLeft
         {
-            if (String.IsNullOrEmpty(this.Characters))
+            get
             {
-                return false;
-            }
+                if (String.IsNullOrEmpty(this.Characters))
+                {
+                    return false;
+                }
 
-            return string.Compare(this.Characters, "right-to-left", true, CultureInfo.InvariantCulture) == 0;
+                return string.Compare(this.Characters, "right-to-left", true, CultureInfo.InvariantCulture) == 0;
+            }
         }
     }
 }
