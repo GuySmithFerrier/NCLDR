@@ -61,6 +61,16 @@
         }
 
         /// <summary>
+        /// GetLayout gets the CLDR Layout for the CultureInfo
+        /// </summary>
+        /// <param name="cultureInfo">The CultureInfo to get the CLDR Layout for</param>
+        /// <returns>The CLDR Layout for the CultureInfo</returns>
+        public static Layout GetLayout(this CultureInfo cultureInfo)
+        {
+            return CultureExtensions.GetLayout(GetNCldrCultureName(cultureInfo));
+        }
+
+        /// <summary>
         /// GetLikelySubTag gets the most likely child culture name from a parent CultureInfo
         /// </summary>
         /// <param name="cultureInfo">The CultureInfo to get the sub tag for</param>
