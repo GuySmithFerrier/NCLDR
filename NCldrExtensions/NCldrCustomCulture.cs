@@ -201,11 +201,11 @@
         {
             System.Globalization.Calendar dotNetCalendar = null;
 
-            if (string.Compare(calendar.Id, "gregorian", false, CultureInfo.InvariantCulture) == 0 && calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.SolarCalendar)
+            if (string.Compare(calendar.Id, "gregorian", StringComparison.InvariantCulture) == 0 && calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.SolarCalendar)
             {
                 dotNetCalendar = new GregorianCalendar();
             }
-            else if (string.Compare(calendar.Id, "japanese", false, CultureInfo.InvariantCulture) == 0)
+            else if (string.Compare(calendar.Id, "japanese", StringComparison.InvariantCulture) == 0)
             {
                 if (calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.SolarCalendar)
                 {
@@ -216,49 +216,49 @@
                     dotNetCalendar = new JapaneseLunisolarCalendar();
                 }
             }
-            else if (string.Compare(calendar.Id, "islamic-civil", false, CultureInfo.InvariantCulture) == 0 && 
+            else if (string.Compare(calendar.Id, "islamic-civil", StringComparison.InvariantCulture) == 0 && 
                 calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.LunisolarCalendar)
             {
                 dotNetCalendar = new HijriCalendar();
             }
-            else if (string.Compare(calendar.Id, "islamic", false, CultureInfo.InvariantCulture) == 0
+            else if (string.Compare(calendar.Id, "islamic", StringComparison.InvariantCulture) == 0
                 && calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.LunisolarCalendar)
             {
                 dotNetCalendar = new HijriCalendar();
             }
-            else if (string.Compare(calendar.Id, "chinese", false, CultureInfo.InvariantCulture) == 0 && 
+            else if (string.Compare(calendar.Id, "chinese", StringComparison.InvariantCulture) == 0 && 
                 calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.LunisolarCalendar)
             {
                 dotNetCalendar = new ChineseLunisolarCalendar();
             }
-            else if (string.Compare(calendar.Id, "hebrew", false, CultureInfo.InvariantCulture) == 0 && 
+            else if (string.Compare(calendar.Id, "hebrew", StringComparison.InvariantCulture) == 0 && 
                 calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.LunisolarCalendar)
             {
                 dotNetCalendar = new HebrewCalendar();
             }
-            else if (string.Compare(calendar.Id, "buddhist", false, CultureInfo.InvariantCulture) == 0 && 
+            else if (string.Compare(calendar.Id, "buddhist", StringComparison.InvariantCulture) == 0 && 
                 calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.SolarCalendar)
             {
                 dotNetCalendar = new ThaiBuddhistCalendar();
             }
-            else if (string.Compare(calendar.Id, "coptic", false, CultureInfo.InvariantCulture) == 0)
+            else if (string.Compare(calendar.Id, "coptic", StringComparison.InvariantCulture) == 0)
             {
                 return null;
             }
-            else if (string.Compare(calendar.Id, "persian", false, CultureInfo.InvariantCulture) == 0 && 
+            else if (string.Compare(calendar.Id, "persian", StringComparison.InvariantCulture) == 0 && 
                 calendar.CalendarType.CalendarAlgorithmType == CalendarAlgorithmType.SolarCalendar)
             {
                 return new PersianCalendar();
             }
-            else if (string.Compare(calendar.Id, "ethiopic", false, CultureInfo.InvariantCulture) == 0)
+            else if (string.Compare(calendar.Id, "ethiopic", StringComparison.InvariantCulture) == 0)
             {
                 return null;
             }
-            else if (string.Compare(calendar.Id, "indian", false, CultureInfo.InvariantCulture) == 0)
+            else if (string.Compare(calendar.Id, "indian", StringComparison.InvariantCulture) == 0)
             {
                 return null;
             }
-            else if (string.Compare(calendar.Id, "roc", false, CultureInfo.InvariantCulture) == 0)
+            else if (string.Compare(calendar.Id, "roc", StringComparison.InvariantCulture) == 0)
             {
                 return null;
             }
@@ -359,7 +359,7 @@
                 if (currentCurrencyPeriod != null)
                 {
                     CurrencyDisplayNameSet currencyDisplayNameSet = (from cdns in culture.Numbers.CurrencyDisplayNameSets
-                                                                     where string.Compare(cdns.Id, currentCurrencyPeriod.Id, false, CultureInfo.InvariantCulture) == 0
+                                                                     where string.Compare(cdns.Id, currentCurrencyPeriod.Id, StringComparison.InvariantCulture) == 0
                                                                      select cdns).FirstOrDefault();
                     if (currencyDisplayNameSet != null && !string.IsNullOrEmpty(currencyDisplayNameSet.Symbol))
                     {
@@ -416,7 +416,7 @@
             if (culture.Dates != null && culture.Dates.Calendars != null)
             {
                 Types.Calendar gregorianCalendar = (from c in culture.Dates.Calendars
-                                                    where string.Compare(c.Id, "gregorian", false, CultureInfo.InvariantCulture) == 0
+                                                    where string.Compare(c.Id, "gregorian", StringComparison.InvariantCulture) == 0
                                                     select c).FirstOrDefault();
                 if (gregorianCalendar != null)
                 {

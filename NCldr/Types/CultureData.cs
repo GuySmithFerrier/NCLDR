@@ -91,7 +91,7 @@
         public static CultureData GetCulture(string cultureName)
         {
             return (from c in NCldr.CultureDatas
-                    where string.Compare(c.Identity.CultureName, cultureName, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(c.Identity.CultureName, cultureName, StringComparison.InvariantCulture) == 0
                     select c).FirstOrDefault();
         }
     }

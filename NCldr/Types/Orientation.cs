@@ -32,7 +32,7 @@
                     return false;
                 }
 
-                return string.Compare(this.Characters, "right-to-left", true, CultureInfo.InvariantCulture) == 0;
+                return string.Compare(this.Characters, "right-to-left", StringComparison.InvariantCultureIgnoreCase) == 0;
             }
         }
     }

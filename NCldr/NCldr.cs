@@ -393,7 +393,7 @@
             }
 
             CurrencyFraction currencyFraction = (from cf in NCldr.CurrencyFractions
-                                                 where string.Compare(cf.Id, currencyId, false, CultureInfo.InvariantCulture) == 0
+                                                 where string.Compare(cf.Id, currencyId, StringComparison.InvariantCulture) == 0
                                                  select cf).FirstOrDefault();
             if (currencyFraction != null)
             {
@@ -402,7 +402,7 @@
 
             // return the default
             return (from cf in NCldr.CurrencyFractions
-                    where string.Compare(cf.Id, "DEFAULT", false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(cf.Id, "DEFAULT", StringComparison.InvariantCulture) == 0
                     select cf).FirstOrDefault();
         }
 

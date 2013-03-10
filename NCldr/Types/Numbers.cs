@@ -31,7 +31,7 @@
                 }
 
                 return (from ns in this.NumberingSystems
-                        where string.Compare(ns.Id, this.DefaultNumberingSystemId, false, CultureInfo.InvariantCulture) == 0
+                        where string.Compare(ns.Id, this.DefaultNumberingSystemId, StringComparison.InvariantCulture) == 0
                         select ns).FirstOrDefault();
             }
         }

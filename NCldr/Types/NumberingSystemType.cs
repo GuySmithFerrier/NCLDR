@@ -75,7 +75,7 @@
         {
             get
             {
-                if (this.Digits == null || string.Compare(this.Digits, "0123456789", false, CultureInfo.InvariantCulture) == 0)
+                if (this.Digits == null || string.Compare(this.Digits, "0123456789", StringComparison.InvariantCulture) == 0)
                 {
                     return DigitShapes.None;
                 }

@@ -28,7 +28,7 @@
         {
             get
             {
-                return string.Compare(this.MeasurementSystemId, "metric", false, CultureInfo.InvariantCulture) == 0;
+                return string.Compare(this.MeasurementSystemId, "metric", StringComparison.InvariantCulture) == 0;
             }
         }
     }

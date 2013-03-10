@@ -543,7 +543,7 @@
                 foreach (Calendar parentCalendar in parentDates.Calendars)
                 {
                     Calendar combinedCalendar = (from c in combinedCalendars
-                                                 where string.Compare(c.Id, parentCalendar.Id, false, CultureInfo.InvariantCulture) == 0
+                                                 where string.Compare(c.Id, parentCalendar.Id, StringComparison.InvariantCulture) == 0
                                                  select c).FirstOrDefault();
                     if (combinedCalendar == null)
                     {
@@ -619,7 +619,7 @@
             foreach (MonthNameSet parentMonthNameSet in parentMonthNameSets)
             {
                 MonthNameSet combinedMonthNameSet = (from cmns in combinedMonthNameSetList
-                                                     where string.Compare(cmns.Id, parentMonthNameSet.Id, false, CultureInfo.InvariantCulture) == 0
+                                                     where string.Compare(cmns.Id, parentMonthNameSet.Id, StringComparison.InvariantCulture) == 0
                                                      select cmns).FirstOrDefault();
                 if (combinedMonthNameSet == null)
                 {
@@ -633,7 +633,7 @@
                     foreach (MonthName parentMonthName in parentMonthNameSet.Names)
                     {
                         if (!(from cmn in combinedMonthNames
-                            where string.Compare(cmn.Id, parentMonthName.Id, false, CultureInfo.InvariantCulture) == 0
+                            where string.Compare(cmn.Id, parentMonthName.Id, StringComparison.InvariantCulture) == 0
                             select cmn).Any())
                         {
                             // the parent month name does not exist in the combined month names
@@ -884,7 +884,7 @@
             foreach (ListPattern parentListPattern in parentListPatterns)
             {
                 if (!(from ups in combinedListPatterns
-                      where string.Compare(ups.Id, parentListPattern.Id, false, CultureInfo.InvariantCulture) == 0
+                      where string.Compare(ups.Id, parentListPattern.Id, StringComparison.InvariantCulture) == 0
                       select ups).Any())
                 {
                     // this unit pattern set does not exist in the combined list
@@ -1049,19 +1049,19 @@
                 this.CombineArrays<NumberingSystem>(
                 combinedNumbers.NumberingSystems, 
                 parentNumbers.NumberingSystems,
-                (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             combinedNumbers.CurrencyDisplayNameSets =
                 this.CombineArrays<CurrencyDisplayNameSet>(
                 combinedNumbers.CurrencyDisplayNameSets,
                 parentNumbers.CurrencyDisplayNameSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             combinedNumbers.CurrencyPeriods =
                 this.CombineArrays<CurrencyPeriod>(
                 combinedNumbers.CurrencyPeriods,
                 parentNumbers.CurrencyPeriods,
-                (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             return combinedNumbers;
         }
@@ -1205,13 +1205,13 @@
                 this.CombineArrays<RuleBasedNumberFormattingRuleSet>(
                 combinedRuleBasedNumberFormatting.OrdinalRuleSets,
                 parentRuleBasedNumberFormatting.OrdinalRuleSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             combinedRuleBasedNumberFormatting.SpelloutRuleSets =
                 this.CombineArrays<RuleBasedNumberFormattingRuleSet>(
                 combinedRuleBasedNumberFormatting.SpelloutRuleSets,
                 parentRuleBasedNumberFormatting.SpelloutRuleSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             return combinedRuleBasedNumberFormatting;
         }
@@ -1355,7 +1355,7 @@
             foreach (UnitPatternSet parentUnitPatternSet in parentUnitPatternSets)
             {
                 if (!(from ups in combinedUnitPatternSets
-                      where string.Compare(ups.Id, parentUnitPatternSet.Id, false, CultureInfo.InvariantCulture) == 0
+                      where string.Compare(ups.Id, parentUnitPatternSet.Id, StringComparison.InvariantCulture) == 0
                       select ups).Any())
                 {
                     // this unit pattern set does not exist in the combined list
@@ -1500,7 +1500,7 @@
                             foreach (var parentDisplayName in parentDisplayNamesNoParents)
                             {
                                 if (!(from dn in displayNames
-                                      where string.Compare(dn.Id, parentDisplayName.Id, false, CultureInfo.InvariantCulture) == 0
+                                      where string.Compare(dn.Id, parentDisplayName.Id, StringComparison.InvariantCulture) == 0
                                       select dn).Any())
                                 {
                                     // the parent's display name does not exist in the current list so add it
@@ -1587,7 +1587,7 @@
         /// <returns>The name of the parent culture</returns>
         public static string GetParentName(string cultureName)
         {
-            if (string.Compare(cultureName, "root", false, CultureInfo.InvariantCulture) == 0)
+            if (string.Compare(cultureName, "root", StringComparison.InvariantCulture) == 0)
             {
                 return null;
             }
@@ -1622,7 +1622,7 @@
         public static Culture GetCulture(string cultureName)
         {
             return (from c in NCldr.Cultures
-                    where string.Compare(c.Identity.CultureName, cultureName, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(c.Identity.CultureName, cultureName, StringComparison.InvariantCulture) == 0
                     select c).FirstOrDefault();
         }
     }

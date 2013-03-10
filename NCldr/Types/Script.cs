@@ -50,7 +50,7 @@
             if (culture != null)
             {
                 return (from ldn in culture.ScriptDisplayNames
-                        where string.Compare(ldn.Id, languageId, false, CultureInfo.InvariantCulture) == 0
+                        where string.Compare(ldn.Id, languageId, StringComparison.InvariantCulture) == 0
                         select ldn.Name).FirstOrDefault();
             }
 

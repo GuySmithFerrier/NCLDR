@@ -624,7 +624,7 @@
                 }
 
                 return (from nst in NCldr.NumberingSystems
-                        where string.Compare(nst.Id, this.Id, false, CultureInfo.InvariantCulture) == 0
+                        where string.Compare(nst.Id, this.Id, StringComparison.InvariantCulture) == 0
                         select nst).FirstOrDefault();
             }
         }

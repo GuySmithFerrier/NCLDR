@@ -39,7 +39,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "yesstr", true, CultureInfo.InvariantCulture) == 0
+                                   where String.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -71,7 +71,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "yesstr", true, CultureInfo.InvariantCulture) == 0
+                                   where String.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -109,7 +109,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "nostr", true, CultureInfo.InvariantCulture) == 0
+                                   where String.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -141,7 +141,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "nostr", true, CultureInfo.InvariantCulture) == 0
+                                   where String.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)

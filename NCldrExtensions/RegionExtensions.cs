@@ -23,7 +23,7 @@
             }
 
             return (from pcr in NCldr.PostcodeRegexes
-                    where string.Compare(pcr.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(pcr.RegionId, regionId, StringComparison.InvariantCulture) == 0
                     select pcr.Regex).FirstOrDefault();
         }
 
@@ -40,7 +40,7 @@
             }
 
             return (from rtc in NCldr.RegionTelephoneCodes
-                    where string.Compare(rtc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(rtc.RegionId, regionId, StringComparison.InvariantCulture) == 0
                     select rtc.TelephoneCodes).FirstOrDefault();
         }
 
@@ -60,7 +60,7 @@
             }
 
             string[] telephoneCodes = (from rtc in NCldr.RegionTelephoneCodes
-                                       where string.Compare(rtc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
+                                       where string.Compare(rtc.RegionId, regionId, StringComparison.InvariantCulture) == 0
                                        select rtc.TelephoneCodes).FirstOrDefault();
             if (telephoneCodes == null || telephoneCodes.GetLength(0) == 0)
             {
@@ -83,7 +83,7 @@
             }
 
             return (from rc in NCldr.RegionCodes
-                    where string.Compare(rc.RegionId, regionId, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(rc.RegionId, regionId, StringComparison.InvariantCulture) == 0
                     select rc).FirstOrDefault();
         }
 
@@ -100,7 +100,7 @@
             }
 
             return (from ri in NCldr.RegionInformations
-                    where string.Compare(ri.Id, regionId, false, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(ri.Id, regionId, StringComparison.InvariantCulture) == 0
                     select ri).FirstOrDefault();
         }
 

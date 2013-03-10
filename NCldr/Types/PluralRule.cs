@@ -85,7 +85,7 @@
             Regex nisRegex = new Regex(@"[\w]*(n|\d+) is \d+[\w]*");
             booleanRule = nisRegex.Replace(booleanRule, this.NisEvaluator);
 
-            return string.Compare(booleanRule, TrueString, false, CultureInfo.InvariantCulture) == 0;
+            return string.Compare(booleanRule, TrueString, StringComparison.InvariantCulture) == 0;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@
 
             string matchLeftHandSide = match.Value.Substring(0, isIndex);
             int matchLeftHandSideInteger;
-            if (string.Compare(matchLeftHandSide, "n", false, CultureInfo.InvariantCulture) == 0)
+            if (string.Compare(matchLeftHandSide, "n", StringComparison.InvariantCulture) == 0)
             {
                 matchLeftHandSideInteger = this.value;
             }

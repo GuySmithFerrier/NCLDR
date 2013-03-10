@@ -62,11 +62,11 @@ namespace NCldrBuilderCmd
             {
                 return DisplayMode.None;
             }
-            else if (String.Compare(displayMode, "Verbose", true, CultureInfo.InvariantCulture) == 0)
+            else if (String.Compare(displayMode, "Verbose", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
                 return DisplayMode.Verbose;
             }
-            else if (String.Compare(displayMode, "Diagnostics", true, CultureInfo.InvariantCulture) == 0)
+            else if (String.Compare(displayMode, "Diagnostics", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
                 return DisplayMode.Diagnostics;
             }

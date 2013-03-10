@@ -44,7 +44,7 @@
                 }
 
                 return (from c in NCldr.Currencies
-                        where string.Compare(c.Id, this.Id, false, CultureInfo.InvariantCulture) == 0
+                        where string.Compare(c.Id, this.Id, StringComparison.InvariantCulture) == 0
                         select c).FirstOrDefault();
             }
         }

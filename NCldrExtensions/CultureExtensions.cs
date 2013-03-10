@@ -26,7 +26,7 @@
 
             CurrencyDisplayNameSet currencyDisplayNameSet =
                 (from cdns in culture.Numbers.CurrencyDisplayNameSets
-                 where string.Compare(cdns.Id, currencyName, false, CultureInfo.InvariantCulture) == 0
+                 where string.Compare(cdns.Id, currencyName, StringComparison.InvariantCulture) == 0
                  select cdns).FirstOrDefault();
 
             if (currencyDisplayNameSet != null)
@@ -95,7 +95,7 @@
 
             // default to the "root"
             return (from dprs in NCldr.DayPeriodRuleSets
-                    where dprs.CultureNames.GetLength(0) == 1 && string.Compare(dprs.CultureNames[0], "root", false, CultureInfo.InvariantCulture) == 0
+                    where dprs.CultureNames.GetLength(0) == 1 && string.Compare(dprs.CultureNames[0], "root", StringComparison.InvariantCulture) == 0
                     select dprs.DayPeriodRules).FirstOrDefault();
         }
 
@@ -163,7 +163,7 @@
             }
 
             return (from lst in NCldr.LikelySubTags
-                    where string.Compare(lst.FromCultureId, cultureName, true, CultureInfo.InvariantCulture) == 0
+                    where string.Compare(lst.FromCultureId, cultureName, StringComparison.InvariantCultureIgnoreCase) == 0
                     select lst.ToCultureId).FirstOrDefault();
         }
 
