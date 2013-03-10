@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NCldr;
 using NCldr.Extensions;
@@ -265,21 +261,16 @@ namespace NCldrExplorer
                 tbxNumbersDefaultNumberingSystemId.Text = numbers.DefaultNumberingSystemId;
 
                 List<NumberingSystemId> numberingSystemIds = new List<NumberingSystemId>();
-                IDictionaryEnumerator enumerator = numbers.NumberingSystemIds.GetEnumerator();
-                while (enumerator.MoveNext())
+                foreach (OtherNumberingSystem otherNumberingSystem in numbers.OtherNumberingSystems)
                 {
-                    DictionaryEntry entry = (DictionaryEntry)enumerator.Current;
-                    string id = entry.Key.ToString();
-                    string value = entry.Value.ToString();
-
                     NumberingSystem numberingSystem = (from ns in numbers.NumberingSystems
-                                                       where ns.Id == value
+                                                       where ns.Id == otherNumberingSystem.Value
                                                        select ns).FirstOrDefault();
 
                     numberingSystemIds.Add(new NumberingSystemId()
                     {
-                        Id = id,
-                        Value = value,
+                        Id = otherNumberingSystem.Id,
+                        Value = otherNumberingSystem.Value,
                         NumberingSystem = numberingSystem
                     });
                 }

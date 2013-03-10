@@ -286,12 +286,14 @@ namespace NCldr.Builder
                 {
                     List<NumberingSystem> numberingSystems = new List<NumberingSystem>();
 
-                    numbers.NumberingSystemIds = new Hashtable();
+                    numbers.OtherNumberingSystems = new List<OtherNumberingSystem>();
                     foreach (XElement otherNumberingSystemElement in otherNumberingSystemElements)
                     {
-                        numbers.NumberingSystemIds.Add(
-                            otherNumberingSystemElement.Name.ToString(),
-                            otherNumberingSystemElement.Value.ToString());
+                        numbers.OtherNumberingSystems.Add(new OtherNumberingSystem()
+                        {
+                            Id = otherNumberingSystemElement.Name.ToString(),
+                            Value = otherNumberingSystemElement.Value.ToString()
+                        });
 
                         numberingSystems.Add(new NumberingSystem() { Id = otherNumberingSystemElement.Value.ToString() });
                     }

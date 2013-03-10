@@ -33,9 +33,6 @@
             try
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-
-                // Deserialize the hashtable from the file and  
-                // assign the reference to the local variable.
                 ncldrData = (NCldrData)formatter.Deserialize(fileStream);
             }
             catch (SerializationException exception)

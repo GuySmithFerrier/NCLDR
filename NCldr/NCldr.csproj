@@ -60,6 +60,7 @@
     <Compile Include="Types\ListPattern.cs" />
     <Compile Include="Types\Message.cs" />
     <Compile Include="Types\MetaTimeZone.cs" />
+    <Compile Include="Types\OtherNumberingSystem.cs" />
     <Compile Include="Types\ParentCulture.cs" />
     <Compile Include="Types\Reference.cs" />
     <Compile Include="Types\RegionCode.cs" />

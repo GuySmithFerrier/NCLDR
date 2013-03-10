@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
 
@@ -36,9 +37,9 @@
         }
 
         /// <summary>
-        /// Gets or sets a list of numbering system Ids
+        /// Gets or sets a list of numbering systems that are not the default numbering system
         /// </summary>
-        public Hashtable NumberingSystemIds { get; set; }
+        public List<OtherNumberingSystem> OtherNumberingSystems { get; set; }
 
         /// <summary>
         /// Gets or sets a list of numbering systems

@@ -1043,7 +1043,7 @@
                 combinedNumbers.DefaultNumberingSystemId = parentNumbers.DefaultNumberingSystemId;
             }
 
-            combinedNumbers.NumberingSystemIds = this.CombineHashtables(combinedNumbers.NumberingSystemIds, parentNumbers.NumberingSystemIds);
+            combinedNumbers.OtherNumberingSystems = this.CombineOtherNumberingSystems(combinedNumbers.OtherNumberingSystems, parentNumbers.OtherNumberingSystems);
 
             combinedNumbers.NumberingSystems = 
                 this.CombineArrays<NumberingSystem>(
@@ -1064,6 +1064,39 @@
                 (item, parent) => string.Compare(item.Id, parent.Id, false, CultureInfo.InvariantCulture) == 0);
 
             return combinedNumbers;
+        }
+
+        /// <summary>
+        /// CombineOtherNumberingSystem combines a list of child objects with a list of parent objects as necessary and
+        /// returns the combined list of objects
+        /// </summary>
+        /// <param name="combinedOtherNumberingSystems">The List of child objects</param>
+        /// <param name="parentOtherNumberingSystems">The List of parent objects</param>
+        /// <returns>The combined list of objects</returns>
+        private List<OtherNumberingSystem> CombineOtherNumberingSystems(List<OtherNumberingSystem> combinedOtherNumberingSystems, List<OtherNumberingSystem> parentOtherNumberingSystems)
+        {
+            if (combinedOtherNumberingSystems == null && parentOtherNumberingSystems == null)
+            {
+                return null;
+            }
+            else if (combinedOtherNumberingSystems == null)
+            {
+                return new List<OtherNumberingSystem>(parentOtherNumberingSystems);
+            }
+            else if (parentOtherNumberingSystems == null)
+            {
+                return combinedOtherNumberingSystems;
+            }
+
+            foreach (OtherNumberingSystem parentOtherNumberingSystem in parentOtherNumberingSystems)
+            {
+                if (!combinedOtherNumberingSystems.Where(ons => ons.Id == parentOtherNumberingSystem.Id).Any())
+                {
+                    combinedOtherNumberingSystems.Add(parentOtherNumberingSystem);
+                }
+            }
+
+            return combinedOtherNumberingSystems;
         }
 
         /// <summary>
@@ -1103,40 +1136,6 @@
             }
 
             return combinedList.ToArray();
-        }
-
-        /// <summary>
-        /// CombineHashtables combines a child Hashtable with a parent Hashtable as necessary and returns the combined Hashtable
-        /// </summary>
-        /// <param name="combinedHashtable">The child Hashtable</param>
-        /// <param name="parentHashtable">The parent Hashtable</param>
-        /// <returns>The combined Hashtable</returns>
-        private Hashtable CombineHashtables(Hashtable combinedHashtable, Hashtable parentHashtable)
-        {
-            if (combinedHashtable == null && parentHashtable == null)
-            {
-                return null;
-            }
-            else if (combinedHashtable == null)
-            {
-                return (Hashtable)parentHashtable.Clone();
-            }
-            else if (parentHashtable == null)
-            {
-                return combinedHashtable;
-            }
-
-            IDictionaryEnumerator enumerator = parentHashtable.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                DictionaryEntry entry = (DictionaryEntry)enumerator.Current;
-                if (!combinedHashtable.ContainsKey(entry.Key.ToString()))
-                {
-                    combinedHashtable.Add(entry.Key.ToString(), entry.Value.ToString());
-                }
-            }
-
-            return combinedHashtable;
         }
 
         /// <summary>
