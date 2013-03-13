@@ -1,0 +1,16 @@
+CultureViewer/bin
+CultureViewer/obj
+NCldr/bin
+NCldr/obj
+NCldrBuilder/bin
+NCldrBuilder/obj
+NCldrBuilderCmd/bin
+NCldrBuilderCmd/obj
+NCldrBuilderGui/bin
+NCldrBuilderGui/obj
+NCldrExplorer/bin
+NCldrExplorer/obj
+NCldrExtensions/bin
+NCldrExtensions/obj
+UnregisterCustomCultures/bin
+UnregisterCustomCultures/obj
