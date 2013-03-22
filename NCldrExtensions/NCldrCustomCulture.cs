@@ -114,7 +114,9 @@
 
             builder.NumberFormat = CreateNumberFormatInfo(culture);
 
-            if (culture.Numbers != null && culture.Numbers.CurrencyDisplayNameSets != null)
+            if (culture.Numbers != null && 
+                culture.Numbers.CurrencyDisplayNameSets != null && 
+                culture.Numbers.CurrentCurrencyPeriod != null)
             {
                 string currencyName = culture.Numbers.CurrentCurrencyPeriod.Id;
                 if (!string.IsNullOrEmpty(currencyName))
@@ -278,15 +280,18 @@
                 return null;
             }
 
-            string currencyId = culture.Numbers.CurrentCurrencyPeriod.Id;
-
             NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
 
-            CurrencyFraction currencyFraction = NCldr.GetCurrencyFraction(currencyId);
-
-            if (currencyFraction != null)
+            if (culture.Numbers.CurrentCurrencyPeriod != null)
             {
-                numberFormatInfo.CurrencyDecimalDigits = currencyFraction.Digits;
+                string currencyId = culture.Numbers.CurrentCurrencyPeriod.Id;
+
+                CurrencyFraction currencyFraction = NCldr.GetCurrencyFraction(currencyId);
+
+                if (currencyFraction != null)
+                {
+                    numberFormatInfo.CurrencyDecimalDigits = currencyFraction.Digits;
+                }
             }
 
             if (culture.Numbers.DefaultNumberingSystem != null && culture.Numbers.DefaultNumberingSystem.Symbols != null)
