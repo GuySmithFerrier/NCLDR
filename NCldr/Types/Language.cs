@@ -64,7 +64,7 @@
         private static string GetDisplayName(string cultureName, string languageId)
         {
             Culture culture = Culture.GetCulture(cultureName);
-            if (culture != null)
+            if (culture != null && culture.LanguageDisplayNames != null)
             {
                 return (from ldn in culture.LanguageDisplayNames
                         where string.Compare(ldn.Id, languageId, StringComparison.InvariantCulture) == 0
