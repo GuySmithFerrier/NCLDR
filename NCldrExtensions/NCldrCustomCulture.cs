@@ -40,9 +40,20 @@
 
             builder.Parent = parentCultureInfo;
 
-            builder.CultureEnglishName = culture.EnglishName;
+            if (string.IsNullOrEmpty(culture.EnglishName))
+            {
+                builder.CultureEnglishName = culture.Identity.CultureName;
+            }
+            else
+            {
+                builder.CultureEnglishName = culture.EnglishName;
+            }
 
-            if (string.IsNullOrEmpty(culture.NativeName))
+            if (string.IsNullOrEmpty(culture.NativeName) && string.IsNullOrEmpty(culture.EnglishName))
+            {
+                builder.CultureNativeName = culture.Identity.CultureName;
+            }
+            else if (string.IsNullOrEmpty(culture.NativeName))
             {
                 builder.CultureNativeName = culture.EnglishName;
             }
