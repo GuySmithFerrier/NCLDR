@@ -76,6 +76,7 @@
             this.rbIncludeOnly = new System.Windows.Forms.RadioButton();
             this.rbExclude = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxIncludeLayouts = new System.Windows.Forms.CheckBox();
             this.cbxIncludeUnitPatternSets = new System.Windows.Forms.CheckBox();
             this.cbxIncludeListPatterns = new System.Windows.Forms.CheckBox();
             this.cbxIncludeDelimiters = new System.Windows.Forms.CheckBox();
@@ -93,7 +94,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbxIncludeLayouts = new System.Windows.Forms.CheckBox();
+            this.btnSelectInputPath = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnSelectOutputPath = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -157,6 +160,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnSelectOutputPath);
+            this.panel3.Controls.Add(this.btnSelectInputPath);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.tbxNCldrPath);
             this.panel3.Controls.Add(this.tbxCldrPath);
@@ -732,6 +737,19 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
+            // cbxIncludeLayouts
+            // 
+            this.cbxIncludeLayouts.AutoSize = true;
+            this.cbxIncludeLayouts.Checked = true;
+            this.cbxIncludeLayouts.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeLayouts.Location = new System.Drawing.Point(6, 188);
+            this.cbxIncludeLayouts.Name = "cbxIncludeLayouts";
+            this.cbxIncludeLayouts.Size = new System.Drawing.Size(106, 17);
+            this.cbxIncludeLayouts.TabIndex = 13;
+            this.cbxIncludeLayouts.Text = "Include layouts ?";
+            this.cbxIncludeLayouts.UseVisualStyleBackColor = true;
+            this.cbxIncludeLayouts.CheckedChanged += new System.EventHandler(this.cbxIncludeLayouts_CheckedChanged);
+            // 
             // cbxIncludeUnitPatternSets
             // 
             this.cbxIncludeUnitPatternSets.AutoSize = true;
@@ -937,18 +955,25 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cbxIncludeLayouts
+            // btnSelectInputPath
             // 
-            this.cbxIncludeLayouts.AutoSize = true;
-            this.cbxIncludeLayouts.Checked = true;
-            this.cbxIncludeLayouts.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeLayouts.Location = new System.Drawing.Point(6, 188);
-            this.cbxIncludeLayouts.Name = "cbxIncludeLayouts";
-            this.cbxIncludeLayouts.Size = new System.Drawing.Size(106, 17);
-            this.cbxIncludeLayouts.TabIndex = 13;
-            this.cbxIncludeLayouts.Text = "Include layouts ?";
-            this.cbxIncludeLayouts.UseVisualStyleBackColor = true;
-            this.cbxIncludeLayouts.CheckedChanged += new System.EventHandler(this.cbxIncludeLayouts_CheckedChanged);
+            this.btnSelectInputPath.Location = new System.Drawing.Point(356, 33);
+            this.btnSelectInputPath.Name = "btnSelectInputPath";
+            this.btnSelectInputPath.Size = new System.Drawing.Size(26, 23);
+            this.btnSelectInputPath.TabIndex = 5;
+            this.btnSelectInputPath.Text = "...";
+            this.btnSelectInputPath.UseVisualStyleBackColor = true;
+            this.btnSelectInputPath.Click += new System.EventHandler(this.btnSelectInputPath_Click);
+            // 
+            // btnSelectOutputPath
+            // 
+            this.btnSelectOutputPath.Location = new System.Drawing.Point(356, 72);
+            this.btnSelectOutputPath.Name = "btnSelectOutputPath";
+            this.btnSelectOutputPath.Size = new System.Drawing.Size(26, 23);
+            this.btnSelectOutputPath.TabIndex = 6;
+            this.btnSelectOutputPath.Text = "...";
+            this.btnSelectOutputPath.UseVisualStyleBackColor = true;
+            this.btnSelectOutputPath.Click += new System.EventHandler(this.btnSelectOutputPath_Click);
             // 
             // Form1
             // 
@@ -1051,6 +1076,9 @@
         private System.Windows.Forms.CheckBox cbxIncludeCharacters;
         private System.Windows.Forms.CheckBox cbxIncludeCalendarPreferences;
         private System.Windows.Forms.CheckBox cbxIncludeLayouts;
+        private System.Windows.Forms.Button btnSelectInputPath;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.Button btnSelectOutputPath;
     }
 }
 

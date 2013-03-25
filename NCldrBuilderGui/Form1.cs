@@ -507,5 +507,23 @@ namespace NCldrBuilderGui
             clbCultures.CheckedItems.CopyTo(selectedCultures, 0);
             return selectedCultures;
         }
+
+        private void btnSelectInputPath_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = tbxCldrPath.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                tbxCldrPath.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
+
+        private void btnSelectOutputPath_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog.SelectedPath = tbxNCldrPath.Text;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                tbxNCldrPath.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
     }
 }
