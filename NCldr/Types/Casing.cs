@@ -153,5 +153,144 @@
         {
             return this.MemberwiseClone();
         }
+
+        /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedCasing">The child object</param>
+        /// <param name="parentCasing">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static Casing Combine(Casing combinedCasing, Casing parentCasing)
+        {
+            if (combinedCasing == null && parentCasing == null)
+            {
+                return null;
+            }
+            else if (combinedCasing == null)
+            {
+                return (Casing)parentCasing.Clone();
+            }
+            else if (parentCasing == null)
+            {
+                return combinedCasing;
+            }
+
+            if (combinedCasing.CalendarField == CasingType.None)
+            {
+                combinedCasing.CalendarField = parentCasing.CalendarField;
+            }
+
+            if (combinedCasing.DayFormatExceptNarrow == CasingType.None)
+            {
+                combinedCasing.DayFormatExceptNarrow = parentCasing.DayFormatExceptNarrow;
+            }
+
+            if (combinedCasing.DayNarrow == CasingType.None)
+            {
+                combinedCasing.DayNarrow = parentCasing.DayNarrow;
+            }
+
+            if (combinedCasing.DayStandAloneExceptNarrow == CasingType.None)
+            {
+                combinedCasing.DayStandAloneExceptNarrow = parentCasing.DayStandAloneExceptNarrow;
+            }
+
+            if (combinedCasing.DisplayName == CasingType.None)
+            {
+                combinedCasing.DisplayName = parentCasing.DisplayName;
+            }
+
+            if (combinedCasing.DisplayNameCount == CasingType.None)
+            {
+                combinedCasing.DisplayNameCount = parentCasing.DisplayNameCount;
+            }
+
+            if (combinedCasing.EraAbbr == CasingType.None)
+            {
+                combinedCasing.EraAbbr = parentCasing.EraAbbr;
+            }
+
+            if (combinedCasing.EraName == CasingType.None)
+            {
+                combinedCasing.EraName = parentCasing.EraName;
+            }
+
+            if (combinedCasing.EraNarrow == CasingType.None)
+            {
+                combinedCasing.EraNarrow = parentCasing.EraNarrow;
+            }
+
+            if (combinedCasing.Key == CasingType.None)
+            {
+                combinedCasing.Key = parentCasing.Key;
+            }
+
+            if (combinedCasing.Language == CasingType.None)
+            {
+                combinedCasing.Language = parentCasing.Language;
+            }
+
+            if (combinedCasing.MetaZoneLong == CasingType.None)
+            {
+                combinedCasing.MetaZoneLong = parentCasing.MetaZoneLong;
+            }
+
+            if (combinedCasing.MetaZoneShort == CasingType.None)
+            {
+                combinedCasing.MetaZoneShort = parentCasing.MetaZoneShort;
+            }
+
+            if (combinedCasing.MonthFormatExceptNarrow == CasingType.None)
+            {
+                combinedCasing.MonthFormatExceptNarrow = parentCasing.MonthFormatExceptNarrow;
+            }
+
+            if (combinedCasing.MonthNarrow == CasingType.None)
+            {
+                combinedCasing.MonthNarrow = parentCasing.MonthNarrow;
+            }
+
+            if (combinedCasing.MonthStandAloneExceptNarrow == CasingType.None)
+            {
+                combinedCasing.MonthStandAloneExceptNarrow = parentCasing.MonthStandAloneExceptNarrow;
+            }
+
+            if (combinedCasing.QuarterAbbreviated == CasingType.None)
+            {
+                combinedCasing.QuarterAbbreviated = parentCasing.QuarterAbbreviated;
+            }
+
+            if (combinedCasing.Region == CasingType.None)
+            {
+                combinedCasing.Region = parentCasing.Region;
+            }
+
+            if (combinedCasing.Script == CasingType.None)
+            {
+                combinedCasing.Script = parentCasing.Script;
+            }
+
+            if (combinedCasing.Symbol == CasingType.None)
+            {
+                combinedCasing.Symbol = parentCasing.Symbol;
+            }
+
+            if (combinedCasing.Tense == CasingType.None)
+            {
+                combinedCasing.Tense = parentCasing.Tense;
+            }
+
+            if (combinedCasing.Type == CasingType.None)
+            {
+                combinedCasing.Type = parentCasing.Type;
+            }
+
+            if (combinedCasing.ZoneExemplarCity == CasingType.None)
+            {
+                combinedCasing.ZoneExemplarCity = parentCasing.ZoneExemplarCity;
+            }
+
+            return combinedCasing;
+        }
     }
 }

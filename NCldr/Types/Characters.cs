@@ -53,5 +53,66 @@
         {
             return this.MemberwiseClone();
         }
+
+        /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedCharacters">The child object</param>
+        /// <param name="parentCharacters">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static Characters Combine(Characters combinedCharacters, Characters parentCharacters)
+        {
+            if (combinedCharacters == null && parentCharacters == null)
+            {
+                return null;
+            }
+            else if (combinedCharacters == null)
+            {
+                return (Characters)parentCharacters.Clone();
+            }
+            else if (parentCharacters == null)
+            {
+                return combinedCharacters;
+            }
+
+            if (combinedCharacters.ExemplarCharacters == null || combinedCharacters.ExemplarCharacters.GetLength(0) == 0)
+            {
+                combinedCharacters.ExemplarCharacters = parentCharacters.ExemplarCharacters;
+            }
+
+            if (combinedCharacters.AuxiliaryExemplarCharacters == null
+                || combinedCharacters.AuxiliaryExemplarCharacters.GetLength(0) == 0)
+            {
+                combinedCharacters.AuxiliaryExemplarCharacters = parentCharacters.AuxiliaryExemplarCharacters;
+            }
+
+            if (combinedCharacters.PunctuationExemplarCharacters == null
+                || combinedCharacters.PunctuationExemplarCharacters.GetLength(0) == 0)
+            {
+                combinedCharacters.PunctuationExemplarCharacters = parentCharacters.PunctuationExemplarCharacters;
+            }
+
+            if (combinedCharacters.FinalEllipsis == null)
+            {
+                combinedCharacters.FinalEllipsis = parentCharacters.FinalEllipsis;
+            }
+
+            if (combinedCharacters.InitialEllipsis == null)
+            {
+                combinedCharacters.InitialEllipsis = parentCharacters.InitialEllipsis;
+            }
+
+            if (combinedCharacters.MedialEllipsis == null)
+            {
+                combinedCharacters.MedialEllipsis = parentCharacters.MedialEllipsis;
+            }
+
+            if (combinedCharacters.MoreInformation == null)
+            {
+                combinedCharacters.MoreInformation = parentCharacters.MoreInformation;
+            }
+
+            return combinedCharacters;
+        }
     }
 }

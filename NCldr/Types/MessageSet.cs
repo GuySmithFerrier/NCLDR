@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
     using System.Runtime.Serialization;
@@ -173,6 +174,44 @@
         public object Clone()
         {
             return this.MemberwiseClone();
+        }
+
+        /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedMessages">The child object</param>
+        /// <param name="parentMessages">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static MessageSet Combine(MessageSet combinedMessages, MessageSet parentMessages)
+        {
+            if (combinedMessages == null && parentMessages == null)
+            {
+                return null;
+            }
+            else if (combinedMessages == null)
+            {
+                return (MessageSet)parentMessages.Clone();
+            }
+            else if (parentMessages == null)
+            {
+                return combinedMessages;
+            }
+
+            List<Message> combinedMessagesList = new List<Message>(combinedMessages.Messages);
+
+            foreach (Message parentMessage in parentMessages.Messages)
+            {
+                if (!(from m in combinedMessages.Messages
+                      where m.Id == parentMessage.Id
+                      select m).Any())
+                {
+                    combinedMessagesList.Add(parentMessage);
+                }
+            }
+
+            combinedMessages.Messages = combinedMessagesList.ToArray();
+
+            return combinedMessages;
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿namespace NCldr.Types
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using Extensions;
 
     /// <summary>
     /// Culture is a representation of the data for a given language and optionally a script, region and variant
@@ -216,149 +216,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                casing = this.CombineCasing(casing, parentCulture.casingNoParents);
+                casing = Casing.Combine(casing, parentCulture.casingNoParents);
             }
 
             return casing;
-        }
-
-        /// <summary>
-        /// CombineCasing combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedCasing">The child object</param>
-        /// <param name="parentCasing">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Casing CombineCasing(Casing combinedCasing, Casing parentCasing)
-        {
-            if (combinedCasing == null && parentCasing == null)
-            {
-                return null;
-            }
-            else if (combinedCasing == null)
-            {
-                return (Casing)parentCasing.Clone();
-            }
-            else if (parentCasing == null)
-            {
-                return combinedCasing;
-            }
-
-            if (combinedCasing.CalendarField == CasingType.None)
-            {
-                combinedCasing.CalendarField = parentCasing.CalendarField;
-            }
-
-            if (combinedCasing.DayFormatExceptNarrow == CasingType.None)
-            {
-                combinedCasing.DayFormatExceptNarrow = parentCasing.DayFormatExceptNarrow;
-            }
-
-            if (combinedCasing.DayNarrow == CasingType.None)
-            {
-                combinedCasing.DayNarrow = parentCasing.DayNarrow;
-            }
-
-            if (combinedCasing.DayStandAloneExceptNarrow == CasingType.None)
-            {
-                combinedCasing.DayStandAloneExceptNarrow = parentCasing.DayStandAloneExceptNarrow;
-            }
-
-            if (combinedCasing.DisplayName == CasingType.None)
-            {
-                combinedCasing.DisplayName = parentCasing.DisplayName;
-            }
-
-            if (combinedCasing.DisplayNameCount == CasingType.None)
-            {
-                combinedCasing.DisplayNameCount = parentCasing.DisplayNameCount;
-            }
-
-            if (combinedCasing.EraAbbr == CasingType.None)
-            {
-                combinedCasing.EraAbbr = parentCasing.EraAbbr;
-            }
-
-            if (combinedCasing.EraName == CasingType.None)
-            {
-                combinedCasing.EraName = parentCasing.EraName;
-            }
-
-            if (combinedCasing.EraNarrow == CasingType.None)
-            {
-                combinedCasing.EraNarrow = parentCasing.EraNarrow;
-            }
-
-            if (combinedCasing.Key == CasingType.None)
-            {
-                combinedCasing.Key = parentCasing.Key;
-            }
-
-            if (combinedCasing.Language == CasingType.None)
-            {
-                combinedCasing.Language = parentCasing.Language;
-            }
-
-            if (combinedCasing.MetaZoneLong == CasingType.None)
-            {
-                combinedCasing.MetaZoneLong = parentCasing.MetaZoneLong;
-            }
-
-            if (combinedCasing.MetaZoneShort == CasingType.None)
-            {
-                combinedCasing.MetaZoneShort = parentCasing.MetaZoneShort;
-            }
-
-            if (combinedCasing.MonthFormatExceptNarrow == CasingType.None)
-            {
-                combinedCasing.MonthFormatExceptNarrow = parentCasing.MonthFormatExceptNarrow;
-            }
-
-            if (combinedCasing.MonthNarrow == CasingType.None)
-            {
-                combinedCasing.MonthNarrow = parentCasing.MonthNarrow;
-            }
-
-            if (combinedCasing.MonthStandAloneExceptNarrow == CasingType.None)
-            {
-                combinedCasing.MonthStandAloneExceptNarrow = parentCasing.MonthStandAloneExceptNarrow;
-            }
-
-            if (combinedCasing.QuarterAbbreviated == CasingType.None)
-            {
-                combinedCasing.QuarterAbbreviated = parentCasing.QuarterAbbreviated;
-            }
-
-            if (combinedCasing.Region == CasingType.None)
-            {
-                combinedCasing.Region = parentCasing.Region;
-            }
-
-            if (combinedCasing.Script == CasingType.None)
-            {
-                combinedCasing.Script = parentCasing.Script;
-            }
-
-            if (combinedCasing.Symbol == CasingType.None)
-            {
-                combinedCasing.Symbol = parentCasing.Symbol;
-            }
-
-            if (combinedCasing.Tense == CasingType.None)
-            {
-                combinedCasing.Tense = parentCasing.Tense;
-            }
-
-            if (combinedCasing.Type == CasingType.None)
-            {
-                combinedCasing.Type = parentCasing.Type;
-            }
-
-            if (combinedCasing.ZoneExemplarCity == CasingType.None)
-            {
-                combinedCasing.ZoneExemplarCity = parentCasing.ZoneExemplarCity;
-            }
-
-            return combinedCasing;
         }
 
         /// <summary>
@@ -397,71 +258,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                characters = this.CombineCharacters(characters, parentCulture.charactersNoParents);
+                characters = Characters.Combine(characters, parentCulture.charactersNoParents);
             }
 
             return characters;
-        }
-
-        /// <summary>
-        /// CombineCharacters combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedCharacters">The child object</param>
-        /// <param name="parentCharacters">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Characters CombineCharacters(Characters combinedCharacters, Characters parentCharacters)
-        {
-            if (combinedCharacters == null && parentCharacters == null)
-            {
-                return null;
-            }
-            else if (combinedCharacters == null)
-            {
-                return (Characters)parentCharacters.Clone();
-            }
-            else if (parentCharacters == null)
-            {
-                return combinedCharacters;
-            }
-
-            if (combinedCharacters.ExemplarCharacters == null || combinedCharacters.ExemplarCharacters.GetLength(0) == 0)
-            {
-                combinedCharacters.ExemplarCharacters = parentCharacters.ExemplarCharacters;
-            }
-
-            if (combinedCharacters.AuxiliaryExemplarCharacters == null
-                || combinedCharacters.AuxiliaryExemplarCharacters.GetLength(0) == 0)
-            {
-                combinedCharacters.AuxiliaryExemplarCharacters = parentCharacters.AuxiliaryExemplarCharacters;
-            }
-
-            if (combinedCharacters.PunctuationExemplarCharacters == null
-                || combinedCharacters.PunctuationExemplarCharacters.GetLength(0) == 0)
-            {
-                combinedCharacters.PunctuationExemplarCharacters = parentCharacters.PunctuationExemplarCharacters;
-            }
-
-            if (combinedCharacters.FinalEllipsis == null)
-            {
-                combinedCharacters.FinalEllipsis = parentCharacters.FinalEllipsis;
-            }
-
-            if (combinedCharacters.InitialEllipsis == null)
-            {
-                combinedCharacters.InitialEllipsis = parentCharacters.InitialEllipsis;
-            }
-
-            if (combinedCharacters.MedialEllipsis == null)
-            {
-                combinedCharacters.MedialEllipsis = parentCharacters.MedialEllipsis;
-            }
-
-            if (combinedCharacters.MoreInformation == null)
-            {
-                combinedCharacters.MoreInformation = parentCharacters.MoreInformation;
-            }
-
-            return combinedCharacters;
         }
 
         /// <summary>
@@ -500,152 +300,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                dates = this.CombineDates(dates, parentCulture.datesNoParents);
+                dates = Dates.Combine(dates, parentCulture.datesNoParents);
             }
 
             return dates;
-        }
-
-        /// <summary>
-        /// CombineDates combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedDates">The child object</param>
-        /// <param name="parentDates">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Dates CombineDates(Dates combinedDates, Dates parentDates)
-        {
-            if (combinedDates == null && parentDates == null)
-            {
-                return null;
-            }
-            else if (combinedDates == null)
-            {
-                return (Dates)parentDates.Clone();
-            }
-            else if (parentDates == null)
-            {
-                return combinedDates;
-            }
-
-            if (combinedDates.DefaultCalendarId == null)
-            {
-                combinedDates.DefaultCalendarId = parentDates.DefaultCalendarId;
-            }
-
-            if (combinedDates.Calendars == null)
-            {
-                combinedDates.Calendars = parentDates.Calendars;
-            }
-            else if (combinedDates.Calendars != null && parentDates.Calendars != null)
-            {
-                // combine the list calendars
-                List<Calendar> combinedCalendars = combinedDates.Calendars.ToList();
-                foreach (Calendar parentCalendar in parentDates.Calendars)
-                {
-                    Calendar combinedCalendar = (from c in combinedCalendars
-                                                 where string.Compare(c.Id, parentCalendar.Id, StringComparison.InvariantCulture) == 0
-                                                 select c).FirstOrDefault();
-                    if (combinedCalendar == null)
-                    {
-                        combinedCalendars.Add(parentCalendar);
-                    }
-                    else
-                    {
-                        combinedCalendar = this.CombineCalendar(combinedCalendar, parentCalendar);
-                    }
-                }
-
-                combinedDates.Calendars = combinedCalendars.ToArray();
-            }
-
-            return combinedDates;
-        }
-
-        /// <summary>
-        /// CombineCalendar combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedCalendar">The child object</param>
-        /// <param name="parentCalendar">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Calendar CombineCalendar(Calendar combinedCalendar, Calendar parentCalendar)
-        {
-            if (combinedCalendar.DateFormats == null || combinedCalendar.DateFormats.GetLength(0) == 0)
-            {
-                combinedCalendar.DateFormats = parentCalendar.DateFormats;
-            }
-
-            if (combinedCalendar.DayNameSets == null || combinedCalendar.DayNameSets.GetLength(0) == 0)
-            {
-                combinedCalendar.DayNameSets = parentCalendar.DayNameSets;
-            }
-
-            if (combinedCalendar.DayPeriodNameSets == null || combinedCalendar.DayPeriodNameSets.GetLength(0) == 0)
-            {
-                combinedCalendar.DayPeriodNameSets = parentCalendar.DayPeriodNameSets;
-            }
-
-            if (combinedCalendar.EraNameSets == null || combinedCalendar.EraNameSets.GetLength(0) == 0)
-            {
-                combinedCalendar.EraNameSets = parentCalendar.EraNameSets;
-            }
-
-            if (combinedCalendar.MonthNameSets == null || combinedCalendar.MonthNameSets.GetLength(0) == 0)
-            {
-                combinedCalendar.MonthNameSets = parentCalendar.MonthNameSets;
-            }
-            else
-            {
-                combinedCalendar.MonthNameSets = 
-                    this.CombineMonthNameSets(combinedCalendar.MonthNameSets, parentCalendar.MonthNameSets);
-            }
-
-            if (combinedCalendar.TimeFormats == null || combinedCalendar.TimeFormats.GetLength(0) == 0)
-            {
-                combinedCalendar.TimeFormats = parentCalendar.TimeFormats;
-            }
-
-            return combinedCalendar;
-        }
-
-        /// <summary>
-        /// CombineMonthNameSets combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedMonthNameSets">The child object</param>
-        /// <param name="parentMonthNameSets">The parent object</param>
-        /// <returns>The combined object</returns>
-        private MonthNameSet[] CombineMonthNameSets(MonthNameSet[] combinedMonthNameSets, MonthNameSet[] parentMonthNameSets)
-        {
-            List<MonthNameSet> combinedMonthNameSetList = new List<MonthNameSet>(combinedMonthNameSets);
-            foreach (MonthNameSet parentMonthNameSet in parentMonthNameSets)
-            {
-                MonthNameSet combinedMonthNameSet = (from cmns in combinedMonthNameSetList
-                                                     where string.Compare(cmns.Id, parentMonthNameSet.Id, StringComparison.InvariantCulture) == 0
-                                                     select cmns).FirstOrDefault();
-                if (combinedMonthNameSet == null)
-                {
-                    // the combined set does not have the parent set so add it
-                    combinedMonthNameSetList.Add(parentMonthNameSet);
-                }
-                else
-                {
-                    // combine the two lists
-                    List<MonthName> combinedMonthNames = new List<MonthName>(combinedMonthNameSet.Names);
-                    foreach (MonthName parentMonthName in parentMonthNameSet.Names)
-                    {
-                        if (!(from cmn in combinedMonthNames
-                            where string.Compare(cmn.Id, parentMonthName.Id, StringComparison.InvariantCulture) == 0
-                            select cmn).Any())
-                        {
-                            // the parent month name does not exist in the combined month names
-                            combinedMonthNames.Add(parentMonthName);
-                        }
-                    }
-
-                    combinedMonthNameSet.Names = combinedMonthNames.OrderBy(monthName => int.Parse(monthName.Id)).ToArray();
-                }
-            }
-
-            return combinedMonthNameSetList.ToArray();
         }
 
         /// <summary>
@@ -684,54 +342,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                delimiters = this.CombineDelimiters(delimiters, parentCulture.delimitersNoParents);
+                delimiters = Delimiters.Combine(delimiters, parentCulture.delimitersNoParents);
             }
 
             return delimiters;
-        }
-
-        /// <summary>
-        /// CombineDelimiters combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedDelimiters">The child object</param>
-        /// <param name="parentDelimiters">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Delimiters CombineDelimiters(Delimiters combinedDelimiters, Delimiters parentDelimiters)
-        {
-            if (combinedDelimiters == null && parentDelimiters == null)
-            {
-                return null;
-            }
-            else if (combinedDelimiters == null)
-            {
-                return (Delimiters)parentDelimiters.Clone();
-            }
-            else if (parentDelimiters == null)
-            {
-                return combinedDelimiters;
-            }
-
-            if (combinedDelimiters.QuotationStart == null)
-            {
-                combinedDelimiters.QuotationStart = parentDelimiters.QuotationStart;
-            }
-
-            if (combinedDelimiters.QuotationEnd == null)
-            {
-                combinedDelimiters.QuotationEnd = parentDelimiters.QuotationEnd;
-            }
-
-            if (combinedDelimiters.AlternateQuotationStart == null)
-            {
-                combinedDelimiters.AlternateQuotationStart = parentDelimiters.AlternateQuotationStart;
-            }
-
-            if (combinedDelimiters.AlternateQuotationEnd == null)
-            {
-                combinedDelimiters.AlternateQuotationEnd = parentDelimiters.AlternateQuotationEnd;
-            }
-
-            return combinedDelimiters;
         }
 
         /// <summary>
@@ -770,51 +384,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                layout = this.CombineLayouts(layout, parentCulture.layoutNoParents);
+                layout = Layout.Combine(layout, parentCulture.layoutNoParents);
             }
 
             return layout;
-        }
-
-        /// <summary>
-        /// CombineLayouts combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedLayout">The child object</param>
-        /// <param name="parentLayout">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Layout CombineLayouts(Layout combinedLayout, Layout parentLayout)
-        {
-            if (combinedLayout == null && parentLayout == null)
-            {
-                return null;
-            }
-            else if (combinedLayout == null)
-            {
-                return (Layout)parentLayout.Clone();
-            }
-            else if (parentLayout == null)
-            {
-                return combinedLayout;
-            }
-
-            if (combinedLayout.Orientation == null)
-            {
-                combinedLayout.Orientation = parentLayout.Orientation;
-            }
-            else if (parentLayout.Orientation != null)
-            {
-                if (string.IsNullOrEmpty(combinedLayout.Orientation.Characters))
-                {
-                    combinedLayout.Orientation.Characters = parentLayout.Orientation.Characters;
-                }
-
-                if (string.IsNullOrEmpty(combinedLayout.Orientation.Lines))
-                {
-                    combinedLayout.Orientation.Lines = parentLayout.Orientation.Lines;
-                }
-            }
-
-            return combinedLayout;
         }
 
         /// <summary>
@@ -853,46 +426,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                listPatterns = this.CombineListPatterns(listPatterns, parentCulture.listPatternsNoParents);
+                listPatterns = ListPattern.Combine(listPatterns, parentCulture.listPatternsNoParents);
             }
 
             return listPatterns;
-        }
-
-        /// <summary>
-        /// CombineListPatterns combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedListPatterns">The child object</param>
-        /// <param name="parentListPatterns">The parent object</param>
-        /// <returns>The combined object</returns>
-        private ListPattern[] CombineListPatterns(ListPattern[] combinedListPatterns, ListPattern[] parentListPatterns)
-        {
-            if (combinedListPatterns == null && parentListPatterns == null)
-            {
-                return null;
-            }
-            else if (combinedListPatterns == null)
-            {
-                return (ListPattern[])parentListPatterns.Clone();
-            }
-            else if (parentListPatterns == null)
-            {
-                return combinedListPatterns;
-            }
-
-            List<ListPattern> combinedListPattern = new List<ListPattern>(combinedListPatterns);
-            foreach (ListPattern parentListPattern in parentListPatterns)
-            {
-                if (!(from ups in combinedListPatterns
-                      where string.Compare(ups.Id, parentListPattern.Id, StringComparison.InvariantCulture) == 0
-                      select ups).Any())
-                {
-                    // this unit pattern set does not exist in the combined list
-                    combinedListPattern.Add(parentListPattern);
-                }
-            }
-
-            return combinedListPattern.ToArray();
         }
 
         /// <summary>
@@ -931,48 +468,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                messages = this.CombineMessages(messages, parentCulture.messagesNoParents);
+                messages = MessageSet.Combine(messages, parentCulture.messagesNoParents);
             }
 
             return messages;
-        }
-
-        /// <summary>
-        /// CombineMessages combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedMessages">The child object</param>
-        /// <param name="parentMessages">The parent object</param>
-        /// <returns>The combined object</returns>
-        private MessageSet CombineMessages(MessageSet combinedMessages, MessageSet parentMessages)
-        {
-            if (combinedMessages == null && parentMessages == null)
-            {
-                return null;
-            }
-            else if (combinedMessages == null)
-            {
-                return (MessageSet)parentMessages.Clone();
-            }
-            else if (parentMessages == null)
-            {
-                return combinedMessages;
-            }
-
-            List<Message> combinedMessagesList = new List<Message>(combinedMessages.Messages);
-
-            foreach (Message parentMessage in parentMessages.Messages)
-            {
-                if (!(from m in combinedMessages.Messages
-                      where m.Id == parentMessage.Id
-                      select m).Any())
-                {
-                    combinedMessagesList.Add(parentMessage);
-                }
-            }
-
-            combinedMessages.Messages = combinedMessagesList.ToArray();
-
-            return combinedMessages;
         }
 
         /// <summary>
@@ -1011,131 +510,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                numbers = this.CombineNumbers(numbers, parentCulture.numbersNoParents);
+                numbers = Numbers.Combine(numbers, parentCulture.numbersNoParents);
             }
 
             return numbers;
-        }
-
-        /// <summary>
-        /// CombineNumbers combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedNumbers">The child object</param>
-        /// <param name="parentNumbers">The parent object</param>
-        /// <returns>The combined object</returns>
-        private Numbers CombineNumbers(Numbers combinedNumbers, Numbers parentNumbers)
-        {
-            if (combinedNumbers == null && parentNumbers == null)
-            {
-                return null;
-            }
-            else if (combinedNumbers == null)
-            {
-                return (Numbers)parentNumbers.Clone();
-            }
-            else if (parentNumbers == null)
-            {
-                return combinedNumbers;
-            }
-
-            if (string.IsNullOrEmpty(combinedNumbers.DefaultNumberingSystemId))
-            {
-                combinedNumbers.DefaultNumberingSystemId = parentNumbers.DefaultNumberingSystemId;
-            }
-
-            combinedNumbers.OtherNumberingSystems = this.CombineOtherNumberingSystems(combinedNumbers.OtherNumberingSystems, parentNumbers.OtherNumberingSystems);
-
-            combinedNumbers.NumberingSystems = 
-                this.CombineArrays<NumberingSystem>(
-                combinedNumbers.NumberingSystems, 
-                parentNumbers.NumberingSystems,
-                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
-
-            combinedNumbers.CurrencyDisplayNameSets =
-                this.CombineArrays<CurrencyDisplayNameSet>(
-                combinedNumbers.CurrencyDisplayNameSets,
-                parentNumbers.CurrencyDisplayNameSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
-
-            combinedNumbers.CurrencyPeriods =
-                this.CombineArrays<CurrencyPeriod>(
-                combinedNumbers.CurrencyPeriods,
-                parentNumbers.CurrencyPeriods,
-                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
-
-            return combinedNumbers;
-        }
-
-        /// <summary>
-        /// CombineOtherNumberingSystem combines a list of child objects with a list of parent objects as necessary and
-        /// returns the combined list of objects
-        /// </summary>
-        /// <param name="combinedOtherNumberingSystems">The List of child objects</param>
-        /// <param name="parentOtherNumberingSystems">The List of parent objects</param>
-        /// <returns>The combined list of objects</returns>
-        private List<OtherNumberingSystem> CombineOtherNumberingSystems(List<OtherNumberingSystem> combinedOtherNumberingSystems, List<OtherNumberingSystem> parentOtherNumberingSystems)
-        {
-            if (combinedOtherNumberingSystems == null && parentOtherNumberingSystems == null)
-            {
-                return null;
-            }
-            else if (combinedOtherNumberingSystems == null)
-            {
-                return new List<OtherNumberingSystem>(parentOtherNumberingSystems);
-            }
-            else if (parentOtherNumberingSystems == null)
-            {
-                return combinedOtherNumberingSystems;
-            }
-
-            foreach (OtherNumberingSystem parentOtherNumberingSystem in parentOtherNumberingSystems)
-            {
-                if (!combinedOtherNumberingSystems.Where(ons => ons.Id == parentOtherNumberingSystem.Id).Any())
-                {
-                    combinedOtherNumberingSystems.Add(parentOtherNumberingSystem);
-                }
-            }
-
-            return combinedOtherNumberingSystems;
-        }
-
-        /// <summary>
-        /// CombineArrays combines a child array with a parent array as necessary and returns the combined array
-        /// </summary>
-        /// <typeparam name="T">The type of the array elements</typeparam>
-        /// <param name="combineds">The child array</param>
-        /// <param name="parents">The parent array</param>
-        /// <param name="typesAreEqual">A method to determine whether the types are equal</param>
-        /// <returns>The combined array</returns>
-        private T[] CombineArrays<T>(T[] combineds, T[] parents, Func<T, T, bool> typesAreEqual)
-        {
-            if (combineds == null && parents == null)
-            {
-                return null;
-            }
-            else if (combineds == null)
-            {
-                T[] copy = new T[parents.GetLength(0)];
-                parents.CopyTo(copy, 0);
-                return copy;
-            }
-            else if (parents == null)
-            {
-                return combineds;
-            }
-
-            List<T> combinedList = new List<T>(combineds);
-            foreach (T parent in parents)
-            {
-                if (!(from item in combinedList
-                      where typesAreEqual(item, parent)
-                      select item).Any())
-                {
-                    combinedList.Add(parent);
-                }
-            }
-
-            return combinedList.ToArray();
         }
 
         /// <summary>
@@ -1174,46 +552,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                ruleBasedNumberFormatting = this.CombineRuleBasedNumberFormatting(ruleBasedNumberFormatting, parentCulture.ruleBasedNumberFormattingNoParents);
+                ruleBasedNumberFormatting = RuleBasedNumberFormatting.Combine(ruleBasedNumberFormatting, parentCulture.ruleBasedNumberFormattingNoParents);
             }
 
             return ruleBasedNumberFormatting;
-        }
-
-        /// <summary>
-        /// CombineRuleBasedNumberFormatting combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedRuleBasedNumberFormatting">The child object</param>
-        /// <param name="parentRuleBasedNumberFormatting">The parent object</param>
-        /// <returns>The combined object</returns>
-        private RuleBasedNumberFormatting CombineRuleBasedNumberFormatting(RuleBasedNumberFormatting combinedRuleBasedNumberFormatting, RuleBasedNumberFormatting parentRuleBasedNumberFormatting)
-        {
-            if (combinedRuleBasedNumberFormatting == null && parentRuleBasedNumberFormatting == null)
-            {
-                return null;
-            }
-            else if (combinedRuleBasedNumberFormatting == null)
-            {
-                return (RuleBasedNumberFormatting)parentRuleBasedNumberFormatting.Clone();
-            }
-            else if (parentRuleBasedNumberFormatting == null)
-            {
-                return combinedRuleBasedNumberFormatting;
-            }
-
-            combinedRuleBasedNumberFormatting.OrdinalRuleSets =
-                this.CombineArrays<RuleBasedNumberFormattingRuleSet>(
-                combinedRuleBasedNumberFormatting.OrdinalRuleSets,
-                parentRuleBasedNumberFormatting.OrdinalRuleSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
-
-            combinedRuleBasedNumberFormatting.SpelloutRuleSets =
-                this.CombineArrays<RuleBasedNumberFormattingRuleSet>(
-                combinedRuleBasedNumberFormatting.SpelloutRuleSets,
-                parentRuleBasedNumberFormatting.SpelloutRuleSets,
-                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
-
-            return combinedRuleBasedNumberFormatting;
         }
 
         /// <summary>
@@ -1225,8 +567,7 @@
             {
                 if (this.languageDisplayNames == null)
                 {
-                    this.languageDisplayNames = this.AddParentDisplayNames<LanguageDisplayName>(
-                        this, 
+                    this.languageDisplayNames = this.GetDisplayNames<LanguageDisplayName>(
                         this.languageDisplayNamesNoParents,
                         (parentCulture) => { return parentCulture.languageDisplayNamesNoParents; });
                 }
@@ -1249,8 +590,7 @@
             {
                 if (this.regionDisplayNames == null)
                 {
-                    this.regionDisplayNames = this.AddParentDisplayNames<RegionDisplayName>(
-                        this, 
+                    this.regionDisplayNames = this.GetDisplayNames<RegionDisplayName>(
                         this.regionDisplayNamesNoParents,
                         (parentCulture) => { return parentCulture.regionDisplayNamesNoParents; });
                 }
@@ -1273,8 +613,7 @@
             {
                 if (this.scriptDisplayNames == null)
                 {
-                    this.scriptDisplayNames = this.AddParentDisplayNames<ScriptDisplayName>(
-                        this, 
+                    this.scriptDisplayNames = this.GetDisplayNames<ScriptDisplayName>(
                         this.scriptDisplayNamesNoParents,
                         (parentCulture) => { return parentCulture.scriptDisplayNamesNoParents; });
                 }
@@ -1324,46 +663,10 @@
             Culture[] parentCultures = this.GetParents();
             foreach (Culture parentCulture in parentCultures)
             {
-                unitPatternSets = this.CombineUnitPatternSets(unitPatternSets, parentCulture.unitPatternSetsNoParents);
+                unitPatternSets = UnitPatternSet.Combine(unitPatternSets, parentCulture.unitPatternSetsNoParents);
             }
 
             return unitPatternSets;
-        }
-
-        /// <summary>
-        /// CombineUnitPatternSets combines a child with a parent as necessary and returns the combined object
-        /// </summary>
-        /// <param name="combinedUnitPatternSets">The child object</param>
-        /// <param name="parentUnitPatternSets">The parent object</param>
-        /// <returns>The combined object</returns>
-        private UnitPatternSet[] CombineUnitPatternSets(UnitPatternSet[] combinedUnitPatternSets, UnitPatternSet[] parentUnitPatternSets)
-        {
-            if (combinedUnitPatternSets == null && parentUnitPatternSets == null)
-            {
-                return null;
-            }
-            else if (combinedUnitPatternSets == null)
-            {
-                return (UnitPatternSet[])parentUnitPatternSets.Clone();
-            }
-            else if (parentUnitPatternSets == null)
-            {
-                return combinedUnitPatternSets;
-            }
-
-            List<UnitPatternSet> combinedUnitPatternSetList = new List<UnitPatternSet>(combinedUnitPatternSets);
-            foreach (UnitPatternSet parentUnitPatternSet in parentUnitPatternSets)
-            {
-                if (!(from ups in combinedUnitPatternSets
-                      where string.Compare(ups.Id, parentUnitPatternSet.Id, StringComparison.InvariantCulture) == 0
-                      select ups).Any())
-                {
-                    // this unit pattern set does not exist in the combined list
-                    combinedUnitPatternSetList.Add(parentUnitPatternSet);
-                }
-            }
-
-            return combinedUnitPatternSetList.ToArray();
         }
 
         /// <summary>
@@ -1469,50 +772,21 @@
         }
 
         /// <summary>
-        /// AddParentDisplayNames adds a parent's display names to a child's display names as necessary
+        /// GetLanguageDisplayNames gets the resolved language display names
         /// </summary>
-        /// <typeparam name="T">The type of the display names</typeparam>
-        /// <param name="culture">The Culture from which to identify the parent</param>
-        /// <param name="displayNames">The child's display names</param>
-        /// <param name="getParentsDisplayNames">A method to get the parent's display names</param>
-        /// <returns>A list of resolved display names</returns>
-        private List<T> AddParentDisplayNames<T>(Culture culture, List<T> displayNames, Func<Culture, List<T>> getParentsDisplayNames) where T : DisplayName
+        /// <returns>The resolved language display names</returns>
+        private List<T> GetDisplayNames<T>(List<T> displayNamesNoParents, Func<Culture, List<T>> getParentsDisplayNames) where T : DisplayName
         {
-            string parentCultureName = culture.GetParentName();
-            if (!string.IsNullOrEmpty(parentCultureName))
+            List<T> displayNames = null;
+            if (displayNamesNoParents != null)
             {
-                // there is a parent
-                Culture parentCulture = Culture.GetCulture(parentCultureName);
-                if (parentCulture != null)
-                {
-                    List<T> parentDisplayNamesNoParents = getParentsDisplayNames(parentCulture);
-                    if (parentDisplayNamesNoParents != null && parentDisplayNamesNoParents.Count > 0)
-                    {
-                        // the parent has display names to merge
-                        if (displayNames == null || displayNames.Count == 0)
-                        {
-                            // there are no existing display names to merge with so take all of the parent's display names
-                            displayNames = parentDisplayNamesNoParents;
-                        }
-                        else
-                        {
-                            // merge the parent's display names with the current list (giving the current list priority)
-                            foreach (var parentDisplayName in parentDisplayNamesNoParents)
-                            {
-                                if (!(from dn in displayNames
-                                      where string.Compare(dn.Id, parentDisplayName.Id, StringComparison.InvariantCulture) == 0
-                                      select dn).Any())
-                                {
-                                    // the parent's display name does not exist in the current list so add it
-                                    displayNames.Add(parentDisplayName);
-                                }
-                            }
-                        }
-                    }
+                displayNames = (List<T>)displayNamesNoParents.Clone();
+            }
 
-                    // now merge the collection with this parent's parent
-                    displayNames = this.AddParentDisplayNames<T>(parentCulture, displayNames, getParentsDisplayNames);
-                }
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                displayNames = Types.DisplayName.Combine<T>(displayNames, getParentsDisplayNames(parentCulture));
             }
 
             return displayNames;

@@ -37,5 +37,49 @@
         {
             return this.MemberwiseClone();
         }
+
+        /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedDelimiters">The child object</param>
+        /// <param name="parentDelimiters">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static Delimiters Combine(Delimiters combinedDelimiters, Delimiters parentDelimiters)
+        {
+            if (combinedDelimiters == null && parentDelimiters == null)
+            {
+                return null;
+            }
+            else if (combinedDelimiters == null)
+            {
+                return (Delimiters)parentDelimiters.Clone();
+            }
+            else if (parentDelimiters == null)
+            {
+                return combinedDelimiters;
+            }
+
+            if (combinedDelimiters.QuotationStart == null)
+            {
+                combinedDelimiters.QuotationStart = parentDelimiters.QuotationStart;
+            }
+
+            if (combinedDelimiters.QuotationEnd == null)
+            {
+                combinedDelimiters.QuotationEnd = parentDelimiters.QuotationEnd;
+            }
+
+            if (combinedDelimiters.AlternateQuotationStart == null)
+            {
+                combinedDelimiters.AlternateQuotationStart = parentDelimiters.AlternateQuotationStart;
+            }
+
+            if (combinedDelimiters.AlternateQuotationEnd == null)
+            {
+                combinedDelimiters.AlternateQuotationEnd = parentDelimiters.AlternateQuotationEnd;
+            }
+
+            return combinedDelimiters;
+        }
     }
 }

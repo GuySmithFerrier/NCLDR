@@ -22,5 +22,46 @@
         {
             return this.MemberwiseClone();
         }
+
+        /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedLayout">The child object</param>
+        /// <param name="parentLayout">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static Layout Combine(Layout combinedLayout, Layout parentLayout)
+        {
+            if (combinedLayout == null && parentLayout == null)
+            {
+                return null;
+            }
+            else if (combinedLayout == null)
+            {
+                return (Layout)parentLayout.Clone();
+            }
+            else if (parentLayout == null)
+            {
+                return combinedLayout;
+            }
+
+            if (combinedLayout.Orientation == null)
+            {
+                combinedLayout.Orientation = parentLayout.Orientation;
+            }
+            else if (parentLayout.Orientation != null)
+            {
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.Characters))
+                {
+                    combinedLayout.Orientation.Characters = parentLayout.Orientation.Characters;
+                }
+
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.Lines))
+                {
+                    combinedLayout.Orientation.Lines = parentLayout.Orientation.Lines;
+                }
+            }
+
+            return combinedLayout;
+        }
     }
 }

@@ -364,6 +364,93 @@
         }
 
         /// <summary>
+        /// Combine combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedCalendar">The child object</param>
+        /// <param name="parentCalendar">The parent object</param>
+        /// <returns>The combined object</returns>
+        public static Calendar Combine(Calendar combinedCalendar, Calendar parentCalendar)
+        {
+            if (combinedCalendar.DateFormats == null || combinedCalendar.DateFormats.GetLength(0) == 0)
+            {
+                combinedCalendar.DateFormats = parentCalendar.DateFormats;
+            }
+
+            if (combinedCalendar.DayNameSets == null || combinedCalendar.DayNameSets.GetLength(0) == 0)
+            {
+                combinedCalendar.DayNameSets = parentCalendar.DayNameSets;
+            }
+
+            if (combinedCalendar.DayPeriodNameSets == null || combinedCalendar.DayPeriodNameSets.GetLength(0) == 0)
+            {
+                combinedCalendar.DayPeriodNameSets = parentCalendar.DayPeriodNameSets;
+            }
+
+            if (combinedCalendar.EraNameSets == null || combinedCalendar.EraNameSets.GetLength(0) == 0)
+            {
+                combinedCalendar.EraNameSets = parentCalendar.EraNameSets;
+            }
+
+            if (combinedCalendar.MonthNameSets == null || combinedCalendar.MonthNameSets.GetLength(0) == 0)
+            {
+                combinedCalendar.MonthNameSets = parentCalendar.MonthNameSets;
+            }
+            else
+            {
+                combinedCalendar.MonthNameSets =
+                    CombineMonthNameSets(combinedCalendar.MonthNameSets, parentCalendar.MonthNameSets);
+            }
+
+            if (combinedCalendar.TimeFormats == null || combinedCalendar.TimeFormats.GetLength(0) == 0)
+            {
+                combinedCalendar.TimeFormats = parentCalendar.TimeFormats;
+            }
+
+            return combinedCalendar;
+        }
+
+        /// <summary>
+        /// CombineMonthNameSets combines a child with a parent as necessary and returns the combined object
+        /// </summary>
+        /// <param name="combinedMonthNameSets">The child object</param>
+        /// <param name="parentMonthNameSets">The parent object</param>
+        /// <returns>The combined object</returns>
+        private static MonthNameSet[] CombineMonthNameSets(MonthNameSet[] combinedMonthNameSets, MonthNameSet[] parentMonthNameSets)
+        {
+            List<MonthNameSet> combinedMonthNameSetList = new List<MonthNameSet>(combinedMonthNameSets);
+            foreach (MonthNameSet parentMonthNameSet in parentMonthNameSets)
+            {
+                MonthNameSet combinedMonthNameSet = (from cmns in combinedMonthNameSetList
+                                                     where string.Compare(cmns.Id, parentMonthNameSet.Id, StringComparison.InvariantCulture) == 0
+                                                     select cmns).FirstOrDefault();
+                if (combinedMonthNameSet == null)
+                {
+                    // the combined set does not have the parent set so add it
+                    combinedMonthNameSetList.Add(parentMonthNameSet);
+                }
+                else
+                {
+                    // combine the two lists
+                    List<MonthName> combinedMonthNames = new List<MonthName>(combinedMonthNameSet.Names);
+                    foreach (MonthName parentMonthName in parentMonthNameSet.Names)
+                    {
+                        if (!(from cmn in combinedMonthNames
+                              where string.Compare(cmn.Id, parentMonthName.Id, StringComparison.InvariantCulture) == 0
+                              select cmn).Any())
+                        {
+                            // the parent month name does not exist in the combined month names
+                            combinedMonthNames.Add(parentMonthName);
+                        }
+                    }
+
+                    combinedMonthNameSet.Names = combinedMonthNames.OrderBy(monthName => int.Parse(monthName.Id)).ToArray();
+                }
+            }
+
+            return combinedMonthNameSetList.ToArray();
+        }
+
+        /// <summary>
         /// GetDayNames gets an array of day names for the given DayNameSet Id
         /// </summary>
         /// <param name="id">The Id of the DayNameSet</param>
