@@ -196,7 +196,7 @@
             this.tbxCldrPath.Name = "tbxCldrPath";
             this.tbxCldrPath.Size = new System.Drawing.Size(334, 20);
             this.tbxCldrPath.TabIndex = 1;
-            this.tbxCldrPath.Text = "C:\\CLDR\\Release22.1\\Core";
+            this.tbxCldrPath.Text = "C:\\CLDR\\Release23\\Core";
             // 
             // label2
             // 

@@ -35,7 +35,7 @@ namespace NCldrBuilderCmd
                 Console.WriteLine("Syntax:");
                 Console.WriteLine("NCldrBuilderCmd -CLDRPath:<CLDRPath> -NCLDRPath:<NCLDRPath> [-DisplayMode:Quiet|Verbose|Diagnostics]");
                 Console.WriteLine("where:");
-                Console.WriteLine(@"<CLDRPath> is the path to the CLDR root folder e.g. C:\CLDR\Release22.1");
+                Console.WriteLine(@"<CLDRPath> is the path to the CLDR root folder e.g. C:\CLDR\Release23");
                 Console.WriteLine(@"<NCLDRPath> is the path to the NCLDR output folder e.g. C:\Projects\NCldr\Source\NCldr\NCldrData");
                 Console.WriteLine(@"<DisplayMode> is either Quiet, Verbose or Diagnostics indicating the volume of progress information displayed");
             }
