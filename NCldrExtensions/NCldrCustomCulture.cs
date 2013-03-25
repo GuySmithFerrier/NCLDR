@@ -425,17 +425,17 @@
                                                     select c).FirstOrDefault();
                 if (gregorianCalendar != null)
                 {
-                    if (gregorianCalendar.AbbreviatedDayNames != null)
+                    if (gregorianCalendar.AbbreviatedDayNames != null && gregorianCalendar.AbbreviatedDayNames.GetLength(0) == 7)
                     {
                         dateTimeFormatInfo.AbbreviatedDayNames = gregorianCalendar.AbbreviatedDayNames;
                     }
 
-                    if (gregorianCalendar.DayNames != null)
+                    if (gregorianCalendar.DayNames != null && gregorianCalendar.DayNames.GetLength(0) == 7)
                     {
                         dateTimeFormatInfo.DayNames = gregorianCalendar.DayNames;
                     }
 
-                    if (gregorianCalendar.ShortestDayNames != null)
+                    if (gregorianCalendar.ShortestDayNames != null && gregorianCalendar.ShortestDayNames.GetLength(0) == 7)
                     {
                         dateTimeFormatInfo.ShortestDayNames = gregorianCalendar.ShortestDayNames;
                     }
