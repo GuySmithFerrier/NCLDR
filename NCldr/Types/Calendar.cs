@@ -417,32 +417,35 @@
         private static MonthNameSet[] CombineMonthNameSets(MonthNameSet[] combinedMonthNameSets, MonthNameSet[] parentMonthNameSets)
         {
             List<MonthNameSet> combinedMonthNameSetList = new List<MonthNameSet>(combinedMonthNameSets);
-            foreach (MonthNameSet parentMonthNameSet in parentMonthNameSets)
+            if (parentMonthNameSets != null)
             {
-                MonthNameSet combinedMonthNameSet = (from cmns in combinedMonthNameSetList
-                                                     where string.Compare(cmns.Id, parentMonthNameSet.Id, StringComparison.InvariantCulture) == 0
-                                                     select cmns).FirstOrDefault();
-                if (combinedMonthNameSet == null)
+                foreach (MonthNameSet parentMonthNameSet in parentMonthNameSets)
                 {
-                    // the combined set does not have the parent set so add it
-                    combinedMonthNameSetList.Add(parentMonthNameSet);
-                }
-                else
-                {
-                    // combine the two lists
-                    List<MonthName> combinedMonthNames = new List<MonthName>(combinedMonthNameSet.Names);
-                    foreach (MonthName parentMonthName in parentMonthNameSet.Names)
+                    MonthNameSet combinedMonthNameSet = (from cmns in combinedMonthNameSetList
+                                                         where string.Compare(cmns.Id, parentMonthNameSet.Id, StringComparison.InvariantCulture) == 0
+                                                         select cmns).FirstOrDefault();
+                    if (combinedMonthNameSet == null)
                     {
-                        if (!(from cmn in combinedMonthNames
-                              where string.Compare(cmn.Id, parentMonthName.Id, StringComparison.InvariantCulture) == 0
-                              select cmn).Any())
-                        {
-                            // the parent month name does not exist in the combined month names
-                            combinedMonthNames.Add(parentMonthName);
-                        }
+                        // the combined set does not have the parent set so add it
+                        combinedMonthNameSetList.Add(parentMonthNameSet);
                     }
+                    else
+                    {
+                        // combine the two lists
+                        List<MonthName> combinedMonthNames = new List<MonthName>(combinedMonthNameSet.Names);
+                        foreach (MonthName parentMonthName in parentMonthNameSet.Names)
+                        {
+                            if (!(from cmn in combinedMonthNames
+                                  where string.Compare(cmn.Id, parentMonthName.Id, StringComparison.InvariantCulture) == 0
+                                  select cmn).Any())
+                            {
+                                // the parent month name does not exist in the combined month names
+                                combinedMonthNames.Add(parentMonthName);
+                            }
+                        }
 
-                    combinedMonthNameSet.Names = combinedMonthNames.OrderBy(monthName => int.Parse(monthName.Id)).ToArray();
+                        combinedMonthNameSet.Names = combinedMonthNames.OrderBy(monthName => int.Parse(monthName.Id)).ToArray();
+                    }
                 }
             }
 
