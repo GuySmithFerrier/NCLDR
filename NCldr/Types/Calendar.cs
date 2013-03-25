@@ -376,10 +376,9 @@
                 combinedCalendar.DateFormats = parentCalendar.DateFormats;
             }
 
-            if (combinedCalendar.DayNameSets == null || combinedCalendar.DayNameSets.GetLength(0) == 0)
-            {
-                combinedCalendar.DayNameSets = parentCalendar.DayNameSets;
-            }
+            combinedCalendar.DayNameSets = CalendarNameSet<DayName>.Combine<DayNameSet>(
+                combinedCalendar.DayNameSets, 
+                parentCalendar.DayNameSets);
 
             if (combinedCalendar.DayPeriodNameSets == null || combinedCalendar.DayPeriodNameSets.GetLength(0) == 0)
             {
