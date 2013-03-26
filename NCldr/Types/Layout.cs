@@ -50,14 +50,14 @@
             }
             else if (parentLayout.Orientation != null)
             {
-                if (string.IsNullOrEmpty(combinedLayout.Orientation.Characters))
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.CharacterOrder))
                 {
-                    combinedLayout.Orientation.Characters = parentLayout.Orientation.Characters;
+                    combinedLayout.Orientation.CharacterOrder = parentLayout.Orientation.CharacterOrder;
                 }
 
-                if (string.IsNullOrEmpty(combinedLayout.Orientation.Lines))
+                if (string.IsNullOrEmpty(combinedLayout.Orientation.LineOrder))
                 {
-                    combinedLayout.Orientation.Lines = parentLayout.Orientation.Lines;
+                    combinedLayout.Orientation.LineOrder = parentLayout.Orientation.LineOrder;
                 }
             }
 

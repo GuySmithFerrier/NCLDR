@@ -13,12 +13,12 @@
         /// <summary>
         /// Gets or sets the default general ordering of lines within a page
         /// </summary>
-        public string Lines { get; set; }
+        public string LineOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the default general ordering of characters within a line
         /// </summary>
-        public string Characters { get; set; }
+        public string CharacterOrder { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the ordering of characters within a line is Right To Left
@@ -27,12 +27,12 @@
         {
             get
             {
-                if (String.IsNullOrEmpty(this.Characters))
+                if (String.IsNullOrEmpty(this.CharacterOrder))
                 {
                     return false;
                 }
 
-                return string.Compare(this.Characters, "right-to-left", StringComparison.InvariantCultureIgnoreCase) == 0;
+                return string.Compare(this.CharacterOrder, "right-to-left", StringComparison.InvariantCultureIgnoreCase) == 0;
             }
         }
     }

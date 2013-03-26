@@ -861,14 +861,28 @@ namespace NCldr.Builder
                     layout = new Layout();
                     layout.Orientation = new Orientation();
 
+                    // "characters" is deprecated and is left here for compatibility with Release 22.1 and earlier
                     if (orientationData.Attribute("characters") != null)
                     {
-                        layout.Orientation.Characters = orientationData.Attribute("characters").Value.ToString();
+                        layout.Orientation.CharacterOrder = orientationData.Attribute("characters").Value.ToString();
                     }
 
+                    // "characterOrder" was introduced in Release 23 and takes precedence over "characters"
+                    if (orientationData.Element("characterOrder") != null)
+                    {
+                        layout.Orientation.CharacterOrder = orientationData.Element("characterOrder").Value.ToString();
+                    }
+
+                    // "lines" is deprecated and is left here for compatibility with Release 22.1 and earlier
                     if (orientationData.Attribute("lines") != null)
                     {
-                        layout.Orientation.Lines = orientationData.Attribute("lines").Value.ToString();
+                        layout.Orientation.LineOrder = orientationData.Attribute("lines").Value.ToString();
+                    }
+
+                    // "lineOrder" was introduced in Release 23 and takes precedence over "characters"
+                    if (orientationData.Element("lineOrder") != null)
+                    {
+                        layout.Orientation.LineOrder = orientationData.Element("lineOrder").Value.ToString();
                     }
                 }
             }

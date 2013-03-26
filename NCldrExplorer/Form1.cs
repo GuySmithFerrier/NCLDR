@@ -388,8 +388,8 @@ namespace NCldrExplorer
             }
             else
             {
-                tbxOrientationCharacters.Text = layout.Orientation.Characters;
-                tbxOrientationLines.Text = layout.Orientation.Lines;
+                tbxOrientationCharacters.Text = layout.Orientation.CharacterOrder;
+                tbxOrientationLines.Text = layout.Orientation.LineOrder;
             }
         }
 
