@@ -37,7 +37,7 @@
     <Compile Include="NCldrLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Calendar.cs" />
-    <Compile Include="Types\CalendarDisplayNames.cs" />
+    <Compile Include="Types\DatesDisplayNames.cs" />
     <Compile Include="Types\CalendarType.cs" />
     <Compile Include="Types\Casing.cs" />
     <Compile Include="Types\CharacterFallback.cs" />
