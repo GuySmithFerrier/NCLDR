@@ -1,0 +1,12 @@
+[Oo]bj
+[Bb]in
+[Dd]ebug
+[Rr]elease
+*.user
+*.suo
+*.ide
+Settings.StyleCop
+StyleCop.cache
+NCldrData/*
+NCldr.Tests/*
+NCldr.IntegrationTests/*
