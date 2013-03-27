@@ -3,10 +3,10 @@
     using System;
 
     /// <summary>
-    /// CalendarDisplayNames is a collection of localized strings for use with calendars
+    /// DatesDisplayNames is a collection of localized strings for use with calendars
     /// </summary>
     [Serializable]
-    public class CalendarDisplayNames
+    public class DatesDisplayNames
     {
         /// <summary>
         /// Gets or sets the localized string for an era

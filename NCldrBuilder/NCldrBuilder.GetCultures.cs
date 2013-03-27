@@ -800,7 +800,7 @@ namespace NCldr.Builder
             if ((calendarDatas != null && calendarDatas.Count > 0) || defaultData != null)
             {
                 dates = new Dates();
-                CalendarDisplayNames calendarDisplayNames;
+                DatesDisplayNames datesDisplayNames;
 
                 if (defaultData != null)
                 {
@@ -815,13 +815,13 @@ namespace NCldr.Builder
                         Calendar calendar = new Calendar();
                         calendar.Id = calendarData.Attribute("type").Value.ToString();
 
-                        // Look for CalendarDisplayNames in the "calendar" element (compatibility with release 22.1 and earlier).
-                        // Prior to release 23 the CalendarDisplayNames can be found in the "calendar" element.
-                        // Starting with release 23 the CalendarDisplayNames moved up to the "dates" element.
-                        calendarDisplayNames = GetCalendarDisplayNames(calendarData);
-                        if (calendarDisplayNames != null)
+                        // Look for DatesDisplayNames in the "calendar" element (compatibility with release 22.1 and earlier).
+                        // Prior to release 23 the DatesDisplayNames can be found in the "calendar" element.
+                        // Starting with release 23 the DatesDisplayNames moved up to the "dates" element.
+                        datesDisplayNames = GetDatesDisplayNames(calendarData);
+                        if (datesDisplayNames != null)
                         {
-                            dates.CalendarDisplayNames = calendarDisplayNames;
+                            dates.DisplayNames = datesDisplayNames;
                         }
 
                         calendar.MonthNameSets =
@@ -846,11 +846,11 @@ namespace NCldr.Builder
                     dates.Calendars = calendars.ToArray();
                 }
 
-                // Look for CalendarDisplayNames in the "dates" element (release 23 and later).
-                calendarDisplayNames = GetCalendarDisplayNames(ldmlElements.Elements("dates").FirstOrDefault());
-                if (calendarDisplayNames != null)
+                // Look for DatesDisplayNames in the "dates" element (release 23 and later).
+                datesDisplayNames = GetDatesDisplayNames(ldmlElements.Elements("dates").FirstOrDefault());
+                if (datesDisplayNames != null)
                 {
-                    dates.CalendarDisplayNames = calendarDisplayNames;
+                    dates.DisplayNames = datesDisplayNames;
                 }
             }
 
@@ -997,7 +997,7 @@ namespace NCldr.Builder
             return timeFormats.ToArray();
         }
 
-        private static CalendarDisplayNames GetCalendarDisplayNames(XElement data)
+        private static DatesDisplayNames GetDatesDisplayNames(XElement data)
         {
             List<XElement> fieldDatas = (from item in data.Elements("fields")
                                              .Elements("field")
@@ -1008,7 +1008,7 @@ namespace NCldr.Builder
                 return null;
             }
 
-            CalendarDisplayNames calendarDisplayNames = new CalendarDisplayNames();
+            DatesDisplayNames datesDisplayNames = new DatesDisplayNames();
 
             foreach (XElement fieldData in fieldDatas)
             {
@@ -1018,63 +1018,63 @@ namespace NCldr.Builder
 
                 if (type == "day")
                 {
-                    calendarDisplayNames.Day = displayName;
+                    datesDisplayNames.Day = displayName;
 
-                    calendarDisplayNames.Yesterday = (from r in fieldData.Elements("relative")
+                    datesDisplayNames.Yesterday = (from r in fieldData.Elements("relative")
                                                       where r.Attribute("type").Value.ToString() == "-1"
                                                       select r.Value.ToString()).FirstOrDefault();
 
-                    calendarDisplayNames.Today = (from r in fieldData.Elements("relative")
+                    datesDisplayNames.Today = (from r in fieldData.Elements("relative")
                                                       where r.Attribute("type").Value.ToString() == "0"
                                                       select r.Value.ToString()).FirstOrDefault();
 
-                    calendarDisplayNames.Tomorrow = (from r in fieldData.Elements("relative")
+                    datesDisplayNames.Tomorrow = (from r in fieldData.Elements("relative")
                                                       where r.Attribute("type").Value.ToString() == "1"
                                                       select r.Value.ToString()).FirstOrDefault();
                 }
                 else if (type == "dayperiod")
                 {
-                    calendarDisplayNames.DayPeriod = displayName;
+                    datesDisplayNames.DayPeriod = displayName;
                 }
                 else if (type == "era")
                 {
-                    calendarDisplayNames.Era = displayName;
+                    datesDisplayNames.Era = displayName;
                 }
                 else if (type == "hour")
                 {
-                    calendarDisplayNames.Hour = displayName;
+                    datesDisplayNames.Hour = displayName;
                 }
                 else if (type == "minute")
                 {
-                    calendarDisplayNames.Minute = displayName;
+                    datesDisplayNames.Minute = displayName;
                 }
                 else if (type == "month")
                 {
-                    calendarDisplayNames.Month = displayName;
+                    datesDisplayNames.Month = displayName;
                 }
                 else if (type == "second")
                 {
-                    calendarDisplayNames.Second = displayName;
+                    datesDisplayNames.Second = displayName;
                 }
                 else if (type == "week")
                 {
-                    calendarDisplayNames.Week = displayName;
+                    datesDisplayNames.Week = displayName;
                 }
                 else if (type == "weekday")
                 {
-                    calendarDisplayNames.WeekDay = displayName;
+                    datesDisplayNames.WeekDay = displayName;
                 }
                 else if (type == "year")
                 {
-                    calendarDisplayNames.Year = displayName;
+                    datesDisplayNames.Year = displayName;
                 }
                 else if (type == "zone")
                 {
-                    calendarDisplayNames.Zone = displayName;
+                    datesDisplayNames.Zone = displayName;
                 }
             }
 
-            return calendarDisplayNames;
+            return datesDisplayNames;
         }
 
         private static TSet[] GetNameSets<T, TSet>(

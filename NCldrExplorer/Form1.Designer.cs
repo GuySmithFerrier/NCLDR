@@ -46,6 +46,35 @@
             this.lbxRegionDisplayNames = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbxLanguageDisplayNames = new System.Windows.Forms.ListBox();
+            this.tbpDatesDisplayNames = new System.Windows.Forms.TabPage();
+            this.label88 = new System.Windows.Forms.Label();
+            this.tbxCalendarZone = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.tbxCalendarSecond = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.tbxCalendarMinute = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.tbxCalendarHour = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.tbxCalendarDayPeriod = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.tbxCalendarWeekDay = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.tbxCalendarWeek = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.tbxCalendarTomorrow = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.tbxCalendarYesterday = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.tbxCalendarToday = new System.Windows.Forms.TextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.tbxCalendarDay = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.tbxCalendarMonth = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.tbxCalendarYear = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.tbxCalendarEra = new System.Windows.Forms.TextBox();
             this.tbpCalendars = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tbpFormats = new System.Windows.Forms.TabPage();
@@ -439,35 +468,6 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
-            this.tbpCalendarDisplayNames = new System.Windows.Forms.TabPage();
-            this.label88 = new System.Windows.Forms.Label();
-            this.tbxCalendarZone = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.tbxCalendarSecond = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.tbxCalendarMinute = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.tbxCalendarHour = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.tbxCalendarDayPeriod = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.tbxCalendarWeekDay = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.tbxCalendarWeek = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.tbxCalendarTomorrow = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.tbxCalendarYesterday = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.tbxCalendarToday = new System.Windows.Forms.TextBox();
-            this.label84 = new System.Windows.Forms.Label();
-            this.tbxCalendarDay = new System.Windows.Forms.TextBox();
-            this.label83 = new System.Windows.Forms.Label();
-            this.tbxCalendarMonth = new System.Windows.Forms.TextBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.tbxCalendarYear = new System.Windows.Forms.TextBox();
-            this.label81 = new System.Windows.Forms.Label();
-            this.tbxCalendarEra = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.tbpCultures.SuspendLayout();
@@ -481,6 +481,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tbpDatesDisplayNames.SuspendLayout();
             this.tbpCalendars.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tbpFormats.SuspendLayout();
@@ -651,7 +652,6 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
-            this.tbpCalendarDisplayNames.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -774,7 +774,7 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tbpDisplayNames);
-            this.tabControl2.Controls.Add(this.tbpCalendarDisplayNames);
+            this.tabControl2.Controls.Add(this.tbpDatesDisplayNames);
             this.tabControl2.Controls.Add(this.tbpCalendars);
             this.tabControl2.Controls.Add(this.tbpCasing);
             this.tabControl2.Controls.Add(this.tbpCharacters);
@@ -863,6 +863,268 @@
             this.lbxLanguageDisplayNames.Name = "lbxLanguageDisplayNames";
             this.lbxLanguageDisplayNames.Size = new System.Drawing.Size(162, 335);
             this.lbxLanguageDisplayNames.TabIndex = 0;
+            // 
+            // tbpDatesDisplayNames
+            // 
+            this.tbpDatesDisplayNames.Controls.Add(this.label88);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarZone);
+            this.tbpDatesDisplayNames.Controls.Add(this.label89);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarSecond);
+            this.tbpDatesDisplayNames.Controls.Add(this.label90);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarMinute);
+            this.tbpDatesDisplayNames.Controls.Add(this.label91);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarHour);
+            this.tbpDatesDisplayNames.Controls.Add(this.label92);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarDayPeriod);
+            this.tbpDatesDisplayNames.Controls.Add(this.label93);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarWeekDay);
+            this.tbpDatesDisplayNames.Controls.Add(this.label94);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarWeek);
+            this.tbpDatesDisplayNames.Controls.Add(this.label87);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarTomorrow);
+            this.tbpDatesDisplayNames.Controls.Add(this.label86);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarYesterday);
+            this.tbpDatesDisplayNames.Controls.Add(this.label85);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarToday);
+            this.tbpDatesDisplayNames.Controls.Add(this.label84);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarDay);
+            this.tbpDatesDisplayNames.Controls.Add(this.label83);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarMonth);
+            this.tbpDatesDisplayNames.Controls.Add(this.label82);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarYear);
+            this.tbpDatesDisplayNames.Controls.Add(this.label81);
+            this.tbpDatesDisplayNames.Controls.Add(this.tbxCalendarEra);
+            this.tbpDatesDisplayNames.Location = new System.Drawing.Point(4, 22);
+            this.tbpDatesDisplayNames.Name = "tbpDatesDisplayNames";
+            this.tbpDatesDisplayNames.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpDatesDisplayNames.Size = new System.Drawing.Size(506, 360);
+            this.tbpDatesDisplayNames.TabIndex = 11;
+            this.tbpDatesDisplayNames.Text = "Dates Display Names";
+            this.tbpDatesDisplayNames.UseVisualStyleBackColor = true;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(199, 178);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(32, 13);
+            this.label88.TabIndex = 27;
+            this.label88.Text = "Zone";
+            // 
+            // tbxCalendarZone
+            // 
+            this.tbxCalendarZone.Location = new System.Drawing.Point(264, 175);
+            this.tbxCalendarZone.Name = "tbxCalendarZone";
+            this.tbxCalendarZone.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarZone.TabIndex = 26;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(199, 152);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(44, 13);
+            this.label89.TabIndex = 25;
+            this.label89.Text = "Second";
+            // 
+            // tbxCalendarSecond
+            // 
+            this.tbxCalendarSecond.Location = new System.Drawing.Point(264, 149);
+            this.tbxCalendarSecond.Name = "tbxCalendarSecond";
+            this.tbxCalendarSecond.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarSecond.TabIndex = 24;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(199, 126);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(39, 13);
+            this.label90.TabIndex = 23;
+            this.label90.Text = "Minute";
+            // 
+            // tbxCalendarMinute
+            // 
+            this.tbxCalendarMinute.Location = new System.Drawing.Point(264, 123);
+            this.tbxCalendarMinute.Name = "tbxCalendarMinute";
+            this.tbxCalendarMinute.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarMinute.TabIndex = 22;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(199, 100);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(30, 13);
+            this.label91.TabIndex = 21;
+            this.label91.Text = "Hour";
+            // 
+            // tbxCalendarHour
+            // 
+            this.tbxCalendarHour.Location = new System.Drawing.Point(264, 97);
+            this.tbxCalendarHour.Name = "tbxCalendarHour";
+            this.tbxCalendarHour.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarHour.TabIndex = 20;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(199, 74);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(59, 13);
+            this.label92.TabIndex = 19;
+            this.label92.Text = "Day Period";
+            // 
+            // tbxCalendarDayPeriod
+            // 
+            this.tbxCalendarDayPeriod.Location = new System.Drawing.Point(264, 71);
+            this.tbxCalendarDayPeriod.Name = "tbxCalendarDayPeriod";
+            this.tbxCalendarDayPeriod.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarDayPeriod.TabIndex = 18;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(199, 48);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(58, 13);
+            this.label93.TabIndex = 17;
+            this.label93.Text = "Week Day";
+            // 
+            // tbxCalendarWeekDay
+            // 
+            this.tbxCalendarWeekDay.Location = new System.Drawing.Point(264, 45);
+            this.tbxCalendarWeekDay.Name = "tbxCalendarWeekDay";
+            this.tbxCalendarWeekDay.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarWeekDay.TabIndex = 16;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(199, 22);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(36, 13);
+            this.label94.TabIndex = 15;
+            this.label94.Text = "Week";
+            // 
+            // tbxCalendarWeek
+            // 
+            this.tbxCalendarWeek.Location = new System.Drawing.Point(264, 19);
+            this.tbxCalendarWeek.Name = "tbxCalendarWeek";
+            this.tbxCalendarWeek.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarWeek.TabIndex = 14;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(13, 178);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(54, 13);
+            this.label87.TabIndex = 13;
+            this.label87.Text = "Tomorrow";
+            // 
+            // tbxCalendarTomorrow
+            // 
+            this.tbxCalendarTomorrow.Location = new System.Drawing.Point(78, 175);
+            this.tbxCalendarTomorrow.Name = "tbxCalendarTomorrow";
+            this.tbxCalendarTomorrow.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarTomorrow.TabIndex = 12;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(13, 152);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(54, 13);
+            this.label86.TabIndex = 11;
+            this.label86.Text = "Yesterday";
+            // 
+            // tbxCalendarYesterday
+            // 
+            this.tbxCalendarYesterday.Location = new System.Drawing.Point(78, 149);
+            this.tbxCalendarYesterday.Name = "tbxCalendarYesterday";
+            this.tbxCalendarYesterday.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarYesterday.TabIndex = 10;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(13, 126);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(37, 13);
+            this.label85.TabIndex = 9;
+            this.label85.Text = "Today";
+            // 
+            // tbxCalendarToday
+            // 
+            this.tbxCalendarToday.Location = new System.Drawing.Point(78, 123);
+            this.tbxCalendarToday.Name = "tbxCalendarToday";
+            this.tbxCalendarToday.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarToday.TabIndex = 8;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(13, 100);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(26, 13);
+            this.label84.TabIndex = 7;
+            this.label84.Text = "Day";
+            // 
+            // tbxCalendarDay
+            // 
+            this.tbxCalendarDay.Location = new System.Drawing.Point(78, 97);
+            this.tbxCalendarDay.Name = "tbxCalendarDay";
+            this.tbxCalendarDay.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarDay.TabIndex = 6;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(13, 74);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(37, 13);
+            this.label83.TabIndex = 5;
+            this.label83.Text = "Month";
+            // 
+            // tbxCalendarMonth
+            // 
+            this.tbxCalendarMonth.Location = new System.Drawing.Point(78, 71);
+            this.tbxCalendarMonth.Name = "tbxCalendarMonth";
+            this.tbxCalendarMonth.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarMonth.TabIndex = 4;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(13, 48);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(29, 13);
+            this.label82.TabIndex = 3;
+            this.label82.Text = "Year";
+            // 
+            // tbxCalendarYear
+            // 
+            this.tbxCalendarYear.Location = new System.Drawing.Point(78, 45);
+            this.tbxCalendarYear.Name = "tbxCalendarYear";
+            this.tbxCalendarYear.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarYear.TabIndex = 2;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(13, 22);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(23, 13);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "Era";
+            // 
+            // tbxCalendarEra
+            // 
+            this.tbxCalendarEra.Location = new System.Drawing.Point(78, 19);
+            this.tbxCalendarEra.Name = "tbxCalendarEra";
+            this.tbxCalendarEra.Size = new System.Drawing.Size(100, 20);
+            this.tbxCalendarEra.TabIndex = 0;
             // 
             // tbpCalendars
             // 
@@ -4843,268 +5105,6 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
-            // tbpCalendarDisplayNames
-            // 
-            this.tbpCalendarDisplayNames.Controls.Add(this.label88);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarZone);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label89);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarSecond);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label90);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarMinute);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label91);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarHour);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label92);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarDayPeriod);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label93);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarWeekDay);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label94);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarWeek);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label87);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarTomorrow);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label86);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarYesterday);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label85);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarToday);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label84);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarDay);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label83);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarMonth);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label82);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarYear);
-            this.tbpCalendarDisplayNames.Controls.Add(this.label81);
-            this.tbpCalendarDisplayNames.Controls.Add(this.tbxCalendarEra);
-            this.tbpCalendarDisplayNames.Location = new System.Drawing.Point(4, 22);
-            this.tbpCalendarDisplayNames.Name = "tbpCalendarDisplayNames";
-            this.tbpCalendarDisplayNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCalendarDisplayNames.Size = new System.Drawing.Size(506, 360);
-            this.tbpCalendarDisplayNames.TabIndex = 11;
-            this.tbpCalendarDisplayNames.Text = "Dates Display Names";
-            this.tbpCalendarDisplayNames.UseVisualStyleBackColor = true;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(199, 178);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(32, 13);
-            this.label88.TabIndex = 27;
-            this.label88.Text = "Zone";
-            // 
-            // tbxCalendarZone
-            // 
-            this.tbxCalendarZone.Location = new System.Drawing.Point(264, 175);
-            this.tbxCalendarZone.Name = "tbxCalendarZone";
-            this.tbxCalendarZone.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarZone.TabIndex = 26;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(199, 152);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(44, 13);
-            this.label89.TabIndex = 25;
-            this.label89.Text = "Second";
-            // 
-            // tbxCalendarSecond
-            // 
-            this.tbxCalendarSecond.Location = new System.Drawing.Point(264, 149);
-            this.tbxCalendarSecond.Name = "tbxCalendarSecond";
-            this.tbxCalendarSecond.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarSecond.TabIndex = 24;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(199, 126);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(39, 13);
-            this.label90.TabIndex = 23;
-            this.label90.Text = "Minute";
-            // 
-            // tbxCalendarMinute
-            // 
-            this.tbxCalendarMinute.Location = new System.Drawing.Point(264, 123);
-            this.tbxCalendarMinute.Name = "tbxCalendarMinute";
-            this.tbxCalendarMinute.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarMinute.TabIndex = 22;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(199, 100);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(30, 13);
-            this.label91.TabIndex = 21;
-            this.label91.Text = "Hour";
-            // 
-            // tbxCalendarHour
-            // 
-            this.tbxCalendarHour.Location = new System.Drawing.Point(264, 97);
-            this.tbxCalendarHour.Name = "tbxCalendarHour";
-            this.tbxCalendarHour.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarHour.TabIndex = 20;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(199, 74);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(59, 13);
-            this.label92.TabIndex = 19;
-            this.label92.Text = "Day Period";
-            // 
-            // tbxCalendarDayPeriod
-            // 
-            this.tbxCalendarDayPeriod.Location = new System.Drawing.Point(264, 71);
-            this.tbxCalendarDayPeriod.Name = "tbxCalendarDayPeriod";
-            this.tbxCalendarDayPeriod.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarDayPeriod.TabIndex = 18;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(199, 48);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(58, 13);
-            this.label93.TabIndex = 17;
-            this.label93.Text = "Week Day";
-            // 
-            // tbxCalendarWeekDay
-            // 
-            this.tbxCalendarWeekDay.Location = new System.Drawing.Point(264, 45);
-            this.tbxCalendarWeekDay.Name = "tbxCalendarWeekDay";
-            this.tbxCalendarWeekDay.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarWeekDay.TabIndex = 16;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(199, 22);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(36, 13);
-            this.label94.TabIndex = 15;
-            this.label94.Text = "Week";
-            // 
-            // tbxCalendarWeek
-            // 
-            this.tbxCalendarWeek.Location = new System.Drawing.Point(264, 19);
-            this.tbxCalendarWeek.Name = "tbxCalendarWeek";
-            this.tbxCalendarWeek.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarWeek.TabIndex = 14;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(13, 178);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(54, 13);
-            this.label87.TabIndex = 13;
-            this.label87.Text = "Tomorrow";
-            // 
-            // tbxCalendarTomorrow
-            // 
-            this.tbxCalendarTomorrow.Location = new System.Drawing.Point(78, 175);
-            this.tbxCalendarTomorrow.Name = "tbxCalendarTomorrow";
-            this.tbxCalendarTomorrow.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarTomorrow.TabIndex = 12;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(13, 152);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(54, 13);
-            this.label86.TabIndex = 11;
-            this.label86.Text = "Yesterday";
-            // 
-            // tbxCalendarYesterday
-            // 
-            this.tbxCalendarYesterday.Location = new System.Drawing.Point(78, 149);
-            this.tbxCalendarYesterday.Name = "tbxCalendarYesterday";
-            this.tbxCalendarYesterday.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarYesterday.TabIndex = 10;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(13, 126);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(37, 13);
-            this.label85.TabIndex = 9;
-            this.label85.Text = "Today";
-            // 
-            // tbxCalendarToday
-            // 
-            this.tbxCalendarToday.Location = new System.Drawing.Point(78, 123);
-            this.tbxCalendarToday.Name = "tbxCalendarToday";
-            this.tbxCalendarToday.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarToday.TabIndex = 8;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(13, 100);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(26, 13);
-            this.label84.TabIndex = 7;
-            this.label84.Text = "Day";
-            // 
-            // tbxCalendarDay
-            // 
-            this.tbxCalendarDay.Location = new System.Drawing.Point(78, 97);
-            this.tbxCalendarDay.Name = "tbxCalendarDay";
-            this.tbxCalendarDay.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarDay.TabIndex = 6;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(13, 74);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(37, 13);
-            this.label83.TabIndex = 5;
-            this.label83.Text = "Month";
-            // 
-            // tbxCalendarMonth
-            // 
-            this.tbxCalendarMonth.Location = new System.Drawing.Point(78, 71);
-            this.tbxCalendarMonth.Name = "tbxCalendarMonth";
-            this.tbxCalendarMonth.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarMonth.TabIndex = 4;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(13, 48);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(29, 13);
-            this.label82.TabIndex = 3;
-            this.label82.Text = "Year";
-            // 
-            // tbxCalendarYear
-            // 
-            this.tbxCalendarYear.Location = new System.Drawing.Point(78, 45);
-            this.tbxCalendarYear.Name = "tbxCalendarYear";
-            this.tbxCalendarYear.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarYear.TabIndex = 2;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(13, 22);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(23, 13);
-            this.label81.TabIndex = 1;
-            this.label81.Text = "Era";
-            // 
-            // tbxCalendarEra
-            // 
-            this.tbxCalendarEra.Location = new System.Drawing.Point(78, 19);
-            this.tbxCalendarEra.Name = "tbxCalendarEra";
-            this.tbxCalendarEra.Size = new System.Drawing.Size(100, 20);
-            this.tbxCalendarEra.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5127,6 +5127,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.tbpDatesDisplayNames.ResumeLayout(false);
+            this.tbpDatesDisplayNames.PerformLayout();
             this.tbpCalendars.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tbpFormats.ResumeLayout(false);
@@ -5335,8 +5337,6 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
-            this.tbpCalendarDisplayNames.ResumeLayout(false);
-            this.tbpCalendarDisplayNames.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5754,7 +5754,7 @@
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.TextBox tbxOrientationCharacters;
         private System.Windows.Forms.Label label123;
-        private System.Windows.Forms.TabPage tbpCalendarDisplayNames;
+        private System.Windows.Forms.TabPage tbpDatesDisplayNames;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.TextBox tbxCalendarZone;
         private System.Windows.Forms.Label label89;

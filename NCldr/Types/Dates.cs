@@ -19,7 +19,7 @@
         /// <summary>
         /// Gets or sets localized display names
         /// </summary>
-        public CalendarDisplayNames CalendarDisplayNames { get; set; }
+        public DatesDisplayNames DisplayNames { get; set; }
 
         /// <summary>
         /// Gets or sets an array of Calendars for the Culture
