@@ -35,6 +35,13 @@ namespace NCldr.Builder
                 currencyFraction.Id = currencyId;
                 currencyFraction.Digits = int.Parse(infoElement.Attribute("digits").Value.ToString());
                 currencyFraction.Rounding = int.Parse(infoElement.Attribute("rounding").Value.ToString());
+
+                XAttribute cashRoundingAttribute = infoElement.Attribute("cashRounding");
+                if (cashRoundingAttribute != null)
+                {
+                    currencyFraction.CashRounding = int.Parse(cashRoundingAttribute.Value.ToString());
+                }
+
                 currencyFractions.Add(currencyFraction);
                 Progress("Added currency fraction", currencyId, ProgressEventType.Added, currencyFraction);
             }

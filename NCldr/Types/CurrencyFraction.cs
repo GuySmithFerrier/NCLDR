@@ -23,5 +23,10 @@
         /// Gets or sets the number of decimal places for rounding
         /// </summary>
         public int Rounding { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of decimal places for cash rounding
+        /// </summary>
+        public int CashRounding { get; set; }
     }
 }
