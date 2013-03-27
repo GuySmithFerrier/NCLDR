@@ -800,6 +800,7 @@ namespace NCldr.Builder
             if ((calendarDatas != null && calendarDatas.Count > 0) || defaultData != null)
             {
                 dates = new Dates();
+                CalendarDisplayNames calendarDisplayNames;
 
                 if (defaultData != null)
                 {
@@ -814,7 +815,14 @@ namespace NCldr.Builder
                         Calendar calendar = new Calendar();
                         calendar.Id = calendarData.Attribute("type").Value.ToString();
 
-                        calendar.CalendarDisplayNames = GetCalendarDisplayNames(calendarData);
+                        // Look for CalendarDisplayNames in the "calendar" element (compatibility with release 22.1 and earlier).
+                        // Prior to release 23 the CalendarDisplayNames can be found in the "calendar" element.
+                        // Starting with release 23 the CalendarDisplayNames moved up to the "dates" element.
+                        calendarDisplayNames = GetCalendarDisplayNames(calendarData);
+                        if (calendarDisplayNames != null)
+                        {
+                            dates.CalendarDisplayNames = calendarDisplayNames;
+                        }
 
                         calendar.MonthNameSets =
                             GetNameSets<MonthName, MonthNameSet>(calendarData, "months", "monthContext", "monthWidth", "month");
@@ -836,6 +844,13 @@ namespace NCldr.Builder
                     }
 
                     dates.Calendars = calendars.ToArray();
+                }
+
+                // Look for CalendarDisplayNames in the "dates" element (release 23 and later).
+                calendarDisplayNames = GetCalendarDisplayNames(ldmlElements.Elements("dates").FirstOrDefault());
+                if (calendarDisplayNames != null)
+                {
+                    dates.CalendarDisplayNames = calendarDisplayNames;
                 }
             }
 
@@ -982,9 +997,9 @@ namespace NCldr.Builder
             return timeFormats.ToArray();
         }
 
-        private static CalendarDisplayNames GetCalendarDisplayNames(XElement calendarData)
+        private static CalendarDisplayNames GetCalendarDisplayNames(XElement data)
         {
-            List<XElement> fieldDatas = (from item in calendarData.Elements("fields")
+            List<XElement> fieldDatas = (from item in data.Elements("fields")
                                              .Elements("field")
                                          select item).ToList();
 

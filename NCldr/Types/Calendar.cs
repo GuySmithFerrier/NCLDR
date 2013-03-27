@@ -18,11 +18,6 @@
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the calendar's localized display names
-        /// </summary>
-        public CalendarDisplayNames CalendarDisplayNames { get; set; }
-
-        /// <summary>
         /// Gets or sets the calendar's date formats
         /// </summary>
         public DateFormat[] DateFormats { get; set; }

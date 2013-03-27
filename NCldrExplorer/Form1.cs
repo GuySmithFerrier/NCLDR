@@ -430,6 +430,41 @@ namespace NCldrExplorer
                     lbxCalendars.Items.AddRange(dates.Calendars);
                     lbxCalendars.SelectedIndex = 0;
                 }
+
+                if (dates.CalendarDisplayNames == null)
+                {
+                    tbxCalendarEra.Text = String.Empty;
+                    tbxCalendarYear.Text = String.Empty;
+                    tbxCalendarMonth.Text = String.Empty;
+                    tbxCalendarDay.Text = String.Empty;
+                    tbxCalendarYesterday.Text = String.Empty;
+                    tbxCalendarToday.Text = String.Empty;
+                    tbxCalendarTomorrow.Text = String.Empty;
+                    tbxCalendarWeek.Text = String.Empty;
+                    tbxCalendarWeekDay.Text = String.Empty;
+                    tbxCalendarDayPeriod.Text = String.Empty;
+                    tbxCalendarHour.Text = String.Empty;
+                    tbxCalendarMinute.Text = String.Empty;
+                    tbxCalendarSecond.Text = String.Empty;
+                    tbxCalendarZone.Text = String.Empty;
+                }
+                else
+                {
+                    tbxCalendarEra.Text = dates.CalendarDisplayNames.Era;
+                    tbxCalendarYear.Text = dates.CalendarDisplayNames.Year;
+                    tbxCalendarMonth.Text = dates.CalendarDisplayNames.Month;
+                    tbxCalendarDay.Text = dates.CalendarDisplayNames.Day;
+                    tbxCalendarYesterday.Text = dates.CalendarDisplayNames.Yesterday;
+                    tbxCalendarToday.Text = dates.CalendarDisplayNames.Today;
+                    tbxCalendarTomorrow.Text = dates.CalendarDisplayNames.Tomorrow;
+                    tbxCalendarWeek.Text = dates.CalendarDisplayNames.Week;
+                    tbxCalendarWeekDay.Text = dates.CalendarDisplayNames.WeekDay;
+                    tbxCalendarDayPeriod.Text = dates.CalendarDisplayNames.DayPeriod;
+                    tbxCalendarHour.Text = dates.CalendarDisplayNames.Hour;
+                    tbxCalendarMinute.Text = dates.CalendarDisplayNames.Minute;
+                    tbxCalendarSecond.Text = dates.CalendarDisplayNames.Second;
+                    tbxCalendarZone.Text = dates.CalendarDisplayNames.Zone;
+                }
             }
         }
 
@@ -1289,41 +1324,6 @@ namespace NCldrExplorer
             {
                 dgvCalendarTimeFormats.DataSource = calendar.TimeFormats;
                 dgvCalendarTimeFormats.Columns[1].Width = 200;
-            }
-
-            if (calendar.CalendarDisplayNames == null)
-            {
-                tbxCalendarEra.Text = String.Empty;
-                tbxCalendarYear.Text = String.Empty;
-                tbxCalendarMonth.Text = String.Empty;
-                tbxCalendarDay.Text = String.Empty;
-                tbxCalendarYesterday.Text = String.Empty;
-                tbxCalendarToday.Text = String.Empty;
-                tbxCalendarTomorrow.Text = String.Empty;
-                tbxCalendarWeek.Text = String.Empty;
-                tbxCalendarWeekDay.Text = String.Empty;
-                tbxCalendarDayPeriod.Text = String.Empty;
-                tbxCalendarHour.Text = String.Empty;
-                tbxCalendarMinute.Text = String.Empty;
-                tbxCalendarSecond.Text = String.Empty;
-                tbxCalendarZone.Text = String.Empty;
-            }
-            else
-            {
-                tbxCalendarEra.Text = calendar.CalendarDisplayNames.Era;
-                tbxCalendarYear.Text = calendar.CalendarDisplayNames.Year;
-                tbxCalendarMonth.Text = calendar.CalendarDisplayNames.Month;
-                tbxCalendarDay.Text = calendar.CalendarDisplayNames.Day;
-                tbxCalendarYesterday.Text = calendar.CalendarDisplayNames.Yesterday;
-                tbxCalendarToday.Text = calendar.CalendarDisplayNames.Today;
-                tbxCalendarTomorrow.Text = calendar.CalendarDisplayNames.Tomorrow;
-                tbxCalendarWeek.Text = calendar.CalendarDisplayNames.Week;
-                tbxCalendarWeekDay.Text = calendar.CalendarDisplayNames.WeekDay;
-                tbxCalendarDayPeriod.Text = calendar.CalendarDisplayNames.DayPeriod;
-                tbxCalendarHour.Text = calendar.CalendarDisplayNames.Hour;
-                tbxCalendarMinute.Text = calendar.CalendarDisplayNames.Minute;
-                tbxCalendarSecond.Text = calendar.CalendarDisplayNames.Second;
-                tbxCalendarZone.Text = calendar.CalendarDisplayNames.Zone;
             }
 
             ShowCalendarNameSets<DayNameSet, DayName>(calendar.DayNameSets, lbxCalendarDayNameSetIds, dgvCalendarDayNames);
