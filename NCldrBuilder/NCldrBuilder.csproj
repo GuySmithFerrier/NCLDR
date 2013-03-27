@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NCldrBuilder.GetTimeData.cs" />
     <Compile Include="NCldrBuilder.GetRegionTelephoneCodes.cs" />
     <Compile Include="GenericDescription.cs" />
     <Compile Include="NCldrBuilder.GetDescriptions.cs" />

@@ -37,6 +37,8 @@
     <Compile Include="NCldrLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Calendar.cs" />
+    <Compile Include="Types\RegionHour.cs" />
+    <Compile Include="Types\TimeData.cs" />
     <Compile Include="Types\DatesDisplayNames.cs" />
     <Compile Include="Types\CalendarType.cs" />
     <Compile Include="Types\Casing.cs" />

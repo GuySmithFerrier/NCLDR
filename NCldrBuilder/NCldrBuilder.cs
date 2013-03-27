@@ -57,6 +57,7 @@ namespace NCldr.Builder
             ncldrData.RegionGroups = GetRegionGroups();
             ncldrData.RegionInformations = GetRegionInformations();
             ncldrData.RegionTelephoneCodes = GetRegionTelephoneCodes();
+            ncldrData.TimeData = GetTimeData();
             ncldrData.TimeZones = GetTimeZones();
             ncldrData.WeekData = GetWeekData();
             ncldrData.WindowsMetaTimeZones = GetWindowsMetaTimeZones();

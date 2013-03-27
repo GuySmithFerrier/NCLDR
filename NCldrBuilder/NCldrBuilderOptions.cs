@@ -39,6 +39,7 @@ namespace NCldr.Builder
             this.IncludeRegionGroups = true;
             this.IncludeRegionInformations = true;
             this.IncludeRegionTelephoneCodes = true;
+            this.IncludeTimeData = true;
             this.IncludeTimeZones = true;
             this.IncludeWeekData = true;
             this.IncludeWindowsMetaTimeZones = true;
@@ -91,6 +92,8 @@ namespace NCldr.Builder
         public bool IncludeRegionInformations { get; set; }
 
         public bool IncludeRegionTelephoneCodes { get; set; }
+
+        public bool IncludeTimeData { get; set; }
 
         public bool IncludeTimeZones { get; set; }
 

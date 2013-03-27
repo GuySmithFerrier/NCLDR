@@ -33,6 +33,8 @@
             this.gbxProgress = new System.Windows.Forms.GroupBox();
             this.tbxProgress = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSelectOutputPath = new System.Windows.Forms.Button();
+            this.btnSelectInputPath = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxNCldrPath = new System.Windows.Forms.TextBox();
             this.tbxCldrPath = new System.Windows.Forms.TextBox();
@@ -94,9 +96,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnSelectInputPath = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.btnSelectOutputPath = new System.Windows.Forms.Button();
+            this.cbxIncludeTimeData = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -173,6 +174,26 @@
             this.panel3.Size = new System.Drawing.Size(877, 139);
             this.panel3.TabIndex = 5;
             // 
+            // btnSelectOutputPath
+            // 
+            this.btnSelectOutputPath.Location = new System.Drawing.Point(356, 72);
+            this.btnSelectOutputPath.Name = "btnSelectOutputPath";
+            this.btnSelectOutputPath.Size = new System.Drawing.Size(26, 23);
+            this.btnSelectOutputPath.TabIndex = 6;
+            this.btnSelectOutputPath.Text = "...";
+            this.btnSelectOutputPath.UseVisualStyleBackColor = true;
+            this.btnSelectOutputPath.Click += new System.EventHandler(this.btnSelectOutputPath_Click);
+            // 
+            // btnSelectInputPath
+            // 
+            this.btnSelectInputPath.Location = new System.Drawing.Point(356, 33);
+            this.btnSelectInputPath.Name = "btnSelectInputPath";
+            this.btnSelectInputPath.Size = new System.Drawing.Size(26, 23);
+            this.btnSelectInputPath.TabIndex = 5;
+            this.btnSelectInputPath.Text = "...";
+            this.btnSelectInputPath.UseVisualStyleBackColor = true;
+            this.btnSelectInputPath.Click += new System.EventHandler(this.btnSelectInputPath_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -248,6 +269,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxIncludeTimeData);
             this.groupBox1.Controls.Add(this.cbxIncludeCalendarPreferences);
             this.groupBox1.Controls.Add(this.cbxIncludeRegionTelephoneCodes);
             this.groupBox1.Controls.Add(this.cbxIncludeWindowsMetaTimeZones);
@@ -313,7 +335,7 @@
             this.cbxIncludeWindowsMetaTimeZones.AutoSize = true;
             this.cbxIncludeWindowsMetaTimeZones.Checked = true;
             this.cbxIncludeWindowsMetaTimeZones.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeWindowsMetaTimeZones.Location = new System.Drawing.Point(199, 296);
+            this.cbxIncludeWindowsMetaTimeZones.Location = new System.Drawing.Point(199, 319);
             this.cbxIncludeWindowsMetaTimeZones.Name = "cbxIncludeWindowsMetaTimeZones";
             this.cbxIncludeWindowsMetaTimeZones.Size = new System.Drawing.Size(196, 17);
             this.cbxIncludeWindowsMetaTimeZones.TabIndex = 23;
@@ -326,7 +348,7 @@
             this.cbxIncludeWeekData.AutoSize = true;
             this.cbxIncludeWeekData.Checked = true;
             this.cbxIncludeWeekData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeWeekData.Location = new System.Drawing.Point(199, 273);
+            this.cbxIncludeWeekData.Location = new System.Drawing.Point(199, 296);
             this.cbxIncludeWeekData.Name = "cbxIncludeWeekData";
             this.cbxIncludeWeekData.Size = new System.Drawing.Size(123, 17);
             this.cbxIncludeWeekData.TabIndex = 22;
@@ -339,7 +361,7 @@
             this.cbxIncludeTimeZones.AutoSize = true;
             this.cbxIncludeTimeZones.Checked = true;
             this.cbxIncludeTimeZones.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeTimeZones.Location = new System.Drawing.Point(199, 250);
+            this.cbxIncludeTimeZones.Location = new System.Drawing.Point(199, 273);
             this.cbxIncludeTimeZones.Name = "cbxIncludeTimeZones";
             this.cbxIncludeTimeZones.Size = new System.Drawing.Size(123, 17);
             this.cbxIncludeTimeZones.TabIndex = 21;
@@ -955,25 +977,18 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnSelectInputPath
+            // cbxIncludeTimeData
             // 
-            this.btnSelectInputPath.Location = new System.Drawing.Point(356, 33);
-            this.btnSelectInputPath.Name = "btnSelectInputPath";
-            this.btnSelectInputPath.Size = new System.Drawing.Size(26, 23);
-            this.btnSelectInputPath.TabIndex = 5;
-            this.btnSelectInputPath.Text = "...";
-            this.btnSelectInputPath.UseVisualStyleBackColor = true;
-            this.btnSelectInputPath.Click += new System.EventHandler(this.btnSelectInputPath_Click);
-            // 
-            // btnSelectOutputPath
-            // 
-            this.btnSelectOutputPath.Location = new System.Drawing.Point(356, 72);
-            this.btnSelectOutputPath.Name = "btnSelectOutputPath";
-            this.btnSelectOutputPath.Size = new System.Drawing.Size(26, 23);
-            this.btnSelectOutputPath.TabIndex = 6;
-            this.btnSelectOutputPath.Text = "...";
-            this.btnSelectOutputPath.UseVisualStyleBackColor = true;
-            this.btnSelectOutputPath.Click += new System.EventHandler(this.btnSelectOutputPath_Click);
+            this.cbxIncludeTimeData.AutoSize = true;
+            this.cbxIncludeTimeData.Checked = true;
+            this.cbxIncludeTimeData.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeTimeData.Location = new System.Drawing.Point(199, 250);
+            this.cbxIncludeTimeData.Name = "cbxIncludeTimeData";
+            this.cbxIncludeTimeData.Size = new System.Drawing.Size(116, 17);
+            this.cbxIncludeTimeData.TabIndex = 25;
+            this.cbxIncludeTimeData.Text = "Include time data ?";
+            this.cbxIncludeTimeData.UseVisualStyleBackColor = true;
+            this.cbxIncludeTimeData.CheckedChanged += new System.EventHandler(this.cbxIncludeTimeData_CheckedChanged);
             // 
             // Form1
             // 
@@ -1079,6 +1094,7 @@
         private System.Windows.Forms.Button btnSelectInputPath;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.Button btnSelectOutputPath;
+        private System.Windows.Forms.CheckBox cbxIncludeTimeData;
     }
 }
 

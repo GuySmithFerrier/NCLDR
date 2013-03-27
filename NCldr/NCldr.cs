@@ -348,6 +348,17 @@
         }
 
         /// <summary>
+        /// Gets the TimeData object
+        /// </summary>
+        public static TimeData TimeData
+        {
+            get
+            {
+                return NCldrData.TimeData;
+            }
+        }
+
+        /// <summary>
         /// Gets the array of TimeZoneInformation objects
         /// </summary>
         public static TimeZoneInformation[] TimeZones

@@ -127,6 +127,11 @@
         public RegionTelephoneCode[] RegionTelephoneCodes { get; set; }
 
         /// <summary>
+        /// Gets or sets the TimeData object
+        /// </summary>
+        public TimeData TimeData { get; set; }
+
+        /// <summary>
         /// Gets or sets the array of TimeZoneInformation objects
         /// </summary>
         public TimeZoneInformation[] TimeZones { get; set; }

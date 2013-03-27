@@ -83,6 +83,11 @@ namespace NCldrBuilderGui
             options.IncludeMeasurementData = cbxIncludeMeasurementData.Checked;
         }
 
+        private void cbxIncludeTimeData_CheckedChanged(object sender, EventArgs e)
+        {
+            options.IncludeTimeData = cbxIncludeTimeData.Checked;
+        }
+
         private void cbxIncludeMetaTimeZones_CheckedChanged(object sender, EventArgs e)
         {
             options.IncludeMetaTimeZones = cbxIncludeMetaTimeZones.Checked;
@@ -424,6 +429,7 @@ namespace NCldrBuilderGui
             cbxIncludeRegionGroups.Checked = options.IncludeRegionGroups;
             cbxIncludeRegionInformations.Checked = options.IncludeRegionInformations;
             cbxIncludeRegionTelephoneCodes.Checked = options.IncludeRegionTelephoneCodes;
+            cbxIncludeTimeData.Checked = options.IncludeTimeData;
             cbxIncludeTimeZones.Checked = options.IncludeTimeZones;
             cbxIncludeWeekData.Checked = options.IncludeWeekData;
             cbxIncludeWindowsMetaTimeZones.Checked = options.IncludeWindowsMetaTimeZones;

@@ -124,6 +124,11 @@
         RegionTelephoneCode[] RegionTelephoneCodes { get; set; }
 
         /// <summary>
+        /// Gets or sets the TimeData object
+        /// </summary>
+        TimeData TimeData { get; set; }
+
+        /// <summary>
         /// Gets or sets the array of TimeZoneInformation objects
         /// </summary>
         TimeZoneInformation[] TimeZones { get; set; }

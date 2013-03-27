@@ -92,5 +92,15 @@
         {
             return RegionExtensions.GetFirstDayOfWeek(regionInfo.Name);
         }
+
+        /// <summary>
+        /// GetHour gets the RegionHour for the RegionInfo
+        /// </summary>
+        /// <param name="regionInfo">The RegionInfo to get the RegionHour for</param>
+        /// <returns>The RegionHour for the RegionInfo</returns>
+        public static RegionHour GetHour(this RegionInfo regionInfo)
+        {
+            return RegionExtensions.GetHour(regionInfo.Name);
+        }
     }
 }

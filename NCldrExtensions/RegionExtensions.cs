@@ -190,5 +190,33 @@
 
             return DayOfWeek.Monday;
         }
+
+        /// <summary>
+        /// GetHour gets the RegionHour for the region
+        /// </summary>
+        /// <param name="regionId">The Id of the region to get the RegionHour for</param>
+        /// <returns>The RegionHour for the region</returns>
+        public static RegionHour GetHour(string regionId)
+        {
+            if (NCldr.TimeData == null || NCldr.TimeData.Hours == null)
+            {
+                return null;
+            }
+
+            RegionHour regionHour = (from h in NCldr.TimeData.Hours
+                                     where h.RegionIds.Contains(regionId)
+                                     select h).FirstOrDefault();
+
+            if (regionHour != null)
+            {
+                // this region has a specific RegionHour
+                return regionHour;
+            }
+
+            // there is no specific RegionHour for this region so default to the RegionHour for the world ("001")
+            return (from h in NCldr.TimeData.Hours
+                    where h.RegionIds.Contains(NCldr.RegionIdForTheWorld)
+                    select h).FirstOrDefault();
+        }
     }
 }
