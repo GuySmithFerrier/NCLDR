@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NCldr")]
-[assembly: AssemblyDescription("NCldr is an open source .NET port of CLDR")]
+[assembly: AssemblyDescription("NCldr is an open source .NET implementation of CLDR")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Guy Smith-Ferrier")]
 [assembly: AssemblyProduct("NCldr")]
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.0.004")]
-[assembly: AssemblyFileVersion("0.0.0.004")]
-[assembly: AssemblyInformationalVersion("0.0.0.004")]
+[assembly: AssemblyVersion("0.0.0.005")]
+[assembly: AssemblyFileVersion("0.0.0.005")]
+[assembly: AssemblyInformationalVersion("0.0.0.005")]
