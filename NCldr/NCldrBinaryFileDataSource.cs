@@ -14,12 +14,12 @@
         /// <summary>
         /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)
         /// </summary>
-        public static string NCldrDataPath { get; set; }
+        public string NCldrDataPath { get; set; }
 
         /// <summary>
         /// Gets the data file name including the path
         /// </summary>
-        public static string NCldrDataFilename
+        public string NCldrDataFilename
         {
             get
             {
@@ -31,7 +31,7 @@
         /// Exists returns true if the NCldr data file exists
         /// </summary>
         /// <returns>True if the NCldr data file exists</returns>
-        public static bool Exists()
+        public bool Exists()
         {
             return File.Exists(NCldrDataFilename);
         }
@@ -40,7 +40,7 @@
         /// Loads loads the raw data from the NCldr data file and returns an NCldrData object
         /// </summary>
         /// <returns>An INCldrData object from the NCldr data file</returns>
-        public static INCldrData Load()
+        public INCldrData Load()
         {
             if (!Exists())
             {
@@ -71,7 +71,7 @@
         /// Save saves the NCldrData object to the NCldr data file
         /// </summary>
         /// <param name="ncldrData">The INCldrData object to save</param>
-        public static void Save(INCldrData ncldrData)
+        public void Save(INCldrData ncldrData)
         {
             FileStream fileStream = new FileStream(NCldrDataFilename, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
