@@ -9,7 +9,7 @@
     /// NCldrBinaryFileDataSource loads/saves the raw NCLDR data from an NCldr binary data file
     /// </summary>
     /// <remarks>Set the NCldrBinaryFileDataSource.NCldrDataPath property before calling NCldrBinaryFileDataSource.Load</remarks>
-    public class NCldrBinaryFileDataSource
+    public class NCldrBinaryFileDataSource : INCldrFileDataSource
     {
         /// <summary>
         /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)

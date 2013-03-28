@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="INCldrData.cs" />
+    <Compile Include="INCldrFileDataSource.cs" />
     <Compile Include="NCldr.cs" />
     <Compile Include="NCldrData.cs" />
     <Compile Include="NCldrBinaryFileDataSource.cs" />

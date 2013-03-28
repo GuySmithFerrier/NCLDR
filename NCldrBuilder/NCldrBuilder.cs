@@ -162,14 +162,14 @@ namespace NCldr.Builder
 
         private static void Build(NCldrData ncldrData)
         {
-            NCldrBinaryFileDataSource ncldrBinaryFileDataSource = new NCldrBinaryFileDataSource();
-            ncldrBinaryFileDataSource.NCldrDataPath = ncldrPath;
+            INCldrFileDataSource ncldrFileDataSource = new NCldrBinaryFileDataSource();
+            ncldrFileDataSource.NCldrDataPath = ncldrPath;
 
-            Progress("Writing data file", ncldrBinaryFileDataSource.NCldrDataFilename, ProgressEventType.Writing);
+            Progress("Writing data file", ncldrFileDataSource.NCldrDataFilename, ProgressEventType.Writing);
 
             try
             {
-                ncldrBinaryFileDataSource.Save(ncldrData);
+                ncldrFileDataSource.Save(ncldrData);
             }
             catch (SerializationException exception)
             {

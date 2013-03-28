@@ -39,9 +39,9 @@ namespace NCldrExplorer
             lblLoading.Visible = true;
             Application.DoEvents();
 
-            NCldrBinaryFileDataSource ncldrBinaryFileDataSource = new NCldrBinaryFileDataSource();
-            ncldrBinaryFileDataSource.NCldrDataPath = tbxNCldrDataPath.Text;
-            NCldr.NCldr.NCldrData = ncldrBinaryFileDataSource.Load();
+            INCldrFileDataSource ncldrFileDataSource = new NCldrBinaryFileDataSource();
+            ncldrFileDataSource.NCldrDataPath = tbxNCldrDataPath.Text;
+            NCldr.NCldr.NCldrData = ncldrFileDataSource.Load();
             lblLoading.Visible = false;
 
             foreach (string culture in NCldr.NCldr.CultureNames)
