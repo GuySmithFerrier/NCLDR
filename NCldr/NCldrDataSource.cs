@@ -6,10 +6,10 @@
     using System.Runtime.Serialization.Formatters.Binary;
 
     /// <summary>
-    /// NCldrDataSource loads/saves the raw NCLDR data from an NCldr data file
+    /// NCldrBinaryFileDataSource loads/saves the raw NCLDR data from an NCldr binary data file
     /// </summary>
-    /// <remarks>Set the NCldrDataSource.NCldrDataPath property before calling NCldrDataSource.Load</remarks>
-    public class NCldrDataSource
+    /// <remarks>Set the NCldrBinaryFileDataSource.NCldrDataPath property before calling NCldrBinaryFileDataSource.Load</remarks>
+    public class NCldrBinaryFileDataSource
     {
         /// <summary>
         /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)

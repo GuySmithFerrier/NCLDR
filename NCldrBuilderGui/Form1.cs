@@ -324,8 +324,8 @@ namespace NCldrBuilderGui
             else
             {
                 previousSection = null;
-                NCldrDataSource.NCldrDataPath = tbxCldrPath.Text;
-                if (!NCldrDataSource.Exists() || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                NCldrBinaryFileDataSource.NCldrDataPath = tbxCldrPath.Text;
+                if (!NCldrBinaryFileDataSource.Exists() || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tbxProgress.Text = String.Empty;
                     

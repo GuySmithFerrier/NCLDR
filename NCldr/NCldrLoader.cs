@@ -7,7 +7,7 @@
     /// </summary>
     /// <remarks>Set the NCldrLoader.NCldrDataPath property before calling NCldrLoader.Load</remarks>
     [Obsolete("NCldrLoader is deprecated. Use NCldrDataSource instead.")]
-    public class NCldrLoader : NCldrDataSource
+    public class NCldrLoader : NCldrBinaryFileDataSource
     {
     }
 }
