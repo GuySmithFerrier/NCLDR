@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NCldr;
 using NCldr.Builder;
 
 namespace NCldrBuilderGui
@@ -323,8 +324,8 @@ namespace NCldrBuilderGui
             else
             {
                 previousSection = null;
-                string ncldrFilename = Path.Combine(tbxNCldrPath.Text, "NCLDR.dat");
-                if (!File.Exists(ncldrFilename) || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                NCldrLoader.NCldrDataPath = tbxCldrPath.Text;
+                if (!NCldrLoader.Exists() || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tbxProgress.Text = String.Empty;
                     

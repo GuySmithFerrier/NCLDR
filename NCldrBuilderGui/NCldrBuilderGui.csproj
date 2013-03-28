@@ -82,6 +82,10 @@
       <Project>{ef372f8e-fab5-4b70-9132-3bea580d0f90}</Project>
       <Name>NCldrBuilder</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NCldr\NCldr.csproj">
+      <Project>{5ff26cfa-910c-43cb-a758-d20bf99efdec}</Project>
+      <Name>NCldr</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,24 +12,43 @@
     public class NCldrLoader
     {
         /// <summary>
-        /// Gets or sets the path to the NCldr.dat file (includes the folder name only with no filename)
+        /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)
         /// </summary>
         public static string NCldrDataPath { get; set; }
 
         /// <summary>
-        /// Loads loads the raw data from the NCldr.dat file and returns an NCldrData object
+        /// Gets the data file name including the path
         /// </summary>
-        /// <returns>An INCldrData object from the NCldr.dat file</returns>
+        public static string NCldrDataFilename
+        {
+            get
+            {
+                return Path.Combine(NCldrDataPath, "NCldr.dat");
+            }
+        }
+
+        /// <summary>
+        /// Exists returns true if the NCldr data file exists
+        /// </summary>
+        /// <returns></returns>
+        public static bool Exists()
+        {
+            return File.Exists(NCldrDataFilename);
+        }
+
+        /// <summary>
+        /// Loads loads the raw data from the NCldr data file and returns an NCldrData object
+        /// </summary>
+        /// <returns>An INCldrData object from the NCldr data file</returns>
         public static INCldrData Load()
         {
-            string ncldrDataFilename = Path.Combine(NCldrDataPath, "NCldr.dat");
-            if (!File.Exists(ncldrDataFilename))
+            if (!Exists())
             {
                 return null;
             }
 
             NCldrData ncldrData = null;
-            FileStream fileStream = new FileStream(ncldrDataFilename, FileMode.Open);
+            FileStream fileStream = new FileStream(NCldrDataFilename, FileMode.Open);
             try
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -46,6 +65,24 @@
             }
 
             return ncldrData;
+        }
+
+        /// <summary>
+        /// Save saves the NCldrData object to the NCldr data file
+        /// </summary>
+        /// <param name="ncldrData">The INCldrData object to save</param>
+        public static void Save(INCldrData ncldrData)
+        {
+            FileStream fileStream = new FileStream(NCldrDataFilename, FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(fileStream, ncldrData);
+            }
+            finally
+            {
+                fileStream.Close();
+            }
         }
     }
 }

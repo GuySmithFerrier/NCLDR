@@ -4,9 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using NCldr.Types;
 
@@ -165,23 +162,18 @@ namespace NCldr.Builder
 
         private static void Build(NCldrData ncldrData)
         {
-            string ncldrFile = Path.Combine(ncldrPath, "NCldr.dat");
-            Progress("Writing data file", ncldrFile, ProgressEventType.Writing);
+            NCldrLoader.NCldrDataPath = ncldrPath;
 
-            FileStream fileStream = new FileStream(ncldrFile, FileMode.Create);
-            BinaryFormatter formatter = new BinaryFormatter();
+            Progress("Writing data file", NCldrLoader.NCldrDataFilename, ProgressEventType.Writing);
+
             try
             {
-                formatter.Serialize(fileStream, ncldrData);
+                NCldrLoader.Save(ncldrData);
             }
             catch (SerializationException exception)
             {
                 Console.WriteLine("Failed to serialize. Reason: " + exception.Message);
                 throw;
-            }
-            finally
-            {
-                fileStream.Close();
             }
         }
 
