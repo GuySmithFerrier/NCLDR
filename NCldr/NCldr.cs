@@ -42,7 +42,7 @@
         /// Gets or sets the NCldrData object containing the raw CLDR data
         /// </summary>
         /// <remarks>This property must be set before NCLDR can be used. Typically it is set using
-        /// the NCldrLoader class.</remarks>
+        /// the NCldrDataSource class.</remarks>
         public static INCldrData NCldrData
         {
             get
