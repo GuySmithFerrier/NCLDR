@@ -12,21 +12,33 @@ namespace NCldr.Builder
     public partial class NCldrBuilder
     {
         private static string cldrPath;
-        private static string ncldrPath;
+        private static INCldrFileDataSource ncldrDataSource;
         private static NCldrBuilderProgressEventHandler progress;
         private static NCldrBuilderOptions options;
         private static XDocument supplementalDataDocument;
 
         public static void Build(
+            string cldrPath,
+            string ncldrPath,
+            NCldrBuilderProgressEventHandler progress = null,
+            NCldrBuilderOptions options = null)
+        {
+            INCldrFileDataSource dataSource = new NCldrBinaryFileDataSource();
+            dataSource.NCldrDataPath = ncldrPath;
+
+            Build(cldrPath, dataSource, progress, options);
+        }
+
+        public static void Build(
             string cldrPath, 
-            string ncldrPath, 
+            INCldrFileDataSource dataSource, 
             NCldrBuilderProgressEventHandler progress = null,
             NCldrBuilderOptions options = null)
         {
             NCldrBuilder.options = options;
             NCldrBuilder.progress = progress;
             NCldrBuilder.cldrPath = cldrPath;
-            NCldrBuilder.ncldrPath = ncldrPath;
+            NCldrBuilder.ncldrDataSource = dataSource;
 
             supplementalDataDocument = GetXmlDocument(@"common\supplemental\supplementalData.xml");
 
@@ -162,14 +174,11 @@ namespace NCldr.Builder
 
         private static void Build(NCldrData ncldrData)
         {
-            INCldrFileDataSource ncldrFileDataSource = new NCldrBinaryFileDataSource();
-            ncldrFileDataSource.NCldrDataPath = ncldrPath;
-
-            Progress("Writing data file", ncldrFileDataSource.NCldrDataFilename, ProgressEventType.Writing);
+            Progress("Writing data file", ncldrDataSource.NCldrDataFilename, ProgressEventType.Writing);
 
             try
             {
-                ncldrFileDataSource.Save(ncldrData);
+                ncldrDataSource.Save(ncldrData);
             }
             catch (SerializationException exception)
             {

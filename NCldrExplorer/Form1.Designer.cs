@@ -468,6 +468,9 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
+            this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.rbBinary = new System.Windows.Forms.RadioButton();
+            this.rbJson = new System.Windows.Forms.RadioButton();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.tbpCultures.SuspendLayout();
@@ -652,6 +655,7 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
+            this.groupBox66.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -672,6 +676,7 @@
             // 
             // tbpLoad
             // 
+            this.tbpLoad.Controls.Add(this.groupBox66);
             this.tbpLoad.Controls.Add(this.lblLoading);
             this.tbpLoad.Controls.Add(this.btnLoadNCldrData);
             this.tbpLoad.Controls.Add(this.tbxNCldrDataPath);
@@ -687,7 +692,7 @@
             // lblLoading
             // 
             this.lblLoading.AutoSize = true;
-            this.lblLoading.Location = new System.Drawing.Point(111, 90);
+            this.lblLoading.Location = new System.Drawing.Point(111, 184);
             this.lblLoading.Name = "lblLoading";
             this.lblLoading.Size = new System.Drawing.Size(54, 13);
             this.lblLoading.TabIndex = 3;
@@ -696,7 +701,7 @@
             // 
             // btnLoadNCldrData
             // 
-            this.btnLoadNCldrData.Location = new System.Drawing.Point(114, 43);
+            this.btnLoadNCldrData.Location = new System.Drawing.Point(114, 137);
             this.btnLoadNCldrData.Name = "btnLoadNCldrData";
             this.btnLoadNCldrData.Size = new System.Drawing.Size(119, 23);
             this.btnLoadNCldrData.TabIndex = 2;
@@ -5105,6 +5110,40 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
+            // groupBox66
+            // 
+            this.groupBox66.Controls.Add(this.rbJson);
+            this.groupBox66.Controls.Add(this.rbBinary);
+            this.groupBox66.Location = new System.Drawing.Point(114, 43);
+            this.groupBox66.Name = "groupBox66";
+            this.groupBox66.Size = new System.Drawing.Size(119, 76);
+            this.groupBox66.TabIndex = 4;
+            this.groupBox66.TabStop = false;
+            this.groupBox66.Text = "Data Source";
+            // 
+            // rbBinary
+            // 
+            this.rbBinary.AutoSize = true;
+            this.rbBinary.Checked = true;
+            this.rbBinary.Location = new System.Drawing.Point(6, 19);
+            this.rbBinary.Name = "rbBinary";
+            this.rbBinary.Size = new System.Drawing.Size(54, 17);
+            this.rbBinary.TabIndex = 0;
+            this.rbBinary.TabStop = true;
+            this.rbBinary.Text = "Binary";
+            this.rbBinary.UseVisualStyleBackColor = true;
+            // 
+            // rbJson
+            // 
+            this.rbJson.AutoSize = true;
+            this.rbJson.Location = new System.Drawing.Point(6, 42);
+            this.rbJson.Name = "rbJson";
+            this.rbJson.Size = new System.Drawing.Size(53, 17);
+            this.rbJson.TabIndex = 1;
+            this.rbJson.TabStop = true;
+            this.rbJson.Text = "JSON";
+            this.rbJson.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5337,6 +5376,8 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
+            this.groupBox66.ResumeLayout(false);
+            this.groupBox66.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5783,6 +5824,9 @@
         private System.Windows.Forms.TextBox tbxCalendarYear;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.TextBox tbxCalendarEra;
+        private System.Windows.Forms.GroupBox groupBox66;
+        private System.Windows.Forms.RadioButton rbJson;
+        private System.Windows.Forms.RadioButton rbBinary;
     }
 }
 

@@ -43,6 +43,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxIncludeTimeData = new System.Windows.Forms.CheckBox();
             this.cbxIncludeCalendarPreferences = new System.Windows.Forms.CheckBox();
             this.cbxIncludeRegionTelephoneCodes = new System.Windows.Forms.CheckBox();
             this.cbxIncludeWindowsMetaTimeZones = new System.Windows.Forms.CheckBox();
@@ -97,7 +98,9 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.cbxIncludeTimeData = new System.Windows.Forms.CheckBox();
+            this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.rbJson = new System.Windows.Forms.RadioButton();
+            this.rbBinary = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -113,6 +116,7 @@
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox66.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -161,6 +165,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.groupBox66);
             this.panel3.Controls.Add(this.btnSelectOutputPath);
             this.panel3.Controls.Add(this.btnSelectInputPath);
             this.panel3.Controls.Add(this.label1);
@@ -230,7 +235,7 @@
             // 
             // btnBuild
             // 
-            this.btnBuild.Location = new System.Drawing.Point(16, 104);
+            this.btnBuild.Location = new System.Drawing.Point(16, 100);
             this.btnBuild.Name = "btnBuild";
             this.btnBuild.Size = new System.Drawing.Size(75, 23);
             this.btnBuild.TabIndex = 2;
@@ -303,6 +308,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // cbxIncludeTimeData
+            // 
+            this.cbxIncludeTimeData.AutoSize = true;
+            this.cbxIncludeTimeData.Checked = true;
+            this.cbxIncludeTimeData.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxIncludeTimeData.Location = new System.Drawing.Point(199, 250);
+            this.cbxIncludeTimeData.Name = "cbxIncludeTimeData";
+            this.cbxIncludeTimeData.Size = new System.Drawing.Size(116, 17);
+            this.cbxIncludeTimeData.TabIndex = 25;
+            this.cbxIncludeTimeData.Text = "Include time data ?";
+            this.cbxIncludeTimeData.UseVisualStyleBackColor = true;
+            this.cbxIncludeTimeData.CheckedChanged += new System.EventHandler(this.cbxIncludeTimeData_CheckedChanged);
             // 
             // cbxIncludeCalendarPreferences
             // 
@@ -977,18 +995,39 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cbxIncludeTimeData
+            // groupBox66
             // 
-            this.cbxIncludeTimeData.AutoSize = true;
-            this.cbxIncludeTimeData.Checked = true;
-            this.cbxIncludeTimeData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIncludeTimeData.Location = new System.Drawing.Point(199, 250);
-            this.cbxIncludeTimeData.Name = "cbxIncludeTimeData";
-            this.cbxIncludeTimeData.Size = new System.Drawing.Size(116, 17);
-            this.cbxIncludeTimeData.TabIndex = 25;
-            this.cbxIncludeTimeData.Text = "Include time data ?";
-            this.cbxIncludeTimeData.UseVisualStyleBackColor = true;
-            this.cbxIncludeTimeData.CheckedChanged += new System.EventHandler(this.cbxIncludeTimeData_CheckedChanged);
+            this.groupBox66.Controls.Add(this.rbJson);
+            this.groupBox66.Controls.Add(this.rbBinary);
+            this.groupBox66.Location = new System.Drawing.Point(418, 19);
+            this.groupBox66.Name = "groupBox66";
+            this.groupBox66.Size = new System.Drawing.Size(119, 76);
+            this.groupBox66.TabIndex = 7;
+            this.groupBox66.TabStop = false;
+            this.groupBox66.Text = "Data Source";
+            // 
+            // rbJson
+            // 
+            this.rbJson.AutoSize = true;
+            this.rbJson.Location = new System.Drawing.Point(6, 42);
+            this.rbJson.Name = "rbJson";
+            this.rbJson.Size = new System.Drawing.Size(53, 17);
+            this.rbJson.TabIndex = 1;
+            this.rbJson.TabStop = true;
+            this.rbJson.Text = "JSON";
+            this.rbJson.UseVisualStyleBackColor = true;
+            // 
+            // rbBinary
+            // 
+            this.rbBinary.AutoSize = true;
+            this.rbBinary.Checked = true;
+            this.rbBinary.Location = new System.Drawing.Point(6, 19);
+            this.rbBinary.Name = "rbBinary";
+            this.rbBinary.Size = new System.Drawing.Size(54, 17);
+            this.rbBinary.TabIndex = 0;
+            this.rbBinary.TabStop = true;
+            this.rbBinary.Text = "Binary";
+            this.rbBinary.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1019,6 +1058,8 @@
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox66.ResumeLayout(false);
+            this.groupBox66.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1095,6 +1136,9 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.Button btnSelectOutputPath;
         private System.Windows.Forms.CheckBox cbxIncludeTimeData;
+        private System.Windows.Forms.GroupBox groupBox66;
+        private System.Windows.Forms.RadioButton rbJson;
+        private System.Windows.Forms.RadioButton rbBinary;
     }
 }
 

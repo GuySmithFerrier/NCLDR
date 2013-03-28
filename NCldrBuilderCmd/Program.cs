@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using NCldr;
 using NCldr.Builder;
 
 namespace NCldrBuilderCmd
@@ -30,14 +31,17 @@ namespace NCldrBuilderCmd
             string cldrPath = reader.GetArgumentValue("-CLDRPath");
             string ncldrPath = reader.GetArgumentValue("-NCLDRPath");
             displayMode = GetDisplayMode(reader.GetArgumentValue("-DisplayMode"));
-            if (String.IsNullOrEmpty(cldrPath) || String.IsNullOrEmpty(ncldrPath))
+            string dataSourceName = reader.GetArgumentValue("-DataSource");
+            INCldrFileDataSource dataSource = GetDataSource(dataSourceName);
+            if (String.IsNullOrEmpty(cldrPath) || String.IsNullOrEmpty(ncldrPath) || dataSource == null)
             {
                 Console.WriteLine("Syntax:");
-                Console.WriteLine("NCldrBuilderCmd -CLDRPath:<CLDRPath> -NCLDRPath:<NCLDRPath> [-DisplayMode:Quiet|Verbose|Diagnostics]");
+                Console.WriteLine("NCldrBuilderCmd -CLDRPath:<CLDRPath> -NCLDRPath:<NCLDRPath> [-DisplayMode:Quiet|Verbose|Diagnostics] [-DataSource:Binary|Json]");
                 Console.WriteLine("where:");
                 Console.WriteLine(@"<CLDRPath> is the path to the CLDR root folder e.g. C:\CLDR\Release23");
                 Console.WriteLine(@"<NCLDRPath> is the path to the NCLDR output folder e.g. C:\Projects\NCldr\Source\NCldr\NCldrData");
-                Console.WriteLine(@"<DisplayMode> is either Quiet, Verbose or Diagnostics indicating the volume of progress information displayed");
+                Console.WriteLine(@"DisplayMode is either Quiet, Verbose or Diagnostics indicating the volume of progress information displayed");
+                Console.WriteLine(@"DataSource is either Binary (default) or Json indicating the file format of the data file created");
             }
             else if (!Directory.Exists(cldrPath))
             {
@@ -49,11 +53,28 @@ namespace NCldrBuilderCmd
             }
             else
             {
+                dataSource.NCldrDataPath = ncldrPath;
+
                 Console.WriteLine(String.Empty);
-                NCldrBuilder.Build(cldrPath, ncldrPath, new NCldrBuilderProgressEventHandler(Progress));
+                NCldrBuilder.Build(cldrPath, dataSource, new NCldrBuilderProgressEventHandler(Progress));
                 Console.WriteLine(String.Empty);
                 Console.WriteLine("Done.");
             }
+        }
+
+        private static INCldrFileDataSource GetDataSource(string dataSourceName)
+        {
+            if (string.IsNullOrEmpty(dataSourceName) ||
+                string.Compare(dataSourceName, "Binary", StringComparison.InvariantCultureIgnoreCase) == 0)
+            {
+                return new NCldrBinaryFileDataSource();
+            }
+            else if (string.Compare(dataSourceName, "Json", StringComparison.InvariantCultureIgnoreCase) == 0)
+            {
+                return new NCldrJsonFileDataSource();
+            }
+
+            return null;
         }
 
         private static DisplayMode GetDisplayMode(string displayMode)

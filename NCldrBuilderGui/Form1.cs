@@ -324,7 +324,7 @@ namespace NCldrBuilderGui
             else
             {
                 previousSection = null;
-                INCldrFileDataSource ncldrFileDataSource = new NCldrBinaryFileDataSource();
+                INCldrFileDataSource ncldrFileDataSource = this.GetNewNCldrDataSource();
                 ncldrFileDataSource.NCldrDataPath = tbxCldrPath.Text;
                 if (!ncldrFileDataSource.Exists() || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -332,13 +332,23 @@ namespace NCldrBuilderGui
                     
                     NCldrBuilder.Build(
                         tbxCldrPath.Text, 
-                        tbxNCldrPath.Text, 
+                        ncldrFileDataSource, 
                         new NCldrBuilderProgressEventHandler(Progress),
                         this.options);
 
                     Progress("Done.");
                 }
             }
+        }
+
+        private INCldrFileDataSource GetNewNCldrDataSource()
+        {
+            if (rbJson.Checked)
+            {
+                return new NCldrJsonFileDataSource();
+            }
+
+            return new NCldrBinaryFileDataSource();
         }
 
         private string previousSection;

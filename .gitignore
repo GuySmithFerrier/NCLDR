@@ -10,3 +10,4 @@ StyleCop.cache
 NCldrData/*
 NCldr.Tests/*
 NCldr.IntegrationTests/*
+packages/*

@@ -30,6 +30,20 @@ namespace NCldrExplorer
             if (args.GetLength(0) > 0 && Directory.Exists(args[0]))
             {
                 tbxNCldrDataPath.Text = args[0];
+
+                if (args.GetLength(0) > 1)
+                {
+                    string dataSourceName = args[1];
+                    if (string.Compare(dataSourceName, "Binary", StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        rbBinary.Checked = true;
+                    }
+                    else if (string.Compare(dataSourceName, "Json", StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        rbJson.Checked = true;
+                    }
+                }
+
                 btnLoadNCldrData_Click(this, null);
             }
         }
@@ -39,7 +53,7 @@ namespace NCldrExplorer
             lblLoading.Visible = true;
             Application.DoEvents();
 
-            INCldrFileDataSource ncldrFileDataSource = new NCldrBinaryFileDataSource();
+            INCldrFileDataSource ncldrFileDataSource = this.GetNewNCldrDataSource();
             ncldrFileDataSource.NCldrDataPath = tbxNCldrDataPath.Text;
             NCldr.NCldr.NCldrData = ncldrFileDataSource.Load();
             lblLoading.Visible = false;
@@ -55,6 +69,16 @@ namespace NCldrExplorer
             }
 
             tabControl.SelectedIndex = 1;
+        }
+
+        private INCldrFileDataSource GetNewNCldrDataSource()
+        {
+            if (rbJson.Checked)
+            {
+                return new NCldrJsonFileDataSource();
+            }
+
+            return new NCldrBinaryFileDataSource();
         }
 
         private void AddPluralRuleSets()
