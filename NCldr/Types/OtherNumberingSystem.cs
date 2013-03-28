@@ -11,8 +11,14 @@
     [Serializable]
     public class OtherNumberingSystem
     {
+        /// <summary>
+        /// Gets or sets the identifier
+        /// </summary>
         public string Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the value
+        /// </summary>
         public string Value { get; set; }
 
         /// <summary>

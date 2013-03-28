@@ -75,33 +75,6 @@
         }
 
         /// <summary>
-        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a given datetime
-        /// </summary>
-        /// <param name="dateTime">The DateTime to get the CurrencyPeriods for</param>
-        /// <returns>An array of CurrencyPeriods for a given datetime</returns>
-        public CurrencyPeriod[] GetCurrencyPeriods(DateTime dateTime)
-        {
-            if (this.CurrencyPeriods != null)
-            {
-                return (from cp in this.CurrencyPeriods
-                        where (cp.From == null || cp.From < dateTime)
-                        && (cp.To == null || cp.To > dateTime)
-                        select cp).ToArray();
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Clone clones the object
-        /// </summary>
-        /// <returns>A cloned copy of the object</returns>
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
-        /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>
         /// <param name="combinedNumbers">The child object</param>
@@ -151,6 +124,24 @@
         }
 
         /// <summary>
+        /// GetCurrencyPeriods gets an array of CurrencyPeriods for a given datetime
+        /// </summary>
+        /// <param name="dateTime">The DateTime to get the CurrencyPeriods for</param>
+        /// <returns>An array of CurrencyPeriods for a given datetime</returns>
+        public CurrencyPeriod[] GetCurrencyPeriods(DateTime dateTime)
+        {
+            if (this.CurrencyPeriods != null)
+            {
+                return (from cp in this.CurrencyPeriods
+                        where (cp.From == null || cp.From < dateTime)
+                        && (cp.To == null || cp.To > dateTime)
+                        select cp).ToArray();
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// CombineArrays combines a child array with a parent array as necessary and returns the combined array
         /// </summary>
         /// <typeparam name="T">The type of the array elements</typeparam>
@@ -187,6 +178,15 @@
             }
 
             return combinedList.ToArray();
+        }
+
+        /// <summary>
+        /// Clone clones the object
+        /// </summary>
+        /// <returns>A cloned copy of the object</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

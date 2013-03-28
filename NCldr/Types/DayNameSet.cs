@@ -7,7 +7,7 @@
     /// </summary>
     /// <remarks>CLDR reference: http://www.unicode.org/reports/tr35/#Calendar_Elements </remarks>
     [Serializable]
-    public class DayNameSet: CalendarNameSet<DayName>
+    public class DayNameSet : CalendarNameSet<DayName>
     {
     }
 }

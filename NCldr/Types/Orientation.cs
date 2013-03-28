@@ -21,13 +21,13 @@
         public string CharacterOrder { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the ordering of characters within a line is Right To Left
+        /// Gets a value indicating whether the ordering of characters within a line is Right To Left
         /// </summary>
         public bool IsRightToLeft
         {
             get
             {
-                if (String.IsNullOrEmpty(this.CharacterOrder))
+                if (string.IsNullOrEmpty(this.CharacterOrder))
                 {
                     return false;
                 }

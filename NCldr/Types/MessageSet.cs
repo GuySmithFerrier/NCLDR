@@ -15,7 +15,7 @@
     public class MessageSet : ICloneable
     {
         /// <summary>
-        /// Initializes a new instance of the Messages class
+        /// Initializes a new instance of the MessageSet class
         /// </summary>
         public MessageSet()
             : base()
@@ -40,7 +40,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
+                                   where string.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -72,7 +72,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
+                                   where string.Compare(m.Id, "yesstr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -110,7 +110,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
+                                   where string.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -142,7 +142,7 @@
                 }
 
                 Message message = (from m in this.Messages
-                                   where String.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
+                                   where string.Compare(m.Id, "nostr", StringComparison.InvariantCultureIgnoreCase) == 0
                                    select m).FirstOrDefault();
 
                 if (message == null)
@@ -165,15 +165,6 @@
 
                 return noBits[1];
             }
-        }
-
-        /// <summary>
-        /// Clone clones the object
-        /// </summary>
-        /// <returns>A cloned copy of the object</returns>
-        public object Clone()
-        {
-            return this.MemberwiseClone();
         }
 
         /// <summary>
@@ -212,6 +203,15 @@
             combinedMessages.Messages = combinedMessagesList.ToArray();
 
             return combinedMessages;
+        }
+
+        /// <summary>
+        /// Clone clones the object
+        /// </summary>
+        /// <returns>A cloned copy of the object</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

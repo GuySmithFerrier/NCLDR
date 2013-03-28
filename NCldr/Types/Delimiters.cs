@@ -30,15 +30,6 @@
         public string AlternateQuotationEnd { get; set; }
 
         /// <summary>
-        /// Clone clones the object
-        /// </summary>
-        /// <returns>A cloned copy of the object</returns>
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
-        /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>
         /// <param name="combinedDelimiters">The child object</param>
@@ -80,6 +71,15 @@
             }
 
             return combinedDelimiters;
+        }
+
+        /// <summary>
+        /// Clone clones the object
+        /// </summary>
+        /// <returns>A cloned copy of the object</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

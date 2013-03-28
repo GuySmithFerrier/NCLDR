@@ -202,27 +202,6 @@
         }
 
         /// <summary>
-        /// GetCasing gets the resolved Casing
-        /// </summary>
-        /// <returns>The resolved Casing</returns>
-        private Casing GetCasing()
-        {
-            Casing casing = null;
-            if (this.casingNoParents != null)
-            {
-                casing = (Casing)this.casingNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                casing = Casing.Combine(casing, parentCulture.casingNoParents);
-            }
-
-            return casing;
-        }
-
-        /// <summary>
         /// Gets or sets the resolved Characters
         /// </summary>
         public Characters Characters
@@ -241,27 +220,6 @@
             {
                 this.characters = value;
             }
-        }
-
-        /// <summary>
-        /// GetCharacters gets the resolved Characters
-        /// </summary>
-        /// <returns>The resolved Characters</returns>
-        private Characters GetCharacters()
-        {
-            Characters characters = null;
-            if (this.charactersNoParents != null)
-            {
-                characters = (Characters)this.charactersNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                characters = Characters.Combine(characters, parentCulture.charactersNoParents);
-            }
-
-            return characters;
         }
 
         /// <summary>
@@ -286,27 +244,6 @@
         }
 
         /// <summary>
-        /// GetDates gets the resolved Dates
-        /// </summary>
-        /// <returns>The resolved Dates</returns>
-        private Dates GetDates()
-        {
-            Dates dates = null;
-            if (this.datesNoParents != null)
-            {
-                dates = (Dates)this.datesNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                dates = Dates.Combine(dates, parentCulture.datesNoParents);
-            }
-
-            return dates;
-        }
-
-        /// <summary>
         /// Gets or sets the resolved Delimiters
         /// </summary>
         public Delimiters Delimiters
@@ -325,27 +262,6 @@
             {
                 this.delimiters = value;
             }
-        }
-
-        /// <summary>
-        /// GetDelimiters gets the resolved Delimiters
-        /// </summary>
-        /// <returns>The resolved Delimiters</returns>
-        private Delimiters GetDelimiters()
-        {
-            Delimiters delimiters = null;
-            if (this.delimitersNoParents != null)
-            {
-                delimiters = (Delimiters)this.delimitersNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                delimiters = Delimiters.Combine(delimiters, parentCulture.delimitersNoParents);
-            }
-
-            return delimiters;
         }
 
         /// <summary>
@@ -370,27 +286,6 @@
         }
 
         /// <summary>
-        /// GetLayout gets the resolved Layout
-        /// </summary>
-        /// <returns>The resolved Layout</returns>
-        private Layout GetLayout()
-        {
-            Layout layout = null;
-            if (this.layoutNoParents != null)
-            {
-                layout = (Layout)this.layoutNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                layout = Layout.Combine(layout, parentCulture.layoutNoParents);
-            }
-
-            return layout;
-        }
-
-        /// <summary>
         /// Gets or sets the resolved ListPatterns
         /// </summary>
         public ListPattern[] ListPatterns
@@ -409,27 +304,6 @@
             {
                 this.ListPatterns = value;
             }
-        }
-
-        /// <summary>
-        /// GetListPatterns gets the resolved ListPatterns
-        /// </summary>
-        /// <returns>The resolved ListPatterns</returns>
-        private ListPattern[] GetListPatterns()
-        {
-            ListPattern[] listPatterns = null;
-            if (this.listPatternsNoParents != null)
-            {
-                listPatterns = (ListPattern[])this.listPatternsNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                listPatterns = ListPattern.Combine(listPatterns, parentCulture.listPatternsNoParents);
-            }
-
-            return listPatterns;
         }
 
         /// <summary>
@@ -454,27 +328,6 @@
         }
 
         /// <summary>
-        /// GetMessages gets the resolved Messages
-        /// </summary>
-        /// <returns>The resolved Messages</returns>
-        private MessageSet GetMessages()
-        {
-            MessageSet messages = null;
-            if (this.messagesNoParents != null)
-            {
-                messages = (MessageSet)this.messagesNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                messages = MessageSet.Combine(messages, parentCulture.messagesNoParents);
-            }
-
-            return messages;
-        }
-
-        /// <summary>
         /// Gets or sets the resolved Numbers
         /// </summary>
         public Numbers Numbers
@@ -496,27 +349,6 @@
         }
 
         /// <summary>
-        /// GetNumbers gets the resolved Numbers
-        /// </summary>
-        /// <returns>The resolved Numbers</returns>
-        private Numbers GetNumbers()
-        {
-            Numbers numbers = null;
-            if (this.numbersNoParents != null)
-            {
-                numbers = (Numbers)this.numbersNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                numbers = Numbers.Combine(numbers, parentCulture.numbersNoParents);
-            }
-
-            return numbers;
-        }
-
-        /// <summary>
         /// Gets or sets the resolved RuleBasedNumberFormatting
         /// </summary>
         public RuleBasedNumberFormatting RuleBasedNumberFormatting
@@ -535,27 +367,6 @@
             {
                 this.ruleBasedNumberFormatting = value;
             }
-        }
-
-        /// <summary>
-        /// GetRuleBasedNumberFormatting gets the resolved RuleBasedNumberFormatting
-        /// </summary>
-        /// <returns>The resolved RuleBasedNumberFormatting</returns>
-        private RuleBasedNumberFormatting GetRuleBasedNumberFormatting()
-        {
-            RuleBasedNumberFormatting ruleBasedNumberFormatting = null;
-            if (this.ruleBasedNumberFormattingNoParents != null)
-            {
-                ruleBasedNumberFormatting = (RuleBasedNumberFormatting)this.ruleBasedNumberFormattingNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                ruleBasedNumberFormatting = RuleBasedNumberFormatting.Combine(ruleBasedNumberFormatting, parentCulture.ruleBasedNumberFormattingNoParents);
-            }
-
-            return ruleBasedNumberFormatting;
         }
 
         /// <summary>
@@ -649,27 +460,6 @@
         }
 
         /// <summary>
-        /// GetUnitPatternSets gets the resolved UnitPatternSets
-        /// </summary>
-        /// <returns>The resolved UnitPatternSets</returns>
-        private UnitPatternSet[] GetUnitPatternSets()
-        {
-            UnitPatternSet[] unitPatternSets = null;
-            if (this.unitPatternSetsNoParents != null)
-            {
-                unitPatternSets = (UnitPatternSet[])this.unitPatternSetsNoParents.Clone();
-            }
-
-            Culture[] parentCultures = this.GetParents();
-            foreach (Culture parentCulture in parentCultures)
-            {
-                unitPatternSets = UnitPatternSet.Combine(unitPatternSets, parentCulture.unitPatternSetsNoParents);
-            }
-
-            return unitPatternSets;
-        }
-
-        /// <summary>
         /// Gets the culture name
         /// </summary>
         public string Name
@@ -703,16 +493,6 @@
         }
 
         /// <summary>
-        /// Gets the culture's display name in a given language
-        /// </summary>
-        /// <param name="languageId">The Id of the language to get the display name for</param>
-        /// <returns>The display name in the given language</returns>
-        public string DisplayName(string languageId)
-        {
-            return this.Identity.DisplayName(languageId);
-        }
-
-        /// <summary>
         /// Gets a value indicating whether the culture is a neutral culture
         /// </summary>
         public bool IsNeutralCulture
@@ -721,25 +501,6 @@
             {
                 return this.Identity.Region == null;
             }
-        }
-
-        /// <summary>
-        /// GetCultures gets an array of Culture objects for the given culture types
-        /// </summary>
-        /// <param name="cultureTypes">The CultureTypes to get the cultures for</param>
-        /// <returns>An array of Culture objects</returns>
-        public static Culture[] GetCultures(CultureTypes cultureTypes)
-        {
-            if (cultureTypes == CultureTypes.NeutralCultures)
-            {
-                return GetCultures(true);
-            }
-            else if (cultureTypes == CultureTypes.SpecificCultures)
-            {
-                return GetCultures(false);
-            }
-
-            return NCldr.Cultures;
         }
 
         /// <summary>
@@ -769,6 +530,245 @@
             }
 
             return cultures.ToArray();
+        }
+
+        /// <summary>
+        /// GetCasing gets the resolved Casing
+        /// </summary>
+        /// <returns>The resolved Casing</returns>
+        private Casing GetCasing()
+        {
+            Casing casing = null;
+            if (this.casingNoParents != null)
+            {
+                casing = (Casing)this.casingNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                casing = Casing.Combine(casing, parentCulture.casingNoParents);
+            }
+
+            return casing;
+        }
+
+        /// <summary>
+        /// GetCharacters gets the resolved Characters
+        /// </summary>
+        /// <returns>The resolved Characters</returns>
+        private Characters GetCharacters()
+        {
+            Characters characters = null;
+            if (this.charactersNoParents != null)
+            {
+                characters = (Characters)this.charactersNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                characters = Characters.Combine(characters, parentCulture.charactersNoParents);
+            }
+
+            return characters;
+        }
+
+        /// <summary>
+        /// GetDates gets the resolved Dates
+        /// </summary>
+        /// <returns>The resolved Dates</returns>
+        private Dates GetDates()
+        {
+            Dates dates = null;
+            if (this.datesNoParents != null)
+            {
+                dates = (Dates)this.datesNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                dates = Dates.Combine(dates, parentCulture.datesNoParents);
+            }
+
+            return dates;
+        }
+
+        /// <summary>
+        /// GetDelimiters gets the resolved Delimiters
+        /// </summary>
+        /// <returns>The resolved Delimiters</returns>
+        private Delimiters GetDelimiters()
+        {
+            Delimiters delimiters = null;
+            if (this.delimitersNoParents != null)
+            {
+                delimiters = (Delimiters)this.delimitersNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                delimiters = Delimiters.Combine(delimiters, parentCulture.delimitersNoParents);
+            }
+
+            return delimiters;
+        }
+
+        /// <summary>
+        /// GetLayout gets the resolved Layout
+        /// </summary>
+        /// <returns>The resolved Layout</returns>
+        private Layout GetLayout()
+        {
+            Layout layout = null;
+            if (this.layoutNoParents != null)
+            {
+                layout = (Layout)this.layoutNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                layout = Layout.Combine(layout, parentCulture.layoutNoParents);
+            }
+
+            return layout;
+        }
+
+        /// <summary>
+        /// GetListPatterns gets the resolved ListPatterns
+        /// </summary>
+        /// <returns>The resolved ListPatterns</returns>
+        private ListPattern[] GetListPatterns()
+        {
+            ListPattern[] listPatterns = null;
+            if (this.listPatternsNoParents != null)
+            {
+                listPatterns = (ListPattern[])this.listPatternsNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                listPatterns = ListPattern.Combine(listPatterns, parentCulture.listPatternsNoParents);
+            }
+
+            return listPatterns;
+        }
+
+        /// <summary>
+        /// GetMessages gets the resolved Messages
+        /// </summary>
+        /// <returns>The resolved Messages</returns>
+        private MessageSet GetMessages()
+        {
+            MessageSet messages = null;
+            if (this.messagesNoParents != null)
+            {
+                messages = (MessageSet)this.messagesNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                messages = MessageSet.Combine(messages, parentCulture.messagesNoParents);
+            }
+
+            return messages;
+        }
+
+        /// <summary>
+        /// GetNumbers gets the resolved Numbers
+        /// </summary>
+        /// <returns>The resolved Numbers</returns>
+        private Numbers GetNumbers()
+        {
+            Numbers numbers = null;
+            if (this.numbersNoParents != null)
+            {
+                numbers = (Numbers)this.numbersNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                numbers = Numbers.Combine(numbers, parentCulture.numbersNoParents);
+            }
+
+            return numbers;
+        }
+
+        /// <summary>
+        /// GetRuleBasedNumberFormatting gets the resolved RuleBasedNumberFormatting
+        /// </summary>
+        /// <returns>The resolved RuleBasedNumberFormatting</returns>
+        private RuleBasedNumberFormatting GetRuleBasedNumberFormatting()
+        {
+            RuleBasedNumberFormatting ruleBasedNumberFormatting = null;
+            if (this.ruleBasedNumberFormattingNoParents != null)
+            {
+                ruleBasedNumberFormatting = (RuleBasedNumberFormatting)this.ruleBasedNumberFormattingNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                ruleBasedNumberFormatting = RuleBasedNumberFormatting.Combine(ruleBasedNumberFormatting, parentCulture.ruleBasedNumberFormattingNoParents);
+            }
+
+            return ruleBasedNumberFormatting;
+        }
+
+        /// <summary>
+        /// GetUnitPatternSets gets the resolved UnitPatternSets
+        /// </summary>
+        /// <returns>The resolved UnitPatternSets</returns>
+        private UnitPatternSet[] GetUnitPatternSets()
+        {
+            UnitPatternSet[] unitPatternSets = null;
+            if (this.unitPatternSetsNoParents != null)
+            {
+                unitPatternSets = (UnitPatternSet[])this.unitPatternSetsNoParents.Clone();
+            }
+
+            Culture[] parentCultures = this.GetParents();
+            foreach (Culture parentCulture in parentCultures)
+            {
+                unitPatternSets = UnitPatternSet.Combine(unitPatternSets, parentCulture.unitPatternSetsNoParents);
+            }
+
+            return unitPatternSets;
+        }
+
+        /// <summary>
+        /// Gets the culture's display name in a given language
+        /// </summary>
+        /// <param name="languageId">The Id of the language to get the display name for</param>
+        /// <returns>The display name in the given language</returns>
+        public string DisplayName(string languageId)
+        {
+            return this.Identity.DisplayName(languageId);
+        }
+
+        /// <summary>
+        /// GetCultures gets an array of Culture objects for the given culture types
+        /// </summary>
+        /// <param name="cultureTypes">The CultureTypes to get the cultures for</param>
+        /// <returns>An array of Culture objects</returns>
+        public static Culture[] GetCultures(CultureTypes cultureTypes)
+        {
+            if (cultureTypes == CultureTypes.NeutralCultures)
+            {
+                return GetCultures(true);
+            }
+            else if (cultureTypes == CultureTypes.SpecificCultures)
+            {
+                return GetCultures(false);
+            }
+
+            return NCldr.Cultures;
         }
 
         /// <summary>

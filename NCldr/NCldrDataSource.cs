@@ -30,7 +30,7 @@
         /// <summary>
         /// Exists returns true if the NCldr data file exists
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if the NCldr data file exists</returns>
         public static bool Exists()
         {
             return File.Exists(NCldrDataFilename);

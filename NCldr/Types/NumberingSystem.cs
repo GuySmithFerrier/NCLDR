@@ -118,42 +118,6 @@
         }
 
         /// <summary>
-        /// GetDecimalDigits gets the number of digits that should be used to display decimals given the format pattern
-        /// </summary>
-        /// <param name="pattern">The pattern to get the number of digits from</param>
-        /// <returns>The number of digits that should be used to display decimals given the format pattern</returns>
-        private int GetDecimalDigits(string pattern)
-        {
-            if (string.IsNullOrEmpty(pattern))
-            {
-                return 0;
-            }
-
-            int decimalPointIndex = pattern.IndexOf(".");
-            if (decimalPointIndex == -1)
-            {
-                return 0;
-            }
-
-            string decimalPlaces = pattern.Substring(decimalPointIndex + 1);
-            if (decimalPlaces.Length > 0 && decimalPlaces.Replace("#", string.Empty).Length == 0)
-            {
-                // The decimal places string is wholly made up of # characters. So it is something like "###".
-                // CLDR interprets "#" to mean display a number if a value is present but display nothing if no value is present.
-                // So 123.456 using a pattern of "###.###" is "123.456" but with a pattern of "###.####" is still "123.456"
-                // (notice that the four decimal "#"s only return 3 decimal places).
-                // The problem here is that .NET does not have an 'optional' number of decimal places - only has a fixed
-                // number of decimal places. The CLDR patterns typically allow additional room for growth using the "#" symbol
-                // but this doesn't translate to a fixed number of decimal places. So "###.###" does not mean 
-                // "display 3 decimal places" - it means "display anything up to 3 decimal places".
-                // So this next line removes a single decimal place as a very rough way of adjusting for this difference.
-                return decimalPlaces.Length - 1;
-            }
-
-            return decimalPlaces.Length;
-        }
-
-        /// <summary>
         /// Gets the number of decimal digits for the positive number pattern
         /// </summary>
         public int NumberDecimalDigits
@@ -161,23 +125,6 @@
             get
             {
                 return this.GetDecimalDigits(this.NumberFormatPositivePattern);
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the number pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
-        /// </summary>
-        private bool NumberHasNegativePattern
-        {
-            get
-            {
-                string numberFormatPattern = this.DecimalFormatPattern;
-                if (string.IsNullOrEmpty(numberFormatPattern))
-                {
-                    return false;
-                }
-
-                return numberFormatPattern.Split(';').GetLength(0) >= 1;
             }
         }
 
@@ -327,23 +274,6 @@
         }
 
         /// <summary>
-        /// Gets a value indicating whether the percentage pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
-        /// </summary>
-        private bool PercentHasNegativePattern
-        {
-            get
-            {
-                string percentFormatPattern = this.PercentFormatPattern;
-                if (string.IsNullOrEmpty(percentFormatPattern))
-                {
-                    return false;
-                }
-
-                return percentFormatPattern.Split(';').GetLength(0) >= 1;
-            }
-        }
-
-        /// <summary>
         /// Gets the .NET pattern used for negative percentages
         /// </summary>
         public int PercentNegativePattern
@@ -477,23 +407,6 @@
 
                 // the default is "$n"
                 return 0;
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the currency pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
-        /// </summary>
-        private bool CurrencyHasNegativePattern
-        {
-            get
-            {
-                string currencyFormatPattern = this.CurrencyFormatPattern;
-                if (string.IsNullOrEmpty(currencyFormatPattern))
-                {
-                    return false;
-                }
-
-                return currencyFormatPattern.Split(';').GetLength(0) >= 1;
             }
         }
 
@@ -675,6 +588,93 @@
             }
 
             return groupSizes.ToArray();
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the number pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
+        /// </summary>
+        private bool NumberHasNegativePattern
+        {
+            get
+            {
+                string numberFormatPattern = this.DecimalFormatPattern;
+                if (string.IsNullOrEmpty(numberFormatPattern))
+                {
+                    return false;
+                }
+
+                return numberFormatPattern.Split(';').GetLength(0) >= 1;
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the percentage pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
+        /// </summary>
+        private bool PercentHasNegativePattern
+        {
+            get
+            {
+                string percentFormatPattern = this.PercentFormatPattern;
+                if (string.IsNullOrEmpty(percentFormatPattern))
+                {
+                    return false;
+                }
+
+                return percentFormatPattern.Split(';').GetLength(0) >= 1;
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the currency pattern has an explicit negative pattern (or if it is simply inferred from the positive pattern)
+        /// </summary>
+        private bool CurrencyHasNegativePattern
+        {
+            get
+            {
+                string currencyFormatPattern = this.CurrencyFormatPattern;
+                if (string.IsNullOrEmpty(currencyFormatPattern))
+                {
+                    return false;
+                }
+
+                return currencyFormatPattern.Split(';').GetLength(0) >= 1;
+            }
+        }
+
+        /// <summary>
+        /// GetDecimalDigits gets the number of digits that should be used to display decimals given the format pattern
+        /// </summary>
+        /// <param name="pattern">The pattern to get the number of digits from</param>
+        /// <returns>The number of digits that should be used to display decimals given the format pattern</returns>
+        private int GetDecimalDigits(string pattern)
+        {
+            if (string.IsNullOrEmpty(pattern))
+            {
+                return 0;
+            }
+
+            int decimalPointIndex = pattern.IndexOf(".");
+            if (decimalPointIndex == -1)
+            {
+                return 0;
+            }
+
+            string decimalPlaces = pattern.Substring(decimalPointIndex + 1);
+            if (decimalPlaces.Length > 0 && decimalPlaces.Replace("#", string.Empty).Length == 0)
+            {
+                // The decimal places string is wholly made up of # characters. So it is something like "###".
+                // CLDR interprets "#" to mean display a number if a value is present but display nothing if no value is present.
+                // So 123.456 using a pattern of "###.###" is "123.456" but with a pattern of "###.####" is still "123.456"
+                // (notice that the four decimal "#"s only return 3 decimal places).
+                // The problem here is that .NET does not have an 'optional' number of decimal places - only has a fixed
+                // number of decimal places. The CLDR patterns typically allow additional room for growth using the "#" symbol
+                // but this doesn't translate to a fixed number of decimal places. So "###.###" does not mean 
+                // "display 3 decimal places" - it means "display anything up to 3 decimal places".
+                // So this next line removes a single decimal place as a very rough way of adjusting for this difference.
+                return decimalPlaces.Length - 1;
+            }
+
+            return decimalPlaces.Length;
         }
     }
 }

@@ -12,15 +12,15 @@
     public class NCldr
     {
         /// <summary>
-        /// Gets or sets the NCldrData object containing the raw CLDR data
-        /// </summary>
-        private static INCldrData ncldrData;
-
-        /// <summary>
         /// Gets the RegionId that represents the whole world
         /// </summary>
         /// <remarks>In some cases this can be seen as the ultimate fallback for all regions</remarks>
         public const string RegionIdForTheWorld = "001";
+
+        /// <summary>
+        /// Gets or sets the NCldrData object containing the raw CLDR data
+        /// </summary>
+        private static INCldrData ncldrData;
 
         /// <summary>
         /// Gets or sets the array of Culture objects used by the Cultures property

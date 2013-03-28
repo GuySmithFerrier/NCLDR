@@ -23,15 +23,6 @@
         public RuleBasedNumberFormattingRuleSet[] OrdinalRuleSets { get; set; }
 
         /// <summary>
-        /// Clone clones the object
-        /// </summary>
-        /// <returns>A cloned copy of the object</returns>
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
-        /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>
         /// <param name="combinedRuleBasedNumberFormatting">The child object</param>
@@ -65,6 +56,15 @@
                 (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             return combinedRuleBasedNumberFormatting;
+        }
+
+        /// <summary>
+        /// Clone clones the object
+        /// </summary>
+        /// <returns>A cloned copy of the object</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
 
         /// <summary>

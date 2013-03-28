@@ -22,15 +22,6 @@
         public T[] Names { get; set; }
 
         /// <summary>
-        /// Clone clones the object
-        /// </summary>
-        /// <returns>A cloned copy of the object</returns>
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
-        /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>
         /// <param name="combinedCalendarNameSets">The child object</param>
@@ -102,7 +93,7 @@
             foreach (T parentCalendarName in parentCalendarNameSet.Names)
             {
                 if (!(from cn in combinedCalendarNames
-                      where String.Compare(cn.Id, parentCalendarName.Id, StringComparison.InvariantCultureIgnoreCase) == 0
+                      where string.Compare(cn.Id, parentCalendarName.Id, StringComparison.InvariantCultureIgnoreCase) == 0
                       select cn).Any())
                 {
                     // the parent name is not in the combined list
@@ -112,6 +103,15 @@
 
             combinedCalendarNameSet.Names = combinedCalendarNames.ToArray();
             return combinedCalendarNameSet;
+        }
+
+        /// <summary>
+        /// Clone clones the object
+        /// </summary>
+        /// <returns>A cloned copy of the object</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }
