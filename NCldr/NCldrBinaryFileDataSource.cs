@@ -23,7 +23,7 @@
         {
             get
             {
-                return Path.Combine(NCldrDataPath, "NCldr.dat");
+                return Path.Combine(this.NCldrDataPath, "NCldr.dat");
             }
         }
 
@@ -33,7 +33,7 @@
         /// <returns>True if the NCldr data file exists</returns>
         public bool Exists()
         {
-            return File.Exists(NCldrDataFilename);
+            return File.Exists(this.NCldrDataFilename);
         }
 
         /// <summary>
@@ -42,13 +42,13 @@
         /// <returns>An INCldrData object from the NCldr data file</returns>
         public INCldrData Load()
         {
-            if (!Exists())
+            if (!this.Exists())
             {
                 return null;
             }
 
             NCldrData ncldrData = null;
-            FileStream fileStream = new FileStream(NCldrDataFilename, FileMode.Open);
+            FileStream fileStream = new FileStream(this.NCldrDataFilename, FileMode.Open);
             try
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -73,7 +73,7 @@
         /// <param name="ncldrData">The INCldrData object to save</param>
         public void Save(INCldrData ncldrData)
         {
-            FileStream fileStream = new FileStream(NCldrDataFilename, FileMode.Create);
+            FileStream fileStream = new FileStream(this.NCldrDataFilename, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             try
             {
