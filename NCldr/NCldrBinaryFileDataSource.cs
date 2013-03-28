@@ -3,7 +3,10 @@
     using System;
     using System.IO;
     using System.Runtime.Serialization;
+
+#if !WINDOWS_PHONE
     using System.Runtime.Serialization.Formatters.Binary;
+#endif
 
     /// <summary>
     /// NCldrBinaryFileDataSource loads/saves the raw NCLDR data from an NCldr binary data file
@@ -42,6 +45,9 @@
         /// <returns>An INCldrData object from the NCldr data file</returns>
         public INCldrData Load()
         {
+#if WINDOWS_PHONE
+            throw new NotImplementedException("NCldrBinaryFileDataSource is not supported on Windows Phone. Use NCldrJsonFileDataSource instead.");
+#else
             if (!this.Exists())
             {
                 return null;
@@ -65,6 +71,7 @@
             }
 
             return ncldrData;
+#endif
         }
 
         /// <summary>
@@ -73,6 +80,9 @@
         /// <param name="ncldrData">The INCldrData object to save</param>
         public void Save(INCldrData ncldrData)
         {
+#if WINDOWS_PHONE
+            throw new NotImplementedException("NCldrBinaryFileDataSource is not supported on Windows Phone. Use NCldrJsonFileDataSource instead.");
+#else
             FileStream fileStream = new FileStream(this.NCldrDataFilename, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             try
@@ -83,6 +93,7 @@
             {
                 fileStream.Close();
             }
+#endif
         }
     }
 }
