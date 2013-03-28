@@ -41,7 +41,7 @@ namespace NCldrBuilderCmd
                 Console.WriteLine(@"<CLDRPath> is the path to the CLDR root folder e.g. C:\CLDR\Release23");
                 Console.WriteLine(@"<NCLDRPath> is the path to the NCLDR output folder e.g. C:\Projects\NCldr\Source\NCldr\NCldrData");
                 Console.WriteLine(@"DisplayMode is either Quiet, Verbose or Diagnostics indicating the volume of progress information displayed");
-                Console.WriteLine(@"DataSource is either Binary (default) or Json indicating the file format of the data file created");
+                Console.WriteLine(@"DataSource is either Binary (default), Json or XML indicating the file format of the data file created");
             }
             else if (!Directory.Exists(cldrPath))
             {
@@ -72,6 +72,10 @@ namespace NCldrBuilderCmd
             else if (string.Compare(dataSourceName, "Json", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
                 return new NCldrJsonFileDataSource();
+            }
+            else if (string.Compare(dataSourceName, "Xml", StringComparison.InvariantCultureIgnoreCase) == 0)
+            {
+                return new NCldrXmlFileDataSource();
             }
 
             return null;

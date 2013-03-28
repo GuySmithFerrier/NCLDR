@@ -325,7 +325,7 @@ namespace NCldrBuilderGui
             {
                 previousSection = null;
                 INCldrFileDataSource ncldrFileDataSource = this.GetNewNCldrDataSource();
-                ncldrFileDataSource.NCldrDataPath = tbxCldrPath.Text;
+                ncldrFileDataSource.NCldrDataPath = tbxNCldrPath.Text;
                 if (!ncldrFileDataSource.Exists() || MessageBox.Show("The NCLDR data file exists - overwrite it ?", "NCLDR Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tbxProgress.Text = String.Empty;
@@ -346,6 +346,10 @@ namespace NCldrBuilderGui
             if (rbJson.Checked)
             {
                 return new NCldrJsonFileDataSource();
+            }
+            else if (rbXml.Checked)
+            {
+                return new NCldrXmlFileDataSource();
             }
 
             return new NCldrBinaryFileDataSource();

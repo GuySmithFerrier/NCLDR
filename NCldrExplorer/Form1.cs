@@ -42,6 +42,10 @@ namespace NCldrExplorer
                     {
                         rbJson.Checked = true;
                     }
+                    else if (string.Compare(dataSourceName, "XML", StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        rbXml.Checked = true;
+                    }
                 }
 
                 btnLoadNCldrData_Click(this, null);
@@ -76,6 +80,10 @@ namespace NCldrExplorer
             if (rbJson.Checked)
             {
                 return new NCldrJsonFileDataSource();
+            }
+            else if (rbXml.Checked)
+            {
+                return new NCldrXmlFileDataSource();
             }
 
             return new NCldrBinaryFileDataSource();

@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NCldrXmlFileDataSource.cs" />
     <Compile Include="NCldrJsonFileDataSource.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="INCldrData.cs" />
@@ -133,6 +134,8 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

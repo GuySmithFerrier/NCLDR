@@ -33,6 +33,9 @@
             this.gbxProgress = new System.Windows.Forms.GroupBox();
             this.tbxProgress = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.rbJson = new System.Windows.Forms.RadioButton();
+            this.rbBinary = new System.Windows.Forms.RadioButton();
             this.btnSelectOutputPath = new System.Windows.Forms.Button();
             this.btnSelectInputPath = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,13 +101,12 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.groupBox66 = new System.Windows.Forms.GroupBox();
-            this.rbJson = new System.Windows.Forms.RadioButton();
-            this.rbBinary = new System.Windows.Forms.RadioButton();
+            this.rbXml = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox66.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -116,7 +118,6 @@
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox66.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -178,6 +179,41 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(877, 139);
             this.panel3.TabIndex = 5;
+            // 
+            // groupBox66
+            // 
+            this.groupBox66.Controls.Add(this.rbXml);
+            this.groupBox66.Controls.Add(this.rbJson);
+            this.groupBox66.Controls.Add(this.rbBinary);
+            this.groupBox66.Location = new System.Drawing.Point(418, 19);
+            this.groupBox66.Name = "groupBox66";
+            this.groupBox66.Size = new System.Drawing.Size(119, 91);
+            this.groupBox66.TabIndex = 7;
+            this.groupBox66.TabStop = false;
+            this.groupBox66.Text = "Data Source";
+            // 
+            // rbJson
+            // 
+            this.rbJson.AutoSize = true;
+            this.rbJson.Location = new System.Drawing.Point(6, 42);
+            this.rbJson.Name = "rbJson";
+            this.rbJson.Size = new System.Drawing.Size(53, 17);
+            this.rbJson.TabIndex = 1;
+            this.rbJson.TabStop = true;
+            this.rbJson.Text = "JSON";
+            this.rbJson.UseVisualStyleBackColor = true;
+            // 
+            // rbBinary
+            // 
+            this.rbBinary.AutoSize = true;
+            this.rbBinary.Checked = true;
+            this.rbBinary.Location = new System.Drawing.Point(6, 19);
+            this.rbBinary.Name = "rbBinary";
+            this.rbBinary.Size = new System.Drawing.Size(54, 17);
+            this.rbBinary.TabIndex = 0;
+            this.rbBinary.TabStop = true;
+            this.rbBinary.Text = "Binary";
+            this.rbBinary.UseVisualStyleBackColor = true;
             // 
             // btnSelectOutputPath
             // 
@@ -995,39 +1031,16 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // groupBox66
+            // rbXml
             // 
-            this.groupBox66.Controls.Add(this.rbJson);
-            this.groupBox66.Controls.Add(this.rbBinary);
-            this.groupBox66.Location = new System.Drawing.Point(418, 19);
-            this.groupBox66.Name = "groupBox66";
-            this.groupBox66.Size = new System.Drawing.Size(119, 76);
-            this.groupBox66.TabIndex = 7;
-            this.groupBox66.TabStop = false;
-            this.groupBox66.Text = "Data Source";
-            // 
-            // rbJson
-            // 
-            this.rbJson.AutoSize = true;
-            this.rbJson.Location = new System.Drawing.Point(6, 42);
-            this.rbJson.Name = "rbJson";
-            this.rbJson.Size = new System.Drawing.Size(53, 17);
-            this.rbJson.TabIndex = 1;
-            this.rbJson.TabStop = true;
-            this.rbJson.Text = "JSON";
-            this.rbJson.UseVisualStyleBackColor = true;
-            // 
-            // rbBinary
-            // 
-            this.rbBinary.AutoSize = true;
-            this.rbBinary.Checked = true;
-            this.rbBinary.Location = new System.Drawing.Point(6, 19);
-            this.rbBinary.Name = "rbBinary";
-            this.rbBinary.Size = new System.Drawing.Size(54, 17);
-            this.rbBinary.TabIndex = 0;
-            this.rbBinary.TabStop = true;
-            this.rbBinary.Text = "Binary";
-            this.rbBinary.UseVisualStyleBackColor = true;
+            this.rbXml.AutoSize = true;
+            this.rbXml.Location = new System.Drawing.Point(6, 65);
+            this.rbXml.Name = "rbXml";
+            this.rbXml.Size = new System.Drawing.Size(47, 17);
+            this.rbXml.TabIndex = 2;
+            this.rbXml.TabStop = true;
+            this.rbXml.Text = "XML";
+            this.rbXml.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1043,6 +1056,8 @@
             this.gbxProgress.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox66.ResumeLayout(false);
+            this.groupBox66.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1058,8 +1073,6 @@
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox66.ResumeLayout(false);
-            this.groupBox66.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1139,6 +1152,7 @@
         private System.Windows.Forms.GroupBox groupBox66;
         private System.Windows.Forms.RadioButton rbJson;
         private System.Windows.Forms.RadioButton rbBinary;
+        private System.Windows.Forms.RadioButton rbXml;
     }
 }
 
