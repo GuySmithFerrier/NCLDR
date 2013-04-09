@@ -667,6 +667,7 @@ namespace NCldr.Builder
                 characters.ExemplarCharacters = GetCharacterArray(characterDatas, "exemplarCharacters", null);
                 characters.AuxiliaryExemplarCharacters = GetCharacterArray(characterDatas, "exemplarCharacters", "auxiliary");
                 characters.PunctuationExemplarCharacters = GetCharacterArray(characterDatas, "exemplarCharacters", "punctuation");
+                characters.IndexExemplarCharacters = GetCharacterArray(characterDatas, "exemplarCharacters", "index");
                 characters.FinalEllipsis = GetString(characterDatas, "ellipsis", "final");
                 characters.InitialEllipsis = GetString(characterDatas, "ellipsis", "initial");
                 characters.MedialEllipsis = GetString(characterDatas, "ellipsis", "medial");

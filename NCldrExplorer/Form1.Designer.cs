@@ -31,6 +31,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbpLoad = new System.Windows.Forms.TabPage();
             this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.rbXml = new System.Windows.Forms.RadioButton();
             this.rbJson = new System.Windows.Forms.RadioButton();
             this.rbBinary = new System.Windows.Forms.RadioButton();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -471,7 +472,8 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
-            this.rbXml = new System.Windows.Forms.RadioButton();
+            this.tbxCharactersIndexExemplarCharacters = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.groupBox66.SuspendLayout();
@@ -701,6 +703,17 @@
             this.groupBox66.TabIndex = 4;
             this.groupBox66.TabStop = false;
             this.groupBox66.Text = "Data Source";
+            // 
+            // rbXml
+            // 
+            this.rbXml.AutoSize = true;
+            this.rbXml.Location = new System.Drawing.Point(6, 65);
+            this.rbXml.Name = "rbXml";
+            this.rbXml.Size = new System.Drawing.Size(47, 17);
+            this.rbXml.TabIndex = 2;
+            this.rbXml.TabStop = true;
+            this.rbXml.Text = "XML";
+            this.rbXml.UseVisualStyleBackColor = true;
             // 
             // rbJson
             // 
@@ -1947,6 +1960,8 @@
             // 
             // tbpCharacters
             // 
+            this.tbpCharacters.Controls.Add(this.tbxCharactersIndexExemplarCharacters);
+            this.tbpCharacters.Controls.Add(this.label124);
             this.tbpCharacters.Controls.Add(this.groupBox38);
             this.tbpCharacters.Controls.Add(this.groupBox3);
             this.tbpCharacters.Controls.Add(this.tbxCharactersPunctuationExemplarCharacters);
@@ -1973,7 +1988,7 @@
             this.groupBox38.Controls.Add(this.tbxCharactersQuotationEnd);
             this.groupBox38.Controls.Add(this.label76);
             this.groupBox38.Controls.Add(this.tbxCharactersQuotationStart);
-            this.groupBox38.Location = new System.Drawing.Point(219, 113);
+            this.groupBox38.Location = new System.Drawing.Point(219, 136);
             this.groupBox38.Name = "groupBox38";
             this.groupBox38.Size = new System.Drawing.Size(206, 143);
             this.groupBox38.TabIndex = 15;
@@ -2054,7 +2069,7 @@
             this.groupBox3.Controls.Add(this.tbxCharactersMedialEllipsis);
             this.groupBox3.Controls.Add(this.tbxCharactersInitialEllipsis);
             this.groupBox3.Controls.Add(this.label74);
-            this.groupBox3.Location = new System.Drawing.Point(10, 112);
+            this.groupBox3.Location = new System.Drawing.Point(10, 135);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(203, 144);
             this.groupBox3.TabIndex = 14;
@@ -5146,16 +5161,21 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
-            // rbXml
+            // tbxCharactersIndexExemplarCharacters
             // 
-            this.rbXml.AutoSize = true;
-            this.rbXml.Location = new System.Drawing.Point(6, 65);
-            this.rbXml.Name = "rbXml";
-            this.rbXml.Size = new System.Drawing.Size(47, 17);
-            this.rbXml.TabIndex = 2;
-            this.rbXml.TabStop = true;
-            this.rbXml.Text = "XML";
-            this.rbXml.UseVisualStyleBackColor = true;
+            this.tbxCharactersIndexExemplarCharacters.Location = new System.Drawing.Point(176, 100);
+            this.tbxCharactersIndexExemplarCharacters.Name = "tbxCharactersIndexExemplarCharacters";
+            this.tbxCharactersIndexExemplarCharacters.Size = new System.Drawing.Size(324, 20);
+            this.tbxCharactersIndexExemplarCharacters.TabIndex = 17;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(6, 103);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(133, 13);
+            this.label124.TabIndex = 16;
+            this.label124.Text = "Index Exemplar Characters";
             // 
             // Form1
             // 
@@ -5841,6 +5861,8 @@
         private System.Windows.Forms.RadioButton rbJson;
         private System.Windows.Forms.RadioButton rbBinary;
         private System.Windows.Forms.RadioButton rbXml;
+        private System.Windows.Forms.TextBox tbxCharactersIndexExemplarCharacters;
+        private System.Windows.Forms.Label label124;
     }
 }
 

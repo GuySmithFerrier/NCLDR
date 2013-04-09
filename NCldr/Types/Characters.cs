@@ -26,6 +26,11 @@
         public string[] PunctuationExemplarCharacters { get; set; }
 
         /// <summary>
+        /// Gets or sets the "shortcut" letters for quickly jumping to sections of a sorted, indexed list
+        /// </summary>
+        public string[] IndexExemplarCharacters { get; set; }
+
+        /// <summary>
         /// Gets or sets the final ellipsis
         /// </summary>
         public string FinalEllipsis { get; set; }
@@ -81,6 +86,12 @@
                 || combinedCharacters.PunctuationExemplarCharacters.GetLength(0) == 0)
             {
                 combinedCharacters.PunctuationExemplarCharacters = parentCharacters.PunctuationExemplarCharacters;
+            }
+
+            if (combinedCharacters.IndexExemplarCharacters == null
+                || combinedCharacters.IndexExemplarCharacters.GetLength(0) == 0)
+            {
+                combinedCharacters.IndexExemplarCharacters = parentCharacters.IndexExemplarCharacters;
             }
 
             if (combinedCharacters.FinalEllipsis == null)

@@ -526,6 +526,7 @@ namespace NCldrExplorer
                 tbxCharactersExemplarCharacters.Text = String.Empty;
                 tbxCharactersAuxiliaryExemplarCharacters.Text = String.Empty;
                 tbxCharactersPunctuationExemplarCharacters.Text = String.Empty;
+                tbxCharactersIndexExemplarCharacters.Text = String.Empty;
 
                 tbxCharactersFinalEllipsis.Text = String.Empty;
                 tbxCharactersInitialEllipsis.Text = String.Empty;
@@ -537,6 +538,7 @@ namespace NCldrExplorer
                 tbxCharactersExemplarCharacters.Text = String.Join(" ", characters.ExemplarCharacters);
                 tbxCharactersAuxiliaryExemplarCharacters.Text = String.Join(" ", characters.AuxiliaryExemplarCharacters);
                 tbxCharactersPunctuationExemplarCharacters.Text = String.Join(" ", characters.PunctuationExemplarCharacters);
+                tbxCharactersIndexExemplarCharacters.Text = String.Join(" ", characters.IndexExemplarCharacters);
 
                 tbxCharactersFinalEllipsis.Text = characters.FinalEllipsis;
                 tbxCharactersInitialEllipsis.Text = characters.InitialEllipsis;
