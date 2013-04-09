@@ -17,7 +17,7 @@
         /// <returns>The postal code regular expression for the RegionInfo</returns>
         public static string GetPostcodeRegex(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetPostcodeRegex(regionInfo.Name);
+            return RegionExtensions.GetPostcodeRegex(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@
         /// <returns>An array of telephone codes used by the RegionInfo</returns>
         public static string[] GetTelephoneCodes(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetTelephoneCodes(regionInfo.Name);
+            return RegionExtensions.GetTelephoneCodes(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@
         /// is larger than a country/region (e.g. The World) will it have more than one telephone code.</remarks>
         public static string GetTelephoneCode(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetTelephoneCode(regionInfo.Name);
+            return RegionExtensions.GetTelephoneCode(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@
         /// <returns>The RegionCode for the RegionInfo</returns>
         public static RegionCode GetRegionCode(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetRegionCode(regionInfo.Name);
+            return RegionExtensions.GetRegionCode(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@
         /// <returns>The RegionInformation for the RegionInfo</returns>
         public static RegionInformation GetRegionInformation(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetRegionInformation(regionInfo.Name);
+            return RegionExtensions.GetRegionInformation(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@
         /// <returns>The MeasurementSystem for the RegionInfo</returns>
         public static RegionMeasurementSystem GetMeasurementSystem(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetMeasurementSystem(regionInfo.Name);
+            return RegionExtensions.GetMeasurementSystem(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@
         /// <returns>The RegionPaperSize for the RegionInfo</returns>
         public static RegionPaperSize GetPaperSize(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetPaperSize(regionInfo.Name);
+            return RegionExtensions.GetPaperSize(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@
         /// <returns>The first DayOfWeek for the RegionInfo</returns>
         public static DayOfWeek GetDayOfWeek(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetFirstDayOfWeek(regionInfo.Name);
+            return RegionExtensions.GetFirstDayOfWeek(regionInfo.TwoLetterISORegionName);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@
         /// <returns>The RegionHour for the RegionInfo</returns>
         public static RegionHour GetHour(this RegionInfo regionInfo)
         {
-            return RegionExtensions.GetHour(regionInfo.Name);
+            return RegionExtensions.GetHour(regionInfo.TwoLetterISORegionName);
         }
     }
 }
