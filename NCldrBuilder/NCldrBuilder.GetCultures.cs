@@ -835,7 +835,7 @@ namespace NCldr.Builder
                             GetNameSets<DayPeriodName, DayPeriodNameSet>(calendarData, "dayPeriods", "dayPeriodContext", "dayPeriodWidth", "dayPeriod");
 
                         calendar.EraNameSets =
-                            GetNameSets<EraName, EraNameSet>(calendarData, "eras", "eraAbbr", null, "era");
+                            GetNameSets<EraName, EraNameSet>(calendarData, "eras", "eraAbbr", "era");
 
                         calendar.DateFormats = GetDateFormats(calendarData);
 
@@ -1083,20 +1083,69 @@ namespace NCldr.Builder
             where T: CalendarName, new() 
             where TSet: CalendarNameSet<T>, new()
         {
+            List<XElement> groupContextNameDatas = (from item in calendarData.Elements(groupName)
+                                                        .Elements(groupContextName)
+                                                    select item).ToList();
+
+            List<TSet> nameSets = new List<TSet>();
+            foreach (XElement groupContextNameData in groupContextNameDatas)
+            {
+                string context = null;
+                if (groupContextNameData.Attribute("type") != null)
+                {
+                    context = groupContextNameData.Attribute("type").Value.ToString();
+                }
+
+                List<XElement> nameSetDatas = (from item in groupContextNameData.Elements(groupWidthName)
+                                               select item).ToList();
+
+                foreach (XElement nameSetData in nameSetDatas)
+                {
+                    TSet nameSet = new TSet();
+
+                    nameSet.Context = context;
+
+                    if (nameSetData.Attribute("type") != null)
+                    {
+                        nameSet.Id = nameSetData.Attribute("type").Value.ToString();
+                    }
+
+                    List<T> names = new List<T>();
+                    List<XElement> nameDatas = (from item in nameSetData.Elements(itemName)
+                                                select item).ToList();
+                    foreach (XElement nameData in nameDatas)
+                    {
+                        T name = new T();
+                        name.Id = nameData.Attribute("type").Value.ToString();
+                        name.Name = nameData.Value.ToString();
+                        names.Add(name);
+                    }
+
+                    nameSet.Names = names.ToArray();
+
+                    nameSets.Add(nameSet);
+                }
+            }
+
+            if (nameSets.Count == 0)
+            {
+                return null;
+            }
+
+            return nameSets.ToArray();
+        }
+
+
+        private static TSet[] GetNameSets<T, TSet>(
+            XElement calendarData, string groupName, string groupContextName, string itemName)
+            where T : CalendarName, new()
+            where TSet : CalendarNameSet<T>, new()
+        {
             List<XElement> nameSetDatas;
 
-            if (groupWidthName != null)
-            {
-                nameSetDatas = (from item in calendarData.Elements(groupName)
-                                            .Elements(groupContextName).Elements(groupWidthName)
-                                select item).ToList();
-            }
-            else
-            {
-                nameSetDatas = (from item in calendarData.Elements(groupName)
-                                            .Elements(groupContextName)
-                                select item).ToList();
-            }
+            nameSetDatas = (from item in calendarData.Elements(groupName)
+                                .Elements(groupContextName)
+                            select item).ToList();
 
             if (nameSetDatas.Count == 0)
             {

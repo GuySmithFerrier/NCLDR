@@ -127,6 +127,11 @@
             this.tbxCurrencyNegativeExample = new System.Windows.Forms.TextBox();
             this.tbxCurrencyPositiveExample = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
+            this.tbpText = new System.Windows.Forms.TabPage();
+            this.label42 = new System.Windows.Forms.Label();
+            this.tbxTextInfoName = new System.Windows.Forms.TextBox();
+            this.tbxCompareInfoName = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbxParents = new System.Windows.Forms.ListBox();
@@ -138,11 +143,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxEnglishName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbpText = new System.Windows.Forms.TabPage();
-            this.label32 = new System.Windows.Forms.Label();
-            this.tbxCompareInfoName = new System.Windows.Forms.TextBox();
-            this.tbxTextInfoName = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.lbxGenitiveMonthNames = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -163,9 +165,10 @@
             this.tbpCurrency.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.tbpText.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tbpText.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -181,8 +184,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gbxSelectedCulture);
-            this.splitContainer1.Size = new System.Drawing.Size(909, 495);
-            this.splitContainer1.SplitterDistance = 157;
+            this.splitContainer1.Size = new System.Drawing.Size(963, 495);
+            this.splitContainer1.SplitterDistance = 166;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox1
@@ -192,7 +195,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(157, 495);
+            this.groupBox1.Size = new System.Drawing.Size(166, 495);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = ".NET Cultures";
@@ -203,7 +206,7 @@
             this.lbxCultures.FormattingEnabled = true;
             this.lbxCultures.Location = new System.Drawing.Point(3, 151);
             this.lbxCultures.Name = "lbxCultures";
-            this.lbxCultures.Size = new System.Drawing.Size(151, 341);
+            this.lbxCultures.Size = new System.Drawing.Size(160, 341);
             this.lbxCultures.TabIndex = 1;
             this.lbxCultures.SelectedIndexChanged += new System.EventHandler(this.lbxCultures_SelectedIndexChanged);
             // 
@@ -216,7 +219,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 135);
+            this.panel1.Size = new System.Drawing.Size(160, 135);
             this.panel1.TabIndex = 0;
             // 
             // btnCustomCultures
@@ -266,7 +269,7 @@
             this.gbxSelectedCulture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxSelectedCulture.Location = new System.Drawing.Point(0, 0);
             this.gbxSelectedCulture.Name = "gbxSelectedCulture";
-            this.gbxSelectedCulture.Size = new System.Drawing.Size(748, 495);
+            this.gbxSelectedCulture.Size = new System.Drawing.Size(793, 495);
             this.gbxSelectedCulture.TabIndex = 0;
             this.gbxSelectedCulture.TabStop = false;
             this.gbxSelectedCulture.Text = "Selected Culture";
@@ -281,11 +284,12 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 194);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(742, 298);
+            this.tabControl1.Size = new System.Drawing.Size(787, 298);
             this.tabControl1.TabIndex = 1;
             // 
             // tbpDates
             // 
+            this.tbpDates.Controls.Add(this.groupBox13);
             this.tbpDates.Controls.Add(this.tbxPMSymbol);
             this.tbpDates.Controls.Add(this.tbxAMSymbol);
             this.tbpDates.Controls.Add(this.label14);
@@ -307,7 +311,7 @@
             this.tbpDates.Location = new System.Drawing.Point(4, 22);
             this.tbpDates.Name = "tbpDates";
             this.tbpDates.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDates.Size = new System.Drawing.Size(734, 272);
+            this.tbpDates.Size = new System.Drawing.Size(779, 272);
             this.tbpDates.TabIndex = 0;
             this.tbpDates.Text = "Dates and Times";
             this.tbpDates.UseVisualStyleBackColor = true;
@@ -347,9 +351,9 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.lbxCalendars);
-            this.groupBox7.Location = new System.Drawing.Point(360, 155);
+            this.groupBox7.Location = new System.Drawing.Point(356, 155);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(169, 108);
+            this.groupBox7.Size = new System.Drawing.Size(136, 108);
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Calendars";
@@ -360,15 +364,15 @@
             this.lbxCalendars.FormattingEnabled = true;
             this.lbxCalendars.Location = new System.Drawing.Point(3, 16);
             this.lbxCalendars.Name = "lbxCalendars";
-            this.lbxCalendars.Size = new System.Drawing.Size(163, 89);
+            this.lbxCalendars.Size = new System.Drawing.Size(130, 89);
             this.lbxCalendars.TabIndex = 0;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.lbxMonthNames);
-            this.groupBox6.Location = new System.Drawing.Point(535, 12);
+            this.groupBox6.Location = new System.Drawing.Point(498, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(164, 251);
+            this.groupBox6.Size = new System.Drawing.Size(118, 251);
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Month Names";
@@ -379,7 +383,7 @@
             this.lbxMonthNames.FormattingEnabled = true;
             this.lbxMonthNames.Location = new System.Drawing.Point(3, 16);
             this.lbxMonthNames.Name = "lbxMonthNames";
-            this.lbxMonthNames.Size = new System.Drawing.Size(158, 232);
+            this.lbxMonthNames.Size = new System.Drawing.Size(112, 232);
             this.lbxMonthNames.TabIndex = 0;
             // 
             // groupBox5
@@ -466,9 +470,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lbxDayNames);
-            this.groupBox4.Location = new System.Drawing.Point(360, 15);
+            this.groupBox4.Location = new System.Drawing.Point(356, 15);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(166, 134);
+            this.groupBox4.Size = new System.Drawing.Size(136, 134);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Day Names";
@@ -479,7 +483,7 @@
             this.lbxDayNames.FormattingEnabled = true;
             this.lbxDayNames.Location = new System.Drawing.Point(3, 16);
             this.lbxDayNames.Name = "lbxDayNames";
-            this.lbxDayNames.Size = new System.Drawing.Size(160, 115);
+            this.lbxDayNames.Size = new System.Drawing.Size(130, 115);
             this.lbxDayNames.TabIndex = 0;
             // 
             // tbxFirstDayOfWeek
@@ -1098,6 +1102,52 @@
             this.label41.TabIndex = 0;
             this.label41.Text = "Positive";
             // 
+            // tbpText
+            // 
+            this.tbpText.Controls.Add(this.label42);
+            this.tbpText.Controls.Add(this.tbxTextInfoName);
+            this.tbpText.Controls.Add(this.tbxCompareInfoName);
+            this.tbpText.Controls.Add(this.label32);
+            this.tbpText.Location = new System.Drawing.Point(4, 22);
+            this.tbpText.Name = "tbpText";
+            this.tbpText.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpText.Size = new System.Drawing.Size(734, 272);
+            this.tbpText.TabIndex = 3;
+            this.tbpText.Text = "Text";
+            this.tbpText.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 44);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(46, 13);
+            this.label42.TabIndex = 3;
+            this.label42.Text = "TextInfo";
+            // 
+            // tbxTextInfoName
+            // 
+            this.tbxTextInfoName.Location = new System.Drawing.Point(81, 41);
+            this.tbxTextInfoName.Name = "tbxTextInfoName";
+            this.tbxTextInfoName.Size = new System.Drawing.Size(100, 20);
+            this.tbxTextInfoName.TabIndex = 2;
+            // 
+            // tbxCompareInfoName
+            // 
+            this.tbxCompareInfoName.Location = new System.Drawing.Point(81, 15);
+            this.tbxCompareInfoName.Name = "tbxCompareInfoName";
+            this.tbxCompareInfoName.Size = new System.Drawing.Size(100, 20);
+            this.tbxCompareInfoName.TabIndex = 1;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 18);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(67, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "CompareInfo";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -1112,7 +1162,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(742, 178);
+            this.groupBox2.Size = new System.Drawing.Size(787, 178);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Overview";
@@ -1204,57 +1254,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "English Name";
             // 
-            // tbpText
+            // groupBox13
             // 
-            this.tbpText.Controls.Add(this.label42);
-            this.tbpText.Controls.Add(this.tbxTextInfoName);
-            this.tbpText.Controls.Add(this.tbxCompareInfoName);
-            this.tbpText.Controls.Add(this.label32);
-            this.tbpText.Location = new System.Drawing.Point(4, 22);
-            this.tbpText.Name = "tbpText";
-            this.tbpText.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpText.Size = new System.Drawing.Size(734, 272);
-            this.tbpText.TabIndex = 3;
-            this.tbpText.Text = "Text";
-            this.tbpText.UseVisualStyleBackColor = true;
+            this.groupBox13.Controls.Add(this.lbxGenitiveMonthNames);
+            this.groupBox13.Location = new System.Drawing.Point(622, 12);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(136, 251);
+            this.groupBox13.TabIndex = 14;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Genitive Month Names";
             // 
-            // label32
+            // lbxGenitiveMonthNames
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 18);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(67, 13);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "CompareInfo";
-            // 
-            // tbxCompareInfoName
-            // 
-            this.tbxCompareInfoName.Location = new System.Drawing.Point(81, 15);
-            this.tbxCompareInfoName.Name = "tbxCompareInfoName";
-            this.tbxCompareInfoName.Size = new System.Drawing.Size(100, 20);
-            this.tbxCompareInfoName.TabIndex = 1;
-            // 
-            // tbxTextInfoName
-            // 
-            this.tbxTextInfoName.Location = new System.Drawing.Point(81, 41);
-            this.tbxTextInfoName.Name = "tbxTextInfoName";
-            this.tbxTextInfoName.Size = new System.Drawing.Size(100, 20);
-            this.tbxTextInfoName.TabIndex = 2;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 44);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(46, 13);
-            this.label42.TabIndex = 3;
-            this.label42.Text = "TextInfo";
+            this.lbxGenitiveMonthNames.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxGenitiveMonthNames.FormattingEnabled = true;
+            this.lbxGenitiveMonthNames.Location = new System.Drawing.Point(3, 16);
+            this.lbxGenitiveMonthNames.Name = "lbxGenitiveMonthNames";
+            this.lbxGenitiveMonthNames.Size = new System.Drawing.Size(130, 232);
+            this.lbxGenitiveMonthNames.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 495);
+            this.ClientSize = new System.Drawing.Size(963, 495);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Culture Viewer";
@@ -1285,11 +1308,12 @@
             this.groupBox11.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            this.tbpText.ResumeLayout(false);
+            this.tbpText.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.tbpText.ResumeLayout(false);
-            this.tbpText.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1411,6 +1435,8 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox tbxTextInfoName;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.ListBox lbxGenitiveMonthNames;
     }
 }
 

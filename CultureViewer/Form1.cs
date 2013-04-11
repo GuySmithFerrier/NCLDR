@@ -113,6 +113,12 @@ namespace CultureViewer
                 lbxMonthNames.Items.Add(monthName);
             }
 
+            lbxGenitiveMonthNames.Items.Clear();
+            foreach (string monthName in cultureInfo.DateTimeFormat.MonthGenitiveNames)
+            {
+                lbxGenitiveMonthNames.Items.Add(monthName);
+            }
+
             lbxCalendars.Items.Clear();
             if (cultureInfo.OptionalCalendars != null)
             {

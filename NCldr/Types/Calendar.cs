@@ -72,7 +72,7 @@
         {
             get
             {
-                return this.GetDayNames("abbreviated");
+                return this.GetDayNames("abbreviated", new string[] { "stand-alone", "format" });
             }
         }
 
@@ -83,7 +83,7 @@
         {
             get
             {
-                return this.GetDayNames("wide");
+                return this.GetDayNames("wide", new string[] { "stand-alone", "format" });
             }
         }
 
@@ -94,7 +94,29 @@
         {
             get
             {
-                return this.GetDayNames("narrow");
+                return this.GetDayNames("narrow", new string[] { "stand-alone", "format" });
+            }
+        }
+
+        /// <summary>
+        /// Gets an array of localized abbreviated genitive month names
+        /// </summary>
+        public string[] AbbreviatedMonthGenitiveNames
+        {
+            get
+            {
+                return this.GetMonthNames("abbreviated", new string[] { "format", "stand-alone" });
+            }
+        }
+
+        /// <summary>
+        /// Gets an array of localized genitive month names
+        /// </summary>
+        public string[] MonthGenitiveNames
+        {
+            get
+            {
+                return this.GetMonthNames("wide", new string[] { "format", "stand-alone" });
             }
         }
 
@@ -105,7 +127,7 @@
         {
             get
             {
-                return this.GetMonthNames("abbreviated");
+                return this.GetMonthNames("abbreviated", new string[] { "stand-alone", "format" });
             }
         }
 
@@ -116,7 +138,7 @@
         {
             get
             {
-                return this.GetMonthNames("wide");
+                return this.GetMonthNames("wide", new string[] { "stand-alone", "format" });
             }
         }
 
@@ -127,7 +149,7 @@
         {
             get
             {
-                return this.GetMonthNames("narrow");
+                return this.GetMonthNames("narrow", new string[] { "stand-alone", "format" });
             }
         }
 
@@ -451,17 +473,34 @@
         /// GetDayNames gets an array of day names for the given DayNameSet Id
         /// </summary>
         /// <param name="id">The Id of the DayNameSet</param>
+        /// <param name="contexts">An array of context names representing the order in which the contexts should be searched</param>
         /// <returns>An array of day names for the given DayNameSet Id</returns>
-        private string[] GetDayNames(string id)
+        private string[] GetDayNames(string id, string[] contexts)
         {
             if (this.DayNameSets == null)
             {
                 return null;
             }
 
-            DayName[] dayNames = (from dns in this.DayNameSets
-                                  where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
-                                  select dns.Names).FirstOrDefault();
+            DayName[] dayNames = null;
+
+            // look for a day name set in the order in which the contexts are listed
+            foreach (string context in contexts)
+            {
+                dayNames = (from dns in this.DayNameSets
+                            where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
+                            && string.Compare(dns.Context, context, StringComparison.InvariantCulture) == 0
+                            select dns.Names).FirstOrDefault();
+            }
+
+            if (dayNames == null)
+            {
+                // there are no day name sets for the given context names so get the first day name set that matches the id
+                dayNames = (from dns in this.DayNameSets
+                            where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
+                            select dns.Names).FirstOrDefault();
+            }
+
             if (dayNames != null)
             {
                 return (from dn in dayNames
@@ -475,17 +514,34 @@
         /// GetMonthNames gets an array of month names for the given MonthNameSet Id
         /// </summary>
         /// <param name="id">The Id of the MonthNameSet</param>
+        /// <param name="contexts">An array of context names representing the order in which the contexts should be searched</param>
         /// <returns>An array of month names for the given MonthNameSet Id</returns>
-        private string[] GetMonthNames(string id)
+        private string[] GetMonthNames(string id, string[] contexts)
         {
             if (this.MonthNameSets == null)
             {
                 return null;
             }
 
-            MonthName[] monthNames = (from dns in this.MonthNameSets
-                                      where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
-                                      select dns.Names).FirstOrDefault();
+            MonthName[] monthNames = null;
+
+            // look for a month name set in the order in which the contexts are listed
+            foreach (string context in contexts)
+            {
+                monthNames = (from dns in this.MonthNameSets
+                              where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
+                              && string.Compare(dns.Context, context, StringComparison.InvariantCulture) == 0
+                              select dns.Names).FirstOrDefault();
+            }
+
+            if (monthNames == null)
+            {
+                // there are no month name sets for the given context names so get the first month name set that matches the id
+                monthNames = (from dns in this.MonthNameSets
+                              where string.Compare(dns.Id, id, StringComparison.InvariantCulture) == 0
+                              select dns.Names).FirstOrDefault();
+            }
+
             if (monthNames != null)
             {
                 List<string> monthNamesList = (from dn in monthNames

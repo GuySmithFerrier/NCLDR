@@ -17,6 +17,12 @@
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the context of the names
+        /// </summary>
+        /// <remarks>The context is something like "stand-alone" or "format" (meaning genitive)</remarks>
+        public string Context { get; set; }
+
+        /// <summary>
         /// Gets or sets an array of names of type T
         /// </summary>
         public T[] Names { get; set; }
@@ -50,6 +56,7 @@
             {
                 CalendarNameSet<T> combinedCalendarNameSet = (from ups in combinedCalendarNameSets
                                                               where string.Compare(ups.Id, parentCalendarNameSet.Id, StringComparison.InvariantCulture) == 0
+                                                              && string.Compare(ups.Context, parentCalendarNameSet.Context, StringComparison.InvariantCulture) == 0
                                                               select ups).FirstOrDefault();
                 if (combinedCalendarNameSet == null)
                 {

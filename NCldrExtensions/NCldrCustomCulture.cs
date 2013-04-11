@@ -454,13 +454,21 @@
                     if (gregorianCalendar.AbbreviatedMonthNames != null)
                     {
                         dateTimeFormatInfo.AbbreviatedMonthNames = gregorianCalendar.AbbreviatedMonthNames;
-                        dateTimeFormatInfo.AbbreviatedMonthGenitiveNames = gregorianCalendar.AbbreviatedMonthNames;
+                    }
+
+                    if (gregorianCalendar.AbbreviatedMonthGenitiveNames != null)
+                    {
+                        dateTimeFormatInfo.AbbreviatedMonthGenitiveNames = gregorianCalendar.AbbreviatedMonthGenitiveNames;
                     }
 
                     if (gregorianCalendar.MonthNames != null)
                     {
                         dateTimeFormatInfo.MonthNames = gregorianCalendar.MonthNames;
-                        dateTimeFormatInfo.MonthGenitiveNames = gregorianCalendar.MonthNames;
+                    }
+
+                    if (gregorianCalendar.MonthGenitiveNames != null)
+                    {
+                        dateTimeFormatInfo.MonthGenitiveNames = gregorianCalendar.MonthGenitiveNames;
                     }
 
                     if (!string.IsNullOrEmpty(gregorianCalendar.AMDesignator))

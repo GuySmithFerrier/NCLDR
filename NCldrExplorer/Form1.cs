@@ -1361,13 +1361,13 @@ namespace NCldrExplorer
                 dgvCalendarTimeFormats.Columns[1].Width = 200;
             }
 
-            ShowCalendarNameSets<DayNameSet, DayName>(calendar.DayNameSets, lbxCalendarDayNameSetIds, dgvCalendarDayNames);
+            ShowCalendarNameSets<DayNameSet, DayName>(calendar.DayNameSets, dgvCalendarDayNameSets, dgvCalendarDayNames);
 
-            ShowCalendarNameSets<DayPeriodNameSet, DayPeriodName>(calendar.DayPeriodNameSets, lbxCalendarDayPeriodNameSetIds, dgvCalendarDayPeriodNames);
+            ShowCalendarNameSets<DayPeriodNameSet, DayPeriodName>(calendar.DayPeriodNameSets, dgvCalendarDayPeriodNameSets, dgvCalendarDayPeriodNames);
 
             ShowCalendarNameSets<EraNameSet, EraName>(calendar.EraNameSets, lbxCalendarEraNameSetIds, dgvCalendarEraNames);
 
-            ShowCalendarNameSets<MonthNameSet, MonthName>(calendar.MonthNameSets, lbxCalendarMonthNameSetIds, dgvCalendarMonthNames);
+            ShowCalendarNameSets<MonthNameSet, MonthName>(calendar.MonthNameSets, dgvCalendarMonthNameSetIds, dgvCalendarMonthNames);
         }
 
         private void ShowCalendarNameSets<T, U>(T[] nameSets, ListBox listBox, DataGridView dataGridView) where T: CalendarNameSet<U> where U: CalendarName
@@ -1389,6 +1389,22 @@ namespace NCldrExplorer
             }
         }
 
+        private void ShowCalendarNameSets<T, U>(T[] nameSets, DataGridView dataGridViewParents, DataGridView dataGridViewChildren)
+            where T : CalendarNameSet<U>
+            where U : CalendarName
+        {
+            dataGridViewParents.DataSource = nameSets;
+            if (nameSets != null && nameSets.GetLength(0) > 0)
+            {
+                dataGridViewParents.Columns[0].Width = 70;
+                dataGridViewParents.Columns[1].Width = 70;
+            }
+            else
+            {
+                dataGridViewChildren.DataSource = null;
+            }
+        }
+
         private void CalendarNameSetChanged<T>(ListBox listBox, DataGridView dataGridView) where T: CalendarName
         {
             CalendarNameSet<T> nameSet = (CalendarNameSet<T>)(listBox).SelectedItem;
@@ -1404,24 +1420,42 @@ namespace NCldrExplorer
             }
         }
 
-        private void lbxCalendarDayNameSetIds_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvCalendarMonthNameSetIds_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            CalendarNameSetChanged<DayName>(sender as ListBox, dgvCalendarDayNames);
+            DataGridViewRow row = (sender as DataGridView).Rows[e.RowIndex];
+            CalendarNameSetChanged<MonthName>(row, dgvCalendarMonthNames);
         }
 
-        private void lbxCalendarDayPeriodNames_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvCalendarDayNameSets_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            CalendarNameSetChanged<DayPeriodName>(sender as ListBox, dgvCalendarDayPeriodNames);
+            DataGridViewRow row = (sender as DataGridView).Rows[e.RowIndex];
+            CalendarNameSetChanged<DayName>(row, dgvCalendarDayNames);
+        }
+
+        private void dgvCalendarDayPeriodNameSets_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = (sender as DataGridView).Rows[e.RowIndex];
+            CalendarNameSetChanged<DayPeriodName>(row, dgvCalendarDayPeriodNames);
+        }
+
+        private void CalendarNameSetChanged<T>(DataGridViewRow dataGridViewRowParent, DataGridView dataGridViewChildren) where T : CalendarName
+        {
+            CalendarNameSet<T> nameSet = (CalendarNameSet<T>)dataGridViewRowParent.DataBoundItem;
+            if (nameSet.Names == null || nameSet.Names.GetLength(0) == 0)
+            {
+                dataGridViewChildren.DataSource = null;
+            }
+            else
+            {
+                dataGridViewChildren.DataSource = nameSet.Names;
+                dataGridViewChildren.Columns[0].Width = 50;
+                dataGridViewChildren.Columns[1].Width = 90;
+            }
         }
 
         private void lbxCalendarEraNameSetIds_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalendarNameSetChanged<EraName>(sender as ListBox, dgvCalendarEraNames);
-        }
-
-        private void lbxCalendarMonthNameSetIds_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CalendarNameSetChanged<MonthName>(sender as ListBox, dgvCalendarMonthNames);
         }
 
         private void lbxUnitPatternSetIds_SelectedIndexChanged(object sender, EventArgs e)

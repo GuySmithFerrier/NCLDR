@@ -90,12 +90,10 @@
             this.groupBox43 = new System.Windows.Forms.GroupBox();
             this.dgvCalendarDayNames = new System.Windows.Forms.DataGridView();
             this.groupBox42 = new System.Windows.Forms.GroupBox();
-            this.lbxCalendarDayNameSetIds = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox44 = new System.Windows.Forms.GroupBox();
             this.dgvCalendarDayPeriodNames = new System.Windows.Forms.DataGridView();
             this.groupBox45 = new System.Windows.Forms.GroupBox();
-            this.lbxCalendarDayPeriodNameSetIds = new System.Windows.Forms.ListBox();
             this.tbpEraNames = new System.Windows.Forms.TabPage();
             this.groupBox46 = new System.Windows.Forms.GroupBox();
             this.dgvCalendarEraNames = new System.Windows.Forms.DataGridView();
@@ -105,7 +103,7 @@
             this.groupBox48 = new System.Windows.Forms.GroupBox();
             this.dgvCalendarMonthNames = new System.Windows.Forms.DataGridView();
             this.groupBox49 = new System.Windows.Forms.GroupBox();
-            this.lbxCalendarMonthNameSetIds = new System.Windows.Forms.ListBox();
+            this.dgvCalendarMonthNameSetIds = new System.Windows.Forms.DataGridView();
             this.groupBox39 = new System.Windows.Forms.GroupBox();
             this.lbxCalendars = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -159,6 +157,8 @@
             this.tbxCasingCalendarField = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.tbpCharacters = new System.Windows.Forms.TabPage();
+            this.tbxCharactersIndexExemplarCharacters = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
             this.groupBox38 = new System.Windows.Forms.GroupBox();
             this.label79 = new System.Windows.Forms.Label();
             this.tbxCharactersAlternateQuotationEnd = new System.Windows.Forms.TextBox();
@@ -472,8 +472,8 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
-            this.tbxCharactersIndexExemplarCharacters = new System.Windows.Forms.TextBox();
-            this.label124 = new System.Windows.Forms.Label();
+            this.dgvCalendarDayNameSets = new System.Windows.Forms.DataGridView();
+            this.dgvCalendarDayPeriodNameSets = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.groupBox66.SuspendLayout();
@@ -512,6 +512,7 @@
             this.groupBox48.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNames)).BeginInit();
             this.groupBox49.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNameSetIds)).BeginInit();
             this.groupBox39.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tbpCasing.SuspendLayout();
@@ -659,6 +660,8 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarDayNameSets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarDayPeriodNameSets)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1278,9 +1281,9 @@
             // 
             this.groupBox43.Controls.Add(this.dgvCalendarDayNames);
             this.groupBox43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox43.Location = new System.Drawing.Point(102, 3);
+            this.groupBox43.Location = new System.Drawing.Point(176, 3);
             this.groupBox43.Name = "groupBox43";
-            this.groupBox43.Size = new System.Drawing.Size(265, 322);
+            this.groupBox43.Size = new System.Drawing.Size(191, 322);
             this.groupBox43.TabIndex = 1;
             this.groupBox43.TabStop = false;
             this.groupBox43.Text = "Names";
@@ -1294,29 +1297,19 @@
             this.dgvCalendarDayNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayNames.Name = "dgvCalendarDayNames";
             this.dgvCalendarDayNames.ReadOnly = true;
-            this.dgvCalendarDayNames.Size = new System.Drawing.Size(259, 303);
+            this.dgvCalendarDayNames.Size = new System.Drawing.Size(185, 303);
             this.dgvCalendarDayNames.TabIndex = 0;
             // 
             // groupBox42
             // 
-            this.groupBox42.Controls.Add(this.lbxCalendarDayNameSetIds);
+            this.groupBox42.Controls.Add(this.dgvCalendarDayNameSets);
             this.groupBox42.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox42.Location = new System.Drawing.Point(3, 3);
             this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(99, 322);
+            this.groupBox42.Size = new System.Drawing.Size(173, 322);
             this.groupBox42.TabIndex = 0;
             this.groupBox42.TabStop = false;
-            this.groupBox42.Text = "Name Set Ids";
-            // 
-            // lbxCalendarDayNameSetIds
-            // 
-            this.lbxCalendarDayNameSetIds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxCalendarDayNameSetIds.FormattingEnabled = true;
-            this.lbxCalendarDayNameSetIds.Location = new System.Drawing.Point(3, 16);
-            this.lbxCalendarDayNameSetIds.Name = "lbxCalendarDayNameSetIds";
-            this.lbxCalendarDayNameSetIds.Size = new System.Drawing.Size(93, 303);
-            this.lbxCalendarDayNameSetIds.TabIndex = 0;
-            this.lbxCalendarDayNameSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxCalendarDayNameSetIds_SelectedIndexChanged);
+            this.groupBox42.Text = "Name Sets";
             // 
             // tabPage1
             // 
@@ -1334,9 +1327,9 @@
             // 
             this.groupBox44.Controls.Add(this.dgvCalendarDayPeriodNames);
             this.groupBox44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox44.Location = new System.Drawing.Point(102, 3);
+            this.groupBox44.Location = new System.Drawing.Point(176, 3);
             this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(265, 322);
+            this.groupBox44.Size = new System.Drawing.Size(191, 322);
             this.groupBox44.TabIndex = 3;
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "Names";
@@ -1350,29 +1343,19 @@
             this.dgvCalendarDayPeriodNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayPeriodNames.Name = "dgvCalendarDayPeriodNames";
             this.dgvCalendarDayPeriodNames.ReadOnly = true;
-            this.dgvCalendarDayPeriodNames.Size = new System.Drawing.Size(259, 303);
+            this.dgvCalendarDayPeriodNames.Size = new System.Drawing.Size(185, 303);
             this.dgvCalendarDayPeriodNames.TabIndex = 0;
             // 
             // groupBox45
             // 
-            this.groupBox45.Controls.Add(this.lbxCalendarDayPeriodNameSetIds);
+            this.groupBox45.Controls.Add(this.dgvCalendarDayPeriodNameSets);
             this.groupBox45.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox45.Location = new System.Drawing.Point(3, 3);
             this.groupBox45.Name = "groupBox45";
-            this.groupBox45.Size = new System.Drawing.Size(99, 322);
+            this.groupBox45.Size = new System.Drawing.Size(173, 322);
             this.groupBox45.TabIndex = 2;
             this.groupBox45.TabStop = false;
-            this.groupBox45.Text = "Name Set Ids";
-            // 
-            // lbxCalendarDayPeriodNameSetIds
-            // 
-            this.lbxCalendarDayPeriodNameSetIds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxCalendarDayPeriodNameSetIds.FormattingEnabled = true;
-            this.lbxCalendarDayPeriodNameSetIds.Location = new System.Drawing.Point(3, 16);
-            this.lbxCalendarDayPeriodNameSetIds.Name = "lbxCalendarDayPeriodNameSetIds";
-            this.lbxCalendarDayPeriodNameSetIds.Size = new System.Drawing.Size(93, 303);
-            this.lbxCalendarDayPeriodNameSetIds.TabIndex = 0;
-            this.lbxCalendarDayPeriodNameSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxCalendarDayPeriodNames_SelectedIndexChanged);
+            this.groupBox45.Text = "Name Sets";
             // 
             // tbpEraNames
             // 
@@ -1446,9 +1429,9 @@
             // 
             this.groupBox48.Controls.Add(this.dgvCalendarMonthNames);
             this.groupBox48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox48.Location = new System.Drawing.Point(102, 3);
+            this.groupBox48.Location = new System.Drawing.Point(176, 3);
             this.groupBox48.Name = "groupBox48";
-            this.groupBox48.Size = new System.Drawing.Size(265, 322);
+            this.groupBox48.Size = new System.Drawing.Size(191, 322);
             this.groupBox48.TabIndex = 7;
             this.groupBox48.TabStop = false;
             this.groupBox48.Text = "Names";
@@ -1462,29 +1445,32 @@
             this.dgvCalendarMonthNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarMonthNames.Name = "dgvCalendarMonthNames";
             this.dgvCalendarMonthNames.ReadOnly = true;
-            this.dgvCalendarMonthNames.Size = new System.Drawing.Size(259, 303);
+            this.dgvCalendarMonthNames.Size = new System.Drawing.Size(185, 303);
             this.dgvCalendarMonthNames.TabIndex = 0;
             // 
             // groupBox49
             // 
-            this.groupBox49.Controls.Add(this.lbxCalendarMonthNameSetIds);
+            this.groupBox49.Controls.Add(this.dgvCalendarMonthNameSetIds);
             this.groupBox49.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox49.Location = new System.Drawing.Point(3, 3);
             this.groupBox49.Name = "groupBox49";
-            this.groupBox49.Size = new System.Drawing.Size(99, 322);
+            this.groupBox49.Size = new System.Drawing.Size(173, 322);
             this.groupBox49.TabIndex = 6;
             this.groupBox49.TabStop = false;
-            this.groupBox49.Text = "Name Set Ids";
+            this.groupBox49.Text = "Name Sets";
             // 
-            // lbxCalendarMonthNameSetIds
+            // dgvCalendarMonthNameSetIds
             // 
-            this.lbxCalendarMonthNameSetIds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxCalendarMonthNameSetIds.FormattingEnabled = true;
-            this.lbxCalendarMonthNameSetIds.Location = new System.Drawing.Point(3, 16);
-            this.lbxCalendarMonthNameSetIds.Name = "lbxCalendarMonthNameSetIds";
-            this.lbxCalendarMonthNameSetIds.Size = new System.Drawing.Size(93, 303);
-            this.lbxCalendarMonthNameSetIds.TabIndex = 0;
-            this.lbxCalendarMonthNameSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxCalendarMonthNameSetIds_SelectedIndexChanged);
+            this.dgvCalendarMonthNameSetIds.AllowUserToAddRows = false;
+            this.dgvCalendarMonthNameSetIds.AllowUserToDeleteRows = false;
+            this.dgvCalendarMonthNameSetIds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalendarMonthNameSetIds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCalendarMonthNameSetIds.Location = new System.Drawing.Point(3, 16);
+            this.dgvCalendarMonthNameSetIds.Name = "dgvCalendarMonthNameSetIds";
+            this.dgvCalendarMonthNameSetIds.ReadOnly = true;
+            this.dgvCalendarMonthNameSetIds.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarMonthNameSetIds.TabIndex = 0;
+            this.dgvCalendarMonthNameSetIds.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarMonthNameSetIds_RowEnter);
             // 
             // groupBox39
             // 
@@ -1977,6 +1963,22 @@
             this.tbpCharacters.TabIndex = 2;
             this.tbpCharacters.Text = "Characters & Delimiters";
             this.tbpCharacters.UseVisualStyleBackColor = true;
+            // 
+            // tbxCharactersIndexExemplarCharacters
+            // 
+            this.tbxCharactersIndexExemplarCharacters.Location = new System.Drawing.Point(176, 100);
+            this.tbxCharactersIndexExemplarCharacters.Name = "tbxCharactersIndexExemplarCharacters";
+            this.tbxCharactersIndexExemplarCharacters.Size = new System.Drawing.Size(324, 20);
+            this.tbxCharactersIndexExemplarCharacters.TabIndex = 17;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(6, 103);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(133, 13);
+            this.label124.TabIndex = 16;
+            this.label124.Text = "Index Exemplar Characters";
             // 
             // groupBox38
             // 
@@ -5161,21 +5163,31 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
-            // tbxCharactersIndexExemplarCharacters
+            // dgvCalendarDayNameSets
             // 
-            this.tbxCharactersIndexExemplarCharacters.Location = new System.Drawing.Point(176, 100);
-            this.tbxCharactersIndexExemplarCharacters.Name = "tbxCharactersIndexExemplarCharacters";
-            this.tbxCharactersIndexExemplarCharacters.Size = new System.Drawing.Size(324, 20);
-            this.tbxCharactersIndexExemplarCharacters.TabIndex = 17;
+            this.dgvCalendarDayNameSets.AllowUserToAddRows = false;
+            this.dgvCalendarDayNameSets.AllowUserToDeleteRows = false;
+            this.dgvCalendarDayNameSets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalendarDayNameSets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCalendarDayNameSets.Location = new System.Drawing.Point(3, 16);
+            this.dgvCalendarDayNameSets.Name = "dgvCalendarDayNameSets";
+            this.dgvCalendarDayNameSets.ReadOnly = true;
+            this.dgvCalendarDayNameSets.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarDayNameSets.TabIndex = 0;
+            this.dgvCalendarDayNameSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarDayNameSets_RowEnter);
             // 
-            // label124
+            // dgvCalendarDayPeriodNameSets
             // 
-            this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(6, 103);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(133, 13);
-            this.label124.TabIndex = 16;
-            this.label124.Text = "Index Exemplar Characters";
+            this.dgvCalendarDayPeriodNameSets.AllowUserToAddRows = false;
+            this.dgvCalendarDayPeriodNameSets.AllowUserToDeleteRows = false;
+            this.dgvCalendarDayPeriodNameSets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalendarDayPeriodNameSets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCalendarDayPeriodNameSets.Location = new System.Drawing.Point(3, 16);
+            this.dgvCalendarDayPeriodNameSets.Name = "dgvCalendarDayPeriodNameSets";
+            this.dgvCalendarDayPeriodNameSets.ReadOnly = true;
+            this.dgvCalendarDayPeriodNameSets.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarDayPeriodNameSets.TabIndex = 0;
+            this.dgvCalendarDayPeriodNameSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarDayPeriodNameSets_RowEnter);
             // 
             // Form1
             // 
@@ -5226,6 +5238,7 @@
             this.groupBox48.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNames)).EndInit();
             this.groupBox49.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNameSetIds)).EndInit();
             this.groupBox39.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -5411,6 +5424,8 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarDayNameSets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarDayPeriodNameSets)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5707,12 +5722,10 @@
         private System.Windows.Forms.GroupBox groupBox43;
         private System.Windows.Forms.DataGridView dgvCalendarDayNames;
         private System.Windows.Forms.GroupBox groupBox42;
-        private System.Windows.Forms.ListBox lbxCalendarDayNameSetIds;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox44;
         private System.Windows.Forms.DataGridView dgvCalendarDayPeriodNames;
         private System.Windows.Forms.GroupBox groupBox45;
-        private System.Windows.Forms.ListBox lbxCalendarDayPeriodNameSetIds;
         private System.Windows.Forms.TabPage tbpEraNames;
         private System.Windows.Forms.GroupBox groupBox46;
         private System.Windows.Forms.DataGridView dgvCalendarEraNames;
@@ -5722,7 +5735,6 @@
         private System.Windows.Forms.GroupBox groupBox48;
         private System.Windows.Forms.DataGridView dgvCalendarMonthNames;
         private System.Windows.Forms.GroupBox groupBox49;
-        private System.Windows.Forms.ListBox lbxCalendarMonthNameSetIds;
         private System.Windows.Forms.TabPage tbpListPatterns;
         private System.Windows.Forms.DataGridView dgvListPatterns;
         private System.Windows.Forms.TabPage tbpMessages;
@@ -5863,6 +5875,9 @@
         private System.Windows.Forms.RadioButton rbXml;
         private System.Windows.Forms.TextBox tbxCharactersIndexExemplarCharacters;
         private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.DataGridView dgvCalendarMonthNameSetIds;
+        private System.Windows.Forms.DataGridView dgvCalendarDayNameSets;
+        private System.Windows.Forms.DataGridView dgvCalendarDayPeriodNameSets;
     }
 }
 
