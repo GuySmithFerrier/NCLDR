@@ -94,7 +94,7 @@
         {
             get
             {
-                return this.GetDayNames("stand-alone");
+                return this.GetDayNames("narrow");
             }
         }
 
@@ -127,7 +127,7 @@
         {
             get
             {
-                return this.GetMonthNames("stand-alone");
+                return this.GetMonthNames("narrow");
             }
         }
 
