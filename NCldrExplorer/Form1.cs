@@ -1517,6 +1517,11 @@ namespace NCldrExplorer
                 tbxNumbersDecimalFormatPattern.Text = String.Empty;
                 tbxNumbersPercentFormatPattern.Text = String.Empty;
                 tbxNumbersScientificFormatPattern.Text = String.Empty;
+
+                tbxNumberingSystemTypeDescription.Text = String.Empty;
+                tbxNumberingSystemTypeDigitsOrRules.Text = String.Empty;
+                tbxNumberingSystemTypeDigits.Text = String.Empty;
+                tbxNumberingSystemTypeRules.Text = String.Empty;
             }
             else
             {
@@ -1577,6 +1582,14 @@ namespace NCldrExplorer
                     lbxDecimalFormatPatternSetIds.Items.AddRange(numberingSystem.DecimalFormatPatternSets);
                     lbxDecimalFormatPatternSetIds.DisplayMember = "Id";
                     lbxDecimalFormatPatternSetIds.SelectedIndex = 0;
+                }
+
+                if (numberingSystem.NumberingSystemType != null)
+                {
+                    tbxNumberingSystemTypeDescription.Text = numberingSystem.NumberingSystemType.Description;
+                    tbxNumberingSystemTypeDigitsOrRules.Text = numberingSystem.NumberingSystemType.DigitsOrRules.ToString();
+                    tbxNumberingSystemTypeDigits.Text = numberingSystem.NumberingSystemType.Digits;
+                    tbxNumberingSystemTypeRules.Text = numberingSystem.NumberingSystemType.Rules;
                 }
             }
         }
