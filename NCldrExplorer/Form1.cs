@@ -538,7 +538,15 @@ namespace NCldrExplorer
                 tbxCharactersExemplarCharacters.Text = String.Join(" ", characters.ExemplarCharacters);
                 tbxCharactersAuxiliaryExemplarCharacters.Text = String.Join(" ", characters.AuxiliaryExemplarCharacters);
                 tbxCharactersPunctuationExemplarCharacters.Text = String.Join(" ", characters.PunctuationExemplarCharacters);
-                tbxCharactersIndexExemplarCharacters.Text = String.Join(" ", characters.IndexExemplarCharacters);
+
+                if (characters.IndexExemplarCharacters != null)
+                {
+                    tbxCharactersIndexExemplarCharacters.Text = String.Join(" ", characters.IndexExemplarCharacters);
+                }
+                else
+                {
+                    tbxCharactersIndexExemplarCharacters.Text = string.Empty;
+                }
 
                 tbxCharactersFinalEllipsis.Text = characters.FinalEllipsis;
                 tbxCharactersInitialEllipsis.Text = characters.InitialEllipsis;
