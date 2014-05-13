@@ -59,20 +59,29 @@ namespace NCldrExplorer
 
             INCldrFileDataSource ncldrFileDataSource = this.GetNewNCldrDataSource();
             ncldrFileDataSource.NCldrDataPath = tbxNCldrDataPath.Text;
-            NCldr.NCldr.NCldrData = ncldrFileDataSource.Load();
-            lblLoading.Visible = false;
-
-            foreach (string culture in NCldr.NCldr.CultureNames)
+            INCldrData ncldrData = ncldrFileDataSource.Load();
+            if (ncldrData == null)
             {
-                lbxCultures.Items.Add(culture);
+                MessageBox.Show("The NCLDR data file cannot be found");
             }
-
-            if (lbxCultures.Items.Count > 0)
+            else
             {
-                lbxCultures.SelectedIndex = 0;
-            }
+                NCldr.NCldr.NCldrData = ncldrData;
 
-            tabControl.SelectedIndex = 1;
+                lblLoading.Visible = false;
+
+                foreach (string culture in NCldr.NCldr.CultureNames)
+                {
+                    lbxCultures.Items.Add(culture);
+                }
+
+                if (lbxCultures.Items.Count > 0)
+                {
+                    lbxCultures.SelectedIndex = 0;
+                }
+
+                tabControl.SelectedIndex = 1;
+            }
         }
 
         private INCldrFileDataSource GetNewNCldrDataSource()

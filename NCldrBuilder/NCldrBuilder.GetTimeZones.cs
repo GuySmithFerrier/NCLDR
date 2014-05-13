@@ -44,16 +44,23 @@ namespace NCldr.Builder
             List<TimeZoneInformation> timeZones = new List<TimeZoneInformation>();
             foreach (XElement timeZoneElement in timeZoneElements)
             {
-                string[] aliases = timeZoneElement.Attribute("alias").Value.ToString().Split(' ');
+                string name = timeZoneElement.Attribute("name").Value.ToString();
+                string id = name;
+                string[] aliases = null;
+                if (timeZoneElement.Attribute("alias") != null)
+                {
+                    aliases = timeZoneElement.Attribute("alias").Value.ToString().Split(' ');
+                    id = aliases[0];
+                }
 
-                Progress("Adding time zone", aliases[0]);
+                Progress("Adding time zone", id);
 
                 TimeZoneInformation timeZone = new TimeZoneInformation();
-                timeZone.Id = aliases[0];
-                timeZone.ShortId = timeZoneElement.Attribute("name").Value.ToString();
+                timeZone.Id = id;
+                timeZone.ShortId = name;
                 timeZone.Description = timeZoneElement.Attribute("description").Value.ToString();
 
-                if (aliases.GetLength(0) > 1)
+                if (aliases != null && aliases.GetLength(0) > 1)
                 {
                     // The first element of "aliases" is the timezone id.
                     // All remaining elements are aliases of the first element.
@@ -98,7 +105,7 @@ namespace NCldr.Builder
                 }
 
                 timeZones.Add(timeZone);
-                Progress("Added time zone", aliases[0], ProgressEventType.Added, timeZone);
+                Progress("Added time zone", id, ProgressEventType.Added, timeZone);
             }
 
             return timeZones.ToArray();

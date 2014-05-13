@@ -34,6 +34,7 @@
             this.tbxProgress = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.rbXml = new System.Windows.Forms.RadioButton();
             this.rbJson = new System.Windows.Forms.RadioButton();
             this.rbBinary = new System.Windows.Forms.RadioButton();
             this.btnSelectOutputPath = new System.Windows.Forms.Button();
@@ -101,7 +102,6 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.rbXml = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxProgress.SuspendLayout();
@@ -192,6 +192,17 @@
             this.groupBox66.TabStop = false;
             this.groupBox66.Text = "Data Source";
             // 
+            // rbXml
+            // 
+            this.rbXml.AutoSize = true;
+            this.rbXml.Location = new System.Drawing.Point(6, 65);
+            this.rbXml.Name = "rbXml";
+            this.rbXml.Size = new System.Drawing.Size(47, 17);
+            this.rbXml.TabIndex = 2;
+            this.rbXml.TabStop = true;
+            this.rbXml.Text = "XML";
+            this.rbXml.UseVisualStyleBackColor = true;
+            // 
             // rbJson
             // 
             this.rbJson.AutoSize = true;
@@ -258,7 +269,7 @@
             this.tbxCldrPath.Name = "tbxCldrPath";
             this.tbxCldrPath.Size = new System.Drawing.Size(334, 20);
             this.tbxCldrPath.TabIndex = 1;
-            this.tbxCldrPath.Text = "C:\\CLDR\\Release23\\Core";
+            this.tbxCldrPath.Text = "C:\\CLDR\\Release25\\Core";
             // 
             // label2
             // 
@@ -1030,17 +1041,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // rbXml
-            // 
-            this.rbXml.AutoSize = true;
-            this.rbXml.Location = new System.Drawing.Point(6, 65);
-            this.rbXml.Name = "rbXml";
-            this.rbXml.Size = new System.Drawing.Size(47, 17);
-            this.rbXml.TabIndex = 2;
-            this.rbXml.TabStop = true;
-            this.rbXml.Text = "XML";
-            this.rbXml.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

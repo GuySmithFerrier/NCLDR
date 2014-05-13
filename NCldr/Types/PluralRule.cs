@@ -32,7 +32,12 @@
         /// <summary>
         /// Many indicates a count of "many"
         /// </summary>
-        Many
+        Many,
+
+        /// <summary>
+        /// Other indicates a count of "other"
+        /// </summary>
+        Other
     }
 
     /// <summary>
