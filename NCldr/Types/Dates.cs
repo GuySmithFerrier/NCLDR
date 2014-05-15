@@ -78,6 +78,15 @@
                 combinedDates.Calendars = combinedCalendars.ToArray();
             }
 
+            if (combinedDates.DisplayNames == null)
+            {
+                combinedDates.DisplayNames = parentDates.DisplayNames;
+            }
+            else if (parentDates.DisplayNames != null)
+            {
+                combinedDates.DisplayNames = DatesDisplayNames.Combine(combinedDates.DisplayNames, parentDates.DisplayNames);
+            }
+
             return combinedDates;
         }
 

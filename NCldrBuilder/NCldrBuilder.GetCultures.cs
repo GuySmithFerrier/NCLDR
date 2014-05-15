@@ -1032,6 +1032,16 @@ namespace NCldr.Builder
                     datesDisplayNames.Tomorrow = (from r in fieldData.Elements("relative")
                                                       where r.Attribute("type").Value.ToString() == "1"
                                                       select r.Value.ToString()).FirstOrDefault();
+
+                    datesDisplayNames.DayFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.DayPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "dayperiod")
                 {
@@ -1044,22 +1054,72 @@ namespace NCldr.Builder
                 else if (type == "hour")
                 {
                     datesDisplayNames.Hour = displayName;
+
+                    datesDisplayNames.HourFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.HourPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "minute")
                 {
                     datesDisplayNames.Minute = displayName;
+
+                    datesDisplayNames.MinuteFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.MinutePastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "month")
                 {
                     datesDisplayNames.Month = displayName;
+
+                    datesDisplayNames.MonthFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.MonthPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "second")
                 {
                     datesDisplayNames.Second = displayName;
+
+                    datesDisplayNames.SecondFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.SecondPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "week")
                 {
                     datesDisplayNames.Week = displayName;
+
+                    datesDisplayNames.WeekFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.WeekPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "weekday")
                 {
@@ -1068,6 +1128,16 @@ namespace NCldr.Builder
                 else if (type == "year")
                 {
                     datesDisplayNames.Year = displayName;
+
+                    datesDisplayNames.YearFutureRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "future"
+                         select r).Elements("relativeTimePattern").ToList());
+
+                    datesDisplayNames.YearPastRelativeTimeRules = GetRelativeTimeRules(
+                        (from r in fieldData.Elements("relativeTime")
+                         where r.Attribute("type").Value.ToString() == "past"
+                         select r).Elements("relativeTimePattern").ToList());
                 }
                 else if (type == "zone")
                 {
@@ -1076,6 +1146,34 @@ namespace NCldr.Builder
             }
 
             return datesDisplayNames;
+        }
+
+        private static RelativeTimeRuleSet GetRelativeTimeRules(List<XElement> relativeTimePatterns)
+        {
+            if (relativeTimePatterns == null)
+            {
+                return null;
+            }
+
+            List<RelativeTimeRule> relativeTimeRules = new List<RelativeTimeRule>();
+
+            foreach (XElement relativeTimePattern in relativeTimePatterns)
+            {
+                RelativeTimeRule relativeTimeRule = new RelativeTimeRule();
+                relativeTimeRule.Id = GetRelativeTimeRuleCount(relativeTimePattern.Attribute("count").Value.ToString());
+                relativeTimeRule.Pattern = relativeTimePattern.Value.ToString();
+                relativeTimeRules.Add(relativeTimeRule);
+            }
+
+            RelativeTimeRuleSet relativeTimeRuleSet = new RelativeTimeRuleSet();
+            relativeTimeRuleSet.RelativeTimeRules = relativeTimeRules.ToArray();
+
+            return relativeTimeRuleSet;
+        }
+
+        private static RelativeTimeRuleCount GetRelativeTimeRuleCount(string relativeTimeRuleCount)
+        {
+            return (RelativeTimeRuleCount)Enum.Parse(typeof(RelativeTimeRuleCount), relativeTimeRuleCount, true);
         }
 
         private static TSet[] GetNameSets<T, TSet>(

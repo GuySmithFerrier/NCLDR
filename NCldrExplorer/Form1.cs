@@ -489,6 +489,21 @@ namespace NCldrExplorer
                     tbxCalendarMinute.Text = String.Empty;
                     tbxCalendarSecond.Text = String.Empty;
                     tbxCalendarZone.Text = String.Empty;
+
+                    dgvDayFutureRelativeTimeRules.DataSource = null;
+                    dgvDayPastRelativeTimeRules.DataSource = null;
+                    dgvWeekFutureRelativeTimeRules.DataSource = null;
+                    dgvWeekPastRelativeTimeRules.DataSource = null;
+                    dgvMonthFutureRelativeTimeRules.DataSource = null;
+                    dgvMonthPastRelativeTimeRules.DataSource = null;
+                    dgvYearFutureRelativeTimeRules.DataSource = null;
+                    dgvYearPastRelativeTimeRules.DataSource = null;
+                    dgvSecondFutureRelativeTimeRules.DataSource = null;
+                    dgvSecondPastRelativeTimeRules.DataSource = null;
+                    dgvMinuteFutureRelativeTimeRules.DataSource = null;
+                    dgvMinutePastRelativeTimeRules.DataSource = null;
+                    dgvHourFutureRelativeTimeRules.DataSource = null;
+                    dgvHourPastRelativeTimeRules.DataSource = null;
                 }
                 else
                 {
@@ -506,7 +521,35 @@ namespace NCldrExplorer
                     tbxCalendarMinute.Text = dates.DisplayNames.Minute;
                     tbxCalendarSecond.Text = dates.DisplayNames.Second;
                     tbxCalendarZone.Text = dates.DisplayNames.Zone;
+
+                    SetRelativeTimeRules(dgvDayFutureRelativeTimeRules, dates.DisplayNames.DayFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvDayPastRelativeTimeRules, dates.DisplayNames.DayPastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvWeekFutureRelativeTimeRules, dates.DisplayNames.WeekFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvWeekPastRelativeTimeRules, dates.DisplayNames.WeekPastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvMonthFutureRelativeTimeRules, dates.DisplayNames.MonthFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvMonthPastRelativeTimeRules, dates.DisplayNames.MonthPastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvYearFutureRelativeTimeRules, dates.DisplayNames.YearFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvYearPastRelativeTimeRules, dates.DisplayNames.YearPastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvSecondFutureRelativeTimeRules, dates.DisplayNames.SecondFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvSecondPastRelativeTimeRules, dates.DisplayNames.SecondPastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvMinuteFutureRelativeTimeRules, dates.DisplayNames.MinuteFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvMinutePastRelativeTimeRules, dates.DisplayNames.MinutePastRelativeTimeRules);
+                    SetRelativeTimeRules(dgvHourFutureRelativeTimeRules, dates.DisplayNames.HourFutureRelativeTimeRules);
+                    SetRelativeTimeRules(dgvHourPastRelativeTimeRules, dates.DisplayNames.HourPastRelativeTimeRules);
                 }
+            }
+        }
+
+        private void SetRelativeTimeRules(DataGridView dataGridView, RelativeTimeRuleSet relativeTimeRuleSet)
+        {
+            if (relativeTimeRuleSet == null)
+            {
+                dataGridView.DataSource = null;
+            }
+            else
+            {
+                dataGridView.DataSource = relativeTimeRuleSet.RelativeTimeRules;
+                dataGridView.Columns[0].Width = 50;
             }
         }
 

@@ -188,19 +188,22 @@
                 return combinedMessages;
             }
 
-            List<Message> combinedMessagesList = new List<Message>(combinedMessages.Messages);
-
-            foreach (Message parentMessage in parentMessages.Messages)
+            if (parentMessages.Messages != null)
             {
-                if (!(from m in combinedMessages.Messages
-                      where m.Id == parentMessage.Id
-                      select m).Any())
-                {
-                    combinedMessagesList.Add(parentMessage);
-                }
-            }
+                List<Message> combinedMessagesList = new List<Message>(combinedMessages.Messages);
 
-            combinedMessages.Messages = combinedMessagesList.ToArray();
+                foreach (Message parentMessage in parentMessages.Messages)
+                {
+                    if (!(from m in combinedMessages.Messages
+                          where m.Id == parentMessage.Id
+                          select m).Any())
+                    {
+                        combinedMessagesList.Add(parentMessage);
+                    }
+                }
+
+                combinedMessages.Messages = combinedMessagesList.ToArray();
+            }
 
             return combinedMessages;
         }

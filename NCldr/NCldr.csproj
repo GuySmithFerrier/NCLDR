@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="NCldrXmlFileDataSource.cs" />
     <Compile Include="NCldrJsonFileDataSource.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
@@ -41,6 +42,8 @@
     <Compile Include="NCldrLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Calendar.cs" />
+    <Compile Include="Types\RelativeTimeRuleSet.cs" />
+    <Compile Include="Types\RelativeTimeRule.cs" />
     <Compile Include="Types\RegionHour.cs" />
     <Compile Include="Types\TimeData.cs" />
     <Compile Include="Types\DatesDisplayNames.cs" />
