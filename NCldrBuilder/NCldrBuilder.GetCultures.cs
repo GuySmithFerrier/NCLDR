@@ -600,6 +600,11 @@ namespace NCldr.Builder
                     symbols.Exponential = symbolElement.Element("exponential").Value.ToString();
                 }
 
+                if (symbolElement.Element("superscriptingExponent") != null)
+                {
+                    symbols.SuperScriptingExponent = symbolElement.Element("superscriptingExponent").Value.ToString();
+                }
+
                 if (symbolElement.Element("perMille") != null)
                 {
                     symbols.PerMille = symbolElement.Element("perMille").Value.ToString();

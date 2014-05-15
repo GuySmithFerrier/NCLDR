@@ -45,6 +45,11 @@
         public string Exponential { get; set; }
 
         /// <summary>
+        /// Gets or sets the symbol used for superscripting exponent values
+        /// </summary>
+        public string SuperScriptingExponent { get; set; }
+
+        /// <summary>
         /// Gets or sets the symbol used for PerMille
         /// </summary>
         public string PerMille { get; set; }

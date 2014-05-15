@@ -1590,6 +1590,7 @@ namespace NCldrExplorer
                     tbxSymbolGroup.Text = String.Empty;
                     tbxSymbolList.Text = String.Empty;
                     tbxSymbolExponential.Text = String.Empty;
+                    tbxSymbolSuperScriptingExponent.Text = String.Empty;
                     tbxSymbolPerMille.Text = String.Empty;
                     tbxSymbolPercent.Text = String.Empty;
                     tbxSymbolPlusSign.Text = String.Empty;
@@ -1604,6 +1605,7 @@ namespace NCldrExplorer
                     tbxSymbolGroup.Text = symbols.Group;
                     tbxSymbolList.Text = symbols.List;
                     tbxSymbolExponential.Text = symbols.Exponential;
+                    tbxSymbolSuperScriptingExponent.Text = symbols.SuperScriptingExponent == null ? string.Empty : symbols.SuperScriptingExponent;
                     tbxSymbolPerMille.Text = symbols.PerMille;
                     tbxSymbolPercent.Text = symbols.PercentSign;
                     tbxSymbolPlusSign.Text = symbols.PlusSign;

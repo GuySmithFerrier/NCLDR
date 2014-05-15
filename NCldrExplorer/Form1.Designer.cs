@@ -511,6 +511,8 @@
             this.dgvMinuteFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
             this.groupBox80 = new System.Windows.Forms.GroupBox();
             this.dgvSecondFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.label129 = new System.Windows.Forms.Label();
+            this.tbxSymbolSuperScriptingExponent = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.groupBox66.SuspendLayout();
@@ -2520,7 +2522,7 @@
             this.tbpNumbers.Location = new System.Drawing.Point(4, 22);
             this.tbpNumbers.Name = "tbpNumbers";
             this.tbpNumbers.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumbers.Size = new System.Drawing.Size(506, 360);
+            this.tbpNumbers.Size = new System.Drawing.Size(1135, 431);
             this.tbpNumbers.TabIndex = 6;
             this.tbpNumbers.Text = "Numbers";
             this.tbpNumbers.UseVisualStyleBackColor = true;
@@ -2534,7 +2536,7 @@
             this.tabControl5.Location = new System.Drawing.Point(3, 3);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(500, 354);
+            this.tabControl5.Size = new System.Drawing.Size(1129, 425);
             this.tabControl5.TabIndex = 0;
             // 
             // tbpCultureNumberingSystems
@@ -2544,7 +2546,7 @@
             this.tbpCultureNumberingSystems.Location = new System.Drawing.Point(4, 22);
             this.tbpCultureNumberingSystems.Name = "tbpCultureNumberingSystems";
             this.tbpCultureNumberingSystems.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCultureNumberingSystems.Size = new System.Drawing.Size(492, 328);
+            this.tbpCultureNumberingSystems.Size = new System.Drawing.Size(1121, 399);
             this.tbpCultureNumberingSystems.TabIndex = 0;
             this.tbpCultureNumberingSystems.Text = "Numbering Systems";
             this.tbpCultureNumberingSystems.UseVisualStyleBackColor = true;
@@ -2560,11 +2562,13 @@
             this.tabControl6.Location = new System.Drawing.Point(203, 3);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(286, 322);
+            this.tabControl6.Size = new System.Drawing.Size(915, 393);
             this.tabControl6.TabIndex = 1;
             // 
             // tbpNumberingSystemSymbols
             // 
+            this.tbpNumberingSystemSymbols.Controls.Add(this.tbxSymbolSuperScriptingExponent);
+            this.tbpNumberingSystemSymbols.Controls.Add(this.label129);
             this.tbpNumberingSystemSymbols.Controls.Add(this.tbxSymbolExponential);
             this.tbpNumberingSystemSymbols.Controls.Add(this.label109);
             this.tbpNumberingSystemSymbols.Controls.Add(this.tbxSymbolPerMille);
@@ -2588,14 +2592,14 @@
             this.tbpNumberingSystemSymbols.Location = new System.Drawing.Point(4, 22);
             this.tbpNumberingSystemSymbols.Name = "tbpNumberingSystemSymbols";
             this.tbpNumberingSystemSymbols.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumberingSystemSymbols.Size = new System.Drawing.Size(278, 296);
+            this.tbpNumberingSystemSymbols.Size = new System.Drawing.Size(907, 367);
             this.tbpNumberingSystemSymbols.TabIndex = 0;
             this.tbpNumberingSystemSymbols.Text = "Symbols";
             this.tbpNumberingSystemSymbols.UseVisualStyleBackColor = true;
             // 
             // tbxSymbolExponential
             // 
-            this.tbxSymbolExponential.Location = new System.Drawing.Point(114, 250);
+            this.tbxSymbolExponential.Location = new System.Drawing.Point(180, 250);
             this.tbxSymbolExponential.Name = "tbxSymbolExponential";
             this.tbxSymbolExponential.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolExponential.TabIndex = 39;
@@ -2611,7 +2615,7 @@
             // 
             // tbxSymbolPerMille
             // 
-            this.tbxSymbolPerMille.Location = new System.Drawing.Point(114, 224);
+            this.tbxSymbolPerMille.Location = new System.Drawing.Point(180, 224);
             this.tbxSymbolPerMille.Name = "tbxSymbolPerMille";
             this.tbxSymbolPerMille.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolPerMille.TabIndex = 37;
@@ -2627,7 +2631,7 @@
             // 
             // tbxSymbolNan
             // 
-            this.tbxSymbolNan.Location = new System.Drawing.Point(114, 198);
+            this.tbxSymbolNan.Location = new System.Drawing.Point(180, 198);
             this.tbxSymbolNan.Name = "tbxSymbolNan";
             this.tbxSymbolNan.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolNan.TabIndex = 35;
@@ -2652,7 +2656,7 @@
             // 
             // tbxSymbolPlusSign
             // 
-            this.tbxSymbolPlusSign.Location = new System.Drawing.Point(114, 172);
+            this.tbxSymbolPlusSign.Location = new System.Drawing.Point(180, 172);
             this.tbxSymbolPlusSign.Name = "tbxSymbolPlusSign";
             this.tbxSymbolPlusSign.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolPlusSign.TabIndex = 32;
@@ -2668,42 +2672,42 @@
             // 
             // tbxSymbolMinusSign
             // 
-            this.tbxSymbolMinusSign.Location = new System.Drawing.Point(114, 146);
+            this.tbxSymbolMinusSign.Location = new System.Drawing.Point(180, 146);
             this.tbxSymbolMinusSign.Name = "tbxSymbolMinusSign";
             this.tbxSymbolMinusSign.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolMinusSign.TabIndex = 30;
             // 
             // tbxSymbolPercent
             // 
-            this.tbxSymbolPercent.Location = new System.Drawing.Point(114, 120);
+            this.tbxSymbolPercent.Location = new System.Drawing.Point(180, 120);
             this.tbxSymbolPercent.Name = "tbxSymbolPercent";
             this.tbxSymbolPercent.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolPercent.TabIndex = 29;
             // 
             // tbxSymbolInfinity
             // 
-            this.tbxSymbolInfinity.Location = new System.Drawing.Point(114, 94);
+            this.tbxSymbolInfinity.Location = new System.Drawing.Point(180, 94);
             this.tbxSymbolInfinity.Name = "tbxSymbolInfinity";
             this.tbxSymbolInfinity.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolInfinity.TabIndex = 28;
             // 
             // tbxSymbolList
             // 
-            this.tbxSymbolList.Location = new System.Drawing.Point(114, 68);
+            this.tbxSymbolList.Location = new System.Drawing.Point(180, 68);
             this.tbxSymbolList.Name = "tbxSymbolList";
             this.tbxSymbolList.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolList.TabIndex = 27;
             // 
             // tbxSymbolGroup
             // 
-            this.tbxSymbolGroup.Location = new System.Drawing.Point(114, 42);
+            this.tbxSymbolGroup.Location = new System.Drawing.Point(180, 42);
             this.tbxSymbolGroup.Name = "tbxSymbolGroup";
             this.tbxSymbolGroup.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolGroup.TabIndex = 26;
             // 
             // tbxSymbolDecimal
             // 
-            this.tbxSymbolDecimal.Location = new System.Drawing.Point(114, 17);
+            this.tbxSymbolDecimal.Location = new System.Drawing.Point(180, 17);
             this.tbxSymbolDecimal.Name = "tbxSymbolDecimal";
             this.tbxSymbolDecimal.Size = new System.Drawing.Size(100, 20);
             this.tbxSymbolDecimal.TabIndex = 25;
@@ -3117,7 +3121,7 @@
             this.groupBox58.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox58.Location = new System.Drawing.Point(3, 3);
             this.groupBox58.Name = "groupBox58";
-            this.groupBox58.Size = new System.Drawing.Size(200, 322);
+            this.groupBox58.Size = new System.Drawing.Size(200, 393);
             this.groupBox58.TabIndex = 0;
             this.groupBox58.TabStop = false;
             this.groupBox58.Text = "Ids";
@@ -3131,7 +3135,7 @@
             this.dgvNumbersNumberingSystemIds.Location = new System.Drawing.Point(3, 72);
             this.dgvNumbersNumberingSystemIds.Name = "dgvNumbersNumberingSystemIds";
             this.dgvNumbersNumberingSystemIds.ReadOnly = true;
-            this.dgvNumbersNumberingSystemIds.Size = new System.Drawing.Size(194, 247);
+            this.dgvNumbersNumberingSystemIds.Size = new System.Drawing.Size(194, 318);
             this.dgvNumbersNumberingSystemIds.TabIndex = 1;
             this.dgvNumbersNumberingSystemIds.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumbersNumberingSystemIds_RowEnter);
             // 
@@ -5660,6 +5664,22 @@
             this.dgvSecondFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
             this.dgvSecondFutureRelativeTimeRules.TabIndex = 0;
             // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(30, 281);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(127, 13);
+            this.label129.TabIndex = 40;
+            this.label129.Text = "Super Scripting Exponent";
+            // 
+            // tbxSymbolSuperScriptingExponent
+            // 
+            this.tbxSymbolSuperScriptingExponent.Location = new System.Drawing.Point(180, 278);
+            this.tbxSymbolSuperScriptingExponent.Name = "tbxSymbolSuperScriptingExponent";
+            this.tbxSymbolSuperScriptingExponent.Size = new System.Drawing.Size(100, 20);
+            this.tbxSymbolSuperScriptingExponent.TabIndex = 41;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6416,6 +6436,8 @@
         private System.Windows.Forms.DataGridView dgvMinuteFutureRelativeTimeRules;
         private System.Windows.Forms.GroupBox groupBox80;
         private System.Windows.Forms.DataGridView dgvSecondFutureRelativeTimeRules;
+        private System.Windows.Forms.TextBox tbxSymbolSuperScriptingExponent;
+        private System.Windows.Forms.Label label129;
     }
 }
 
