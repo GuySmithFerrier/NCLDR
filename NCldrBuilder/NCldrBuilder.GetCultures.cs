@@ -330,6 +330,8 @@ namespace NCldr.Builder
 
                 numbers.CurrencyDisplayNameSets = GetCurrencyDisplayNameSets(numbersElements);
 
+                numbers.MiscellaneousPatternSets = GetMiscellaneousPatternSets(numbersElements);
+
                 if (region != null)
                 {
                     numbers.CurrencyPeriods = GetCurrencyPeriods(region.Id);
@@ -466,6 +468,43 @@ namespace NCldr.Builder
                 }
 
                 return currencyDisplayNameSets.ToArray();
+            }
+
+            return null;
+        }
+
+        private static MiscellaneousPatternSet[] GetMiscellaneousPatternSets(IEnumerable<XElement> numbersElements)
+        {
+            List<XElement> miscellanousPatternSetElements = (from item in numbersElements.Elements("miscPatterns")
+                                                             select item).ToList();
+
+            if (miscellanousPatternSetElements != null && miscellanousPatternSetElements.Count > 0)
+            {
+                List<MiscellaneousPatternSet> miscellaneousPatternSets = new List<MiscellaneousPatternSet>();
+                foreach (XElement miscellanousPatternSetElement in miscellanousPatternSetElements)
+                {
+                    MiscellaneousPatternSet miscellaneousPatternSet = new MiscellaneousPatternSet();
+                    miscellaneousPatternSet.Id = miscellanousPatternSetElement.Attribute("numberSystem").Value.ToString();
+                    List<MiscellaneousPattern> miscellaneousPatterns = new List<MiscellaneousPattern>();
+                    foreach (XElement miscellanousPatternElement in miscellanousPatternSetElement.Elements("pattern"))
+                    {
+                        MiscellaneousPattern miscellaneousPattern = new MiscellaneousPattern();
+                        if (miscellanousPatternElement.Attribute("type") != null)
+                        {
+                            string id = miscellanousPatternElement.Attribute("type").Value.ToString();
+                            miscellaneousPattern.Id = id;
+                        }
+
+                        miscellaneousPattern.Pattern = miscellanousPatternElement.Value.ToString();
+                        miscellaneousPatterns.Add(miscellaneousPattern);
+                    }
+
+                    miscellaneousPatternSet.MiscellaneousPatterns = miscellaneousPatterns.ToArray();
+
+                    miscellaneousPatternSets.Add(miscellaneousPatternSet);
+                }
+
+                return miscellaneousPatternSets.ToArray();
             }
 
             return null;

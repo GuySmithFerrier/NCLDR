@@ -296,6 +296,9 @@ namespace NCldrExplorer
 
             dgvCurrencyDisplayNameSets.DataSource = null;
 
+            dgvMiscellaneousPatternSets.DataSource = null;
+            dgvMiscellaneousPatterns.DataSource = null;
+
             dgvCurrencyPeriods.DataSource = null;
 
             if (numbers != null)
@@ -326,6 +329,8 @@ namespace NCldrExplorer
 
                 ShowCurrencyDisplayNames(numbers.CurrencyDisplayNameSets);
 
+                ShowMiscellaneousPatterns(numbers.MiscellaneousPatternSets);
+
                 ShowCurrencyPeriods(numbers.CurrencyPeriods);
             }
         }
@@ -346,6 +351,14 @@ namespace NCldrExplorer
                 dgvCurrencyDisplayNameSets.DataSource = currencyDisplayNameSets.OrderBy(cdns => cdns.Id).ToList();
                 dgvCurrencyDisplayNameSets.Columns[0].Width = 66;
                 dgvCurrencyDisplayNameSets.Columns[1].Width = 66;
+            }
+        }
+
+        private void ShowMiscellaneousPatterns(MiscellaneousPatternSet[] miscellaneousPatternSets)
+        {
+            if (miscellaneousPatternSets != null && miscellaneousPatternSets.GetLength(0) > 0)
+            {
+                dgvMiscellaneousPatternSets.DataSource = miscellaneousPatternSets.OrderBy(cdns => cdns.Id).ToList();
             }
         }
 
@@ -1670,6 +1683,16 @@ namespace NCldrExplorer
             dgvCultureCurrencyNames.DataSource = currencyDisplayNameSet.CurrencyDisplayNames;
             dgvCultureCurrencyNames.Columns[0].Width = 70;
             dgvCultureCurrencyNames.Columns[1].Width = 140;
+        }
+
+        private void dgvMiscellaneousPatternSets_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            MiscellaneousPatternSet miscellaneousPatternSet =
+                (MiscellaneousPatternSet)dgvMiscellaneousPatternSets.Rows[e.RowIndex].DataBoundItem;
+
+            dgvMiscellaneousPatterns.DataSource = miscellaneousPatternSet.MiscellaneousPatterns;
+            dgvMiscellaneousPatterns.Columns[0].Width = 70;
+            dgvMiscellaneousPatterns.Columns[1].Width = 140;
         }
     }
 

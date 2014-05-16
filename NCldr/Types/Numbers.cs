@@ -57,6 +57,11 @@
         public CurrencyPeriod[] CurrencyPeriods { get; set; }
 
         /// <summary>
+        /// Gets or sets an array of miscellaneous pattern sets
+        /// </summary>
+        public MiscellaneousPatternSet[] MiscellaneousPatternSets { get; set; }
+
+        /// <summary>
         /// Gets the CurrencyPeriod that is in use at the current time
         /// </summary>
         public CurrencyPeriod CurrentCurrencyPeriod
@@ -112,6 +117,12 @@
                 CombineArrays<CurrencyDisplayNameSet>(
                 combinedNumbers.CurrencyDisplayNameSets,
                 parentNumbers.CurrencyDisplayNameSets,
+                (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
+
+            combinedNumbers.MiscellaneousPatternSets =
+                CombineArrays<MiscellaneousPatternSet>(
+                combinedNumbers.MiscellaneousPatternSets,
+                parentNumbers.MiscellaneousPatternSets,
                 (item, parent) => string.Compare(item.Id, parent.Id, StringComparison.InvariantCulture) == 0);
 
             combinedNumbers.CurrencyPeriods =
