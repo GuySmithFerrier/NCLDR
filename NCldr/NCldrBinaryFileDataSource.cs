@@ -15,6 +15,16 @@
     public class NCldrBinaryFileDataSource : INCldrFileDataSource
     {
         /// <summary>
+        /// Gets or sets the name of the data source
+        /// </summary>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the description of the data source
+        /// </summary>
+        public string Description { get; private set; }
+
+        /// <summary>
         /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)
         /// </summary>
         public string NCldrDataPath { get; set; }
@@ -28,6 +38,15 @@
             {
                 return Path.Combine(this.NCldrDataPath, "NCldr.dat");
             }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the NCldrBinaryFileDataSource class
+        /// </summary>
+        public NCldrBinaryFileDataSource()
+        {
+            this.Name = "Binary";
+            this.Description = ".NET Framework Binary Serializer";
         }
 
         /// <summary>

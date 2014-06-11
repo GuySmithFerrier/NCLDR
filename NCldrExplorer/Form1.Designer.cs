@@ -31,9 +31,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbpLoad = new System.Windows.Forms.TabPage();
             this.groupBox66 = new System.Windows.Forms.GroupBox();
-            this.rbXml = new System.Windows.Forms.RadioButton();
-            this.rbJson = new System.Windows.Forms.RadioButton();
-            this.rbBinary = new System.Windows.Forms.RadioButton();
+            this.clbDataSources = new System.Windows.Forms.CheckedListBox();
             this.lblLoading = new System.Windows.Forms.Label();
             this.btnLoadNCldrData = new System.Windows.Forms.Button();
             this.tbxNCldrDataPath = new System.Windows.Forms.TextBox();
@@ -51,6 +49,32 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbxLanguageDisplayNames = new System.Windows.Forms.ListBox();
             this.tbpDatesDisplayNames = new System.Windows.Forms.TabPage();
+            this.groupBox75 = new System.Windows.Forms.GroupBox();
+            this.dgvHourPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox73 = new System.Windows.Forms.GroupBox();
+            this.dgvYearPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox76 = new System.Windows.Forms.GroupBox();
+            this.dgvMinutePastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox71 = new System.Windows.Forms.GroupBox();
+            this.dgvMonthPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox77 = new System.Windows.Forms.GroupBox();
+            this.dgvHourFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox74 = new System.Windows.Forms.GroupBox();
+            this.dgvYearFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox78 = new System.Windows.Forms.GroupBox();
+            this.dgvSecondPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox69 = new System.Windows.Forms.GroupBox();
+            this.dgvWeekPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox79 = new System.Windows.Forms.GroupBox();
+            this.dgvMinuteFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox72 = new System.Windows.Forms.GroupBox();
+            this.dgvMonthFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox80 = new System.Windows.Forms.GroupBox();
+            this.dgvSecondFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox68 = new System.Windows.Forms.GroupBox();
+            this.dgvDayPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
+            this.groupBox70 = new System.Windows.Forms.GroupBox();
+            this.dgvWeekFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
             this.groupBox67 = new System.Windows.Forms.GroupBox();
             this.dgvDayFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
             this.label88 = new System.Windows.Forms.Label();
@@ -212,6 +236,8 @@
             this.tbpCultureNumberingSystems = new System.Windows.Forms.TabPage();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tbpNumberingSystemSymbols = new System.Windows.Forms.TabPage();
+            this.tbxSymbolSuperScriptingExponent = new System.Windows.Forms.TextBox();
+            this.label129 = new System.Windows.Forms.Label();
             this.tbxSymbolExponential = new System.Windows.Forms.TextBox();
             this.label109 = new System.Windows.Forms.Label();
             this.tbxSymbolPerMille = new System.Windows.Forms.TextBox();
@@ -282,6 +308,11 @@
             this.dgvCurrencyDisplayNameSets = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvCurrencyPeriods = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox81 = new System.Windows.Forms.GroupBox();
+            this.dgvMiscellaneousPatterns = new System.Windows.Forms.DataGridView();
+            this.groupBox82 = new System.Windows.Forms.GroupBox();
+            this.dgvMiscellaneousPatternSets = new System.Windows.Forms.DataGridView();
             this.tbpRbnf = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tbpOrdinalRules = new System.Windows.Forms.TabPage();
@@ -485,39 +516,6 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
-            this.groupBox68 = new System.Windows.Forms.GroupBox();
-            this.dgvDayPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox69 = new System.Windows.Forms.GroupBox();
-            this.dgvWeekPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox70 = new System.Windows.Forms.GroupBox();
-            this.dgvWeekFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox71 = new System.Windows.Forms.GroupBox();
-            this.dgvMonthPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox72 = new System.Windows.Forms.GroupBox();
-            this.dgvMonthFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox73 = new System.Windows.Forms.GroupBox();
-            this.dgvYearPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox74 = new System.Windows.Forms.GroupBox();
-            this.dgvYearFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox75 = new System.Windows.Forms.GroupBox();
-            this.dgvHourPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox76 = new System.Windows.Forms.GroupBox();
-            this.dgvMinutePastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox77 = new System.Windows.Forms.GroupBox();
-            this.dgvHourFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox78 = new System.Windows.Forms.GroupBox();
-            this.dgvSecondPastRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox79 = new System.Windows.Forms.GroupBox();
-            this.dgvMinuteFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.groupBox80 = new System.Windows.Forms.GroupBox();
-            this.dgvSecondFutureRelativeTimeRules = new System.Windows.Forms.DataGridView();
-            this.label129 = new System.Windows.Forms.Label();
-            this.tbxSymbolSuperScriptingExponent = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.groupBox81 = new System.Windows.Forms.GroupBox();
-            this.dgvMiscellaneousPatterns = new System.Windows.Forms.DataGridView();
-            this.groupBox82 = new System.Windows.Forms.GroupBox();
-            this.dgvMiscellaneousPatternSets = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.groupBox66.SuspendLayout();
@@ -533,6 +531,32 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tbpDatesDisplayNames.SuspendLayout();
+            this.groupBox75.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHourPastRelativeTimeRules)).BeginInit();
+            this.groupBox73.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYearPastRelativeTimeRules)).BeginInit();
+            this.groupBox76.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMinutePastRelativeTimeRules)).BeginInit();
+            this.groupBox71.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthPastRelativeTimeRules)).BeginInit();
+            this.groupBox77.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHourFutureRelativeTimeRules)).BeginInit();
+            this.groupBox74.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYearFutureRelativeTimeRules)).BeginInit();
+            this.groupBox78.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondPastRelativeTimeRules)).BeginInit();
+            this.groupBox69.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekPastRelativeTimeRules)).BeginInit();
+            this.groupBox79.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMinuteFutureRelativeTimeRules)).BeginInit();
+            this.groupBox72.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthFutureRelativeTimeRules)).BeginInit();
+            this.groupBox80.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondFutureRelativeTimeRules)).BeginInit();
+            this.groupBox68.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDayPastRelativeTimeRules)).BeginInit();
+            this.groupBox70.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekFutureRelativeTimeRules)).BeginInit();
             this.groupBox67.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDayFutureRelativeTimeRules)).BeginInit();
             this.tbpCalendars.SuspendLayout();
@@ -599,6 +623,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrencyDisplayNameSets)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrencyPeriods)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.groupBox81.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatterns)).BeginInit();
+            this.groupBox82.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatternSets)).BeginInit();
             this.tbpRbnf.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tbpOrdinalRules.SuspendLayout();
@@ -709,37 +738,6 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
-            this.groupBox68.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDayPastRelativeTimeRules)).BeginInit();
-            this.groupBox69.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekPastRelativeTimeRules)).BeginInit();
-            this.groupBox70.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekFutureRelativeTimeRules)).BeginInit();
-            this.groupBox71.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthPastRelativeTimeRules)).BeginInit();
-            this.groupBox72.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthFutureRelativeTimeRules)).BeginInit();
-            this.groupBox73.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYearPastRelativeTimeRules)).BeginInit();
-            this.groupBox74.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYearFutureRelativeTimeRules)).BeginInit();
-            this.groupBox75.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHourPastRelativeTimeRules)).BeginInit();
-            this.groupBox76.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMinutePastRelativeTimeRules)).BeginInit();
-            this.groupBox77.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHourFutureRelativeTimeRules)).BeginInit();
-            this.groupBox78.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondPastRelativeTimeRules)).BeginInit();
-            this.groupBox79.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMinuteFutureRelativeTimeRules)).BeginInit();
-            this.groupBox80.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondFutureRelativeTimeRules)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.groupBox81.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatterns)).BeginInit();
-            this.groupBox82.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatternSets)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -768,56 +766,31 @@
             this.tbpLoad.Location = new System.Drawing.Point(4, 22);
             this.tbpLoad.Name = "tbpLoad";
             this.tbpLoad.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpLoad.Size = new System.Drawing.Size(780, 511);
+            this.tbpLoad.Size = new System.Drawing.Size(1333, 582);
             this.tbpLoad.TabIndex = 0;
             this.tbpLoad.Text = "Load NCLDR";
             this.tbpLoad.UseVisualStyleBackColor = true;
             // 
             // groupBox66
             // 
-            this.groupBox66.Controls.Add(this.rbXml);
-            this.groupBox66.Controls.Add(this.rbJson);
-            this.groupBox66.Controls.Add(this.rbBinary);
+            this.groupBox66.Controls.Add(this.clbDataSources);
             this.groupBox66.Location = new System.Drawing.Point(114, 43);
             this.groupBox66.Name = "groupBox66";
-            this.groupBox66.Size = new System.Drawing.Size(119, 90);
-            this.groupBox66.TabIndex = 4;
+            this.groupBox66.Size = new System.Drawing.Size(200, 100);
+            this.groupBox66.TabIndex = 9;
             this.groupBox66.TabStop = false;
-            this.groupBox66.Text = "Data Source";
+            this.groupBox66.Text = "DataSource";
             // 
-            // rbXml
+            // clbDataSources
             // 
-            this.rbXml.AutoSize = true;
-            this.rbXml.Location = new System.Drawing.Point(6, 65);
-            this.rbXml.Name = "rbXml";
-            this.rbXml.Size = new System.Drawing.Size(47, 17);
-            this.rbXml.TabIndex = 2;
-            this.rbXml.TabStop = true;
-            this.rbXml.Text = "XML";
-            this.rbXml.UseVisualStyleBackColor = true;
-            // 
-            // rbJson
-            // 
-            this.rbJson.AutoSize = true;
-            this.rbJson.Location = new System.Drawing.Point(6, 42);
-            this.rbJson.Name = "rbJson";
-            this.rbJson.Size = new System.Drawing.Size(53, 17);
-            this.rbJson.TabIndex = 1;
-            this.rbJson.TabStop = true;
-            this.rbJson.Text = "JSON";
-            this.rbJson.UseVisualStyleBackColor = true;
-            // 
-            // rbBinary
-            // 
-            this.rbBinary.AutoSize = true;
-            this.rbBinary.Checked = true;
-            this.rbBinary.Location = new System.Drawing.Point(6, 19);
-            this.rbBinary.Name = "rbBinary";
-            this.rbBinary.Size = new System.Drawing.Size(54, 17);
-            this.rbBinary.TabIndex = 0;
-            this.rbBinary.TabStop = true;
-            this.rbBinary.Text = "Binary";
-            this.rbBinary.UseVisualStyleBackColor = true;
+            this.clbDataSources.CheckOnClick = true;
+            this.clbDataSources.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clbDataSources.FormattingEnabled = true;
+            this.clbDataSources.Location = new System.Drawing.Point(3, 16);
+            this.clbDataSources.Name = "clbDataSources";
+            this.clbDataSources.Size = new System.Drawing.Size(194, 81);
+            this.clbDataSources.TabIndex = 0;
+            this.clbDataSources.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbDataSources_ItemCheck);
             // 
             // lblLoading
             // 
@@ -934,7 +907,7 @@
             this.tbpDisplayNames.Location = new System.Drawing.Point(4, 22);
             this.tbpDisplayNames.Name = "tbpDisplayNames";
             this.tbpDisplayNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDisplayNames.Size = new System.Drawing.Size(506, 360);
+            this.tbpDisplayNames.Size = new System.Drawing.Size(1135, 431);
             this.tbpDisplayNames.TabIndex = 0;
             this.tbpDisplayNames.Text = "Display Names";
             this.tbpDisplayNames.UseVisualStyleBackColor = true;
@@ -945,7 +918,7 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(367, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(136, 354);
+            this.groupBox6.Size = new System.Drawing.Size(765, 425);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Scripts";
@@ -956,7 +929,7 @@
             this.lbxScriptDisplayNames.FormattingEnabled = true;
             this.lbxScriptDisplayNames.Location = new System.Drawing.Point(3, 16);
             this.lbxScriptDisplayNames.Name = "lbxScriptDisplayNames";
-            this.lbxScriptDisplayNames.Size = new System.Drawing.Size(130, 335);
+            this.lbxScriptDisplayNames.Size = new System.Drawing.Size(759, 406);
             this.lbxScriptDisplayNames.TabIndex = 0;
             // 
             // groupBox5
@@ -965,7 +938,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox5.Location = new System.Drawing.Point(171, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(196, 354);
+            this.groupBox5.Size = new System.Drawing.Size(196, 425);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Regions";
@@ -976,7 +949,7 @@
             this.lbxRegionDisplayNames.FormattingEnabled = true;
             this.lbxRegionDisplayNames.Location = new System.Drawing.Point(3, 16);
             this.lbxRegionDisplayNames.Name = "lbxRegionDisplayNames";
-            this.lbxRegionDisplayNames.Size = new System.Drawing.Size(190, 335);
+            this.lbxRegionDisplayNames.Size = new System.Drawing.Size(190, 406);
             this.lbxRegionDisplayNames.TabIndex = 0;
             // 
             // groupBox4
@@ -985,7 +958,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(168, 354);
+            this.groupBox4.Size = new System.Drawing.Size(168, 425);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Languages";
@@ -996,7 +969,7 @@
             this.lbxLanguageDisplayNames.FormattingEnabled = true;
             this.lbxLanguageDisplayNames.Location = new System.Drawing.Point(3, 16);
             this.lbxLanguageDisplayNames.Name = "lbxLanguageDisplayNames";
-            this.lbxLanguageDisplayNames.Size = new System.Drawing.Size(162, 335);
+            this.lbxLanguageDisplayNames.Size = new System.Drawing.Size(162, 406);
             this.lbxLanguageDisplayNames.TabIndex = 0;
             // 
             // tbpDatesDisplayNames
@@ -1050,6 +1023,292 @@
             this.tbpDatesDisplayNames.TabIndex = 11;
             this.tbpDatesDisplayNames.Text = "Dates Display Names";
             this.tbpDatesDisplayNames.UseVisualStyleBackColor = true;
+            // 
+            // groupBox75
+            // 
+            this.groupBox75.Controls.Add(this.dgvHourPastRelativeTimeRules);
+            this.groupBox75.Location = new System.Drawing.Point(785, 125);
+            this.groupBox75.Name = "groupBox75";
+            this.groupBox75.Size = new System.Drawing.Size(200, 100);
+            this.groupBox75.TabIndex = 41;
+            this.groupBox75.TabStop = false;
+            this.groupBox75.Text = "Hour Past Relative Time Rules";
+            // 
+            // dgvHourPastRelativeTimeRules
+            // 
+            this.dgvHourPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvHourPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvHourPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHourPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHourPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvHourPastRelativeTimeRules.Name = "dgvHourPastRelativeTimeRules";
+            this.dgvHourPastRelativeTimeRules.ReadOnly = true;
+            this.dgvHourPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvHourPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox73
+            // 
+            this.groupBox73.Controls.Add(this.dgvYearPastRelativeTimeRules);
+            this.groupBox73.Location = new System.Drawing.Point(782, 348);
+            this.groupBox73.Name = "groupBox73";
+            this.groupBox73.Size = new System.Drawing.Size(200, 100);
+            this.groupBox73.TabIndex = 35;
+            this.groupBox73.TabStop = false;
+            this.groupBox73.Text = "Year Past Relative Time Rules";
+            // 
+            // dgvYearPastRelativeTimeRules
+            // 
+            this.dgvYearPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvYearPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvYearPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvYearPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvYearPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvYearPastRelativeTimeRules.Name = "dgvYearPastRelativeTimeRules";
+            this.dgvYearPastRelativeTimeRules.ReadOnly = true;
+            this.dgvYearPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvYearPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox76
+            // 
+            this.groupBox76.Controls.Add(this.dgvMinutePastRelativeTimeRules);
+            this.groupBox76.Location = new System.Drawing.Point(579, 125);
+            this.groupBox76.Name = "groupBox76";
+            this.groupBox76.Size = new System.Drawing.Size(200, 100);
+            this.groupBox76.TabIndex = 39;
+            this.groupBox76.TabStop = false;
+            this.groupBox76.Text = "Minute Past Relative Time Rules";
+            // 
+            // dgvMinutePastRelativeTimeRules
+            // 
+            this.dgvMinutePastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvMinutePastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvMinutePastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMinutePastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMinutePastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvMinutePastRelativeTimeRules.Name = "dgvMinutePastRelativeTimeRules";
+            this.dgvMinutePastRelativeTimeRules.ReadOnly = true;
+            this.dgvMinutePastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvMinutePastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox71
+            // 
+            this.groupBox71.Controls.Add(this.dgvMonthPastRelativeTimeRules);
+            this.groupBox71.Location = new System.Drawing.Point(576, 348);
+            this.groupBox71.Name = "groupBox71";
+            this.groupBox71.Size = new System.Drawing.Size(200, 100);
+            this.groupBox71.TabIndex = 33;
+            this.groupBox71.TabStop = false;
+            this.groupBox71.Text = "Month Past Relative Time Rules";
+            // 
+            // dgvMonthPastRelativeTimeRules
+            // 
+            this.dgvMonthPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvMonthPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvMonthPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMonthPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMonthPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvMonthPastRelativeTimeRules.Name = "dgvMonthPastRelativeTimeRules";
+            this.dgvMonthPastRelativeTimeRules.ReadOnly = true;
+            this.dgvMonthPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvMonthPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox77
+            // 
+            this.groupBox77.Controls.Add(this.dgvHourFutureRelativeTimeRules);
+            this.groupBox77.Location = new System.Drawing.Point(785, 13);
+            this.groupBox77.Name = "groupBox77";
+            this.groupBox77.Size = new System.Drawing.Size(200, 100);
+            this.groupBox77.TabIndex = 40;
+            this.groupBox77.TabStop = false;
+            this.groupBox77.Text = "Hour Future Relative Time Rules";
+            // 
+            // dgvHourFutureRelativeTimeRules
+            // 
+            this.dgvHourFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvHourFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvHourFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHourFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHourFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvHourFutureRelativeTimeRules.Name = "dgvHourFutureRelativeTimeRules";
+            this.dgvHourFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvHourFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvHourFutureRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox74
+            // 
+            this.groupBox74.Controls.Add(this.dgvYearFutureRelativeTimeRules);
+            this.groupBox74.Location = new System.Drawing.Point(782, 236);
+            this.groupBox74.Name = "groupBox74";
+            this.groupBox74.Size = new System.Drawing.Size(200, 100);
+            this.groupBox74.TabIndex = 34;
+            this.groupBox74.TabStop = false;
+            this.groupBox74.Text = "Year Future Relative Time Rules";
+            // 
+            // dgvYearFutureRelativeTimeRules
+            // 
+            this.dgvYearFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvYearFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvYearFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvYearFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvYearFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvYearFutureRelativeTimeRules.Name = "dgvYearFutureRelativeTimeRules";
+            this.dgvYearFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvYearFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvYearFutureRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox78
+            // 
+            this.groupBox78.Controls.Add(this.dgvSecondPastRelativeTimeRules);
+            this.groupBox78.Location = new System.Drawing.Point(373, 125);
+            this.groupBox78.Name = "groupBox78";
+            this.groupBox78.Size = new System.Drawing.Size(200, 100);
+            this.groupBox78.TabIndex = 37;
+            this.groupBox78.TabStop = false;
+            this.groupBox78.Text = "Second Past Relative Time Rules";
+            // 
+            // dgvSecondPastRelativeTimeRules
+            // 
+            this.dgvSecondPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvSecondPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvSecondPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecondPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSecondPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvSecondPastRelativeTimeRules.Name = "dgvSecondPastRelativeTimeRules";
+            this.dgvSecondPastRelativeTimeRules.ReadOnly = true;
+            this.dgvSecondPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvSecondPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox69
+            // 
+            this.groupBox69.Controls.Add(this.dgvWeekPastRelativeTimeRules);
+            this.groupBox69.Location = new System.Drawing.Point(370, 348);
+            this.groupBox69.Name = "groupBox69";
+            this.groupBox69.Size = new System.Drawing.Size(200, 100);
+            this.groupBox69.TabIndex = 31;
+            this.groupBox69.TabStop = false;
+            this.groupBox69.Text = "Week Past Relative Time Rules";
+            // 
+            // dgvWeekPastRelativeTimeRules
+            // 
+            this.dgvWeekPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvWeekPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvWeekPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWeekPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWeekPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvWeekPastRelativeTimeRules.Name = "dgvWeekPastRelativeTimeRules";
+            this.dgvWeekPastRelativeTimeRules.ReadOnly = true;
+            this.dgvWeekPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvWeekPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox79
+            // 
+            this.groupBox79.Controls.Add(this.dgvMinuteFutureRelativeTimeRules);
+            this.groupBox79.Location = new System.Drawing.Point(579, 13);
+            this.groupBox79.Name = "groupBox79";
+            this.groupBox79.Size = new System.Drawing.Size(200, 100);
+            this.groupBox79.TabIndex = 38;
+            this.groupBox79.TabStop = false;
+            this.groupBox79.Text = "Minute Future Relative Time Rules";
+            // 
+            // dgvMinuteFutureRelativeTimeRules
+            // 
+            this.dgvMinuteFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvMinuteFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvMinuteFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMinuteFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMinuteFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvMinuteFutureRelativeTimeRules.Name = "dgvMinuteFutureRelativeTimeRules";
+            this.dgvMinuteFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvMinuteFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvMinuteFutureRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox72
+            // 
+            this.groupBox72.Controls.Add(this.dgvMonthFutureRelativeTimeRules);
+            this.groupBox72.Location = new System.Drawing.Point(576, 236);
+            this.groupBox72.Name = "groupBox72";
+            this.groupBox72.Size = new System.Drawing.Size(200, 100);
+            this.groupBox72.TabIndex = 32;
+            this.groupBox72.TabStop = false;
+            this.groupBox72.Text = "Month Future Relative Time Rules";
+            // 
+            // dgvMonthFutureRelativeTimeRules
+            // 
+            this.dgvMonthFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvMonthFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvMonthFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMonthFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMonthFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvMonthFutureRelativeTimeRules.Name = "dgvMonthFutureRelativeTimeRules";
+            this.dgvMonthFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvMonthFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvMonthFutureRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox80
+            // 
+            this.groupBox80.Controls.Add(this.dgvSecondFutureRelativeTimeRules);
+            this.groupBox80.Location = new System.Drawing.Point(373, 13);
+            this.groupBox80.Name = "groupBox80";
+            this.groupBox80.Size = new System.Drawing.Size(200, 100);
+            this.groupBox80.TabIndex = 36;
+            this.groupBox80.TabStop = false;
+            this.groupBox80.Text = "Second Future Relative Time Rules";
+            // 
+            // dgvSecondFutureRelativeTimeRules
+            // 
+            this.dgvSecondFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvSecondFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvSecondFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecondFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSecondFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvSecondFutureRelativeTimeRules.Name = "dgvSecondFutureRelativeTimeRules";
+            this.dgvSecondFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvSecondFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvSecondFutureRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox68
+            // 
+            this.groupBox68.Controls.Add(this.dgvDayPastRelativeTimeRules);
+            this.groupBox68.Location = new System.Drawing.Point(164, 348);
+            this.groupBox68.Name = "groupBox68";
+            this.groupBox68.Size = new System.Drawing.Size(200, 100);
+            this.groupBox68.TabIndex = 29;
+            this.groupBox68.TabStop = false;
+            this.groupBox68.Text = "Day Past Relative Time Rules";
+            // 
+            // dgvDayPastRelativeTimeRules
+            // 
+            this.dgvDayPastRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvDayPastRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvDayPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDayPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDayPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvDayPastRelativeTimeRules.Name = "dgvDayPastRelativeTimeRules";
+            this.dgvDayPastRelativeTimeRules.ReadOnly = true;
+            this.dgvDayPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvDayPastRelativeTimeRules.TabIndex = 0;
+            // 
+            // groupBox70
+            // 
+            this.groupBox70.Controls.Add(this.dgvWeekFutureRelativeTimeRules);
+            this.groupBox70.Location = new System.Drawing.Point(370, 236);
+            this.groupBox70.Name = "groupBox70";
+            this.groupBox70.Size = new System.Drawing.Size(200, 100);
+            this.groupBox70.TabIndex = 30;
+            this.groupBox70.TabStop = false;
+            this.groupBox70.Text = "Week Future Relative Time Rules";
+            // 
+            // dgvWeekFutureRelativeTimeRules
+            // 
+            this.dgvWeekFutureRelativeTimeRules.AllowUserToAddRows = false;
+            this.dgvWeekFutureRelativeTimeRules.AllowUserToDeleteRows = false;
+            this.dgvWeekFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWeekFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWeekFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
+            this.dgvWeekFutureRelativeTimeRules.Name = "dgvWeekFutureRelativeTimeRules";
+            this.dgvWeekFutureRelativeTimeRules.ReadOnly = true;
+            this.dgvWeekFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
+            this.dgvWeekFutureRelativeTimeRules.TabIndex = 0;
             // 
             // groupBox67
             // 
@@ -1304,7 +1563,7 @@
             this.tbpCalendars.Location = new System.Drawing.Point(4, 22);
             this.tbpCalendars.Name = "tbpCalendars";
             this.tbpCalendars.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCalendars.Size = new System.Drawing.Size(506, 360);
+            this.tbpCalendars.Size = new System.Drawing.Size(1135, 431);
             this.tbpCalendars.TabIndex = 3;
             this.tbpCalendars.Text = "Calendars";
             this.tbpCalendars.UseVisualStyleBackColor = true;
@@ -1320,7 +1579,7 @@
             this.tabControl3.Location = new System.Drawing.Point(125, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(378, 354);
+            this.tabControl3.Size = new System.Drawing.Size(1007, 425);
             this.tabControl3.TabIndex = 1;
             // 
             // tbpFormats
@@ -1330,7 +1589,7 @@
             this.tbpFormats.Location = new System.Drawing.Point(4, 22);
             this.tbpFormats.Name = "tbpFormats";
             this.tbpFormats.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpFormats.Size = new System.Drawing.Size(370, 328);
+            this.tbpFormats.Size = new System.Drawing.Size(999, 399);
             this.tbpFormats.TabIndex = 0;
             this.tbpFormats.Text = "Formats";
             this.tbpFormats.UseVisualStyleBackColor = true;
@@ -1386,7 +1645,7 @@
             this.tbpCalendarDayNames.Location = new System.Drawing.Point(4, 22);
             this.tbpCalendarDayNames.Name = "tbpCalendarDayNames";
             this.tbpCalendarDayNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCalendarDayNames.Size = new System.Drawing.Size(370, 328);
+            this.tbpCalendarDayNames.Size = new System.Drawing.Size(999, 399);
             this.tbpCalendarDayNames.TabIndex = 2;
             this.tbpCalendarDayNames.Text = "Day Names";
             this.tbpCalendarDayNames.UseVisualStyleBackColor = true;
@@ -1397,7 +1656,7 @@
             this.groupBox43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox43.Location = new System.Drawing.Point(176, 3);
             this.groupBox43.Name = "groupBox43";
-            this.groupBox43.Size = new System.Drawing.Size(191, 322);
+            this.groupBox43.Size = new System.Drawing.Size(820, 393);
             this.groupBox43.TabIndex = 1;
             this.groupBox43.TabStop = false;
             this.groupBox43.Text = "Names";
@@ -1411,7 +1670,7 @@
             this.dgvCalendarDayNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayNames.Name = "dgvCalendarDayNames";
             this.dgvCalendarDayNames.ReadOnly = true;
-            this.dgvCalendarDayNames.Size = new System.Drawing.Size(185, 303);
+            this.dgvCalendarDayNames.Size = new System.Drawing.Size(814, 374);
             this.dgvCalendarDayNames.TabIndex = 0;
             // 
             // groupBox42
@@ -1420,7 +1679,7 @@
             this.groupBox42.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox42.Location = new System.Drawing.Point(3, 3);
             this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(173, 322);
+            this.groupBox42.Size = new System.Drawing.Size(173, 393);
             this.groupBox42.TabIndex = 0;
             this.groupBox42.TabStop = false;
             this.groupBox42.Text = "Name Sets";
@@ -1434,7 +1693,7 @@
             this.dgvCalendarDayNameSets.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayNameSets.Name = "dgvCalendarDayNameSets";
             this.dgvCalendarDayNameSets.ReadOnly = true;
-            this.dgvCalendarDayNameSets.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarDayNameSets.Size = new System.Drawing.Size(167, 374);
             this.dgvCalendarDayNameSets.TabIndex = 0;
             this.dgvCalendarDayNameSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarDayNameSets_RowEnter);
             // 
@@ -1445,7 +1704,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(370, 328);
+            this.tabPage1.Size = new System.Drawing.Size(999, 399);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Day Period Names";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1456,7 +1715,7 @@
             this.groupBox44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox44.Location = new System.Drawing.Point(176, 3);
             this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(191, 322);
+            this.groupBox44.Size = new System.Drawing.Size(820, 393);
             this.groupBox44.TabIndex = 3;
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "Names";
@@ -1470,7 +1729,7 @@
             this.dgvCalendarDayPeriodNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayPeriodNames.Name = "dgvCalendarDayPeriodNames";
             this.dgvCalendarDayPeriodNames.ReadOnly = true;
-            this.dgvCalendarDayPeriodNames.Size = new System.Drawing.Size(185, 303);
+            this.dgvCalendarDayPeriodNames.Size = new System.Drawing.Size(814, 374);
             this.dgvCalendarDayPeriodNames.TabIndex = 0;
             // 
             // groupBox45
@@ -1479,7 +1738,7 @@
             this.groupBox45.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox45.Location = new System.Drawing.Point(3, 3);
             this.groupBox45.Name = "groupBox45";
-            this.groupBox45.Size = new System.Drawing.Size(173, 322);
+            this.groupBox45.Size = new System.Drawing.Size(173, 393);
             this.groupBox45.TabIndex = 2;
             this.groupBox45.TabStop = false;
             this.groupBox45.Text = "Name Sets";
@@ -1493,7 +1752,7 @@
             this.dgvCalendarDayPeriodNameSets.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarDayPeriodNameSets.Name = "dgvCalendarDayPeriodNameSets";
             this.dgvCalendarDayPeriodNameSets.ReadOnly = true;
-            this.dgvCalendarDayPeriodNameSets.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarDayPeriodNameSets.Size = new System.Drawing.Size(167, 374);
             this.dgvCalendarDayPeriodNameSets.TabIndex = 0;
             this.dgvCalendarDayPeriodNameSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarDayPeriodNameSets_RowEnter);
             // 
@@ -1504,7 +1763,7 @@
             this.tbpEraNames.Location = new System.Drawing.Point(4, 22);
             this.tbpEraNames.Name = "tbpEraNames";
             this.tbpEraNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpEraNames.Size = new System.Drawing.Size(370, 328);
+            this.tbpEraNames.Size = new System.Drawing.Size(999, 399);
             this.tbpEraNames.TabIndex = 4;
             this.tbpEraNames.Text = "Era Names";
             this.tbpEraNames.UseVisualStyleBackColor = true;
@@ -1515,7 +1774,7 @@
             this.groupBox46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox46.Location = new System.Drawing.Point(102, 3);
             this.groupBox46.Name = "groupBox46";
-            this.groupBox46.Size = new System.Drawing.Size(265, 322);
+            this.groupBox46.Size = new System.Drawing.Size(894, 393);
             this.groupBox46.TabIndex = 5;
             this.groupBox46.TabStop = false;
             this.groupBox46.Text = "Names";
@@ -1529,7 +1788,7 @@
             this.dgvCalendarEraNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarEraNames.Name = "dgvCalendarEraNames";
             this.dgvCalendarEraNames.ReadOnly = true;
-            this.dgvCalendarEraNames.Size = new System.Drawing.Size(259, 303);
+            this.dgvCalendarEraNames.Size = new System.Drawing.Size(888, 374);
             this.dgvCalendarEraNames.TabIndex = 0;
             // 
             // groupBox47
@@ -1538,7 +1797,7 @@
             this.groupBox47.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox47.Location = new System.Drawing.Point(3, 3);
             this.groupBox47.Name = "groupBox47";
-            this.groupBox47.Size = new System.Drawing.Size(99, 322);
+            this.groupBox47.Size = new System.Drawing.Size(99, 393);
             this.groupBox47.TabIndex = 4;
             this.groupBox47.TabStop = false;
             this.groupBox47.Text = "Name Set Ids";
@@ -1549,7 +1808,7 @@
             this.lbxCalendarEraNameSetIds.FormattingEnabled = true;
             this.lbxCalendarEraNameSetIds.Location = new System.Drawing.Point(3, 16);
             this.lbxCalendarEraNameSetIds.Name = "lbxCalendarEraNameSetIds";
-            this.lbxCalendarEraNameSetIds.Size = new System.Drawing.Size(93, 303);
+            this.lbxCalendarEraNameSetIds.Size = new System.Drawing.Size(93, 374);
             this.lbxCalendarEraNameSetIds.TabIndex = 0;
             this.lbxCalendarEraNameSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxCalendarEraNameSetIds_SelectedIndexChanged);
             // 
@@ -1560,7 +1819,7 @@
             this.tbpMonthNames.Location = new System.Drawing.Point(4, 22);
             this.tbpMonthNames.Name = "tbpMonthNames";
             this.tbpMonthNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMonthNames.Size = new System.Drawing.Size(370, 328);
+            this.tbpMonthNames.Size = new System.Drawing.Size(999, 399);
             this.tbpMonthNames.TabIndex = 5;
             this.tbpMonthNames.Text = "Month Names";
             this.tbpMonthNames.UseVisualStyleBackColor = true;
@@ -1571,7 +1830,7 @@
             this.groupBox48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox48.Location = new System.Drawing.Point(176, 3);
             this.groupBox48.Name = "groupBox48";
-            this.groupBox48.Size = new System.Drawing.Size(191, 322);
+            this.groupBox48.Size = new System.Drawing.Size(820, 393);
             this.groupBox48.TabIndex = 7;
             this.groupBox48.TabStop = false;
             this.groupBox48.Text = "Names";
@@ -1585,7 +1844,7 @@
             this.dgvCalendarMonthNames.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarMonthNames.Name = "dgvCalendarMonthNames";
             this.dgvCalendarMonthNames.ReadOnly = true;
-            this.dgvCalendarMonthNames.Size = new System.Drawing.Size(185, 303);
+            this.dgvCalendarMonthNames.Size = new System.Drawing.Size(814, 374);
             this.dgvCalendarMonthNames.TabIndex = 0;
             // 
             // groupBox49
@@ -1594,7 +1853,7 @@
             this.groupBox49.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox49.Location = new System.Drawing.Point(3, 3);
             this.groupBox49.Name = "groupBox49";
-            this.groupBox49.Size = new System.Drawing.Size(173, 322);
+            this.groupBox49.Size = new System.Drawing.Size(173, 393);
             this.groupBox49.TabIndex = 6;
             this.groupBox49.TabStop = false;
             this.groupBox49.Text = "Name Sets";
@@ -1608,7 +1867,7 @@
             this.dgvCalendarMonthNameSetIds.Location = new System.Drawing.Point(3, 16);
             this.dgvCalendarMonthNameSetIds.Name = "dgvCalendarMonthNameSetIds";
             this.dgvCalendarMonthNameSetIds.ReadOnly = true;
-            this.dgvCalendarMonthNameSetIds.Size = new System.Drawing.Size(167, 303);
+            this.dgvCalendarMonthNameSetIds.Size = new System.Drawing.Size(167, 374);
             this.dgvCalendarMonthNameSetIds.TabIndex = 0;
             this.dgvCalendarMonthNameSetIds.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendarMonthNameSetIds_RowEnter);
             // 
@@ -1619,7 +1878,7 @@
             this.groupBox39.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox39.Location = new System.Drawing.Point(3, 3);
             this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Size = new System.Drawing.Size(122, 354);
+            this.groupBox39.Size = new System.Drawing.Size(122, 425);
             this.groupBox39.TabIndex = 0;
             this.groupBox39.TabStop = false;
             this.groupBox39.Text = "Calendars";
@@ -1630,7 +1889,7 @@
             this.lbxCalendars.FormattingEnabled = true;
             this.lbxCalendars.Location = new System.Drawing.Point(3, 77);
             this.lbxCalendars.Name = "lbxCalendars";
-            this.lbxCalendars.Size = new System.Drawing.Size(116, 274);
+            this.lbxCalendars.Size = new System.Drawing.Size(116, 345);
             this.lbxCalendars.TabIndex = 1;
             this.lbxCalendars.SelectedIndexChanged += new System.EventHandler(this.lbxCalendars_SelectedIndexChanged);
             // 
@@ -1711,7 +1970,7 @@
             this.tbpCasing.Location = new System.Drawing.Point(4, 22);
             this.tbpCasing.Name = "tbpCasing";
             this.tbpCasing.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCasing.Size = new System.Drawing.Size(506, 360);
+            this.tbpCasing.Size = new System.Drawing.Size(1135, 431);
             this.tbpCasing.TabIndex = 1;
             this.tbpCasing.Text = "Casing";
             this.tbpCasing.UseVisualStyleBackColor = true;
@@ -2099,7 +2358,7 @@
             this.tbpCharacters.Location = new System.Drawing.Point(4, 22);
             this.tbpCharacters.Name = "tbpCharacters";
             this.tbpCharacters.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCharacters.Size = new System.Drawing.Size(506, 360);
+            this.tbpCharacters.Size = new System.Drawing.Size(1135, 431);
             this.tbpCharacters.TabIndex = 2;
             this.tbpCharacters.Text = "Characters & Delimiters";
             this.tbpCharacters.UseVisualStyleBackColor = true;
@@ -2336,7 +2595,7 @@
             this.tbpLayout.Location = new System.Drawing.Point(4, 22);
             this.tbpLayout.Name = "tbpLayout";
             this.tbpLayout.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpLayout.Size = new System.Drawing.Size(506, 360);
+            this.tbpLayout.Size = new System.Drawing.Size(1135, 431);
             this.tbpLayout.TabIndex = 9;
             this.tbpLayout.Text = "Layout";
             this.tbpLayout.UseVisualStyleBackColor = true;
@@ -2392,7 +2651,7 @@
             this.tbpListPatterns.Location = new System.Drawing.Point(4, 22);
             this.tbpListPatterns.Name = "tbpListPatterns";
             this.tbpListPatterns.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpListPatterns.Size = new System.Drawing.Size(506, 360);
+            this.tbpListPatterns.Size = new System.Drawing.Size(1135, 431);
             this.tbpListPatterns.TabIndex = 4;
             this.tbpListPatterns.Text = "List Patterns";
             this.tbpListPatterns.UseVisualStyleBackColor = true;
@@ -2406,7 +2665,7 @@
             this.dgvListPatterns.Location = new System.Drawing.Point(3, 3);
             this.dgvListPatterns.Name = "dgvListPatterns";
             this.dgvListPatterns.ReadOnly = true;
-            this.dgvListPatterns.Size = new System.Drawing.Size(500, 354);
+            this.dgvListPatterns.Size = new System.Drawing.Size(1129, 425);
             this.dgvListPatterns.TabIndex = 0;
             // 
             // tbpMessages
@@ -2416,7 +2675,7 @@
             this.tbpMessages.Location = new System.Drawing.Point(4, 22);
             this.tbpMessages.Name = "tbpMessages";
             this.tbpMessages.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMessages.Size = new System.Drawing.Size(506, 360);
+            this.tbpMessages.Size = new System.Drawing.Size(1135, 431);
             this.tbpMessages.TabIndex = 5;
             this.tbpMessages.Text = "Messages";
             this.tbpMessages.UseVisualStyleBackColor = true;
@@ -2427,7 +2686,7 @@
             this.groupBox51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox51.Location = new System.Drawing.Point(186, 3);
             this.groupBox51.Name = "groupBox51";
-            this.groupBox51.Size = new System.Drawing.Size(317, 354);
+            this.groupBox51.Size = new System.Drawing.Size(946, 425);
             this.groupBox51.TabIndex = 1;
             this.groupBox51.TabStop = false;
             this.groupBox51.Text = "All Messages";
@@ -2441,7 +2700,7 @@
             this.dgvMessages.Location = new System.Drawing.Point(3, 16);
             this.dgvMessages.Name = "dgvMessages";
             this.dgvMessages.ReadOnly = true;
-            this.dgvMessages.Size = new System.Drawing.Size(311, 335);
+            this.dgvMessages.Size = new System.Drawing.Size(940, 406);
             this.dgvMessages.TabIndex = 0;
             // 
             // groupBox50
@@ -2457,7 +2716,7 @@
             this.groupBox50.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox50.Location = new System.Drawing.Point(3, 3);
             this.groupBox50.Name = "groupBox50";
-            this.groupBox50.Size = new System.Drawing.Size(183, 354);
+            this.groupBox50.Size = new System.Drawing.Size(183, 425);
             this.groupBox50.TabIndex = 0;
             this.groupBox50.TabStop = false;
             this.groupBox50.Text = "Yes and No";
@@ -2607,6 +2866,22 @@
             this.tbpNumberingSystemSymbols.TabIndex = 0;
             this.tbpNumberingSystemSymbols.Text = "Symbols";
             this.tbpNumberingSystemSymbols.UseVisualStyleBackColor = true;
+            // 
+            // tbxSymbolSuperScriptingExponent
+            // 
+            this.tbxSymbolSuperScriptingExponent.Location = new System.Drawing.Point(180, 278);
+            this.tbxSymbolSuperScriptingExponent.Name = "tbxSymbolSuperScriptingExponent";
+            this.tbxSymbolSuperScriptingExponent.Size = new System.Drawing.Size(100, 20);
+            this.tbxSymbolSuperScriptingExponent.TabIndex = 41;
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(30, 281);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(127, 13);
+            this.label129.TabIndex = 40;
+            this.label129.Text = "Super Scripting Exponent";
             // 
             // tbxSymbolExponential
             // 
@@ -2781,7 +3056,7 @@
             this.tbpNumberPatterns.Location = new System.Drawing.Point(4, 22);
             this.tbpNumberPatterns.Name = "tbpNumberPatterns";
             this.tbpNumberPatterns.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumberPatterns.Size = new System.Drawing.Size(278, 296);
+            this.tbpNumberPatterns.Size = new System.Drawing.Size(907, 367);
             this.tbpNumberPatterns.TabIndex = 1;
             this.tbpNumberPatterns.Text = "Patterns";
             this.tbpNumberPatterns.UseVisualStyleBackColor = true;
@@ -2857,7 +3132,7 @@
             this.tbpNumbersSpacing.Location = new System.Drawing.Point(4, 22);
             this.tbpNumbersSpacing.Name = "tbpNumbersSpacing";
             this.tbpNumbersSpacing.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumbersSpacing.Size = new System.Drawing.Size(278, 296);
+            this.tbpNumbersSpacing.Size = new System.Drawing.Size(907, 367);
             this.tbpNumbersSpacing.TabIndex = 2;
             this.tbpNumbersSpacing.Text = "Spacing";
             this.tbpNumbersSpacing.UseVisualStyleBackColor = true;
@@ -2995,7 +3270,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(278, 296);
+            this.tabPage2.Size = new System.Drawing.Size(907, 367);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Decimal Patterns";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -3006,7 +3281,7 @@
             this.groupBox62.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox62.Location = new System.Drawing.Point(91, 3);
             this.groupBox62.Name = "groupBox62";
-            this.groupBox62.Size = new System.Drawing.Size(184, 290);
+            this.groupBox62.Size = new System.Drawing.Size(813, 361);
             this.groupBox62.TabIndex = 1;
             this.groupBox62.TabStop = false;
             this.groupBox62.Text = "Patterns";
@@ -3019,7 +3294,7 @@
             this.dgvDecimalFormatPatterns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDecimalFormatPatterns.Location = new System.Drawing.Point(3, 16);
             this.dgvDecimalFormatPatterns.Name = "dgvDecimalFormatPatterns";
-            this.dgvDecimalFormatPatterns.Size = new System.Drawing.Size(178, 271);
+            this.dgvDecimalFormatPatterns.Size = new System.Drawing.Size(807, 342);
             this.dgvDecimalFormatPatterns.TabIndex = 0;
             // 
             // groupBox61
@@ -3028,7 +3303,7 @@
             this.groupBox61.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox61.Location = new System.Drawing.Point(3, 3);
             this.groupBox61.Name = "groupBox61";
-            this.groupBox61.Size = new System.Drawing.Size(88, 290);
+            this.groupBox61.Size = new System.Drawing.Size(88, 361);
             this.groupBox61.TabIndex = 0;
             this.groupBox61.TabStop = false;
             this.groupBox61.Text = "Set Ids";
@@ -3039,7 +3314,7 @@
             this.lbxDecimalFormatPatternSetIds.FormattingEnabled = true;
             this.lbxDecimalFormatPatternSetIds.Location = new System.Drawing.Point(3, 16);
             this.lbxDecimalFormatPatternSetIds.Name = "lbxDecimalFormatPatternSetIds";
-            this.lbxDecimalFormatPatternSetIds.Size = new System.Drawing.Size(82, 271);
+            this.lbxDecimalFormatPatternSetIds.Size = new System.Drawing.Size(82, 342);
             this.lbxDecimalFormatPatternSetIds.TabIndex = 0;
             this.lbxDecimalFormatPatternSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxDecimalFormatPatternSetIds_SelectedIndexChanged);
             // 
@@ -3056,7 +3331,7 @@
             this.tbpNumberingSystemType.Location = new System.Drawing.Point(4, 22);
             this.tbpNumberingSystemType.Name = "tbpNumberingSystemType";
             this.tbpNumberingSystemType.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumberingSystemType.Size = new System.Drawing.Size(278, 296);
+            this.tbpNumberingSystemType.Size = new System.Drawing.Size(907, 367);
             this.tbpNumberingSystemType.TabIndex = 4;
             this.tbpNumberingSystemType.Text = "Numbering System Type";
             this.tbpNumberingSystemType.UseVisualStyleBackColor = true;
@@ -3258,13 +3533,72 @@
             this.dgvCurrencyPeriods.Size = new System.Drawing.Size(1115, 393);
             this.dgvCurrencyPeriods.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox81);
+            this.tabPage5.Controls.Add(this.groupBox82);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1121, 399);
+            this.tabPage5.TabIndex = 3;
+            this.tabPage5.Text = "Miscellaneous Patterns";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox81
+            // 
+            this.groupBox81.Controls.Add(this.dgvMiscellaneousPatterns);
+            this.groupBox81.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox81.Location = new System.Drawing.Point(204, 3);
+            this.groupBox81.Name = "groupBox81";
+            this.groupBox81.Size = new System.Drawing.Size(914, 393);
+            this.groupBox81.TabIndex = 3;
+            this.groupBox81.TabStop = false;
+            this.groupBox81.Text = "Patterns";
+            // 
+            // dgvMiscellaneousPatterns
+            // 
+            this.dgvMiscellaneousPatterns.AllowUserToAddRows = false;
+            this.dgvMiscellaneousPatterns.AllowUserToDeleteRows = false;
+            this.dgvMiscellaneousPatterns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMiscellaneousPatterns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMiscellaneousPatterns.Location = new System.Drawing.Point(3, 16);
+            this.dgvMiscellaneousPatterns.Name = "dgvMiscellaneousPatterns";
+            this.dgvMiscellaneousPatterns.ReadOnly = true;
+            this.dgvMiscellaneousPatterns.Size = new System.Drawing.Size(908, 374);
+            this.dgvMiscellaneousPatterns.TabIndex = 0;
+            // 
+            // groupBox82
+            // 
+            this.groupBox82.Controls.Add(this.dgvMiscellaneousPatternSets);
+            this.groupBox82.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox82.Location = new System.Drawing.Point(3, 3);
+            this.groupBox82.Name = "groupBox82";
+            this.groupBox82.Size = new System.Drawing.Size(201, 393);
+            this.groupBox82.TabIndex = 2;
+            this.groupBox82.TabStop = false;
+            this.groupBox82.Text = "Set Ids";
+            // 
+            // dgvMiscellaneousPatternSets
+            // 
+            this.dgvMiscellaneousPatternSets.AllowUserToAddRows = false;
+            this.dgvMiscellaneousPatternSets.AllowUserToDeleteRows = false;
+            this.dgvMiscellaneousPatternSets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMiscellaneousPatternSets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMiscellaneousPatternSets.Location = new System.Drawing.Point(3, 16);
+            this.dgvMiscellaneousPatternSets.Name = "dgvMiscellaneousPatternSets";
+            this.dgvMiscellaneousPatternSets.ReadOnly = true;
+            this.dgvMiscellaneousPatternSets.Size = new System.Drawing.Size(195, 374);
+            this.dgvMiscellaneousPatternSets.TabIndex = 0;
+            this.dgvMiscellaneousPatternSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMiscellaneousPatternSets_RowEnter);
+            // 
             // tbpRbnf
             // 
             this.tbpRbnf.Controls.Add(this.tabControl4);
             this.tbpRbnf.Location = new System.Drawing.Point(4, 22);
             this.tbpRbnf.Name = "tbpRbnf";
             this.tbpRbnf.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRbnf.Size = new System.Drawing.Size(506, 360);
+            this.tbpRbnf.Size = new System.Drawing.Size(1135, 431);
             this.tbpRbnf.TabIndex = 7;
             this.tbpRbnf.Text = "RBNF";
             this.tbpRbnf.UseVisualStyleBackColor = true;
@@ -3277,7 +3611,7 @@
             this.tabControl4.Location = new System.Drawing.Point(3, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(500, 354);
+            this.tabControl4.Size = new System.Drawing.Size(1129, 425);
             this.tabControl4.TabIndex = 0;
             // 
             // tbpOrdinalRules
@@ -3287,7 +3621,7 @@
             this.tbpOrdinalRules.Location = new System.Drawing.Point(4, 22);
             this.tbpOrdinalRules.Name = "tbpOrdinalRules";
             this.tbpOrdinalRules.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOrdinalRules.Size = new System.Drawing.Size(492, 328);
+            this.tbpOrdinalRules.Size = new System.Drawing.Size(1121, 399);
             this.tbpOrdinalRules.TabIndex = 0;
             this.tbpOrdinalRules.Text = "Ordinal Rules";
             this.tbpOrdinalRules.UseVisualStyleBackColor = true;
@@ -3298,7 +3632,7 @@
             this.groupBox55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox55.Location = new System.Drawing.Point(249, 3);
             this.groupBox55.Name = "groupBox55";
-            this.groupBox55.Size = new System.Drawing.Size(240, 322);
+            this.groupBox55.Size = new System.Drawing.Size(869, 393);
             this.groupBox55.TabIndex = 1;
             this.groupBox55.TabStop = false;
             this.groupBox55.Text = "Rules";
@@ -3312,7 +3646,7 @@
             this.dgvOrdinalRules.Location = new System.Drawing.Point(3, 16);
             this.dgvOrdinalRules.Name = "dgvOrdinalRules";
             this.dgvOrdinalRules.ReadOnly = true;
-            this.dgvOrdinalRules.Size = new System.Drawing.Size(234, 303);
+            this.dgvOrdinalRules.Size = new System.Drawing.Size(863, 374);
             this.dgvOrdinalRules.TabIndex = 0;
             // 
             // groupBox54
@@ -3321,7 +3655,7 @@
             this.groupBox54.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox54.Location = new System.Drawing.Point(3, 3);
             this.groupBox54.Name = "groupBox54";
-            this.groupBox54.Size = new System.Drawing.Size(246, 322);
+            this.groupBox54.Size = new System.Drawing.Size(246, 393);
             this.groupBox54.TabIndex = 0;
             this.groupBox54.TabStop = false;
             this.groupBox54.Text = "Rule Sets";
@@ -3335,7 +3669,7 @@
             this.dgvOrdinalRuleSets.Location = new System.Drawing.Point(3, 16);
             this.dgvOrdinalRuleSets.Name = "dgvOrdinalRuleSets";
             this.dgvOrdinalRuleSets.ReadOnly = true;
-            this.dgvOrdinalRuleSets.Size = new System.Drawing.Size(240, 303);
+            this.dgvOrdinalRuleSets.Size = new System.Drawing.Size(240, 374);
             this.dgvOrdinalRuleSets.TabIndex = 0;
             this.dgvOrdinalRuleSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdinalRuleSets_RowEnter);
             // 
@@ -3346,7 +3680,7 @@
             this.tbpSpelloutRules.Location = new System.Drawing.Point(4, 22);
             this.tbpSpelloutRules.Name = "tbpSpelloutRules";
             this.tbpSpelloutRules.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSpelloutRules.Size = new System.Drawing.Size(492, 328);
+            this.tbpSpelloutRules.Size = new System.Drawing.Size(1121, 399);
             this.tbpSpelloutRules.TabIndex = 1;
             this.tbpSpelloutRules.Text = "Spellout Rules";
             this.tbpSpelloutRules.UseVisualStyleBackColor = true;
@@ -3357,7 +3691,7 @@
             this.groupBox56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox56.Location = new System.Drawing.Point(249, 3);
             this.groupBox56.Name = "groupBox56";
-            this.groupBox56.Size = new System.Drawing.Size(240, 322);
+            this.groupBox56.Size = new System.Drawing.Size(869, 393);
             this.groupBox56.TabIndex = 3;
             this.groupBox56.TabStop = false;
             this.groupBox56.Text = "Rules";
@@ -3371,7 +3705,7 @@
             this.dgvSpelloutRules.Location = new System.Drawing.Point(3, 16);
             this.dgvSpelloutRules.Name = "dgvSpelloutRules";
             this.dgvSpelloutRules.ReadOnly = true;
-            this.dgvSpelloutRules.Size = new System.Drawing.Size(234, 303);
+            this.dgvSpelloutRules.Size = new System.Drawing.Size(863, 374);
             this.dgvSpelloutRules.TabIndex = 0;
             // 
             // groupBox57
@@ -3380,7 +3714,7 @@
             this.groupBox57.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox57.Location = new System.Drawing.Point(3, 3);
             this.groupBox57.Name = "groupBox57";
-            this.groupBox57.Size = new System.Drawing.Size(246, 322);
+            this.groupBox57.Size = new System.Drawing.Size(246, 393);
             this.groupBox57.TabIndex = 2;
             this.groupBox57.TabStop = false;
             this.groupBox57.Text = "Rule Sets";
@@ -3394,7 +3728,7 @@
             this.dgvSpelloutRuleSets.Location = new System.Drawing.Point(3, 16);
             this.dgvSpelloutRuleSets.Name = "dgvSpelloutRuleSets";
             this.dgvSpelloutRuleSets.ReadOnly = true;
-            this.dgvSpelloutRuleSets.Size = new System.Drawing.Size(240, 303);
+            this.dgvSpelloutRuleSets.Size = new System.Drawing.Size(240, 374);
             this.dgvSpelloutRuleSets.TabIndex = 0;
             this.dgvSpelloutRuleSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSpelloutRuleSets_RowEnter);
             // 
@@ -3405,7 +3739,7 @@
             this.tbpUnitPatterns.Location = new System.Drawing.Point(4, 22);
             this.tbpUnitPatterns.Name = "tbpUnitPatterns";
             this.tbpUnitPatterns.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpUnitPatterns.Size = new System.Drawing.Size(506, 360);
+            this.tbpUnitPatterns.Size = new System.Drawing.Size(1135, 431);
             this.tbpUnitPatterns.TabIndex = 8;
             this.tbpUnitPatterns.Text = "Unit Patterns";
             this.tbpUnitPatterns.UseVisualStyleBackColor = true;
@@ -3416,7 +3750,7 @@
             this.groupBox53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox53.Location = new System.Drawing.Point(125, 3);
             this.groupBox53.Name = "groupBox53";
-            this.groupBox53.Size = new System.Drawing.Size(378, 354);
+            this.groupBox53.Size = new System.Drawing.Size(1007, 425);
             this.groupBox53.TabIndex = 1;
             this.groupBox53.TabStop = false;
             this.groupBox53.Text = "Unit Patterns";
@@ -3430,7 +3764,7 @@
             this.dgvUnitPatterns.Location = new System.Drawing.Point(3, 16);
             this.dgvUnitPatterns.Name = "dgvUnitPatterns";
             this.dgvUnitPatterns.ReadOnly = true;
-            this.dgvUnitPatterns.Size = new System.Drawing.Size(372, 335);
+            this.dgvUnitPatterns.Size = new System.Drawing.Size(1001, 406);
             this.dgvUnitPatterns.TabIndex = 0;
             // 
             // groupBox52
@@ -3439,7 +3773,7 @@
             this.groupBox52.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox52.Location = new System.Drawing.Point(3, 3);
             this.groupBox52.Name = "groupBox52";
-            this.groupBox52.Size = new System.Drawing.Size(122, 354);
+            this.groupBox52.Size = new System.Drawing.Size(122, 425);
             this.groupBox52.TabIndex = 0;
             this.groupBox52.TabStop = false;
             this.groupBox52.Text = "Unit Pattern Sets";
@@ -3450,7 +3784,7 @@
             this.lbxUnitPatternSetIds.FormattingEnabled = true;
             this.lbxUnitPatternSetIds.Location = new System.Drawing.Point(3, 16);
             this.lbxUnitPatternSetIds.Name = "lbxUnitPatternSetIds";
-            this.lbxUnitPatternSetIds.Size = new System.Drawing.Size(116, 335);
+            this.lbxUnitPatternSetIds.Size = new System.Drawing.Size(116, 406);
             this.lbxUnitPatternSetIds.TabIndex = 0;
             this.lbxUnitPatternSetIds.SelectedIndexChanged += new System.EventHandler(this.lbxUnitPatternSetIds_SelectedIndexChanged);
             // 
@@ -3610,7 +3944,7 @@
             this.tbpDotNetComparison.Location = new System.Drawing.Point(4, 22);
             this.tbpDotNetComparison.Name = "tbpDotNetComparison";
             this.tbpDotNetComparison.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDotNetComparison.Size = new System.Drawing.Size(780, 511);
+            this.tbpDotNetComparison.Size = new System.Drawing.Size(1333, 582);
             this.tbpDotNetComparison.TabIndex = 2;
             this.tbpDotNetComparison.Text = ".NET Comparison";
             this.tbpDotNetComparison.UseVisualStyleBackColor = true;
@@ -3628,8 +3962,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupBox10);
-            this.splitContainer5.Size = new System.Drawing.Size(774, 505);
-            this.splitContainer5.SplitterDistance = 359;
+            this.splitContainer5.Size = new System.Drawing.Size(1327, 576);
+            this.splitContainer5.SplitterDistance = 615;
             this.splitContainer5.TabIndex = 0;
             // 
             // groupBox7
@@ -3639,7 +3973,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(359, 505);
+            this.groupBox7.Size = new System.Drawing.Size(615, 576);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = ".NET Framework";
@@ -3650,7 +3984,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(3, 116);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(353, 386);
+            this.groupBox9.Size = new System.Drawing.Size(609, 457);
             this.groupBox9.TabIndex = 1;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Cultures";
@@ -3673,8 +4007,8 @@
             this.splitContainer6.Panel2.Controls.Add(this.label12);
             this.splitContainer6.Panel2.Controls.Add(this.tbxDotNetCultureEnglishDisplayName);
             this.splitContainer6.Panel2.Controls.Add(this.label11);
-            this.splitContainer6.Size = new System.Drawing.Size(347, 367);
-            this.splitContainer6.SplitterDistance = 115;
+            this.splitContainer6.Size = new System.Drawing.Size(603, 438);
+            this.splitContainer6.SplitterDistance = 199;
             this.splitContainer6.TabIndex = 0;
             // 
             // lbxDotNetCultures
@@ -3683,7 +4017,7 @@
             this.lbxDotNetCultures.FormattingEnabled = true;
             this.lbxDotNetCultures.Location = new System.Drawing.Point(0, 0);
             this.lbxDotNetCultures.Name = "lbxDotNetCultures";
-            this.lbxDotNetCultures.Size = new System.Drawing.Size(115, 367);
+            this.lbxDotNetCultures.Size = new System.Drawing.Size(199, 438);
             this.lbxDotNetCultures.TabIndex = 0;
             this.lbxDotNetCultures.SelectedIndexChanged += new System.EventHandler(this.lbxDotNetCultures_SelectedIndexChanged);
             // 
@@ -3761,7 +4095,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox8.Location = new System.Drawing.Point(3, 16);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(353, 100);
+            this.groupBox8.Size = new System.Drawing.Size(609, 100);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Overview";
@@ -3830,7 +4164,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(411, 505);
+            this.groupBox10.Size = new System.Drawing.Size(708, 576);
             this.groupBox10.TabIndex = 1;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "NCLDR";
@@ -3841,7 +4175,7 @@
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.Location = new System.Drawing.Point(3, 116);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(405, 386);
+            this.groupBox11.Size = new System.Drawing.Size(702, 457);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Cultures";
@@ -3864,8 +4198,8 @@
             this.splitContainer7.Panel2.Controls.Add(this.label13);
             this.splitContainer7.Panel2.Controls.Add(this.tbxNCldrCultureEnglishDisplayName);
             this.splitContainer7.Panel2.Controls.Add(this.label14);
-            this.splitContainer7.Size = new System.Drawing.Size(399, 367);
-            this.splitContainer7.SplitterDistance = 132;
+            this.splitContainer7.Size = new System.Drawing.Size(696, 438);
+            this.splitContainer7.SplitterDistance = 230;
             this.splitContainer7.TabIndex = 0;
             // 
             // lbxNCldrCultures
@@ -3874,7 +4208,7 @@
             this.lbxNCldrCultures.FormattingEnabled = true;
             this.lbxNCldrCultures.Location = new System.Drawing.Point(0, 0);
             this.lbxNCldrCultures.Name = "lbxNCldrCultures";
-            this.lbxNCldrCultures.Size = new System.Drawing.Size(132, 367);
+            this.lbxNCldrCultures.Size = new System.Drawing.Size(230, 438);
             this.lbxNCldrCultures.TabIndex = 0;
             this.lbxNCldrCultures.SelectedIndexChanged += new System.EventHandler(this.lbxNCldrCultures_SelectedIndexChanged);
             // 
@@ -3951,7 +4285,7 @@
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox12.Location = new System.Drawing.Point(3, 16);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(405, 100);
+            this.groupBox12.Size = new System.Drawing.Size(702, 100);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Overview";
@@ -4010,7 +4344,7 @@
             this.tbpSupplemental.Location = new System.Drawing.Point(4, 22);
             this.tbpSupplemental.Name = "tbpSupplemental";
             this.tbpSupplemental.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSupplemental.Size = new System.Drawing.Size(780, 511);
+            this.tbpSupplemental.Size = new System.Drawing.Size(1333, 582);
             this.tbpSupplemental.TabIndex = 3;
             this.tbpSupplemental.Text = "Supplemental";
             this.tbpSupplemental.UseVisualStyleBackColor = true;
@@ -4027,7 +4361,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(774, 505);
+            this.tabControl1.Size = new System.Drawing.Size(1327, 576);
             this.tabControl1.TabIndex = 0;
             // 
             // tbpDayPeriods
@@ -4036,7 +4370,7 @@
             this.tbpDayPeriods.Location = new System.Drawing.Point(4, 22);
             this.tbpDayPeriods.Name = "tbpDayPeriods";
             this.tbpDayPeriods.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDayPeriods.Size = new System.Drawing.Size(766, 479);
+            this.tbpDayPeriods.Size = new System.Drawing.Size(1319, 550);
             this.tbpDayPeriods.TabIndex = 4;
             this.tbpDayPeriods.Text = "Day Periods";
             this.tbpDayPeriods.UseVisualStyleBackColor = true;
@@ -4054,8 +4388,8 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.groupBox26);
-            this.splitContainer14.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer14.SplitterDistance = 253;
+            this.splitContainer14.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer14.SplitterDistance = 436;
             this.splitContainer14.TabIndex = 2;
             // 
             // groupBox24
@@ -4064,7 +4398,7 @@
             this.groupBox24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox24.Location = new System.Drawing.Point(0, 0);
             this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(253, 473);
+            this.groupBox24.Size = new System.Drawing.Size(436, 544);
             this.groupBox24.TabIndex = 0;
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Day Period Rule Sets";
@@ -4085,8 +4419,8 @@
             this.splitContainer15.Panel2.Controls.Add(this.label34);
             this.splitContainer15.Panel2.Controls.Add(this.tbxDayPeriodCultures);
             this.splitContainer15.Panel2.Controls.Add(this.label35);
-            this.splitContainer15.Size = new System.Drawing.Size(247, 454);
-            this.splitContainer15.SplitterDistance = 82;
+            this.splitContainer15.Size = new System.Drawing.Size(430, 525);
+            this.splitContainer15.SplitterDistance = 142;
             this.splitContainer15.TabIndex = 0;
             // 
             // groupBox25
@@ -4095,7 +4429,7 @@
             this.groupBox25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox25.Location = new System.Drawing.Point(0, 0);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(82, 454);
+            this.groupBox25.Size = new System.Drawing.Size(142, 525);
             this.groupBox25.TabIndex = 0;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Cultures";
@@ -4106,7 +4440,7 @@
             this.lbxDayPeriodRuleSets.FormattingEnabled = true;
             this.lbxDayPeriodRuleSets.Location = new System.Drawing.Point(3, 16);
             this.lbxDayPeriodRuleSets.Name = "lbxDayPeriodRuleSets";
-            this.lbxDayPeriodRuleSets.Size = new System.Drawing.Size(76, 435);
+            this.lbxDayPeriodRuleSets.Size = new System.Drawing.Size(136, 506);
             this.lbxDayPeriodRuleSets.TabIndex = 1;
             this.lbxDayPeriodRuleSets.SelectedIndexChanged += new System.EventHandler(this.lbxDayPeriodRuleSets_SelectedIndexChanged);
             // 
@@ -4118,7 +4452,7 @@
             this.lbxDayPeriodRules.FormattingEnabled = true;
             this.lbxDayPeriodRules.Location = new System.Drawing.Point(16, 178);
             this.lbxDayPeriodRules.Name = "lbxDayPeriodRules";
-            this.lbxDayPeriodRules.Size = new System.Drawing.Size(127, 199);
+            this.lbxDayPeriodRules.Size = new System.Drawing.Size(250, 264);
             this.lbxDayPeriodRules.TabIndex = 3;
             // 
             // label34
@@ -4138,7 +4472,7 @@
             this.tbxDayPeriodCultures.Location = new System.Drawing.Point(16, 32);
             this.tbxDayPeriodCultures.Multiline = true;
             this.tbxDayPeriodCultures.Name = "tbxDayPeriodCultures";
-            this.tbxDayPeriodCultures.Size = new System.Drawing.Size(127, 144);
+            this.tbxDayPeriodCultures.Size = new System.Drawing.Size(250, 215);
             this.tbxDayPeriodCultures.TabIndex = 1;
             // 
             // label35
@@ -4157,7 +4491,7 @@
             this.groupBox26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox26.Location = new System.Drawing.Point(0, 0);
             this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(503, 473);
+            this.groupBox26.Size = new System.Drawing.Size(873, 544);
             this.groupBox26.TabIndex = 0;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Day Period Rule Investigator";
@@ -4168,7 +4502,7 @@
             this.groupBox27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox27.Location = new System.Drawing.Point(3, 156);
             this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Size = new System.Drawing.Size(497, 314);
+            this.groupBox27.Size = new System.Drawing.Size(867, 385);
             this.groupBox27.TabIndex = 1;
             this.groupBox27.TabStop = false;
             this.groupBox27.Text = "Results";
@@ -4179,7 +4513,7 @@
             this.tbxDayPeriodResults.Location = new System.Drawing.Point(3, 16);
             this.tbxDayPeriodResults.Multiline = true;
             this.tbxDayPeriodResults.Name = "tbxDayPeriodResults";
-            this.tbxDayPeriodResults.Size = new System.Drawing.Size(491, 295);
+            this.tbxDayPeriodResults.Size = new System.Drawing.Size(861, 366);
             this.tbxDayPeriodResults.TabIndex = 0;
             // 
             // panel3
@@ -4190,7 +4524,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 16);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(497, 140);
+            this.panel3.Size = new System.Drawing.Size(867, 140);
             this.panel3.TabIndex = 0;
             // 
             // label36
@@ -4226,7 +4560,7 @@
             this.tbpNumberingSystems.Location = new System.Drawing.Point(4, 22);
             this.tbpNumberingSystems.Name = "tbpNumberingSystems";
             this.tbpNumberingSystems.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNumberingSystems.Size = new System.Drawing.Size(766, 479);
+            this.tbpNumberingSystems.Size = new System.Drawing.Size(1319, 550);
             this.tbpNumberingSystems.TabIndex = 2;
             this.tbpNumberingSystems.Text = "Numbering Systems";
             this.tbpNumberingSystems.UseVisualStyleBackColor = true;
@@ -4248,8 +4582,8 @@
             this.splitContainer11.Panel1.Controls.Add(this.tbxNumberingSystemId);
             this.splitContainer11.Panel1.Controls.Add(this.label26);
             this.splitContainer11.Panel1.Controls.Add(this.groupBox19);
-            this.splitContainer11.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer11.SplitterDistance = 253;
+            this.splitContainer11.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer11.SplitterDistance = 437;
             this.splitContainer11.TabIndex = 0;
             // 
             // tbxNumberingSystemRules
@@ -4322,7 +4656,7 @@
             this.groupBox19.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox19.Location = new System.Drawing.Point(0, 0);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(103, 473);
+            this.groupBox19.Size = new System.Drawing.Size(103, 544);
             this.groupBox19.TabIndex = 0;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Systems";
@@ -4333,7 +4667,7 @@
             this.lbxNumberingSystems.FormattingEnabled = true;
             this.lbxNumberingSystems.Location = new System.Drawing.Point(3, 16);
             this.lbxNumberingSystems.Name = "lbxNumberingSystems";
-            this.lbxNumberingSystems.Size = new System.Drawing.Size(97, 454);
+            this.lbxNumberingSystems.Size = new System.Drawing.Size(97, 525);
             this.lbxNumberingSystems.TabIndex = 0;
             this.lbxNumberingSystems.SelectedIndexChanged += new System.EventHandler(this.lbxNumberingSystems_SelectedIndexChanged);
             // 
@@ -4343,7 +4677,7 @@
             this.tbpOrdinals.Location = new System.Drawing.Point(4, 22);
             this.tbpOrdinals.Name = "tbpOrdinals";
             this.tbpOrdinals.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOrdinals.Size = new System.Drawing.Size(766, 479);
+            this.tbpOrdinals.Size = new System.Drawing.Size(1319, 550);
             this.tbpOrdinals.TabIndex = 3;
             this.tbpOrdinals.Text = "Ordinals";
             this.tbpOrdinals.UseVisualStyleBackColor = true;
@@ -4361,8 +4695,8 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox22);
-            this.splitContainer12.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer12.SplitterDistance = 253;
+            this.splitContainer12.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer12.SplitterDistance = 437;
             this.splitContainer12.TabIndex = 1;
             // 
             // groupBox20
@@ -4371,7 +4705,7 @@
             this.groupBox20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox20.Location = new System.Drawing.Point(0, 0);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(253, 473);
+            this.groupBox20.Size = new System.Drawing.Size(437, 544);
             this.groupBox20.TabIndex = 0;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Ordinal Rules";
@@ -4392,8 +4726,8 @@
             this.splitContainer13.Panel2.Controls.Add(this.label30);
             this.splitContainer13.Panel2.Controls.Add(this.tbxOrdinalRuleSetCultures);
             this.splitContainer13.Panel2.Controls.Add(this.label31);
-            this.splitContainer13.Size = new System.Drawing.Size(247, 454);
-            this.splitContainer13.SplitterDistance = 82;
+            this.splitContainer13.Size = new System.Drawing.Size(431, 525);
+            this.splitContainer13.SplitterDistance = 143;
             this.splitContainer13.TabIndex = 0;
             // 
             // groupBox21
@@ -4402,7 +4736,7 @@
             this.groupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox21.Location = new System.Drawing.Point(0, 0);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(82, 454);
+            this.groupBox21.Size = new System.Drawing.Size(143, 525);
             this.groupBox21.TabIndex = 0;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Cultures";
@@ -4413,7 +4747,7 @@
             this.lbxOrdinalRuleSets.FormattingEnabled = true;
             this.lbxOrdinalRuleSets.Location = new System.Drawing.Point(3, 16);
             this.lbxOrdinalRuleSets.Name = "lbxOrdinalRuleSets";
-            this.lbxOrdinalRuleSets.Size = new System.Drawing.Size(76, 435);
+            this.lbxOrdinalRuleSets.Size = new System.Drawing.Size(137, 506);
             this.lbxOrdinalRuleSets.TabIndex = 1;
             this.lbxOrdinalRuleSets.SelectedIndexChanged += new System.EventHandler(this.lbxOrdinalRuleSets_SelectedIndexChanged);
             // 
@@ -4425,7 +4759,7 @@
             this.lbxOrdinalRuleSetRules.FormattingEnabled = true;
             this.lbxOrdinalRuleSetRules.Location = new System.Drawing.Point(16, 178);
             this.lbxOrdinalRuleSetRules.Name = "lbxOrdinalRuleSetRules";
-            this.lbxOrdinalRuleSetRules.Size = new System.Drawing.Size(127, 199);
+            this.lbxOrdinalRuleSetRules.Size = new System.Drawing.Size(250, 264);
             this.lbxOrdinalRuleSetRules.TabIndex = 3;
             // 
             // label30
@@ -4445,7 +4779,7 @@
             this.tbxOrdinalRuleSetCultures.Location = new System.Drawing.Point(16, 32);
             this.tbxOrdinalRuleSetCultures.Multiline = true;
             this.tbxOrdinalRuleSetCultures.Name = "tbxOrdinalRuleSetCultures";
-            this.tbxOrdinalRuleSetCultures.Size = new System.Drawing.Size(127, 144);
+            this.tbxOrdinalRuleSetCultures.Size = new System.Drawing.Size(250, 215);
             this.tbxOrdinalRuleSetCultures.TabIndex = 1;
             // 
             // label31
@@ -4464,7 +4798,7 @@
             this.groupBox22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox22.Location = new System.Drawing.Point(0, 0);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(503, 473);
+            this.groupBox22.Size = new System.Drawing.Size(872, 544);
             this.groupBox22.TabIndex = 0;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Ordinal Rule Investigator";
@@ -4475,7 +4809,7 @@
             this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox23.Location = new System.Drawing.Point(3, 156);
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(497, 314);
+            this.groupBox23.Size = new System.Drawing.Size(866, 385);
             this.groupBox23.TabIndex = 1;
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Results";
@@ -4486,7 +4820,7 @@
             this.tbxOrdinalRuleResults.Location = new System.Drawing.Point(3, 16);
             this.tbxOrdinalRuleResults.Multiline = true;
             this.tbxOrdinalRuleResults.Name = "tbxOrdinalRuleResults";
-            this.tbxOrdinalRuleResults.Size = new System.Drawing.Size(491, 295);
+            this.tbxOrdinalRuleResults.Size = new System.Drawing.Size(860, 366);
             this.tbxOrdinalRuleResults.TabIndex = 0;
             // 
             // panel2
@@ -4501,7 +4835,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 140);
+            this.panel2.Size = new System.Drawing.Size(866, 140);
             this.panel2.TabIndex = 0;
             // 
             // label121
@@ -4573,7 +4907,7 @@
             this.tbpPostalCodes.Location = new System.Drawing.Point(4, 22);
             this.tbpPostalCodes.Name = "tbpPostalCodes";
             this.tbpPostalCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpPostalCodes.Size = new System.Drawing.Size(766, 479);
+            this.tbpPostalCodes.Size = new System.Drawing.Size(1319, 550);
             this.tbpPostalCodes.TabIndex = 1;
             this.tbpPostalCodes.Text = "Postal Codes";
             this.tbpPostalCodes.UseVisualStyleBackColor = true;
@@ -4595,8 +4929,8 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.groupBox18);
-            this.splitContainer10.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer10.SplitterDistance = 253;
+            this.splitContainer10.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer10.SplitterDistance = 437;
             this.splitContainer10.TabIndex = 0;
             // 
             // tbxPostalCodesRegex
@@ -4607,7 +4941,7 @@
             this.tbxPostalCodesRegex.Location = new System.Drawing.Point(82, 86);
             this.tbxPostalCodesRegex.Multiline = true;
             this.tbxPostalCodesRegex.Name = "tbxPostalCodesRegex";
-            this.tbxPostalCodesRegex.Size = new System.Drawing.Size(154, 170);
+            this.tbxPostalCodesRegex.Size = new System.Drawing.Size(338, 241);
             this.tbxPostalCodesRegex.TabIndex = 4;
             // 
             // label24
@@ -4641,7 +4975,7 @@
             this.groupBox17.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox17.Location = new System.Drawing.Point(0, 0);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(73, 473);
+            this.groupBox17.Size = new System.Drawing.Size(73, 544);
             this.groupBox17.TabIndex = 0;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Regions";
@@ -4652,7 +4986,7 @@
             this.lbxPostalCodeRegions.FormattingEnabled = true;
             this.lbxPostalCodeRegions.Location = new System.Drawing.Point(3, 16);
             this.lbxPostalCodeRegions.Name = "lbxPostalCodeRegions";
-            this.lbxPostalCodeRegions.Size = new System.Drawing.Size(67, 454);
+            this.lbxPostalCodeRegions.Size = new System.Drawing.Size(67, 525);
             this.lbxPostalCodeRegions.TabIndex = 0;
             this.lbxPostalCodeRegions.SelectedIndexChanged += new System.EventHandler(this.lbxPostalCodeRegions_SelectedIndexChanged);
             // 
@@ -4665,7 +4999,7 @@
             this.groupBox18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox18.Location = new System.Drawing.Point(0, 0);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(503, 473);
+            this.groupBox18.Size = new System.Drawing.Size(872, 544);
             this.groupBox18.TabIndex = 0;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Postal Code Investigator";
@@ -4710,7 +5044,7 @@
             this.tbpPlurals.Location = new System.Drawing.Point(4, 22);
             this.tbpPlurals.Name = "tbpPlurals";
             this.tbpPlurals.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpPlurals.Size = new System.Drawing.Size(766, 479);
+            this.tbpPlurals.Size = new System.Drawing.Size(1319, 550);
             this.tbpPlurals.TabIndex = 0;
             this.tbpPlurals.Text = "Plurals";
             this.tbpPlurals.UseVisualStyleBackColor = true;
@@ -4728,8 +5062,8 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.groupBox15);
-            this.splitContainer8.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer8.SplitterDistance = 253;
+            this.splitContainer8.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer8.SplitterDistance = 437;
             this.splitContainer8.TabIndex = 0;
             // 
             // groupBox13
@@ -4738,7 +5072,7 @@
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(253, 473);
+            this.groupBox13.Size = new System.Drawing.Size(437, 544);
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Plural Rules";
@@ -4759,8 +5093,8 @@
             this.splitContainer9.Panel2.Controls.Add(this.label20);
             this.splitContainer9.Panel2.Controls.Add(this.tbxPluralRuleSetCultures);
             this.splitContainer9.Panel2.Controls.Add(this.label19);
-            this.splitContainer9.Size = new System.Drawing.Size(247, 454);
-            this.splitContainer9.SplitterDistance = 82;
+            this.splitContainer9.Size = new System.Drawing.Size(431, 525);
+            this.splitContainer9.SplitterDistance = 143;
             this.splitContainer9.TabIndex = 0;
             // 
             // groupBox14
@@ -4769,7 +5103,7 @@
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(82, 454);
+            this.groupBox14.Size = new System.Drawing.Size(143, 525);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Cultures";
@@ -4780,7 +5114,7 @@
             this.lbxPluralRuleSets.FormattingEnabled = true;
             this.lbxPluralRuleSets.Location = new System.Drawing.Point(3, 16);
             this.lbxPluralRuleSets.Name = "lbxPluralRuleSets";
-            this.lbxPluralRuleSets.Size = new System.Drawing.Size(76, 435);
+            this.lbxPluralRuleSets.Size = new System.Drawing.Size(137, 506);
             this.lbxPluralRuleSets.TabIndex = 1;
             this.lbxPluralRuleSets.SelectedIndexChanged += new System.EventHandler(this.lbxPluralRuleSets_SelectedIndexChanged);
             // 
@@ -4792,7 +5126,7 @@
             this.lbxPluralRuleSetRules.FormattingEnabled = true;
             this.lbxPluralRuleSetRules.Location = new System.Drawing.Point(16, 178);
             this.lbxPluralRuleSetRules.Name = "lbxPluralRuleSetRules";
-            this.lbxPluralRuleSetRules.Size = new System.Drawing.Size(127, 199);
+            this.lbxPluralRuleSetRules.Size = new System.Drawing.Size(250, 264);
             this.lbxPluralRuleSetRules.TabIndex = 3;
             // 
             // label20
@@ -4812,7 +5146,7 @@
             this.tbxPluralRuleSetCultures.Location = new System.Drawing.Point(16, 32);
             this.tbxPluralRuleSetCultures.Multiline = true;
             this.tbxPluralRuleSetCultures.Name = "tbxPluralRuleSetCultures";
-            this.tbxPluralRuleSetCultures.Size = new System.Drawing.Size(127, 144);
+            this.tbxPluralRuleSetCultures.Size = new System.Drawing.Size(250, 215);
             this.tbxPluralRuleSetCultures.TabIndex = 1;
             // 
             // label19
@@ -4831,7 +5165,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(503, 473);
+            this.groupBox15.Size = new System.Drawing.Size(872, 544);
             this.groupBox15.TabIndex = 0;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Plural Rule Investigator";
@@ -4842,7 +5176,7 @@
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Location = new System.Drawing.Point(3, 156);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(497, 314);
+            this.groupBox16.Size = new System.Drawing.Size(866, 385);
             this.groupBox16.TabIndex = 1;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Results";
@@ -4853,7 +5187,7 @@
             this.tbxPluralRuleResults.Location = new System.Drawing.Point(3, 16);
             this.tbxPluralRuleResults.Multiline = true;
             this.tbxPluralRuleResults.Name = "tbxPluralRuleResults";
-            this.tbxPluralRuleResults.Size = new System.Drawing.Size(491, 295);
+            this.tbxPluralRuleResults.Size = new System.Drawing.Size(860, 366);
             this.tbxPluralRuleResults.TabIndex = 0;
             // 
             // panel1
@@ -4868,7 +5202,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 140);
+            this.panel1.Size = new System.Drawing.Size(866, 140);
             this.panel1.TabIndex = 0;
             // 
             // label120
@@ -4940,7 +5274,7 @@
             this.tbpTelephoneCodes.Location = new System.Drawing.Point(4, 22);
             this.tbpTelephoneCodes.Name = "tbpTelephoneCodes";
             this.tbpTelephoneCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpTelephoneCodes.Size = new System.Drawing.Size(766, 479);
+            this.tbpTelephoneCodes.Size = new System.Drawing.Size(1319, 550);
             this.tbpTelephoneCodes.TabIndex = 5;
             this.tbpTelephoneCodes.Text = "Telephone Codes";
             this.tbpTelephoneCodes.UseVisualStyleBackColor = true;
@@ -4962,8 +5296,8 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.groupBox37);
-            this.splitContainer16.Size = new System.Drawing.Size(760, 473);
-            this.splitContainer16.SplitterDistance = 253;
+            this.splitContainer16.Size = new System.Drawing.Size(1313, 544);
+            this.splitContainer16.SplitterDistance = 437;
             this.splitContainer16.TabIndex = 1;
             // 
             // tbxTelephoneCodes
@@ -4974,7 +5308,7 @@
             this.tbxTelephoneCodes.Location = new System.Drawing.Point(82, 86);
             this.tbxTelephoneCodes.Multiline = true;
             this.tbxTelephoneCodes.Name = "tbxTelephoneCodes";
-            this.tbxTelephoneCodes.Size = new System.Drawing.Size(154, 170);
+            this.tbxTelephoneCodes.Size = new System.Drawing.Size(338, 241);
             this.tbxTelephoneCodes.TabIndex = 4;
             // 
             // label43
@@ -5008,7 +5342,7 @@
             this.groupBox36.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox36.Location = new System.Drawing.Point(0, 0);
             this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(73, 473);
+            this.groupBox36.Size = new System.Drawing.Size(73, 544);
             this.groupBox36.TabIndex = 0;
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "Regions";
@@ -5019,7 +5353,7 @@
             this.lbxTelephoneCodeRegions.FormattingEnabled = true;
             this.lbxTelephoneCodeRegions.Location = new System.Drawing.Point(3, 16);
             this.lbxTelephoneCodeRegions.Name = "lbxTelephoneCodeRegions";
-            this.lbxTelephoneCodeRegions.Size = new System.Drawing.Size(67, 454);
+            this.lbxTelephoneCodeRegions.Size = new System.Drawing.Size(67, 525);
             this.lbxTelephoneCodeRegions.TabIndex = 0;
             this.lbxTelephoneCodeRegions.SelectedIndexChanged += new System.EventHandler(this.lbxTelephoneCodeRegions_SelectedIndexChanged);
             // 
@@ -5032,7 +5366,7 @@
             this.groupBox37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox37.Location = new System.Drawing.Point(0, 0);
             this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Size = new System.Drawing.Size(503, 473);
+            this.groupBox37.Size = new System.Drawing.Size(872, 544);
             this.groupBox37.TabIndex = 0;
             this.groupBox37.TabStop = false;
             this.groupBox37.Text = "Telephone Code Investigator";
@@ -5080,7 +5414,7 @@
             this.tbpCustomCultures.Location = new System.Drawing.Point(4, 22);
             this.tbpCustomCultures.Name = "tbpCustomCultures";
             this.tbpCustomCultures.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCustomCultures.Size = new System.Drawing.Size(780, 511);
+            this.tbpCustomCultures.Size = new System.Drawing.Size(1333, 582);
             this.tbpCustomCultures.TabIndex = 4;
             this.tbpCustomCultures.Text = "Custom Cultures";
             this.tbpCustomCultures.UseVisualStyleBackColor = true;
@@ -5092,7 +5426,7 @@
             this.groupBox35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox35.Location = new System.Drawing.Point(356, 3);
             this.groupBox35.Name = "groupBox35";
-            this.groupBox35.Size = new System.Drawing.Size(298, 505);
+            this.groupBox35.Size = new System.Drawing.Size(851, 576);
             this.groupBox35.TabIndex = 6;
             this.groupBox35.TabStop = false;
             // 
@@ -5103,7 +5437,7 @@
             this.groupBox31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox31.Location = new System.Drawing.Point(3, 137);
             this.groupBox31.Name = "groupBox31";
-            this.groupBox31.Size = new System.Drawing.Size(292, 365);
+            this.groupBox31.Size = new System.Drawing.Size(845, 436);
             this.groupBox31.TabIndex = 4;
             this.groupBox31.TabStop = false;
             this.groupBox31.Text = "Create";
@@ -5114,7 +5448,7 @@
             this.gbxCustomCultureProgress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxCustomCultureProgress.Location = new System.Drawing.Point(3, 174);
             this.gbxCustomCultureProgress.Name = "gbxCustomCultureProgress";
-            this.gbxCustomCultureProgress.Size = new System.Drawing.Size(286, 188);
+            this.gbxCustomCultureProgress.Size = new System.Drawing.Size(839, 259);
             this.gbxCustomCultureProgress.TabIndex = 7;
             this.gbxCustomCultureProgress.TabStop = false;
             this.gbxCustomCultureProgress.Text = "Progress";
@@ -5126,7 +5460,7 @@
             this.tbxCustomCultureProgress.Location = new System.Drawing.Point(3, 16);
             this.tbxCustomCultureProgress.Multiline = true;
             this.tbxCustomCultureProgress.Name = "tbxCustomCultureProgress";
-            this.tbxCustomCultureProgress.Size = new System.Drawing.Size(280, 169);
+            this.tbxCustomCultureProgress.Size = new System.Drawing.Size(833, 240);
             this.tbxCustomCultureProgress.TabIndex = 0;
             // 
             // panel4
@@ -5140,7 +5474,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(286, 158);
+            this.panel4.Size = new System.Drawing.Size(839, 158);
             this.panel4.TabIndex = 6;
             // 
             // tbxCustomCulturePrefix
@@ -5205,7 +5539,7 @@
             this.groupBox30.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox30.Location = new System.Drawing.Point(3, 16);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(292, 121);
+            this.groupBox30.Size = new System.Drawing.Size(845, 121);
             this.groupBox30.TabIndex = 3;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Currently Selected Culture";
@@ -5249,9 +5583,9 @@
             this.groupBox34.Controls.Add(this.label42);
             this.groupBox34.Controls.Add(this.btnUnregisterCustomCultures);
             this.groupBox34.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox34.Location = new System.Drawing.Point(654, 3);
+            this.groupBox34.Location = new System.Drawing.Point(1207, 3);
             this.groupBox34.Name = "groupBox34";
-            this.groupBox34.Size = new System.Drawing.Size(123, 505);
+            this.groupBox34.Size = new System.Drawing.Size(123, 576);
             this.groupBox34.TabIndex = 4;
             this.groupBox34.TabStop = false;
             this.groupBox34.Text = "Custom Cultures";
@@ -5298,7 +5632,7 @@
             this.groupBox29.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox29.Location = new System.Drawing.Point(214, 3);
             this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(142, 505);
+            this.groupBox29.Size = new System.Drawing.Size(142, 576);
             this.groupBox29.TabIndex = 1;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "NCLDR Cultures";
@@ -5310,7 +5644,7 @@
             this.clbCustomCultures.FormattingEnabled = true;
             this.clbCustomCultures.Location = new System.Drawing.Point(3, 16);
             this.clbCustomCultures.Name = "clbCustomCultures";
-            this.clbCustomCultures.Size = new System.Drawing.Size(136, 486);
+            this.clbCustomCultures.Size = new System.Drawing.Size(136, 557);
             this.clbCustomCultures.TabIndex = 0;
             this.clbCustomCultures.SelectedIndexChanged += new System.EventHandler(this.clbCustomCultures_SelectedIndexChanged);
             // 
@@ -5325,7 +5659,7 @@
             this.groupBox28.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox28.Location = new System.Drawing.Point(3, 3);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(211, 505);
+            this.groupBox28.Size = new System.Drawing.Size(211, 576);
             this.groupBox28.TabIndex = 0;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "Pre-Selects";
@@ -5389,367 +5723,6 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
-            // groupBox68
-            // 
-            this.groupBox68.Controls.Add(this.dgvDayPastRelativeTimeRules);
-            this.groupBox68.Location = new System.Drawing.Point(164, 348);
-            this.groupBox68.Name = "groupBox68";
-            this.groupBox68.Size = new System.Drawing.Size(200, 100);
-            this.groupBox68.TabIndex = 29;
-            this.groupBox68.TabStop = false;
-            this.groupBox68.Text = "Day Past Relative Time Rules";
-            // 
-            // dgvDayPastRelativeTimeRules
-            // 
-            this.dgvDayPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvDayPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvDayPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDayPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDayPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvDayPastRelativeTimeRules.Name = "dgvDayPastRelativeTimeRules";
-            this.dgvDayPastRelativeTimeRules.ReadOnly = true;
-            this.dgvDayPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvDayPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox69
-            // 
-            this.groupBox69.Controls.Add(this.dgvWeekPastRelativeTimeRules);
-            this.groupBox69.Location = new System.Drawing.Point(370, 348);
-            this.groupBox69.Name = "groupBox69";
-            this.groupBox69.Size = new System.Drawing.Size(200, 100);
-            this.groupBox69.TabIndex = 31;
-            this.groupBox69.TabStop = false;
-            this.groupBox69.Text = "Week Past Relative Time Rules";
-            // 
-            // dgvWeekPastRelativeTimeRules
-            // 
-            this.dgvWeekPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvWeekPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvWeekPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWeekPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWeekPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvWeekPastRelativeTimeRules.Name = "dgvWeekPastRelativeTimeRules";
-            this.dgvWeekPastRelativeTimeRules.ReadOnly = true;
-            this.dgvWeekPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvWeekPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox70
-            // 
-            this.groupBox70.Controls.Add(this.dgvWeekFutureRelativeTimeRules);
-            this.groupBox70.Location = new System.Drawing.Point(370, 236);
-            this.groupBox70.Name = "groupBox70";
-            this.groupBox70.Size = new System.Drawing.Size(200, 100);
-            this.groupBox70.TabIndex = 30;
-            this.groupBox70.TabStop = false;
-            this.groupBox70.Text = "Week Future Relative Time Rules";
-            // 
-            // dgvWeekFutureRelativeTimeRules
-            // 
-            this.dgvWeekFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvWeekFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvWeekFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWeekFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWeekFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvWeekFutureRelativeTimeRules.Name = "dgvWeekFutureRelativeTimeRules";
-            this.dgvWeekFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvWeekFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvWeekFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox71
-            // 
-            this.groupBox71.Controls.Add(this.dgvMonthPastRelativeTimeRules);
-            this.groupBox71.Location = new System.Drawing.Point(576, 348);
-            this.groupBox71.Name = "groupBox71";
-            this.groupBox71.Size = new System.Drawing.Size(200, 100);
-            this.groupBox71.TabIndex = 33;
-            this.groupBox71.TabStop = false;
-            this.groupBox71.Text = "Month Past Relative Time Rules";
-            // 
-            // dgvMonthPastRelativeTimeRules
-            // 
-            this.dgvMonthPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvMonthPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvMonthPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonthPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMonthPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvMonthPastRelativeTimeRules.Name = "dgvMonthPastRelativeTimeRules";
-            this.dgvMonthPastRelativeTimeRules.ReadOnly = true;
-            this.dgvMonthPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvMonthPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox72
-            // 
-            this.groupBox72.Controls.Add(this.dgvMonthFutureRelativeTimeRules);
-            this.groupBox72.Location = new System.Drawing.Point(576, 236);
-            this.groupBox72.Name = "groupBox72";
-            this.groupBox72.Size = new System.Drawing.Size(200, 100);
-            this.groupBox72.TabIndex = 32;
-            this.groupBox72.TabStop = false;
-            this.groupBox72.Text = "Month Future Relative Time Rules";
-            // 
-            // dgvMonthFutureRelativeTimeRules
-            // 
-            this.dgvMonthFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvMonthFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvMonthFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonthFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMonthFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvMonthFutureRelativeTimeRules.Name = "dgvMonthFutureRelativeTimeRules";
-            this.dgvMonthFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvMonthFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvMonthFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox73
-            // 
-            this.groupBox73.Controls.Add(this.dgvYearPastRelativeTimeRules);
-            this.groupBox73.Location = new System.Drawing.Point(782, 348);
-            this.groupBox73.Name = "groupBox73";
-            this.groupBox73.Size = new System.Drawing.Size(200, 100);
-            this.groupBox73.TabIndex = 35;
-            this.groupBox73.TabStop = false;
-            this.groupBox73.Text = "Year Past Relative Time Rules";
-            // 
-            // dgvYearPastRelativeTimeRules
-            // 
-            this.dgvYearPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvYearPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvYearPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvYearPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvYearPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvYearPastRelativeTimeRules.Name = "dgvYearPastRelativeTimeRules";
-            this.dgvYearPastRelativeTimeRules.ReadOnly = true;
-            this.dgvYearPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvYearPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox74
-            // 
-            this.groupBox74.Controls.Add(this.dgvYearFutureRelativeTimeRules);
-            this.groupBox74.Location = new System.Drawing.Point(782, 236);
-            this.groupBox74.Name = "groupBox74";
-            this.groupBox74.Size = new System.Drawing.Size(200, 100);
-            this.groupBox74.TabIndex = 34;
-            this.groupBox74.TabStop = false;
-            this.groupBox74.Text = "Year Future Relative Time Rules";
-            // 
-            // dgvYearFutureRelativeTimeRules
-            // 
-            this.dgvYearFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvYearFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvYearFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvYearFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvYearFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvYearFutureRelativeTimeRules.Name = "dgvYearFutureRelativeTimeRules";
-            this.dgvYearFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvYearFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvYearFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox75
-            // 
-            this.groupBox75.Controls.Add(this.dgvHourPastRelativeTimeRules);
-            this.groupBox75.Location = new System.Drawing.Point(785, 125);
-            this.groupBox75.Name = "groupBox75";
-            this.groupBox75.Size = new System.Drawing.Size(200, 100);
-            this.groupBox75.TabIndex = 41;
-            this.groupBox75.TabStop = false;
-            this.groupBox75.Text = "Hour Past Relative Time Rules";
-            // 
-            // dgvHourPastRelativeTimeRules
-            // 
-            this.dgvHourPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvHourPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvHourPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHourPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHourPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvHourPastRelativeTimeRules.Name = "dgvHourPastRelativeTimeRules";
-            this.dgvHourPastRelativeTimeRules.ReadOnly = true;
-            this.dgvHourPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvHourPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox76
-            // 
-            this.groupBox76.Controls.Add(this.dgvMinutePastRelativeTimeRules);
-            this.groupBox76.Location = new System.Drawing.Point(579, 125);
-            this.groupBox76.Name = "groupBox76";
-            this.groupBox76.Size = new System.Drawing.Size(200, 100);
-            this.groupBox76.TabIndex = 39;
-            this.groupBox76.TabStop = false;
-            this.groupBox76.Text = "Minute Past Relative Time Rules";
-            // 
-            // dgvMinutePastRelativeTimeRules
-            // 
-            this.dgvMinutePastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvMinutePastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvMinutePastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMinutePastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMinutePastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvMinutePastRelativeTimeRules.Name = "dgvMinutePastRelativeTimeRules";
-            this.dgvMinutePastRelativeTimeRules.ReadOnly = true;
-            this.dgvMinutePastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvMinutePastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox77
-            // 
-            this.groupBox77.Controls.Add(this.dgvHourFutureRelativeTimeRules);
-            this.groupBox77.Location = new System.Drawing.Point(785, 13);
-            this.groupBox77.Name = "groupBox77";
-            this.groupBox77.Size = new System.Drawing.Size(200, 100);
-            this.groupBox77.TabIndex = 40;
-            this.groupBox77.TabStop = false;
-            this.groupBox77.Text = "Hour Future Relative Time Rules";
-            // 
-            // dgvHourFutureRelativeTimeRules
-            // 
-            this.dgvHourFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvHourFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvHourFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHourFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHourFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvHourFutureRelativeTimeRules.Name = "dgvHourFutureRelativeTimeRules";
-            this.dgvHourFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvHourFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvHourFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox78
-            // 
-            this.groupBox78.Controls.Add(this.dgvSecondPastRelativeTimeRules);
-            this.groupBox78.Location = new System.Drawing.Point(373, 125);
-            this.groupBox78.Name = "groupBox78";
-            this.groupBox78.Size = new System.Drawing.Size(200, 100);
-            this.groupBox78.TabIndex = 37;
-            this.groupBox78.TabStop = false;
-            this.groupBox78.Text = "Second Past Relative Time Rules";
-            // 
-            // dgvSecondPastRelativeTimeRules
-            // 
-            this.dgvSecondPastRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvSecondPastRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvSecondPastRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSecondPastRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSecondPastRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvSecondPastRelativeTimeRules.Name = "dgvSecondPastRelativeTimeRules";
-            this.dgvSecondPastRelativeTimeRules.ReadOnly = true;
-            this.dgvSecondPastRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvSecondPastRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox79
-            // 
-            this.groupBox79.Controls.Add(this.dgvMinuteFutureRelativeTimeRules);
-            this.groupBox79.Location = new System.Drawing.Point(579, 13);
-            this.groupBox79.Name = "groupBox79";
-            this.groupBox79.Size = new System.Drawing.Size(200, 100);
-            this.groupBox79.TabIndex = 38;
-            this.groupBox79.TabStop = false;
-            this.groupBox79.Text = "Minute Future Relative Time Rules";
-            // 
-            // dgvMinuteFutureRelativeTimeRules
-            // 
-            this.dgvMinuteFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvMinuteFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvMinuteFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMinuteFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMinuteFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvMinuteFutureRelativeTimeRules.Name = "dgvMinuteFutureRelativeTimeRules";
-            this.dgvMinuteFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvMinuteFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvMinuteFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // groupBox80
-            // 
-            this.groupBox80.Controls.Add(this.dgvSecondFutureRelativeTimeRules);
-            this.groupBox80.Location = new System.Drawing.Point(373, 13);
-            this.groupBox80.Name = "groupBox80";
-            this.groupBox80.Size = new System.Drawing.Size(200, 100);
-            this.groupBox80.TabIndex = 36;
-            this.groupBox80.TabStop = false;
-            this.groupBox80.Text = "Second Future Relative Time Rules";
-            // 
-            // dgvSecondFutureRelativeTimeRules
-            // 
-            this.dgvSecondFutureRelativeTimeRules.AllowUserToAddRows = false;
-            this.dgvSecondFutureRelativeTimeRules.AllowUserToDeleteRows = false;
-            this.dgvSecondFutureRelativeTimeRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSecondFutureRelativeTimeRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSecondFutureRelativeTimeRules.Location = new System.Drawing.Point(3, 16);
-            this.dgvSecondFutureRelativeTimeRules.Name = "dgvSecondFutureRelativeTimeRules";
-            this.dgvSecondFutureRelativeTimeRules.ReadOnly = true;
-            this.dgvSecondFutureRelativeTimeRules.Size = new System.Drawing.Size(194, 81);
-            this.dgvSecondFutureRelativeTimeRules.TabIndex = 0;
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(30, 281);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(127, 13);
-            this.label129.TabIndex = 40;
-            this.label129.Text = "Super Scripting Exponent";
-            // 
-            // tbxSymbolSuperScriptingExponent
-            // 
-            this.tbxSymbolSuperScriptingExponent.Location = new System.Drawing.Point(180, 278);
-            this.tbxSymbolSuperScriptingExponent.Name = "tbxSymbolSuperScriptingExponent";
-            this.tbxSymbolSuperScriptingExponent.Size = new System.Drawing.Size(100, 20);
-            this.tbxSymbolSuperScriptingExponent.TabIndex = 41;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.groupBox81);
-            this.tabPage5.Controls.Add(this.groupBox82);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1121, 399);
-            this.tabPage5.TabIndex = 3;
-            this.tabPage5.Text = "Miscellaneous Patterns";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox81
-            // 
-            this.groupBox81.Controls.Add(this.dgvMiscellaneousPatterns);
-            this.groupBox81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox81.Location = new System.Drawing.Point(204, 3);
-            this.groupBox81.Name = "groupBox81";
-            this.groupBox81.Size = new System.Drawing.Size(914, 393);
-            this.groupBox81.TabIndex = 3;
-            this.groupBox81.TabStop = false;
-            this.groupBox81.Text = "Patterns";
-            // 
-            // dgvMiscellaneousPatterns
-            // 
-            this.dgvMiscellaneousPatterns.AllowUserToAddRows = false;
-            this.dgvMiscellaneousPatterns.AllowUserToDeleteRows = false;
-            this.dgvMiscellaneousPatterns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMiscellaneousPatterns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMiscellaneousPatterns.Location = new System.Drawing.Point(3, 16);
-            this.dgvMiscellaneousPatterns.Name = "dgvMiscellaneousPatterns";
-            this.dgvMiscellaneousPatterns.ReadOnly = true;
-            this.dgvMiscellaneousPatterns.Size = new System.Drawing.Size(908, 374);
-            this.dgvMiscellaneousPatterns.TabIndex = 0;
-            // 
-            // groupBox82
-            // 
-            this.groupBox82.Controls.Add(this.dgvMiscellaneousPatternSets);
-            this.groupBox82.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox82.Location = new System.Drawing.Point(3, 3);
-            this.groupBox82.Name = "groupBox82";
-            this.groupBox82.Size = new System.Drawing.Size(201, 393);
-            this.groupBox82.TabIndex = 2;
-            this.groupBox82.TabStop = false;
-            this.groupBox82.Text = "Set Ids";
-            // 
-            // dgvMiscellaneousPatternSets
-            // 
-            this.dgvMiscellaneousPatternSets.AllowUserToAddRows = false;
-            this.dgvMiscellaneousPatternSets.AllowUserToDeleteRows = false;
-            this.dgvMiscellaneousPatternSets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMiscellaneousPatternSets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMiscellaneousPatternSets.Location = new System.Drawing.Point(3, 16);
-            this.dgvMiscellaneousPatternSets.Name = "dgvMiscellaneousPatternSets";
-            this.dgvMiscellaneousPatternSets.ReadOnly = true;
-            this.dgvMiscellaneousPatternSets.Size = new System.Drawing.Size(195, 374);
-            this.dgvMiscellaneousPatternSets.TabIndex = 0;
-            this.dgvMiscellaneousPatternSets.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMiscellaneousPatternSets_RowEnter);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5762,7 +5735,6 @@
             this.tbpLoad.ResumeLayout(false);
             this.tbpLoad.PerformLayout();
             this.groupBox66.ResumeLayout(false);
-            this.groupBox66.PerformLayout();
             this.tbpCultures.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -5776,6 +5748,32 @@
             this.groupBox4.ResumeLayout(false);
             this.tbpDatesDisplayNames.ResumeLayout(false);
             this.tbpDatesDisplayNames.PerformLayout();
+            this.groupBox75.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHourPastRelativeTimeRules)).EndInit();
+            this.groupBox73.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYearPastRelativeTimeRules)).EndInit();
+            this.groupBox76.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMinutePastRelativeTimeRules)).EndInit();
+            this.groupBox71.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthPastRelativeTimeRules)).EndInit();
+            this.groupBox77.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHourFutureRelativeTimeRules)).EndInit();
+            this.groupBox74.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYearFutureRelativeTimeRules)).EndInit();
+            this.groupBox78.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondPastRelativeTimeRules)).EndInit();
+            this.groupBox69.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekPastRelativeTimeRules)).EndInit();
+            this.groupBox79.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMinuteFutureRelativeTimeRules)).EndInit();
+            this.groupBox72.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthFutureRelativeTimeRules)).EndInit();
+            this.groupBox80.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondFutureRelativeTimeRules)).EndInit();
+            this.groupBox68.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDayPastRelativeTimeRules)).EndInit();
+            this.groupBox70.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekFutureRelativeTimeRules)).EndInit();
             this.groupBox67.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDayFutureRelativeTimeRules)).EndInit();
             this.tbpCalendars.ResumeLayout(false);
@@ -5855,6 +5853,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrencyDisplayNameSets)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrencyPeriods)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox81.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatterns)).EndInit();
+            this.groupBox82.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatternSets)).EndInit();
             this.tbpRbnf.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tbpOrdinalRules.ResumeLayout(false);
@@ -5991,37 +5994,6 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
-            this.groupBox68.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDayPastRelativeTimeRules)).EndInit();
-            this.groupBox69.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekPastRelativeTimeRules)).EndInit();
-            this.groupBox70.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekFutureRelativeTimeRules)).EndInit();
-            this.groupBox71.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthPastRelativeTimeRules)).EndInit();
-            this.groupBox72.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthFutureRelativeTimeRules)).EndInit();
-            this.groupBox73.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYearPastRelativeTimeRules)).EndInit();
-            this.groupBox74.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYearFutureRelativeTimeRules)).EndInit();
-            this.groupBox75.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHourPastRelativeTimeRules)).EndInit();
-            this.groupBox76.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMinutePastRelativeTimeRules)).EndInit();
-            this.groupBox77.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHourFutureRelativeTimeRules)).EndInit();
-            this.groupBox78.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondPastRelativeTimeRules)).EndInit();
-            this.groupBox79.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMinuteFutureRelativeTimeRules)).EndInit();
-            this.groupBox80.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecondFutureRelativeTimeRules)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.groupBox81.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatterns)).EndInit();
-            this.groupBox82.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMiscellaneousPatternSets)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -6465,10 +6437,6 @@
         private System.Windows.Forms.TextBox tbxCalendarYear;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.TextBox tbxCalendarEra;
-        private System.Windows.Forms.GroupBox groupBox66;
-        private System.Windows.Forms.RadioButton rbJson;
-        private System.Windows.Forms.RadioButton rbBinary;
-        private System.Windows.Forms.RadioButton rbXml;
         private System.Windows.Forms.TextBox tbxCharactersIndexExemplarCharacters;
         private System.Windows.Forms.Label label124;
         private System.Windows.Forms.DataGridView dgvCalendarMonthNameSetIds;
@@ -6518,6 +6486,8 @@
         private System.Windows.Forms.DataGridView dgvMiscellaneousPatterns;
         private System.Windows.Forms.GroupBox groupBox82;
         private System.Windows.Forms.DataGridView dgvMiscellaneousPatternSets;
+        private System.Windows.Forms.GroupBox groupBox66;
+        private System.Windows.Forms.CheckedListBox clbDataSources;
     }
 }
 

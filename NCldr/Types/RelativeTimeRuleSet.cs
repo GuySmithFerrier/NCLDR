@@ -16,6 +16,11 @@
         /// </summary>
         public RelativeTimeRule[] RelativeTimeRules { get; set; }
 
+        public RelativeTimeRuleSet()
+        {
+            this.RelativeTimeRules = new RelativeTimeRule[]{};
+        }
+
         /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>

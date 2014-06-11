@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,19 @@ namespace NCldrBuilderGui
             InitializeComponent();
 
             options = new NCldrBuilderOptions();
+
+            InitializeDataSources();
+        }
+
+        private void InitializeDataSources()
+        {
+            NCldrDataSources.Discover();
+            clbDataSources.DataSource = NCldrDataSources.DataSources;
+            clbDataSources.DisplayMember = "Name";
+            if (NCldrDataSources.DataSources.Count > 0)
+            {
+                clbDataSources.SetItemChecked(0, true);
+            }
         }
 
         private void cbxIncludeCultureNames_CheckedChanged(object sender, EventArgs e)
@@ -343,16 +357,7 @@ namespace NCldrBuilderGui
 
         private INCldrFileDataSource GetNewNCldrDataSource()
         {
-            if (rbJson.Checked)
-            {
-                return new NCldrJsonFileDataSource();
-            }
-            else if (rbXml.Checked)
-            {
-                return new NCldrXmlFileDataSource();
-            }
-
-            return new NCldrBinaryFileDataSource();
+            return (INCldrFileDataSource)clbDataSources.CheckedItems[0];
         }
 
         private string previousSection;
@@ -545,6 +550,17 @@ namespace NCldrBuilderGui
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 tbxNCldrPath.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
+
+        private void clbDataSources_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int itemIndex = 0; itemIndex < clbDataSources.Items.Count; itemIndex++)
+            {
+                if (itemIndex != e.Index)
+                {
+                    clbDataSources.SetItemChecked(itemIndex, false);
+                }
             }
         }
     }

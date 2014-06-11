@@ -15,6 +15,16 @@
     public class NCldrJsonFileDataSource : INCldrFileDataSource
     {
         /// <summary>
+        /// Gets or sets the name of the data source
+        /// </summary>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the description of the data source
+        /// </summary>
+        public string Description { get; private set; }
+
+        /// <summary>
         /// Gets or sets the formatting used to write the JSON
         /// </summary>
         /// <remarks>None means no special formatting, Indented means child objects are indented</remarks>
@@ -34,6 +44,15 @@
             {
                 return Path.Combine(this.NCldrDataPath, "NCldr.json");
             }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the NCldrJsonFileDataSource class
+        /// </summary>
+        public NCldrJsonFileDataSource()
+        {
+            this.Name = "JSON";
+            this.Description = "Newtonsoft JSON Serializer";
         }
 
         /// <summary>

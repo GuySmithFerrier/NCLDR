@@ -28,6 +28,14 @@
         public T[] Names { get; set; }
 
         /// <summary>
+        /// Initializes a new instance of the CalendarNameSet class
+        /// </summary>
+        public CalendarNameSet()
+        {
+            this.Names = (T[])Array.CreateInstance(typeof(T), 0);
+        }
+
+        /// <summary>
         /// Combine combines a child with a parent as necessary and returns the combined object
         /// </summary>
         /// <param name="combinedCalendarNameSets">The child object</param>

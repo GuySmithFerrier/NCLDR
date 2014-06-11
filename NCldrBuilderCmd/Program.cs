@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using NCldr;
 using NCldr.Builder;
 
@@ -32,6 +27,7 @@ namespace NCldrBuilderCmd
             string ncldrPath = reader.GetArgumentValue("-NCLDRPath");
             displayMode = GetDisplayMode(reader.GetArgumentValue("-DisplayMode"));
             string dataSourceName = reader.GetArgumentValue("-DataSource");
+            NCldrDataSources.Discover();
             INCldrFileDataSource dataSource = GetDataSource(dataSourceName);
             if (String.IsNullOrEmpty(cldrPath) || String.IsNullOrEmpty(ncldrPath) || dataSource == null)
             {
@@ -64,18 +60,24 @@ namespace NCldrBuilderCmd
 
         private static INCldrFileDataSource GetDataSource(string dataSourceName)
         {
-            if (string.IsNullOrEmpty(dataSourceName) ||
-                string.Compare(dataSourceName, "Binary", StringComparison.InvariantCultureIgnoreCase) == 0)
+            if (NCldrDataSources.DataSources.Count == 0)
             {
-                return new NCldrBinaryFileDataSource();
+                return null;
             }
-            else if (string.Compare(dataSourceName, "Json", StringComparison.InvariantCultureIgnoreCase) == 0)
+            else if (string.IsNullOrEmpty(dataSourceName))
             {
-                return new NCldrJsonFileDataSource();
+                return NCldrDataSources.DataSources[0];
             }
-            else if (string.Compare(dataSourceName, "Xml", StringComparison.InvariantCultureIgnoreCase) == 0)
+            else
             {
-                return new NCldrXmlFileDataSource();
+                foreach (INCldrFileDataSource dataSource in NCldrDataSources.DataSources)
+                {
+                    if (string.Compare(dataSourceName, dataSource.Name, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        return dataSource;
+                    }
+                }
+
             }
 
             return null;

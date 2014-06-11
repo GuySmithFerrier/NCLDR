@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="NCldrDataSources.cs" />
     <Compile Include="NCldrXmlFileDataSource.cs" />
     <Compile Include="NCldrJsonFileDataSource.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />

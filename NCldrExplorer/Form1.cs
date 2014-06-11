@@ -21,11 +21,24 @@ namespace NCldrExplorer
         public Form1()
         {
             InitializeComponent();
+            InitializeDataSources();
+        }
+
+        private void InitializeDataSources()
+        {
+            NCldrDataSources.Discover();
+            clbDataSources.DataSource = NCldrDataSources.DataSources;
+            clbDataSources.DisplayMember = "Name";
+            if (NCldrDataSources.DataSources.Count > 0)
+            {
+                clbDataSources.SetItemChecked(0, true);
+            }
         }
 
         public Form1(string[] args)
         {
             InitializeComponent();
+            InitializeDataSources();
 
             if (args.GetLength(0) > 0 && Directory.Exists(args[0]))
             {
@@ -34,17 +47,16 @@ namespace NCldrExplorer
                 if (args.GetLength(0) > 1)
                 {
                     string dataSourceName = args[1];
-                    if (string.Compare(dataSourceName, "Binary", StringComparison.InvariantCultureIgnoreCase) == 0)
+                    int dataSourceIndex = 0;
+                    foreach (INCldrFileDataSource dataSource in clbDataSources.Items)
                     {
-                        rbBinary.Checked = true;
-                    }
-                    else if (string.Compare(dataSourceName, "Json", StringComparison.InvariantCultureIgnoreCase) == 0)
-                    {
-                        rbJson.Checked = true;
-                    }
-                    else if (string.Compare(dataSourceName, "XML", StringComparison.InvariantCultureIgnoreCase) == 0)
-                    {
-                        rbXml.Checked = true;
+                        if (string.Compare(dataSourceName, dataSource.Name, StringComparison.InvariantCultureIgnoreCase) == 0)
+                        {
+                            clbDataSources.SetItemChecked(dataSourceIndex, true);
+                            break;
+                        }
+
+                        dataSourceIndex++;
                     }
                 }
 
@@ -86,16 +98,7 @@ namespace NCldrExplorer
 
         private INCldrFileDataSource GetNewNCldrDataSource()
         {
-            if (rbJson.Checked)
-            {
-                return new NCldrJsonFileDataSource();
-            }
-            else if (rbXml.Checked)
-            {
-                return new NCldrXmlFileDataSource();
-            }
-
-            return new NCldrBinaryFileDataSource();
+            return (INCldrFileDataSource)clbDataSources.CheckedItems[0];
         }
 
         private void AddPluralRuleSets()
@@ -1481,7 +1484,7 @@ namespace NCldrExplorer
         private void CalendarNameSetChanged<T>(ListBox listBox, DataGridView dataGridView) where T: CalendarName
         {
             CalendarNameSet<T> nameSet = (CalendarNameSet<T>)(listBox).SelectedItem;
-            if (nameSet.Names == null || nameSet.Names.GetLength(0) == 0)
+            if (nameSet.Names == null || nameSet.Names.Length == 0)
             {
                 dataGridView.DataSource = null;
             }
@@ -1514,7 +1517,7 @@ namespace NCldrExplorer
         private void CalendarNameSetChanged<T>(DataGridViewRow dataGridViewRowParent, DataGridView dataGridViewChildren) where T : CalendarName
         {
             CalendarNameSet<T> nameSet = (CalendarNameSet<T>)dataGridViewRowParent.DataBoundItem;
-            if (nameSet.Names == null || nameSet.Names.GetLength(0) == 0)
+            if (nameSet.Names == null || nameSet.Names.Length == 0)
             {
                 dataGridViewChildren.DataSource = null;
             }
@@ -1693,6 +1696,17 @@ namespace NCldrExplorer
             dgvMiscellaneousPatterns.DataSource = miscellaneousPatternSet.MiscellaneousPatterns;
             dgvMiscellaneousPatterns.Columns[0].Width = 70;
             dgvMiscellaneousPatterns.Columns[1].Width = 140;
+        }
+
+        private void clbDataSources_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (int itemIndex = 0; itemIndex < clbDataSources.Items.Count; itemIndex++)
+            {
+                if (itemIndex != e.Index)
+                {
+                    clbDataSources.SetItemChecked(itemIndex, false);
+                }
+            }
         }
     }
 

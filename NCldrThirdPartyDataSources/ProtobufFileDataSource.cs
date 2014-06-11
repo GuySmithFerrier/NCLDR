@@ -2,14 +2,18 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
+    using System.Reflection;
     using System.Runtime.Serialization;
-    using System.Xml.Serialization;
+    using ProtoBuf;
+    using ProtoBuf.Meta;
 
     /// <summary>
-    /// NCldrXmlFileDataSource loads/saves the raw NCLDR data from an NCldr XML data file
+    /// ProtobufFileDataSource loads/saves the raw NCLDR data from an NCldr Protocol Buffers binary data file
     /// </summary>
-    /// <remarks>Set the NCldrXmlFileDataSource.NCldrDataPath property before calling NCldrXmlFileDataSource.Load</remarks>
-    public class NCldrXmlFileDataSource : INCldrFileDataSource
+    /// <remarks>This class requires the protobuf-net library from https://code.google.com/p/protobuf-net/.
+    /// Set the ProtobufFileDataSource.NCldrDataPath property before calling Load</remarks>
+    public class ProtobufFileDataSource : INCldrFileDataSource
     {
         /// <summary>
         /// Gets or sets the name of the data source
@@ -33,17 +37,62 @@
         {
             get
             {
-                return Path.Combine(this.NCldrDataPath, "NCldr.xml");
+                return Path.Combine(this.NCldrDataPath, "NCldr.prb");
             }
         }
 
         /// <summary>
-        /// Initializes a new instance of the NCldrXmlFileDataSource class
+        /// Initializes static members of the ProtobufFileDataSource class
         /// </summary>
-        public NCldrXmlFileDataSource()
+        static ProtobufFileDataSource()
         {
-            this.Name = "XML";
-            this.Description = ".NET Framework XML Serializer";
+            Assembly assembly = Assembly.GetAssembly(typeof(NCldrData));
+            Type[] ncldrTypes = (from t in assembly.GetTypes()
+                                 where t.Namespace.StartsWith("NCldr.Types")
+                                 select t).ToArray();
+
+            AddProtobufType(ncldrTypes, typeof(NCldrData));
+
+            foreach (Type type in ncldrTypes)
+            {
+                AddProtobufType(ncldrTypes, type);
+            }
+        }
+
+        /// <summary>
+        /// Adds a default protobuf data contract to the protobuf runtime model
+        /// </summary>
+        /// <param name="allTypes">All types available</param>
+        /// <param name="type">The type to add to the model</param>
+        private static void AddProtobufType(Type[] allTypes, Type type)
+        {
+            MetaType metaType = RuntimeTypeModel.Default.Add(type, true);
+
+            string[] memberNames = (from pi in type.GetProperties()
+                                    where pi.CanWrite
+                                    select pi.Name).ToArray();
+
+            metaType.Add(memberNames);
+
+            int index = memberNames.Length;
+
+            // add subtypes
+            foreach (Type allType in allTypes)
+            {
+                if (allType.IsSubclassOf(type))
+                {
+                    metaType.AddSubType(++index, allType);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the ProtobufFileDataSource class
+        /// </summary>
+        public ProtobufFileDataSource()
+        {
+            this.Name = "Protocol Buffers";
+            this.Description = "Google Protocol Buffers Serializer";
         }
 
         /// <summary>
@@ -70,8 +119,7 @@
             FileStream fileStream = new FileStream(this.NCldrDataFilename, FileMode.Open);
             try
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(NCldrData));
-                ncldrData = (NCldrData)serializer.Deserialize(fileStream);
+                ncldrData = Serializer.Deserialize<NCldrData>(fileStream);
             }
             catch (SerializationException exception)
             {
@@ -93,10 +141,9 @@
         public void Save(INCldrData ncldrData)
         {
             FileStream fileStream = new FileStream(this.NCldrDataFilename, FileMode.Create);
-            XmlSerializer serializer = new XmlSerializer(typeof(NCldrData));
             try
             {
-                serializer.Serialize(fileStream, ncldrData);
+                Serializer.Serialize(fileStream, (NCldrData)ncldrData);
             }
             finally
             {

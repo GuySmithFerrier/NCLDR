@@ -6,6 +6,16 @@
     public interface INCldrFileDataSource
     {
         /// <summary>
+        /// Gets or sets the name of the data source
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
+        /// Gets or sets the description of the data source
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
         /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)
         /// </summary>
         string NCldrDataPath { get; set; }
