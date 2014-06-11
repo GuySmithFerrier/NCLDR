@@ -11,3 +11,6 @@ NCldrData/*
 NCldr.Tests/*
 NCldr.IntegrationTests/*
 packages/*
+Libraries/Protobuf-Net/protobuf-net.dll
+Libraries/Protobuf-Net/protobuf-net.pdb
+Libraries/Protobuf-Net/protobuf-net.xml
