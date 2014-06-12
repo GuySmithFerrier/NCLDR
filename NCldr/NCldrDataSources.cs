@@ -24,6 +24,7 @@
             DataSources = new List<INCldrFileDataSource>();
             DataSources.Add(new NCldrBinaryFileDataSource());
             DataSources.Add(new NCldrJsonFileDataSource());
+            DataSources.Add(new NCldrBsonFileDataSource());
             DataSources.Add(new NCldrXmlFileDataSource());
         }
 

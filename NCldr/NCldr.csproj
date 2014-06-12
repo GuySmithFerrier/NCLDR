@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NCldrBsonFileDataSource.cs" />
+    <Compile Include="NCldrJsonFileDataSourceBase.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="NCldrDataSources.cs" />
     <Compile Include="NCldrXmlFileDataSource.cs" />

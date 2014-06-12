@@ -12,18 +12,8 @@
     /// NCldrJsonFileDataSource loads/saves the raw NCLDR data from an NCldr JSON data file
     /// </summary>
     /// <remarks>Set the NCldrJsonFileDataSource.NCldrDataPath property before calling NCldrJsonFileDataSource.Load</remarks>
-    public class NCldrJsonFileDataSource : INCldrFileDataSource
+    public class NCldrJsonFileDataSource : NCldrJsonFileDataSourceBase, INCldrFileDataSource
     {
-        /// <summary>
-        /// Gets or sets the name of the data source
-        /// </summary>
-        public string Name { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the description of the data source
-        /// </summary>
-        public string Description { get; private set; }
-
         /// <summary>
         /// Gets or sets the formatting used to write the JSON
         /// </summary>
@@ -31,14 +21,9 @@
         public Formatting JsonFormatting { get; set; }
 
         /// <summary>
-        /// Gets or sets the path to the NCldr data file (includes the folder name only with no filename)
-        /// </summary>
-        public string NCldrDataPath { get; set; }
-
-        /// <summary>
         /// Gets the data file name including the path
         /// </summary>
-        public string NCldrDataFilename
+        public override string NCldrDataFilename
         {
             get
             {
@@ -53,15 +38,6 @@
         {
             this.Name = "JSON";
             this.Description = "Newtonsoft JSON Serializer";
-        }
-
-        /// <summary>
-        /// Exists returns true if the NCldr data file exists
-        /// </summary>
-        /// <returns>True if the NCldr data file exists</returns>
-        public bool Exists()
-        {
-            return File.Exists(this.NCldrDataFilename);
         }
 
         /// <summary>
@@ -108,25 +84,6 @@
                 }
 
                 serializer.Serialize(writer, ncldrData);
-            }
-        }
-
-        /// <summary>
-        /// IgnoreReadOnlyPropertiesContractResolver is a JsonSerializer ContractResolver that ignores read-only properties
-        /// </summary>
-        internal class IgnoreReadOnlyPropertiesContractResolver : DefaultContractResolver
-        {
-            /// <summary>
-            /// CreateProperties creates a list of properties to serialize that excludes properties that are read-only
-            /// </summary>
-            /// <param name="type">The type</param>
-            /// <param name="memberSerialization">The MemberSerialization</param>
-            /// <returns>A list of properties to serialize that excludes properties that are read-only</returns>
-            protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-            {
-                return (from property in base.CreateProperties(type, memberSerialization)
-                        where property.Writable
-                        select property).ToList();
             }
         }
     }
