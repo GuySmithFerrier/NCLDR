@@ -102,5 +102,15 @@
         {
             return RegionExtensions.GetHour(regionInfo.TwoLetterISORegionName);
         }
+
+        /// <summary>
+        /// GetCalendarPreferences gets the calendar preference ids for the RegionInfo
+        /// </summary>
+        /// <param name="regionInfo">The RegionInfo to get the calendar preference ids for</param>
+        /// <returns>The calendar preference ids for the RegionInfo</returns>
+        public static string[] GetCalendarPreferenceIds(this RegionInfo regionInfo)
+        {
+            return RegionExtensions.GetCalendarPreferenceIds(regionInfo.TwoLetterISORegionName);
+        }
     }
 }

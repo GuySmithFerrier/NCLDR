@@ -218,5 +218,33 @@
                     where h.RegionIds.Contains(NCldr.RegionIdForTheWorld)
                     select h).FirstOrDefault();
         }
+
+        /// <summary>
+        /// GetCalendarPreferenceIds gets the calendar preference ids for the region
+        /// </summary>
+        /// <param name="regionId">The Id of the region to get the calendar preference ids for</param>
+        /// <returns>The calendar preference ids for the region</returns>
+        public static string[] GetCalendarPreferenceIds(string regionId)
+        {
+            if (NCldr.CalendarPreferences == null)
+            {
+                return null;
+            }
+
+            CalendarPreference calendarPreference = (from ms in NCldr.CalendarPreferences
+                                                     where ms.RegionIds.Contains(regionId)
+                                                     select ms).FirstOrDefault();
+
+            if (calendarPreference != null)
+            {
+                // this region has a specific calendar preference
+                return calendarPreference.CalendarTypes;
+            }
+
+            // there are no specific calendar preferences for this region so default to the calendar preferences for the world ("001")
+            return (from ms in NCldr.CalendarPreferences
+                    where ms.RegionIds.Contains(NCldr.RegionIdForTheWorld)
+                    select ms.CalendarTypes).FirstOrDefault();
+        }
     }
 }

@@ -269,7 +269,7 @@ namespace NCldrExplorer
             ShowDisplayNames<RegionDisplayName>(lbxRegionDisplayNames, culture.RegionDisplayNames);
             ShowDisplayNames<ScriptDisplayName>(lbxScriptDisplayNames, culture.ScriptDisplayNames);
 
-            ShowCalendars(culture.Dates);
+            ShowCalendars(culture, culture.Dates);
 
             ShowCasing(culture.Casing);
 
@@ -463,23 +463,24 @@ namespace NCldrExplorer
             }
         }
 
-        private void ShowCalendars(Dates dates)
+        private void ShowCalendars(Culture culture, Dates dates)
         {
             lbxCalendars.Items.Clear();
 
             if (dates == null)
             {
-                tbxCalendarsDefault.Text = String.Empty;
+                lbxCalendarPreferences.Items.Clear();
             }
             else
             {
-                if (dates.DefaultCalendarId == null)
+                lbxCalendarPreferences.Items.Clear();
+                if (culture.Identity.Region != null)
                 {
-                    tbxCalendarsDefault.Text = String.Empty;
-                }
-                else
-                {
-                    tbxCalendarsDefault.Text = dates.DefaultCalendarId;
+                    string[] calendarPreferences = RegionExtensions.GetCalendarPreferenceIds(culture.Identity.Region.Id);
+                    if (calendarPreferences != null)
+                    {
+                        lbxCalendarPreferences.Items.AddRange(calendarPreferences);
+                    }
                 }
 
                 if (dates.Calendars != null && dates.Calendars.GetLength(0) > 0)
@@ -1417,6 +1418,11 @@ namespace NCldrExplorer
         private void lbxCalendars_SelectedIndexChanged(object sender, EventArgs e)
         {
             NCldr.Types.Calendar calendar = (NCldr.Types.Calendar)lbxCalendars.SelectedItem;
+            ShowCalendar(calendar);
+        }
+
+        private void ShowCalendar(NCldr.Types.Calendar calendar)
+        {
             if (calendar.DateFormats == null || calendar.DateFormats.GetLength(0) == 0)
             {
                 dgvCalendarDateFormats.DataSource = null;
@@ -1706,6 +1712,18 @@ namespace NCldrExplorer
                 {
                     clbDataSources.SetItemChecked(itemIndex, false);
                 }
+            }
+        }
+
+        private void lbxCalendarPreferences_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string calendarPreference = (string)lbxCalendarPreferences.SelectedItem;
+            NCldr.Types.Calendar calendar = (from c in lbxCalendars.Items.Cast <NCldr.Types.Calendar>().ToArray()
+                                             where c.Id == calendarPreference
+                                             select c).FirstOrDefault();
+            if (calendar != null)
+            {
+                ShowCalendar(calendar);
             }
         }
     }

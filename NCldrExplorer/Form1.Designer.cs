@@ -134,9 +134,6 @@
             this.dgvCalendarMonthNameSetIds = new System.Windows.Forms.DataGridView();
             this.groupBox39 = new System.Windows.Forms.GroupBox();
             this.lbxCalendars = new System.Windows.Forms.ListBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tbxCalendarsDefault = new System.Windows.Forms.TextBox();
-            this.label80 = new System.Windows.Forms.Label();
             this.tbpCasing = new System.Windows.Forms.TabPage();
             this.tbxCasingZoneExemplarCity = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -516,6 +513,10 @@
             this.btnCustomCulturesCheckAllNew = new System.Windows.Forms.Button();
             this.btnCustomCulturesUncheckAll = new System.Windows.Forms.Button();
             this.btnCustomCulturesCheckAll = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbxCalendarPreferences = new System.Windows.Forms.ListBox();
+            this.groupBox83 = new System.Windows.Forms.GroupBox();
+            this.groupBox84 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tbpLoad.SuspendLayout();
             this.groupBox66.SuspendLayout();
@@ -586,7 +587,6 @@
             this.groupBox49.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNameSetIds)).BeginInit();
             this.groupBox39.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.tbpCasing.SuspendLayout();
             this.tbpCharacters.SuspendLayout();
             this.groupBox38.SuspendLayout();
@@ -738,6 +738,9 @@
             this.groupBox34.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.groupBox28.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBox83.SuspendLayout();
+            this.groupBox84.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1873,7 +1876,7 @@
             // 
             // groupBox39
             // 
-            this.groupBox39.Controls.Add(this.lbxCalendars);
+            this.groupBox39.Controls.Add(this.groupBox84);
             this.groupBox39.Controls.Add(this.panel5);
             this.groupBox39.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox39.Location = new System.Drawing.Point(3, 3);
@@ -1887,37 +1890,11 @@
             // 
             this.lbxCalendars.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxCalendars.FormattingEnabled = true;
-            this.lbxCalendars.Location = new System.Drawing.Point(3, 77);
+            this.lbxCalendars.Location = new System.Drawing.Point(3, 16);
             this.lbxCalendars.Name = "lbxCalendars";
-            this.lbxCalendars.Size = new System.Drawing.Size(116, 345);
+            this.lbxCalendars.Size = new System.Drawing.Size(110, 253);
             this.lbxCalendars.TabIndex = 1;
             this.lbxCalendars.SelectedIndexChanged += new System.EventHandler(this.lbxCalendars_SelectedIndexChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.tbxCalendarsDefault);
-            this.panel5.Controls.Add(this.label80);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 16);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(116, 61);
-            this.panel5.TabIndex = 0;
-            // 
-            // tbxCalendarsDefault
-            // 
-            this.tbxCalendarsDefault.Location = new System.Drawing.Point(6, 28);
-            this.tbxCalendarsDefault.Name = "tbxCalendarsDefault";
-            this.tbxCalendarsDefault.Size = new System.Drawing.Size(106, 20);
-            this.tbxCalendarsDefault.TabIndex = 1;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(3, 12);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(41, 13);
-            this.label80.TabIndex = 0;
-            this.label80.Text = "Default";
             // 
             // tbpCasing
             // 
@@ -4583,7 +4560,7 @@
             this.splitContainer11.Panel1.Controls.Add(this.label26);
             this.splitContainer11.Panel1.Controls.Add(this.groupBox19);
             this.splitContainer11.Size = new System.Drawing.Size(1313, 544);
-            this.splitContainer11.SplitterDistance = 437;
+            this.splitContainer11.SplitterDistance = 436;
             this.splitContainer11.TabIndex = 0;
             // 
             // tbxNumberingSystemRules
@@ -4696,7 +4673,7 @@
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox22);
             this.splitContainer12.Size = new System.Drawing.Size(1313, 544);
-            this.splitContainer12.SplitterDistance = 437;
+            this.splitContainer12.SplitterDistance = 436;
             this.splitContainer12.TabIndex = 1;
             // 
             // groupBox20
@@ -4705,7 +4682,7 @@
             this.groupBox20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox20.Location = new System.Drawing.Point(0, 0);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(437, 544);
+            this.groupBox20.Size = new System.Drawing.Size(436, 544);
             this.groupBox20.TabIndex = 0;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Ordinal Rules";
@@ -4726,8 +4703,8 @@
             this.splitContainer13.Panel2.Controls.Add(this.label30);
             this.splitContainer13.Panel2.Controls.Add(this.tbxOrdinalRuleSetCultures);
             this.splitContainer13.Panel2.Controls.Add(this.label31);
-            this.splitContainer13.Size = new System.Drawing.Size(431, 525);
-            this.splitContainer13.SplitterDistance = 143;
+            this.splitContainer13.Size = new System.Drawing.Size(430, 525);
+            this.splitContainer13.SplitterDistance = 142;
             this.splitContainer13.TabIndex = 0;
             // 
             // groupBox21
@@ -4736,7 +4713,7 @@
             this.groupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox21.Location = new System.Drawing.Point(0, 0);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(143, 525);
+            this.groupBox21.Size = new System.Drawing.Size(142, 525);
             this.groupBox21.TabIndex = 0;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Cultures";
@@ -4747,7 +4724,7 @@
             this.lbxOrdinalRuleSets.FormattingEnabled = true;
             this.lbxOrdinalRuleSets.Location = new System.Drawing.Point(3, 16);
             this.lbxOrdinalRuleSets.Name = "lbxOrdinalRuleSets";
-            this.lbxOrdinalRuleSets.Size = new System.Drawing.Size(137, 506);
+            this.lbxOrdinalRuleSets.Size = new System.Drawing.Size(136, 506);
             this.lbxOrdinalRuleSets.TabIndex = 1;
             this.lbxOrdinalRuleSets.SelectedIndexChanged += new System.EventHandler(this.lbxOrdinalRuleSets_SelectedIndexChanged);
             // 
@@ -4798,7 +4775,7 @@
             this.groupBox22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox22.Location = new System.Drawing.Point(0, 0);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(872, 544);
+            this.groupBox22.Size = new System.Drawing.Size(873, 544);
             this.groupBox22.TabIndex = 0;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Ordinal Rule Investigator";
@@ -4809,7 +4786,7 @@
             this.groupBox23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox23.Location = new System.Drawing.Point(3, 156);
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(866, 385);
+            this.groupBox23.Size = new System.Drawing.Size(867, 385);
             this.groupBox23.TabIndex = 1;
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Results";
@@ -4820,7 +4797,7 @@
             this.tbxOrdinalRuleResults.Location = new System.Drawing.Point(3, 16);
             this.tbxOrdinalRuleResults.Multiline = true;
             this.tbxOrdinalRuleResults.Name = "tbxOrdinalRuleResults";
-            this.tbxOrdinalRuleResults.Size = new System.Drawing.Size(860, 366);
+            this.tbxOrdinalRuleResults.Size = new System.Drawing.Size(861, 366);
             this.tbxOrdinalRuleResults.TabIndex = 0;
             // 
             // panel2
@@ -4835,7 +4812,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(866, 140);
+            this.panel2.Size = new System.Drawing.Size(867, 140);
             this.panel2.TabIndex = 0;
             // 
             // label121
@@ -4930,7 +4907,7 @@
             // 
             this.splitContainer10.Panel2.Controls.Add(this.groupBox18);
             this.splitContainer10.Size = new System.Drawing.Size(1313, 544);
-            this.splitContainer10.SplitterDistance = 437;
+            this.splitContainer10.SplitterDistance = 436;
             this.splitContainer10.TabIndex = 0;
             // 
             // tbxPostalCodesRegex
@@ -4941,7 +4918,7 @@
             this.tbxPostalCodesRegex.Location = new System.Drawing.Point(82, 86);
             this.tbxPostalCodesRegex.Multiline = true;
             this.tbxPostalCodesRegex.Name = "tbxPostalCodesRegex";
-            this.tbxPostalCodesRegex.Size = new System.Drawing.Size(338, 241);
+            this.tbxPostalCodesRegex.Size = new System.Drawing.Size(337, 241);
             this.tbxPostalCodesRegex.TabIndex = 4;
             // 
             // label24
@@ -4999,7 +4976,7 @@
             this.groupBox18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox18.Location = new System.Drawing.Point(0, 0);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(872, 544);
+            this.groupBox18.Size = new System.Drawing.Size(873, 544);
             this.groupBox18.TabIndex = 0;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Postal Code Investigator";
@@ -5063,7 +5040,7 @@
             // 
             this.splitContainer8.Panel2.Controls.Add(this.groupBox15);
             this.splitContainer8.Size = new System.Drawing.Size(1313, 544);
-            this.splitContainer8.SplitterDistance = 437;
+            this.splitContainer8.SplitterDistance = 436;
             this.splitContainer8.TabIndex = 0;
             // 
             // groupBox13
@@ -5072,7 +5049,7 @@
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(437, 544);
+            this.groupBox13.Size = new System.Drawing.Size(436, 544);
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Plural Rules";
@@ -5093,8 +5070,8 @@
             this.splitContainer9.Panel2.Controls.Add(this.label20);
             this.splitContainer9.Panel2.Controls.Add(this.tbxPluralRuleSetCultures);
             this.splitContainer9.Panel2.Controls.Add(this.label19);
-            this.splitContainer9.Size = new System.Drawing.Size(431, 525);
-            this.splitContainer9.SplitterDistance = 143;
+            this.splitContainer9.Size = new System.Drawing.Size(430, 525);
+            this.splitContainer9.SplitterDistance = 142;
             this.splitContainer9.TabIndex = 0;
             // 
             // groupBox14
@@ -5103,7 +5080,7 @@
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(143, 525);
+            this.groupBox14.Size = new System.Drawing.Size(142, 525);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Cultures";
@@ -5114,7 +5091,7 @@
             this.lbxPluralRuleSets.FormattingEnabled = true;
             this.lbxPluralRuleSets.Location = new System.Drawing.Point(3, 16);
             this.lbxPluralRuleSets.Name = "lbxPluralRuleSets";
-            this.lbxPluralRuleSets.Size = new System.Drawing.Size(137, 506);
+            this.lbxPluralRuleSets.Size = new System.Drawing.Size(136, 506);
             this.lbxPluralRuleSets.TabIndex = 1;
             this.lbxPluralRuleSets.SelectedIndexChanged += new System.EventHandler(this.lbxPluralRuleSets_SelectedIndexChanged);
             // 
@@ -5165,7 +5142,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(872, 544);
+            this.groupBox15.Size = new System.Drawing.Size(873, 544);
             this.groupBox15.TabIndex = 0;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Plural Rule Investigator";
@@ -5176,7 +5153,7 @@
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Location = new System.Drawing.Point(3, 156);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(866, 385);
+            this.groupBox16.Size = new System.Drawing.Size(867, 385);
             this.groupBox16.TabIndex = 1;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Results";
@@ -5187,7 +5164,7 @@
             this.tbxPluralRuleResults.Location = new System.Drawing.Point(3, 16);
             this.tbxPluralRuleResults.Multiline = true;
             this.tbxPluralRuleResults.Name = "tbxPluralRuleResults";
-            this.tbxPluralRuleResults.Size = new System.Drawing.Size(860, 366);
+            this.tbxPluralRuleResults.Size = new System.Drawing.Size(861, 366);
             this.tbxPluralRuleResults.TabIndex = 0;
             // 
             // panel1
@@ -5202,7 +5179,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(866, 140);
+            this.panel1.Size = new System.Drawing.Size(867, 140);
             this.panel1.TabIndex = 0;
             // 
             // label120
@@ -5297,7 +5274,7 @@
             // 
             this.splitContainer16.Panel2.Controls.Add(this.groupBox37);
             this.splitContainer16.Size = new System.Drawing.Size(1313, 544);
-            this.splitContainer16.SplitterDistance = 437;
+            this.splitContainer16.SplitterDistance = 436;
             this.splitContainer16.TabIndex = 1;
             // 
             // tbxTelephoneCodes
@@ -5308,7 +5285,7 @@
             this.tbxTelephoneCodes.Location = new System.Drawing.Point(82, 86);
             this.tbxTelephoneCodes.Multiline = true;
             this.tbxTelephoneCodes.Name = "tbxTelephoneCodes";
-            this.tbxTelephoneCodes.Size = new System.Drawing.Size(338, 241);
+            this.tbxTelephoneCodes.Size = new System.Drawing.Size(337, 241);
             this.tbxTelephoneCodes.TabIndex = 4;
             // 
             // label43
@@ -5366,7 +5343,7 @@
             this.groupBox37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox37.Location = new System.Drawing.Point(0, 0);
             this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Size = new System.Drawing.Size(872, 544);
+            this.groupBox37.Size = new System.Drawing.Size(873, 544);
             this.groupBox37.TabIndex = 0;
             this.groupBox37.TabStop = false;
             this.groupBox37.Text = "Telephone Code Investigator";
@@ -5723,6 +5700,47 @@
             this.btnCustomCulturesCheckAll.UseVisualStyleBackColor = true;
             this.btnCustomCulturesCheckAll.Click += new System.EventHandler(this.btnCustomCulturesCheckAll_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.groupBox83);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 16);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(116, 134);
+            this.panel5.TabIndex = 0;
+            // 
+            // lbxCalendarPreferences
+            // 
+            this.lbxCalendarPreferences.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxCalendarPreferences.FormattingEnabled = true;
+            this.lbxCalendarPreferences.Location = new System.Drawing.Point(3, 16);
+            this.lbxCalendarPreferences.Name = "lbxCalendarPreferences";
+            this.lbxCalendarPreferences.Size = new System.Drawing.Size(110, 115);
+            this.lbxCalendarPreferences.TabIndex = 1;
+            this.lbxCalendarPreferences.SelectedIndexChanged += new System.EventHandler(this.lbxCalendarPreferences_SelectedIndexChanged);
+            // 
+            // groupBox83
+            // 
+            this.groupBox83.Controls.Add(this.lbxCalendarPreferences);
+            this.groupBox83.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox83.Location = new System.Drawing.Point(0, 0);
+            this.groupBox83.Name = "groupBox83";
+            this.groupBox83.Size = new System.Drawing.Size(116, 134);
+            this.groupBox83.TabIndex = 2;
+            this.groupBox83.TabStop = false;
+            this.groupBox83.Text = "Preferences";
+            // 
+            // groupBox84
+            // 
+            this.groupBox84.Controls.Add(this.lbxCalendars);
+            this.groupBox84.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox84.Location = new System.Drawing.Point(3, 150);
+            this.groupBox84.Name = "groupBox84";
+            this.groupBox84.Size = new System.Drawing.Size(116, 272);
+            this.groupBox84.TabIndex = 2;
+            this.groupBox84.TabStop = false;
+            this.groupBox84.Text = "All";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5803,8 +5821,6 @@
             this.groupBox49.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalendarMonthNameSetIds)).EndInit();
             this.groupBox39.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.tbpCasing.ResumeLayout(false);
             this.tbpCasing.PerformLayout();
             this.tbpCharacters.ResumeLayout(false);
@@ -5994,6 +6010,9 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox28.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.groupBox83.ResumeLayout(false);
+            this.groupBox84.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -6277,9 +6296,6 @@
         private System.Windows.Forms.TabPage tbpCalendars;
         private System.Windows.Forms.GroupBox groupBox39;
         private System.Windows.Forms.ListBox lbxCalendars;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox tbxCalendarsDefault;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tbpFormats;
         private System.Windows.Forms.GroupBox groupBox40;
@@ -6488,6 +6504,10 @@
         private System.Windows.Forms.DataGridView dgvMiscellaneousPatternSets;
         private System.Windows.Forms.GroupBox groupBox66;
         private System.Windows.Forms.CheckedListBox clbDataSources;
+        private System.Windows.Forms.GroupBox groupBox84;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.GroupBox groupBox83;
+        private System.Windows.Forms.ListBox lbxCalendarPreferences;
     }
 }
 

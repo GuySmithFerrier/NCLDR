@@ -183,8 +183,25 @@
 
             List<System.Globalization.Calendar> availableCalendars = new List<System.Globalization.Calendar>();
 
-            // the order of the calendars is important - the default calendar must be the first calendar in the list
-            foreach (Types.Calendar calendar in culture.Dates.Calendars.OrderBy(c => c.Id != culture.Dates.DefaultCalendarId))
+            Types.Calendar[] allCalendars = null;
+            if (culture.Identity.Region != null)
+            {
+                string[] calendarPreferenceIds = RegionExtensions.GetCalendarPreferenceIds(culture.Identity.Region.Id);
+                if (calendarPreferenceIds != null)
+                {
+                    allCalendars = (from cpi in calendarPreferenceIds
+                                    select (from c in culture.Dates.Calendars
+                                            where c.Id == cpi
+                                            select c).FirstOrDefault()).ToArray();
+                }
+            }
+
+            if (allCalendars == null)
+            {
+                allCalendars = culture.Dates.Calendars;
+            }
+
+            foreach (Types.Calendar calendar in allCalendars)
             {
                 System.Globalization.Calendar dotNetCalendar = GetCalendar(calendar);
 

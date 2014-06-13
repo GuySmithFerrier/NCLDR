@@ -14,6 +14,7 @@
         /// <summary>
         /// Gets or sets the Id of the calendar which is the default for the Culture
         /// </summary>
+        [Obsolete("DefaultCalendarId is obsolete. Use RegionExtensions.GetCalendarPreferenceIds or RegionInfo.GetCalendarPreferenceIds instead.")]
         public string DefaultCalendarId { get; set; }
 
         /// <summary>
